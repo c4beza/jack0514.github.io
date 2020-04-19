@@ -1,0 +1,256 @@
+﻿@model IEnumerable<EnvisionAGreenLife.Models.dishwasher>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplStandard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conn_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.delayStartMode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Depth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Load_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Family_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N_Standard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.New_SRI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.New_Star)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postProgenergy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.powerConsMode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prog_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prog_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sold_in)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.standbyPowerUsage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Submit_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tot_Wat_Cons)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Water_Softener)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrandDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Availability_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Water_Consumption_litres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Rating_old)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Image_Large)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Image_Small)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplStandard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Conn_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.delayStartMode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Depth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Load_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Family_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N_Standard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.New_SRI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.New_Star)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postProgenergy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.powerConsMode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prog_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prog_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sold_in)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.standbyPowerUsage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Submit_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tot_Wat_Cons)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Water_Softener)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrandDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Availability_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Website)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Representative_Brand_URL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Water_Consumption_litres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Rating_old)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Image_Large)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Image_Small)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appliance_types.Type_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Dishwasher_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Dishwasher_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Dishwasher_Id })
+        </td>
+    </tr>
+}
+
+</table>

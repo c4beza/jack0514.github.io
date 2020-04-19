@@ -1,0 +1,298 @@
+﻿@model IEnumerable<EnvisionAGreenLife.Models.refrigerator>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adaptive_Defrost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplStandard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompartGrVol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompartNetVol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompartType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Configuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Depth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FF_Vol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FZ_Vol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Group)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Icemaker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MEPSApproval)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Family_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N_Standard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star2009)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SRI2009)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.No_Doors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_MEPS_Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_MEPScutoff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sold_in)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Submit_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tot_Vol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrandDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Availability_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fixed_MEPS_allowance_factor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Variable_MEPS_allowance_factor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adjusted_volume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Rating_old)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Image_Large)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Image_Small)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Registration_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adaptive_Defrost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplStandard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompartGrVol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompartNetVol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompartType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Configuration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Depth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FF_Vol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FZ_Vol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Group)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Icemaker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MEPSApproval)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Family_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N_Standard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star2009)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SRI2009)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.No_Doors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_MEPS_Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_MEPScutoff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sold_in)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Submit_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tot_Vol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrandDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Availability_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Website)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Representative_Brand_URL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fixed_MEPS_allowance_factor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Variable_MEPS_allowance_factor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adjusted_volume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Rating_old)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Image_Large)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Image_Small)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registration_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appliance_types.Type_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Refrigerator_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Refrigerator_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Refrigerator_Id })
+        </td>
+    </tr>
+}
+
+</table>

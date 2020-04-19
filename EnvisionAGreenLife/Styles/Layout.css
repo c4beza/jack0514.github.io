@@ -1,0 +1,17 @@
+﻿
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75px;
+}
+
+.name {
+    text-align: center;
+    color: #9cbd4f;
+    font-family: Times;
+    font-size: 300%;
+    padding-bottom: 10px;
+}
+
+

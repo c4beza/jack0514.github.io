@@ -1,0 +1,185 @@
+﻿@model EnvisionAGreenLife.Models.monitor
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>monitor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Record_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Record_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Family_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Family_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Selling_Countries)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Selling_Countries)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturing_Countries)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturing_Countries)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Screen_Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Screen_Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Screen_Technology)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Screen_Technology)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comparative_Energy_Consumption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comparative_Energy_Consumption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active_Standby_Power)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active_Standby_Power)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Rating_Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Rating_Index)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Representative_Brand_URL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Availability_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Availability_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Expiry_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Expiry_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Image_Large)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Image_Large)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Image_Small)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Image_Small)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appliance_types.Type_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

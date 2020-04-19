@@ -1,0 +1,659 @@
+﻿@model EnvisionAGreenLife.Models.clothes_washer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>clothes_washer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplStandard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplStandard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cap_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cap_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CEC_Cold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEC_Cold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CEC_Cold_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEC_Cold_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CEC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CEC_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEC_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cold_Prog)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cold_Prog)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cold_Prog_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cold_Prog_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cold_Wat_Cons)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cold_Wat_Cons)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cold_Wat_Cons_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cold_Wat_Cons_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Combination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Combination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Combination_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Combination_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conn_Mode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conn_Mode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conn_Mode_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conn_Mode_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.delayStartMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.delayStartMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.delayStartMode_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.delayStartMode_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Depth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Depth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Depth_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Depth_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DetergentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DetergentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DetergentType_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DetergentType_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Height_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hot_Wat_Cons)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hot_Wat_Cons)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hot_Wat_Cons_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hot_Wat_Cons_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.internal_heater)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.internal_heater)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.internal_heater_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.internal_heater_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loading)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loading)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loading_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loading_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MachineAction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MachineAction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MachineAction_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MachineAction_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Family_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Family_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N_Standard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N_Standard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.New_SRI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.New_SRI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.New_SRI_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.New_SRI_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.New_Star)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.New_Star)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.New_Star_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.New_Star_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postProgenergy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postProgenergy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postProgenergy_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postProgenergy_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.powerConsMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.powerConsMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.powerConsMode_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.powerConsMode_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prog_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prog_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prog_Name_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prog_Name_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sold_in)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sold_in)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.standbyPowerUsage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.standbyPowerUsage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.standbyPowerUsage_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.standbyPowerUsage_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Submit_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Submit_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmitStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmitStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test_Prog_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_Prog_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test_Prog_Time_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_Prog_Time_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tot_Wat_Cons)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tot_Wat_Cons)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tot_Wat_Cons_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tot_Wat_Cons_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WEI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WEI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WEI_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WEI_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Width)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Width_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Width_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrandDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrandDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Availability_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Availability_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Representative_Brand_URL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_Time_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_Time_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hot_Water_L)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hot_Water_L)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hot_Water_L_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hot_Water_L_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cold_Water_L)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cold_Water_L)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cold_Water_L_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cold_Water_L_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Rating_old)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Rating_old)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Image_Large)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Image_Large)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Image_Large_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Image_Large_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Image_Small)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Image_Small)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star_Image_Small_Second_Drum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star_Image_Small_Second_Drum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Registration_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registration_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appliance_types.Type_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Clothes_Washer_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

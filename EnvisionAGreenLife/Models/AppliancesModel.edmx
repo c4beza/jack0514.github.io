@@ -1,0 +1,1427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AppliancesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="air_conditioner">
+          <Key>
+            <PropertyRef Name="Air_Conditioner_Id" />
+          </Key>
+          <Property Name="Air_Conditioner_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplStandard" Type="nvarchar" MaxLength="83" />
+          <Property Name="MEPSComp" Type="nvarchar" MaxLength="18" />
+          <Property Name="N_Standard" Type="nvarchar" MaxLength="32" />
+          <Property Name="Model_No" Type="nvarchar" MaxLength="105" />
+          <Property Name="Family_Name" Type="nvarchar" MaxLength="49" />
+          <Property Name="avg_pwr_standby_mode" Type="int" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="33" />
+          <Property Name="C_Dehumid_Rated" Type="numeric" Precision="9" Scale="5" />
+          <Property Name="Configuration1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Configuration2" Type="nvarchar" MaxLength="32" />
+          <Property Name="Configuration2_unitmount" Type="nvarchar" MaxLength="13" />
+          <Property Name="Configuration3_Sink" Type="nvarchar" MaxLength="13" />
+          <Property Name="Configuration3_Source" Type="nvarchar" MaxLength="13" />
+          <Property Name="Country" Type="nvarchar" MaxLength="24" />
+          <Property Name="C_Power_Inp_Rated" Type="numeric" Precision="8" Scale="6" />
+          <Property Name="C_Sens_Cool_Rated" Type="numeric" Precision="9" Scale="4" />
+          <Property Name="C_Total_Cool_Rated" Type="numeric" Precision="7" Scale="5" />
+          <Property Name="Depth" Type="int" />
+          <Property Name="H2_COP" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="H2_HeatPwrCapacity" Type="numeric" Precision="6" Scale="4" />
+          <Property Name="H2_HeatPwrInput" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="Height" Type="numeric" Precision="5" Scale="1" />
+          <Property Name="H_Power_Inp_Rated" Type="numeric" Precision="8" Scale="6" />
+          <Property Name="H_Total_Heat_Rated" Type="numeric" Precision="5" Scale="3" />
+          <Property Name="indoorType" Type="nvarchar" MaxLength="18" />
+          <Property Name="EERtestAvg" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="COPtestAvg" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="Invert" Type="nvarchar" MaxLength="5" />
+          <Property Name="Setting_cool" Type="numeric" Precision="10" Scale="7" />
+          <Property Name="Setting_heat" Type="int" />
+          <Property Name="Pnoc" Type="numeric" Precision="7" Scale="4" />
+          <Property Name="Pnoh" Type="numeric" Precision="7" Scale="4" />
+          <Property Name="VSCP_EER50" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="VSCP_COP50" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="AnnualOutputEER" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="AnnualOutputCOP" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="sri2010_cool" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="sri2010_heat" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="Star2010_Cool" Type="numeric" Precision="2" Scale="1" />
+          <Property Name="Star2010_Heat" Type="numeric" Precision="2" Scale="1" />
+          <Property Name="outdoortype" Type="nvarchar" MaxLength="20" />
+          <Property Name="Phase" Type="nvarchar" MaxLength="6" />
+          <Property Name="Refrigerant" Type="nvarchar" MaxLength="5" />
+          <Property Name="Sold_in" Type="nvarchar" MaxLength="26" />
+          <Property Name="Submit_ID" Type="int" />
+          <Property Name="ExpDate" Type="datetime" />
+          <Property Name="GrandDate" Type="datetime" />
+          <Property Name="SubmitStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="Type" Type="nvarchar" MaxLength="13" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Product_Class" Type="nvarchar" MaxLength="8" />
+          <Property Name="Demand_Response_1" Type="nvarchar" MaxLength="5" />
+          <Property Name="Demand_Response_2" Type="nvarchar" MaxLength="5" />
+          <Property Name="Demand_Response_4" Type="nvarchar" MaxLength="5" />
+          <Property Name="Demand_Response_5" Type="nvarchar" MaxLength="5" />
+          <Property Name="Demand_Response_6" Type="nvarchar" MaxLength="5" />
+          <Property Name="Demand_Response_7" Type="nvarchar" MaxLength="5" />
+          <Property Name="PartNumber" Type="nvarchar" MaxLength="18" />
+          <Property Name="EER" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="Availability_Status" Type="nvarchar" MaxLength="11" />
+          <Property Name="star2000_cool" Type="int" />
+          <Property Name="star2000_heat" Type="int" />
+          <Property Name="Product_Website" Type="nvarchar" MaxLength="44" />
+          <Property Name="Representative_Brand_URL" Type="nvarchar" MaxLength="64" />
+          <Property Name="Variable_Output_Compressor" Type="nvarchar" MaxLength="5" />
+          <Property Name="Star_Image_Large" Type="nvarchar" MaxLength="105" />
+          <Property Name="Star_Image_Small" Type="nvarchar" MaxLength="105" />
+          <Property Name="Registration_Number" Type="nvarchar" MaxLength="7" />
+          <Property Name="Is_variable_speed" Type="nvarchar" MaxLength="5" />
+          <Property Name="Type_variable_output" Type="nvarchar" MaxLength="103" />
+          <Property Name="Var_output_compressor" Type="nvarchar" MaxLength="27" />
+          <Property Name="Rated_cooling_power_input_kW" Type="numeric" Precision="8" Scale="6" />
+          <Property Name="Rated_heating_power_input_kW" Type="numeric" Precision="8" Scale="6" />
+          <Property Name="Rated_AEER" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="Rated_ACOP" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="Type_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="appliance_types">
+          <Key>
+            <PropertyRef Name="Type_Id" />
+          </Key>
+          <Property Name="Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type_Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="clothes_dryer">
+          <Key>
+            <PropertyRef Name="Clothes_Dryer_Id" />
+          </Key>
+          <Property Name="Clothes_Dryer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplStandard" Type="nvarchar" MaxLength="82" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="19" />
+          <Property Name="Cap" Type="numeric" Precision="3" Scale="1" />
+          <Property Name="Combination" Type="nvarchar" MaxLength="5" />
+          <Property Name="Control" Type="nvarchar" MaxLength="11" />
+          <Property Name="Country" Type="nvarchar" MaxLength="34" />
+          <Property Name="Depth" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="Height" Type="numeric" Precision="5" Scale="1" />
+          <Property Name="Model_No" Type="nvarchar" MaxLength="24" />
+          <Property Name="Family_Name" Type="nvarchar" MaxLength="24" />
+          <Property Name="N_Standard" Type="nvarchar" MaxLength="30" />
+          <Property Name="New_CEC" Type="int" />
+          <Property Name="New_SRI" Type="numeric" Precision="17" Scale="15" />
+          <Property Name="New_Star" Type="numeric" Precision="3" Scale="1" />
+          <Property Name="Prog_Name" Type="nvarchar" MaxLength="82" />
+          <Property Name="Prog_Time" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="Sold_in" Type="nvarchar" MaxLength="26" />
+          <Property Name="SubmitStatus" Type="nvarchar" MaxLength="8" />
+          <Property Name="Submit_ID" Type="int" />
+          <Property Name="Test_Moist_Remove" Type="numeric" Precision="11" Scale="10" />
+          <Property Name="Tot_Wat_Cons" Type="numeric" Precision="7" Scale="4" />
+          <Property Name="Type" Type="nvarchar" MaxLength="9" />
+          <Property Name="Width" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="ExpDate" Type="datetime" />
+          <Property Name="GrandDate" Type="int" />
+          <Property Name="Product_Class" Type="nvarchar" MaxLength="20" />
+          <Property Name="Availability_Status" Type="nvarchar" MaxLength="11" />
+          <Property Name="Product_Website" Type="nvarchar" MaxLength="41" />
+          <Property Name="Representative_Brand_URL" Type="nvarchar" MaxLength="64" />
+          <Property Name="Star_Rating_old" Type="int" />
+          <Property Name="Star_Image_Large" Type="nvarchar" MaxLength="100" />
+          <Property Name="Star_Image_Small" Type="nvarchar" MaxLength="90" />
+          <Property Name="Type_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="clothes_washer">
+          <Key>
+            <PropertyRef Name="Clothes_Washer_Id" />
+          </Key>
+          <Property Name="Clothes_Washer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplStandard" Type="nvarchar" MaxLength="85" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="19" />
+          <Property Name="Cap" Type="numeric" Precision="3" Scale="1" />
+          <Property Name="Cap_Second_Drum" Type="int" />
+          <Property Name="CEC_Cold" Type="int" />
+          <Property Name="CEC_Cold_Second_Drum" Type="int" />
+          <Property Name="CEC" Type="int" />
+          <Property Name="CEC_Second_Drum" Type="int" />
+          <Property Name="Cold_Prog" Type="nvarchar" MaxLength="97" />
+          <Property Name="Cold_Prog_Second_Drum" Type="int" />
+          <Property Name="Cold_Wat_Cons" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="Cold_Wat_Cons_Second_Drum" Type="int" />
+          <Property Name="Combination" Type="nvarchar" MaxLength="5" />
+          <Property Name="Combination_Second_Drum" Type="nvarchar" MaxLength="5" />
+          <Property Name="Conn_Mode" Type="nvarchar" MaxLength="4" />
+          <Property Name="Conn_Mode_Second_Drum" Type="nvarchar" MaxLength="4" />
+          <Property Name="Country" Type="nvarchar" MaxLength="34" />
+          <Property Name="delayStartMode" Type="nvarchar" MaxLength="5" />
+          <Property Name="delayStartMode_Second_Drum" Type="nvarchar" MaxLength="4" />
+          <Property Name="Depth" Type="int" />
+          <Property Name="Depth_Second_Drum" Type="int" />
+          <Property Name="DetergentType" Type="nvarchar" MaxLength="8" />
+          <Property Name="DetergentType_Second_Drum" Type="nvarchar" MaxLength="4" />
+          <Property Name="Height" Type="int" />
+          <Property Name="Height_Second_Drum" Type="int" />
+          <Property Name="Hot_Wat_Cons" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="Hot_Wat_Cons_Second_Drum" Type="int" />
+          <Property Name="internal_heater" Type="nvarchar" MaxLength="43" />
+          <Property Name="internal_heater_Second_Drum" Type="nvarchar" MaxLength="33" />
+          <Property Name="Loading" Type="nvarchar" MaxLength="21" />
+          <Property Name="Loading_Second_Drum" Type="nvarchar" MaxLength="21" />
+          <Property Name="MachineAction" Type="nvarchar" MaxLength="20" />
+          <Property Name="MachineAction_Second_Drum" Type="int" />
+          <Property Name="Model_No" Type="nvarchar" MaxLength="28" />
+          <Property Name="Family_Name" Type="nvarchar" MaxLength="28" />
+          <Property Name="N_Standard" Type="nvarchar" MaxLength="30" />
+          <Property Name="New_SRI" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="New_SRI_Second_Drum" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="New_Star" Type="numeric" Precision="2" Scale="1" />
+          <Property Name="New_Star_Second_Drum" Type="int" />
+          <Property Name="postProgenergy" Type="numeric" Precision="9" Scale="8" />
+          <Property Name="postProgenergy_Second_Drum" Type="numeric" Precision="6" Scale="5" />
+          <Property Name="powerConsMode" Type="numeric" Precision="8" Scale="6" />
+          <Property Name="powerConsMode_Second_Drum" Type="numeric" Precision="3" Scale="2" />
+          <Property Name="Prog_Name" Type="nvarchar" MaxLength="229" />
+          <Property Name="Prog_Name_Second_Drum" Type="nvarchar" MaxLength="111" />
+          <Property Name="Sold_in" Type="nvarchar" MaxLength="26" />
+          <Property Name="standbyPowerUsage" Type="numeric" Precision="6" Scale="5" />
+          <Property Name="standbyPowerUsage_Second_Drum" Type="int" />
+          <Property Name="Submit_ID" Type="int" />
+          <Property Name="SubmitStatus" Type="nvarchar" MaxLength="8" />
+          <Property Name="Test_Prog_Time" Type="numeric" Precision="7" Scale="4" />
+          <Property Name="Test_Prog_Time_Second_Drum" Type="int" />
+          <Property Name="Tot_Wat_Cons" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="Tot_Wat_Cons_Second_Drum" Type="int" />
+          <Property Name="Type" Type="nvarchar" MaxLength="8" />
+          <Property Name="Type_Second_Drum" Type="nvarchar" MaxLength="4" />
+          <Property Name="WEI" Type="numeric" Precision="9" Scale="5" />
+          <Property Name="WEI_Second_Drum" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Width_Second_Drum" Type="int" />
+          <Property Name="ExpDate" Type="datetime" />
+          <Property Name="GrandDate" Type="int" />
+          <Property Name="Product_Class" Type="nvarchar" MaxLength="20" />
+          <Property Name="Availability_Status" Type="nvarchar" MaxLength="11" />
+          <Property Name="Product_Website" Type="nvarchar" MaxLength="41" />
+          <Property Name="Representative_Brand_URL" Type="nvarchar" MaxLength="76" />
+          <Property Name="Program_Time" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="Program_Time_Second_Drum" Type="int" />
+          <Property Name="Hot_Water_L" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="Hot_Water_L_Second_Drum" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="Cold_Water_L" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="Cold_Water_L_Second_Drum" Type="int" />
+          <Property Name="Star_Rating_old" Type="int" />
+          <Property Name="Star_Image_Large" Type="nvarchar" MaxLength="100" />
+          <Property Name="Star_Image_Large_Second_Drum" Type="nvarchar" MaxLength="98" />
+          <Property Name="Star_Image_Small" Type="nvarchar" MaxLength="90" />
+          <Property Name="Star_Image_Small_Second_Drum" Type="nvarchar" MaxLength="88" />
+          <Property Name="Registration_Number" Type="nvarchar" MaxLength="7" />
+          <Property Name="Type_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="dishwasher">
+          <Key>
+            <PropertyRef Name="Dishwasher_Id" />
+          </Key>
+          <Property Name="Dishwasher_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplStandard" Type="nvarchar" MaxLength="72" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="23" />
+          <Property Name="Cap" Type="int" />
+          <Property Name="CEC" Type="int" />
+          <Property Name="Conn_Type" Type="nvarchar" MaxLength="6" />
+          <Property Name="Country" Type="nvarchar" MaxLength="15" />
+          <Property Name="delayStartMode" Type="nvarchar" MaxLength="5" />
+          <Property Name="Depth" Type="int" />
+          <Property Name="Height" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="Load_Type" Type="nvarchar" MaxLength="17" />
+          <Property Name="Model_No" Type="nvarchar" MaxLength="45" />
+          <Property Name="Family_Name" Type="nvarchar" MaxLength="45" />
+          <Property Name="N_Standard" Type="nvarchar" MaxLength="18" />
+          <Property Name="New_SRI" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="New_Star" Type="numeric" Precision="2" Scale="1" />
+          <Property Name="postProgenergy" Type="numeric" Precision="7" Scale="6" />
+          <Property Name="powerConsMode" Type="numeric" Precision="9" Scale="6" />
+          <Property Name="Prog_Name" Type="nvarchar" MaxLength="34" />
+          <Property Name="Prog_Time" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="Sold_in" Type="nvarchar" MaxLength="26" />
+          <Property Name="standbyPowerUsage" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="Submit_ID" Type="int" />
+          <Property Name="SubmitStatus" Type="nvarchar" MaxLength="8" />
+          <Property Name="Tot_Wat_Cons" Type="numeric" Precision="5" Scale="3" />
+          <Property Name="Type" Type="nvarchar" MaxLength="12" />
+          <Property Name="Water_Softener" Type="nvarchar" MaxLength="5" />
+          <Property Name="Width" Type="int" />
+          <Property Name="ExpDate" Type="datetime" />
+          <Property Name="GrandDate" Type="int" />
+          <Property Name="Product_Class" Type="nvarchar" MaxLength="20" />
+          <Property Name="Availability_Status" Type="nvarchar" MaxLength="11" />
+          <Property Name="Product_Website" Type="nvarchar" MaxLength="41" />
+          <Property Name="Representative_Brand_URL" Type="nvarchar" MaxLength="177" />
+          <Property Name="Water_Consumption_litres" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="Star_Rating_old" Type="int" />
+          <Property Name="Star_Image_Large" Type="nvarchar" MaxLength="100" />
+          <Property Name="Star_Image_Small" Type="nvarchar" MaxLength="90" />
+          <Property Name="Type_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="monitor">
+          <Key>
+            <PropertyRef Name="Monitor_Id" />
+          </Key>
+          <Property Name="Monitor_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Record_ID" Type="int" />
+          <Property Name="Status" Type="nvarchar" MaxLength="8" />
+          <Property Name="Brand_Name" Type="nvarchar" MaxLength="19" />
+          <Property Name="Model_Number" Type="nvarchar" MaxLength="143" />
+          <Property Name="Family_Name" Type="nvarchar" MaxLength="143" />
+          <Property Name="Selling_Countries" Type="nvarchar" MaxLength="26" />
+          <Property Name="Manufacturing_Countries" Type="nvarchar" MaxLength="27" />
+          <Property Name="Screen_Size" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="Screen_Technology" Type="nvarchar" MaxLength="9" />
+          <Property Name="Comparative_Energy_Consumption" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="Active_Standby_Power" Type="numeric" Precision="8" Scale="6" />
+          <Property Name="Star_Rating_Index" Type="numeric" Precision="11" Scale="9" />
+          <Property Name="Star_Rating" Type="numeric" Precision="3" Scale="1" />
+          <Property Name="Product_Website" Type="nvarchar" MaxLength="34" />
+          <Property Name="Representative_Brand_URL" Type="nvarchar" MaxLength="31" />
+          <Property Name="Availability_Status" Type="nvarchar" MaxLength="11" />
+          <Property Name="Expiry_Date" Type="datetime" />
+          <Property Name="Star_Image_Large" Type="nvarchar" MaxLength="100" />
+          <Property Name="Star_Image_Small" Type="nvarchar" MaxLength="90" />
+          <Property Name="Type_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="refrigerator">
+          <Key>
+            <PropertyRef Name="Refrigerator_Id" />
+          </Key>
+          <Property Name="Refrigerator_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adaptive_Defrost" Type="nvarchar" MaxLength="5" />
+          <Property Name="ApplStandard" Type="nvarchar" MaxLength="95" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="22" />
+          <Property Name="CEC" Type="int" />
+          <Property Name="CompartGrVol" Type="nvarchar" MaxLength="27" />
+          <Property Name="CompartNetVol" Type="nvarchar" MaxLength="24" />
+          <Property Name="CompartType" Type="nvarchar" MaxLength="72" />
+          <Property Name="Configuration" Type="nvarchar" MaxLength="12" />
+          <Property Name="Country" Type="nvarchar" MaxLength="24" />
+          <Property Name="Depth" Type="numeric" Precision="5" Scale="1" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="20" />
+          <Property Name="FF_Vol" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="FZ_Vol" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="Group" Type="nvarchar" MaxLength="2" />
+          <Property Name="Height" Type="int" />
+          <Property Name="Icemaker" Type="nvarchar" MaxLength="5" />
+          <Property Name="MEPSApproval" Type="nvarchar" MaxLength="20" />
+          <Property Name="Model_No" Type="nvarchar" MaxLength="41" />
+          <Property Name="Family_Name" Type="nvarchar" MaxLength="41" />
+          <Property Name="N_Standard" Type="nvarchar" MaxLength="30" />
+          <Property Name="Star2009" Type="numeric" Precision="2" Scale="1" />
+          <Property Name="SRI2009" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="No_Doors" Type="int" />
+          <Property Name="S_MEPS_Ad" Type="numeric" Precision="7" Scale="4" />
+          <Property Name="S_MEPScutoff" Type="numeric" Precision="11" Scale="7" />
+          <Property Name="Sold_in" Type="nvarchar" MaxLength="32" />
+          <Property Name="Submit_ID" Type="int" />
+          <Property Name="SubmitStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="Tot_Vol" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="Width" Type="int" />
+          <Property Name="ExpDate" Type="datetime" />
+          <Property Name="GrandDate" Type="datetime" />
+          <Property Name="Product_Class" Type="nvarchar" MaxLength="8" />
+          <Property Name="Availability_Status" Type="nvarchar" MaxLength="11" />
+          <Property Name="Product_Website" Type="nvarchar" MaxLength="48" />
+          <Property Name="Representative_Brand_URL" Type="nvarchar" MaxLength="76" />
+          <Property Name="Fixed_MEPS_allowance_factor" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="Variable_MEPS_allowance_factor" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="Adjusted_volume" Type="numeric" Precision="8" Scale="4" />
+          <Property Name="Type" Type="nvarchar" MaxLength="2" />
+          <Property Name="Star_Rating_old" Type="int" />
+          <Property Name="Star_Image_Large" Type="nvarchar" MaxLength="100" />
+          <Property Name="Star_Image_Small" Type="nvarchar" MaxLength="90" />
+          <Property Name="Registration_Number" Type="nvarchar" MaxLength="7" />
+          <Property Name="Type_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="television">
+          <Key>
+            <PropertyRef Name="Television_Id" />
+          </Key>
+          <Property Name="Television_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Submit_ID" Type="int" />
+          <Property Name="Brand_Reg" Type="nvarchar" MaxLength="22" />
+          <Property Name="Model_No" Type="nvarchar" MaxLength="98" />
+          <Property Name="Family_Name" Type="nvarchar" MaxLength="98" />
+          <Property Name="SoldIn" Type="nvarchar" MaxLength="26" />
+          <Property Name="Country" Type="nvarchar" MaxLength="60" />
+          <Property Name="screensize" Type="numeric" Precision="6" Scale="3" />
+          <Property Name="Screen_Area" Type="numeric" Precision="11" Scale="6" />
+          <Property Name="Screen_Tech" Type="nvarchar" MaxLength="9" />
+          <Property Name="Pasv_stnd_power" Type="numeric" Precision="7" Scale="6" />
+          <Property Name="Act_stnd_power" Type="numeric" Precision="7" Scale="4" />
+          <Property Name="Act_stnd_time" Type="numeric" Precision="5" Scale="3" />
+          <Property Name="Avg_mode_power" Type="numeric" Precision="7" Scale="4" />
+          <Property Name="Star" Type="numeric" Precision="3" Scale="1" />
+          <Property Name="SRI" Type="numeric" Precision="11" Scale="9" />
+          <Property Name="CEC" Type="numeric" Precision="5" Scale="1" />
+          <Property Name="SubmitStatus" Type="nvarchar" MaxLength="8" />
+          <Property Name="ExpDate" Type="datetime" />
+          <Property Name="GrandDate" Type="int" />
+          <Property Name="Product_Class" Type="nvarchar" MaxLength="20" />
+          <Property Name="Availability_Status" Type="nvarchar" MaxLength="11" />
+          <Property Name="Star2" Type="numeric" Precision="2" Scale="1" />
+          <Property Name="Product_Website" Type="nvarchar" MaxLength="34" />
+          <Property Name="Representative_Brand_URL" Type="nvarchar" MaxLength="34" />
+          <Property Name="Star_Rating_Index" Type="numeric" Precision="10" Scale="9" />
+          <Property Name="Star_Image_Large" Type="nvarchar" MaxLength="100" />
+          <Property Name="Star_Image_Small" Type="nvarchar" MaxLength="90" />
+          <Property Name="Power_supply" Type="nvarchar" MaxLength="8" />
+          <Property Name="Tuner_Type" Type="nvarchar" MaxLength="16" />
+          <Property Name="What_test_standard_was_used" Type="nvarchar" MaxLength="19" />
+          <Property Name="Registration_Number" Type="nvarchar" MaxLength="7" />
+          <Property Name="Type_Id" Type="int" />
+        </EntityType>
+        <Association Name="FK__air_condi__Type___286302EC">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="air_conditioner" Type="Self.air_conditioner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="air_conditioner">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__clothes_d__Type___25869641">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="clothes_dryer" Type="Self.clothes_dryer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="clothes_dryer">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__clothes_w__Type___33D4B598">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="clothes_washer" Type="Self.clothes_washer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="clothes_washer">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dishwashe__Type___36B12243">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="dishwasher" Type="Self.dishwasher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="dishwasher">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__monitor__Type_Id__2B3F6F97">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="monitor" Type="Self.monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="monitor">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__refrigera__Type___30F848ED">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="refrigerator" Type="Self.refrigerator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="refrigerator">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__televisio__Type___2E1BDC42">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="television" Type="Self.television" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="television">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AppliancesModelStoreContainer">
+          <EntitySet Name="air_conditioner" EntityType="Self.air_conditioner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="appliance_types" EntityType="Self.appliance_types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clothes_dryer" EntityType="Self.clothes_dryer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clothes_washer" EntityType="Self.clothes_washer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dishwasher" EntityType="Self.dishwasher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="monitor" EntityType="Self.monitor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="refrigerator" EntityType="Self.refrigerator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="television" EntityType="Self.television" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__air_condi__Type___286302EC" Association="Self.FK__air_condi__Type___286302EC">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="air_conditioner" EntitySet="air_conditioner" />
+          </AssociationSet>
+          <AssociationSet Name="FK__clothes_d__Type___25869641" Association="Self.FK__clothes_d__Type___25869641">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="clothes_dryer" EntitySet="clothes_dryer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__clothes_w__Type___33D4B598" Association="Self.FK__clothes_w__Type___33D4B598">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="clothes_washer" EntitySet="clothes_washer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dishwashe__Type___36B12243" Association="Self.FK__dishwashe__Type___36B12243">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="dishwasher" EntitySet="dishwasher" />
+          </AssociationSet>
+          <AssociationSet Name="FK__monitor__Type_Id__2B3F6F97" Association="Self.FK__monitor__Type_Id__2B3F6F97">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="monitor" EntitySet="monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__refrigera__Type___30F848ED" Association="Self.FK__refrigera__Type___30F848ED">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="refrigerator" EntitySet="refrigerator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__televisio__Type___2E1BDC42" Association="Self.FK__televisio__Type___2E1BDC42">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="television" EntitySet="television" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AppliancesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="air_conditioner">
+          <Key>
+            <PropertyRef Name="Air_Conditioner_Id" />
+          </Key>
+          <Property Name="Air_Conditioner_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplStandard" Type="String" MaxLength="83" FixedLength="false" Unicode="true" />
+          <Property Name="MEPSComp" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="N_Standard" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Model_No" Type="String" MaxLength="105" FixedLength="false" Unicode="true" />
+          <Property Name="Family_Name" Type="String" MaxLength="49" FixedLength="false" Unicode="true" />
+          <Property Name="avg_pwr_standby_mode" Type="Int32" />
+          <Property Name="Brand" Type="String" MaxLength="33" FixedLength="false" Unicode="true" />
+          <Property Name="C_Dehumid_Rated" Type="Decimal" Precision="9" Scale="5" />
+          <Property Name="Configuration1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Configuration2" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Configuration2_unitmount" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="Configuration3_Sink" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="Configuration3_Source" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="C_Power_Inp_Rated" Type="Decimal" Precision="8" Scale="6" />
+          <Property Name="C_Sens_Cool_Rated" Type="Decimal" Precision="9" Scale="4" />
+          <Property Name="C_Total_Cool_Rated" Type="Decimal" Precision="7" Scale="5" />
+          <Property Name="Depth" Type="Int32" />
+          <Property Name="H2_COP" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="H2_HeatPwrCapacity" Type="Decimal" Precision="6" Scale="4" />
+          <Property Name="H2_HeatPwrInput" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="Height" Type="Decimal" Precision="5" Scale="1" />
+          <Property Name="H_Power_Inp_Rated" Type="Decimal" Precision="8" Scale="6" />
+          <Property Name="H_Total_Heat_Rated" Type="Decimal" Precision="5" Scale="3" />
+          <Property Name="indoorType" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="EERtestAvg" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="COPtestAvg" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="Invert" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Setting_cool" Type="Decimal" Precision="10" Scale="7" />
+          <Property Name="Setting_heat" Type="Int32" />
+          <Property Name="Pnoc" Type="Decimal" Precision="7" Scale="4" />
+          <Property Name="Pnoh" Type="Decimal" Precision="7" Scale="4" />
+          <Property Name="VSCP_EER50" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="VSCP_COP50" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="AnnualOutputEER" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="AnnualOutputCOP" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="sri2010_cool" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="sri2010_heat" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="Star2010_Cool" Type="Decimal" Precision="2" Scale="1" />
+          <Property Name="Star2010_Heat" Type="Decimal" Precision="2" Scale="1" />
+          <Property Name="outdoortype" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Phase" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Refrigerant" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Sold_in" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="Submit_ID" Type="Int32" />
+          <Property Name="ExpDate" Type="DateTime" Precision="3" />
+          <Property Name="GrandDate" Type="DateTime" Precision="3" />
+          <Property Name="SubmitStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="Product_Class" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Demand_Response_1" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Demand_Response_2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Demand_Response_4" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Demand_Response_5" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Demand_Response_6" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Demand_Response_7" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="PartNumber" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="EER" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="Availability_Status" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="star2000_cool" Type="Int32" />
+          <Property Name="star2000_heat" Type="Int32" />
+          <Property Name="Product_Website" Type="String" MaxLength="44" FixedLength="false" Unicode="true" />
+          <Property Name="Representative_Brand_URL" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Variable_Output_Compressor" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Large" Type="String" MaxLength="105" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Small" Type="String" MaxLength="105" FixedLength="false" Unicode="true" />
+          <Property Name="Registration_Number" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Is_variable_speed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Type_variable_output" Type="String" MaxLength="103" FixedLength="false" Unicode="true" />
+          <Property Name="Var_output_compressor" Type="String" MaxLength="27" FixedLength="false" Unicode="true" />
+          <Property Name="Rated_cooling_power_input_kW" Type="Decimal" Precision="8" Scale="6" />
+          <Property Name="Rated_heating_power_input_kW" Type="Decimal" Precision="8" Scale="6" />
+          <Property Name="Rated_AEER" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="Rated_ACOP" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="Type_Id" Type="Int32" />
+          <NavigationProperty Name="appliance_types" Relationship="Self.FK__air_condi__Type___286302EC" FromRole="air_conditioner" ToRole="appliance_types" />
+        </EntityType>
+        <EntityType Name="appliance_types">
+          <Key>
+            <PropertyRef Name="Type_Id" />
+          </Key>
+          <Property Name="Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="air_conditioner" Relationship="Self.FK__air_condi__Type___286302EC" FromRole="appliance_types" ToRole="air_conditioner" />
+          <NavigationProperty Name="clothes_dryer" Relationship="Self.FK__clothes_d__Type___25869641" FromRole="appliance_types" ToRole="clothes_dryer" />
+          <NavigationProperty Name="clothes_washer" Relationship="Self.FK__clothes_w__Type___33D4B598" FromRole="appliance_types" ToRole="clothes_washer" />
+          <NavigationProperty Name="dishwashers" Relationship="Self.FK__dishwashe__Type___36B12243" FromRole="appliance_types" ToRole="dishwasher" />
+          <NavigationProperty Name="monitors" Relationship="Self.FK__monitor__Type_Id__2B3F6F97" FromRole="appliance_types" ToRole="monitor" />
+          <NavigationProperty Name="refrigerators" Relationship="Self.FK__refrigera__Type___30F848ED" FromRole="appliance_types" ToRole="refrigerator" />
+          <NavigationProperty Name="televisions" Relationship="Self.FK__televisio__Type___2E1BDC42" FromRole="appliance_types" ToRole="television" />
+        </EntityType>
+        <EntityType Name="clothes_dryer">
+          <Key>
+            <PropertyRef Name="Clothes_Dryer_Id" />
+          </Key>
+          <Property Name="Clothes_Dryer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplStandard" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="19" FixedLength="false" Unicode="true" />
+          <Property Name="Cap" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Combination" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Control" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="Depth" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="Height" Type="Decimal" Precision="5" Scale="1" />
+          <Property Name="Model_No" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="Family_Name" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="N_Standard" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="New_CEC" Type="Int32" />
+          <Property Name="New_SRI" Type="Decimal" Precision="17" Scale="15" />
+          <Property Name="New_Star" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Prog_Name" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+          <Property Name="Prog_Time" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="Sold_in" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="SubmitStatus" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Submit_ID" Type="Int32" />
+          <Property Name="Test_Moist_Remove" Type="Decimal" Precision="11" Scale="10" />
+          <Property Name="Tot_Wat_Cons" Type="Decimal" Precision="7" Scale="4" />
+          <Property Name="Type" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Width" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="ExpDate" Type="DateTime" Precision="3" />
+          <Property Name="GrandDate" Type="Int32" />
+          <Property Name="Product_Class" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Availability_Status" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Website" Type="String" MaxLength="41" FixedLength="false" Unicode="true" />
+          <Property Name="Representative_Brand_URL" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Rating_old" Type="Int32" />
+          <Property Name="Star_Image_Large" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Small" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Id" Type="Int32" />
+          <NavigationProperty Name="appliance_types" Relationship="Self.FK__clothes_d__Type___25869641" FromRole="clothes_dryer" ToRole="appliance_types" />
+        </EntityType>
+        <EntityType Name="clothes_washer">
+          <Key>
+            <PropertyRef Name="Clothes_Washer_Id" />
+          </Key>
+          <Property Name="Clothes_Washer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplStandard" Type="String" MaxLength="85" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="19" FixedLength="false" Unicode="true" />
+          <Property Name="Cap" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Cap_Second_Drum" Type="Int32" />
+          <Property Name="CEC_Cold" Type="Int32" />
+          <Property Name="CEC_Cold_Second_Drum" Type="Int32" />
+          <Property Name="CEC" Type="Int32" />
+          <Property Name="CEC_Second_Drum" Type="Int32" />
+          <Property Name="Cold_Prog" Type="String" MaxLength="97" FixedLength="false" Unicode="true" />
+          <Property Name="Cold_Prog_Second_Drum" Type="Int32" />
+          <Property Name="Cold_Wat_Cons" Type="Decimal" Precision="6" Scale="3" />
+          <Property Name="Cold_Wat_Cons_Second_Drum" Type="Int32" />
+          <Property Name="Combination" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Combination_Second_Drum" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Conn_Mode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Conn_Mode_Second_Drum" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="delayStartMode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="delayStartMode_Second_Drum" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Depth" Type="Int32" />
+          <Property Name="Depth_Second_Drum" Type="Int32" />
+          <Property Name="DetergentType" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="DetergentType_Second_Drum" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="Height_Second_Drum" Type="Int32" />
+          <Property Name="Hot_Wat_Cons" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="Hot_Wat_Cons_Second_Drum" Type="Int32" />
+          <Property Name="internal_heater" Type="String" MaxLength="43" FixedLength="false" Unicode="true" />
+          <Property Name="internal_heater_Second_Drum" Type="String" MaxLength="33" FixedLength="false" Unicode="true" />
+          <Property Name="Loading" Type="String" MaxLength="21" FixedLength="false" Unicode="true" />
+          <Property Name="Loading_Second_Drum" Type="String" MaxLength="21" FixedLength="false" Unicode="true" />
+          <Property Name="MachineAction" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MachineAction_Second_Drum" Type="Int32" />
+          <Property Name="Model_No" Type="String" MaxLength="28" FixedLength="false" Unicode="true" />
+          <Property Name="Family_Name" Type="String" MaxLength="28" FixedLength="false" Unicode="true" />
+          <Property Name="N_Standard" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="New_SRI" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="New_SRI_Second_Drum" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="New_Star" Type="Decimal" Precision="2" Scale="1" />
+          <Property Name="New_Star_Second_Drum" Type="Int32" />
+          <Property Name="postProgenergy" Type="Decimal" Precision="9" Scale="8" />
+          <Property Name="postProgenergy_Second_Drum" Type="Decimal" Precision="6" Scale="5" />
+          <Property Name="powerConsMode" Type="Decimal" Precision="8" Scale="6" />
+          <Property Name="powerConsMode_Second_Drum" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="Prog_Name" Type="String" MaxLength="229" FixedLength="false" Unicode="true" />
+          <Property Name="Prog_Name_Second_Drum" Type="String" MaxLength="111" FixedLength="false" Unicode="true" />
+          <Property Name="Sold_in" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="standbyPowerUsage" Type="Decimal" Precision="6" Scale="5" />
+          <Property Name="standbyPowerUsage_Second_Drum" Type="Int32" />
+          <Property Name="Submit_ID" Type="Int32" />
+          <Property Name="SubmitStatus" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Prog_Time" Type="Decimal" Precision="7" Scale="4" />
+          <Property Name="Test_Prog_Time_Second_Drum" Type="Int32" />
+          <Property Name="Tot_Wat_Cons" Type="Decimal" Precision="6" Scale="3" />
+          <Property Name="Tot_Wat_Cons_Second_Drum" Type="Int32" />
+          <Property Name="Type" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Second_Drum" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="WEI" Type="Decimal" Precision="9" Scale="5" />
+          <Property Name="WEI_Second_Drum" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="Width_Second_Drum" Type="Int32" />
+          <Property Name="ExpDate" Type="DateTime" Precision="3" />
+          <Property Name="GrandDate" Type="Int32" />
+          <Property Name="Product_Class" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Availability_Status" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Website" Type="String" MaxLength="41" FixedLength="false" Unicode="true" />
+          <Property Name="Representative_Brand_URL" Type="String" MaxLength="76" FixedLength="false" Unicode="true" />
+          <Property Name="Program_Time" Type="Decimal" Precision="6" Scale="3" />
+          <Property Name="Program_Time_Second_Drum" Type="Int32" />
+          <Property Name="Hot_Water_L" Type="Decimal" Precision="6" Scale="3" />
+          <Property Name="Hot_Water_L_Second_Drum" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="Cold_Water_L" Type="Decimal" Precision="6" Scale="3" />
+          <Property Name="Cold_Water_L_Second_Drum" Type="Int32" />
+          <Property Name="Star_Rating_old" Type="Int32" />
+          <Property Name="Star_Image_Large" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Large_Second_Drum" Type="String" MaxLength="98" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Small" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Small_Second_Drum" Type="String" MaxLength="88" FixedLength="false" Unicode="true" />
+          <Property Name="Registration_Number" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Id" Type="Int32" />
+          <NavigationProperty Name="appliance_types" Relationship="Self.FK__clothes_w__Type___33D4B598" FromRole="clothes_washer" ToRole="appliance_types" />
+        </EntityType>
+        <EntityType Name="dishwasher">
+          <Key>
+            <PropertyRef Name="Dishwasher_Id" />
+          </Key>
+          <Property Name="Dishwasher_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplStandard" Type="String" MaxLength="72" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="23" FixedLength="false" Unicode="true" />
+          <Property Name="Cap" Type="Int32" />
+          <Property Name="CEC" Type="Int32" />
+          <Property Name="Conn_Type" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="delayStartMode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Depth" Type="Int32" />
+          <Property Name="Height" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="Load_Type" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="Model_No" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="Family_Name" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="N_Standard" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="New_SRI" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="New_Star" Type="Decimal" Precision="2" Scale="1" />
+          <Property Name="postProgenergy" Type="Decimal" Precision="7" Scale="6" />
+          <Property Name="powerConsMode" Type="Decimal" Precision="9" Scale="6" />
+          <Property Name="Prog_Name" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="Prog_Time" Type="Decimal" Precision="6" Scale="3" />
+          <Property Name="Sold_in" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="standbyPowerUsage" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="Submit_ID" Type="Int32" />
+          <Property Name="SubmitStatus" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Tot_Wat_Cons" Type="Decimal" Precision="5" Scale="3" />
+          <Property Name="Type" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Water_Softener" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="ExpDate" Type="DateTime" Precision="3" />
+          <Property Name="GrandDate" Type="Int32" />
+          <Property Name="Product_Class" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Availability_Status" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Website" Type="String" MaxLength="41" FixedLength="false" Unicode="true" />
+          <Property Name="Representative_Brand_URL" Type="String" MaxLength="177" FixedLength="false" Unicode="true" />
+          <Property Name="Water_Consumption_litres" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="Star_Rating_old" Type="Int32" />
+          <Property Name="Star_Image_Large" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Small" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Id" Type="Int32" />
+          <NavigationProperty Name="appliance_types" Relationship="Self.FK__dishwashe__Type___36B12243" FromRole="dishwasher" ToRole="appliance_types" />
+        </EntityType>
+        <EntityType Name="monitor">
+          <Key>
+            <PropertyRef Name="Monitor_Id" />
+          </Key>
+          <Property Name="Monitor_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Record_ID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Brand_Name" Type="String" MaxLength="19" FixedLength="false" Unicode="true" />
+          <Property Name="Model_Number" Type="String" MaxLength="143" FixedLength="false" Unicode="true" />
+          <Property Name="Family_Name" Type="String" MaxLength="143" FixedLength="false" Unicode="true" />
+          <Property Name="Selling_Countries" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="Manufacturing_Countries" Type="String" MaxLength="27" FixedLength="false" Unicode="true" />
+          <Property Name="Screen_Size" Type="Decimal" Precision="6" Scale="3" />
+          <Property Name="Screen_Technology" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Comparative_Energy_Consumption" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="Active_Standby_Power" Type="Decimal" Precision="8" Scale="6" />
+          <Property Name="Star_Rating_Index" Type="Decimal" Precision="11" Scale="9" />
+          <Property Name="Star_Rating" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Product_Website" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="Representative_Brand_URL" Type="String" MaxLength="31" FixedLength="false" Unicode="true" />
+          <Property Name="Availability_Status" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Expiry_Date" Type="DateTime" Precision="3" />
+          <Property Name="Star_Image_Large" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Small" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Id" Type="Int32" />
+          <NavigationProperty Name="appliance_types" Relationship="Self.FK__monitor__Type_Id__2B3F6F97" FromRole="monitor" ToRole="appliance_types" />
+        </EntityType>
+        <EntityType Name="refrigerator">
+          <Key>
+            <PropertyRef Name="Refrigerator_Id" />
+          </Key>
+          <Property Name="Refrigerator_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adaptive_Defrost" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ApplStandard" Type="String" MaxLength="95" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="CEC" Type="Int32" />
+          <Property Name="CompartGrVol" Type="String" MaxLength="27" FixedLength="false" Unicode="true" />
+          <Property Name="CompartNetVol" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="CompartType" Type="String" MaxLength="72" FixedLength="false" Unicode="true" />
+          <Property Name="Configuration" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="Depth" Type="Decimal" Precision="5" Scale="1" />
+          <Property Name="Designation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FF_Vol" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="FZ_Vol" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="Group" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="Icemaker" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="MEPSApproval" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Model_No" Type="String" MaxLength="41" FixedLength="false" Unicode="true" />
+          <Property Name="Family_Name" Type="String" MaxLength="41" FixedLength="false" Unicode="true" />
+          <Property Name="N_Standard" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Star2009" Type="Decimal" Precision="2" Scale="1" />
+          <Property Name="SRI2009" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="No_Doors" Type="Int32" />
+          <Property Name="S_MEPS_Ad" Type="Decimal" Precision="7" Scale="4" />
+          <Property Name="S_MEPScutoff" Type="Decimal" Precision="11" Scale="7" />
+          <Property Name="Sold_in" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Submit_ID" Type="Int32" />
+          <Property Name="SubmitStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Tot_Vol" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="ExpDate" Type="DateTime" Precision="3" />
+          <Property Name="GrandDate" Type="DateTime" Precision="3" />
+          <Property Name="Product_Class" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Availability_Status" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Website" Type="String" MaxLength="48" FixedLength="false" Unicode="true" />
+          <Property Name="Representative_Brand_URL" Type="String" MaxLength="76" FixedLength="false" Unicode="true" />
+          <Property Name="Fixed_MEPS_allowance_factor" Type="Decimal" Precision="4" Scale="1" />
+          <Property Name="Variable_MEPS_allowance_factor" Type="Decimal" Precision="5" Scale="4" />
+          <Property Name="Adjusted_volume" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="Type" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Rating_old" Type="Int32" />
+          <Property Name="Star_Image_Large" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Small" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="Registration_Number" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Id" Type="Int32" />
+          <NavigationProperty Name="appliance_types" Relationship="Self.FK__refrigera__Type___30F848ED" FromRole="refrigerator" ToRole="appliance_types" />
+        </EntityType>
+        <EntityType Name="television">
+          <Key>
+            <PropertyRef Name="Television_Id" />
+          </Key>
+          <Property Name="Television_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Submit_ID" Type="Int32" />
+          <Property Name="Brand_Reg" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="Model_No" Type="String" MaxLength="98" FixedLength="false" Unicode="true" />
+          <Property Name="Family_Name" Type="String" MaxLength="98" FixedLength="false" Unicode="true" />
+          <Property Name="SoldIn" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="screensize" Type="Decimal" Precision="6" Scale="3" />
+          <Property Name="Screen_Area" Type="Decimal" Precision="11" Scale="6" />
+          <Property Name="Screen_Tech" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Pasv_stnd_power" Type="Decimal" Precision="7" Scale="6" />
+          <Property Name="Act_stnd_power" Type="Decimal" Precision="7" Scale="4" />
+          <Property Name="Act_stnd_time" Type="Decimal" Precision="5" Scale="3" />
+          <Property Name="Avg_mode_power" Type="Decimal" Precision="7" Scale="4" />
+          <Property Name="Star" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="SRI" Type="Decimal" Precision="11" Scale="9" />
+          <Property Name="CEC" Type="Decimal" Precision="5" Scale="1" />
+          <Property Name="SubmitStatus" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="ExpDate" Type="DateTime" Precision="3" />
+          <Property Name="GrandDate" Type="Int32" />
+          <Property Name="Product_Class" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Availability_Status" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Star2" Type="Decimal" Precision="2" Scale="1" />
+          <Property Name="Product_Website" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="Representative_Brand_URL" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Rating_Index" Type="Decimal" Precision="10" Scale="9" />
+          <Property Name="Star_Image_Large" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Star_Image_Small" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="Power_supply" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Tuner_Type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="What_test_standard_was_used" Type="String" MaxLength="19" FixedLength="false" Unicode="true" />
+          <Property Name="Registration_Number" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Id" Type="Int32" />
+          <NavigationProperty Name="appliance_types" Relationship="Self.FK__televisio__Type___2E1BDC42" FromRole="television" ToRole="appliance_types" />
+        </EntityType>
+        <Association Name="FK__air_condi__Type___286302EC">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="air_conditioner" Type="Self.air_conditioner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="air_conditioner">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__clothes_d__Type___25869641">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="clothes_dryer" Type="Self.clothes_dryer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="clothes_dryer">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__clothes_w__Type___33D4B598">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="clothes_washer" Type="Self.clothes_washer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="clothes_washer">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__dishwashe__Type___36B12243">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="dishwasher" Type="Self.dishwasher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="dishwasher">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__monitor__Type_Id__2B3F6F97">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="monitor" Type="Self.monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="monitor">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__refrigera__Type___30F848ED">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="refrigerator" Type="Self.refrigerator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="refrigerator">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__televisio__Type___2E1BDC42">
+          <End Role="appliance_types" Type="Self.appliance_types" Multiplicity="0..1" />
+          <End Role="television" Type="Self.television" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="appliance_types">
+              <PropertyRef Name="Type_Id" />
+            </Principal>
+            <Dependent Role="television">
+              <PropertyRef Name="Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AppliancesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="air_conditioner" EntityType="Self.air_conditioner" />
+          <EntitySet Name="appliance_types" EntityType="Self.appliance_types" />
+          <EntitySet Name="clothes_dryer" EntityType="Self.clothes_dryer" />
+          <EntitySet Name="clothes_washer" EntityType="Self.clothes_washer" />
+          <EntitySet Name="dishwashers" EntityType="Self.dishwasher" />
+          <EntitySet Name="monitors" EntityType="Self.monitor" />
+          <EntitySet Name="refrigerators" EntityType="Self.refrigerator" />
+          <EntitySet Name="televisions" EntityType="Self.television" />
+          <AssociationSet Name="FK__air_condi__Type___286302EC" Association="Self.FK__air_condi__Type___286302EC">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="air_conditioner" EntitySet="air_conditioner" />
+          </AssociationSet>
+          <AssociationSet Name="FK__clothes_d__Type___25869641" Association="Self.FK__clothes_d__Type___25869641">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="clothes_dryer" EntitySet="clothes_dryer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__clothes_w__Type___33D4B598" Association="Self.FK__clothes_w__Type___33D4B598">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="clothes_washer" EntitySet="clothes_washer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__dishwashe__Type___36B12243" Association="Self.FK__dishwashe__Type___36B12243">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="dishwasher" EntitySet="dishwashers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__monitor__Type_Id__2B3F6F97" Association="Self.FK__monitor__Type_Id__2B3F6F97">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="monitor" EntitySet="monitors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__refrigera__Type___30F848ED" Association="Self.FK__refrigera__Type___30F848ED">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="refrigerator" EntitySet="refrigerators" />
+          </AssociationSet>
+          <AssociationSet Name="FK__televisio__Type___2E1BDC42" Association="Self.FK__televisio__Type___2E1BDC42">
+            <End Role="appliance_types" EntitySet="appliance_types" />
+            <End Role="television" EntitySet="televisions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AppliancesModelStoreContainer" CdmEntityContainer="AppliancesEntities">
+          <EntitySetMapping Name="air_conditioner">
+            <EntityTypeMapping TypeName="AppliancesModel.air_conditioner">
+              <MappingFragment StoreEntitySet="air_conditioner">
+                <ScalarProperty Name="Air_Conditioner_Id" ColumnName="Air_Conditioner_Id" />
+                <ScalarProperty Name="ApplStandard" ColumnName="ApplStandard" />
+                <ScalarProperty Name="MEPSComp" ColumnName="MEPSComp" />
+                <ScalarProperty Name="N_Standard" ColumnName="N_Standard" />
+                <ScalarProperty Name="Model_No" ColumnName="Model_No" />
+                <ScalarProperty Name="Family_Name" ColumnName="Family_Name" />
+                <ScalarProperty Name="avg_pwr_standby_mode" ColumnName="avg_pwr_standby_mode" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="C_Dehumid_Rated" ColumnName="C_Dehumid_Rated" />
+                <ScalarProperty Name="Configuration1" ColumnName="Configuration1" />
+                <ScalarProperty Name="Configuration2" ColumnName="Configuration2" />
+                <ScalarProperty Name="Configuration2_unitmount" ColumnName="Configuration2_unitmount" />
+                <ScalarProperty Name="Configuration3_Sink" ColumnName="Configuration3_Sink" />
+                <ScalarProperty Name="Configuration3_Source" ColumnName="Configuration3_Source" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="C_Power_Inp_Rated" ColumnName="C_Power_Inp_Rated" />
+                <ScalarProperty Name="C_Sens_Cool_Rated" ColumnName="C_Sens_Cool_Rated" />
+                <ScalarProperty Name="C_Total_Cool_Rated" ColumnName="C_Total_Cool_Rated" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+                <ScalarProperty Name="H2_COP" ColumnName="H2_COP" />
+                <ScalarProperty Name="H2_HeatPwrCapacity" ColumnName="H2_HeatPwrCapacity" />
+                <ScalarProperty Name="H2_HeatPwrInput" ColumnName="H2_HeatPwrInput" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="H_Power_Inp_Rated" ColumnName="H_Power_Inp_Rated" />
+                <ScalarProperty Name="H_Total_Heat_Rated" ColumnName="H_Total_Heat_Rated" />
+                <ScalarProperty Name="indoorType" ColumnName="indoorType" />
+                <ScalarProperty Name="EERtestAvg" ColumnName="EERtestAvg" />
+                <ScalarProperty Name="COPtestAvg" ColumnName="COPtestAvg" />
+                <ScalarProperty Name="Invert" ColumnName="Invert" />
+                <ScalarProperty Name="Setting_cool" ColumnName="Setting_cool" />
+                <ScalarProperty Name="Setting_heat" ColumnName="Setting_heat" />
+                <ScalarProperty Name="Pnoc" ColumnName="Pnoc" />
+                <ScalarProperty Name="Pnoh" ColumnName="Pnoh" />
+                <ScalarProperty Name="VSCP_EER50" ColumnName="VSCP_EER50" />
+                <ScalarProperty Name="VSCP_COP50" ColumnName="VSCP_COP50" />
+                <ScalarProperty Name="AnnualOutputEER" ColumnName="AnnualOutputEER" />
+                <ScalarProperty Name="AnnualOutputCOP" ColumnName="AnnualOutputCOP" />
+                <ScalarProperty Name="sri2010_cool" ColumnName="sri2010_cool" />
+                <ScalarProperty Name="sri2010_heat" ColumnName="sri2010_heat" />
+                <ScalarProperty Name="Star2010_Cool" ColumnName="Star2010_Cool" />
+                <ScalarProperty Name="Star2010_Heat" ColumnName="Star2010_Heat" />
+                <ScalarProperty Name="outdoortype" ColumnName="outdoortype" />
+                <ScalarProperty Name="Phase" ColumnName="Phase" />
+                <ScalarProperty Name="Refrigerant" ColumnName="Refrigerant" />
+                <ScalarProperty Name="Sold_in" ColumnName="Sold_in" />
+                <ScalarProperty Name="Submit_ID" ColumnName="Submit_ID" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+                <ScalarProperty Name="GrandDate" ColumnName="GrandDate" />
+                <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Product_Class" ColumnName="Product_Class" />
+                <ScalarProperty Name="Demand_Response_1" ColumnName="Demand_Response_1" />
+                <ScalarProperty Name="Demand_Response_2" ColumnName="Demand_Response_2" />
+                <ScalarProperty Name="Demand_Response_4" ColumnName="Demand_Response_4" />
+                <ScalarProperty Name="Demand_Response_5" ColumnName="Demand_Response_5" />
+                <ScalarProperty Name="Demand_Response_6" ColumnName="Demand_Response_6" />
+                <ScalarProperty Name="Demand_Response_7" ColumnName="Demand_Response_7" />
+                <ScalarProperty Name="PartNumber" ColumnName="PartNumber" />
+                <ScalarProperty Name="EER" ColumnName="EER" />
+                <ScalarProperty Name="Availability_Status" ColumnName="Availability_Status" />
+                <ScalarProperty Name="star2000_cool" ColumnName="star2000_cool" />
+                <ScalarProperty Name="star2000_heat" ColumnName="star2000_heat" />
+                <ScalarProperty Name="Product_Website" ColumnName="Product_Website" />
+                <ScalarProperty Name="Representative_Brand_URL" ColumnName="Representative_Brand_URL" />
+                <ScalarProperty Name="Variable_Output_Compressor" ColumnName="Variable_Output_Compressor" />
+                <ScalarProperty Name="Star_Image_Large" ColumnName="Star_Image_Large" />
+                <ScalarProperty Name="Star_Image_Small" ColumnName="Star_Image_Small" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="Is_variable_speed" ColumnName="Is_variable_speed" />
+                <ScalarProperty Name="Type_variable_output" ColumnName="Type_variable_output" />
+                <ScalarProperty Name="Var_output_compressor" ColumnName="Var_output_compressor" />
+                <ScalarProperty Name="Rated_cooling_power_input_kW" ColumnName="Rated_cooling_power_input_kW" />
+                <ScalarProperty Name="Rated_heating_power_input_kW" ColumnName="Rated_heating_power_input_kW" />
+                <ScalarProperty Name="Rated_AEER" ColumnName="Rated_AEER" />
+                <ScalarProperty Name="Rated_ACOP" ColumnName="Rated_ACOP" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="appliance_types">
+            <EntityTypeMapping TypeName="AppliancesModel.appliance_types">
+              <MappingFragment StoreEntitySet="appliance_types">
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+                <ScalarProperty Name="Type_Name" ColumnName="Type_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clothes_dryer">
+            <EntityTypeMapping TypeName="AppliancesModel.clothes_dryer">
+              <MappingFragment StoreEntitySet="clothes_dryer">
+                <ScalarProperty Name="Clothes_Dryer_Id" ColumnName="Clothes_Dryer_Id" />
+                <ScalarProperty Name="ApplStandard" ColumnName="ApplStandard" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Cap" ColumnName="Cap" />
+                <ScalarProperty Name="Combination" ColumnName="Combination" />
+                <ScalarProperty Name="Control" ColumnName="Control" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Model_No" ColumnName="Model_No" />
+                <ScalarProperty Name="Family_Name" ColumnName="Family_Name" />
+                <ScalarProperty Name="N_Standard" ColumnName="N_Standard" />
+                <ScalarProperty Name="New_CEC" ColumnName="New_CEC" />
+                <ScalarProperty Name="New_SRI" ColumnName="New_SRI" />
+                <ScalarProperty Name="New_Star" ColumnName="New_Star" />
+                <ScalarProperty Name="Prog_Name" ColumnName="Prog_Name" />
+                <ScalarProperty Name="Prog_Time" ColumnName="Prog_Time" />
+                <ScalarProperty Name="Sold_in" ColumnName="Sold_in" />
+                <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+                <ScalarProperty Name="Submit_ID" ColumnName="Submit_ID" />
+                <ScalarProperty Name="Test_Moist_Remove" ColumnName="Test_Moist_Remove" />
+                <ScalarProperty Name="Tot_Wat_Cons" ColumnName="Tot_Wat_Cons" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+                <ScalarProperty Name="GrandDate" ColumnName="GrandDate" />
+                <ScalarProperty Name="Product_Class" ColumnName="Product_Class" />
+                <ScalarProperty Name="Availability_Status" ColumnName="Availability_Status" />
+                <ScalarProperty Name="Product_Website" ColumnName="Product_Website" />
+                <ScalarProperty Name="Representative_Brand_URL" ColumnName="Representative_Brand_URL" />
+                <ScalarProperty Name="Star_Rating_old" ColumnName="Star_Rating_old" />
+                <ScalarProperty Name="Star_Image_Large" ColumnName="Star_Image_Large" />
+                <ScalarProperty Name="Star_Image_Small" ColumnName="Star_Image_Small" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clothes_washer">
+            <EntityTypeMapping TypeName="AppliancesModel.clothes_washer">
+              <MappingFragment StoreEntitySet="clothes_washer">
+                <ScalarProperty Name="Clothes_Washer_Id" ColumnName="Clothes_Washer_Id" />
+                <ScalarProperty Name="ApplStandard" ColumnName="ApplStandard" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Cap" ColumnName="Cap" />
+                <ScalarProperty Name="Cap_Second_Drum" ColumnName="Cap_Second_Drum" />
+                <ScalarProperty Name="CEC_Cold" ColumnName="CEC_Cold" />
+                <ScalarProperty Name="CEC_Cold_Second_Drum" ColumnName="CEC_Cold_Second_Drum" />
+                <ScalarProperty Name="CEC" ColumnName="CEC" />
+                <ScalarProperty Name="CEC_Second_Drum" ColumnName="CEC_Second_Drum" />
+                <ScalarProperty Name="Cold_Prog" ColumnName="Cold_Prog" />
+                <ScalarProperty Name="Cold_Prog_Second_Drum" ColumnName="Cold_Prog_Second_Drum" />
+                <ScalarProperty Name="Cold_Wat_Cons" ColumnName="Cold_Wat_Cons" />
+                <ScalarProperty Name="Cold_Wat_Cons_Second_Drum" ColumnName="Cold_Wat_Cons_Second_Drum" />
+                <ScalarProperty Name="Combination" ColumnName="Combination" />
+                <ScalarProperty Name="Combination_Second_Drum" ColumnName="Combination_Second_Drum" />
+                <ScalarProperty Name="Conn_Mode" ColumnName="Conn_Mode" />
+                <ScalarProperty Name="Conn_Mode_Second_Drum" ColumnName="Conn_Mode_Second_Drum" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="delayStartMode" ColumnName="delayStartMode" />
+                <ScalarProperty Name="delayStartMode_Second_Drum" ColumnName="delayStartMode_Second_Drum" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+                <ScalarProperty Name="Depth_Second_Drum" ColumnName="Depth_Second_Drum" />
+                <ScalarProperty Name="DetergentType" ColumnName="DetergentType" />
+                <ScalarProperty Name="DetergentType_Second_Drum" ColumnName="DetergentType_Second_Drum" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Height_Second_Drum" ColumnName="Height_Second_Drum" />
+                <ScalarProperty Name="Hot_Wat_Cons" ColumnName="Hot_Wat_Cons" />
+                <ScalarProperty Name="Hot_Wat_Cons_Second_Drum" ColumnName="Hot_Wat_Cons_Second_Drum" />
+                <ScalarProperty Name="internal_heater" ColumnName="internal_heater" />
+                <ScalarProperty Name="internal_heater_Second_Drum" ColumnName="internal_heater_Second_Drum" />
+                <ScalarProperty Name="Loading" ColumnName="Loading" />
+                <ScalarProperty Name="Loading_Second_Drum" ColumnName="Loading_Second_Drum" />
+                <ScalarProperty Name="MachineAction" ColumnName="MachineAction" />
+                <ScalarProperty Name="MachineAction_Second_Drum" ColumnName="MachineAction_Second_Drum" />
+                <ScalarProperty Name="Model_No" ColumnName="Model_No" />
+                <ScalarProperty Name="Family_Name" ColumnName="Family_Name" />
+                <ScalarProperty Name="N_Standard" ColumnName="N_Standard" />
+                <ScalarProperty Name="New_SRI" ColumnName="New_SRI" />
+                <ScalarProperty Name="New_SRI_Second_Drum" ColumnName="New_SRI_Second_Drum" />
+                <ScalarProperty Name="New_Star" ColumnName="New_Star" />
+                <ScalarProperty Name="New_Star_Second_Drum" ColumnName="New_Star_Second_Drum" />
+                <ScalarProperty Name="postProgenergy" ColumnName="postProgenergy" />
+                <ScalarProperty Name="postProgenergy_Second_Drum" ColumnName="postProgenergy_Second_Drum" />
+                <ScalarProperty Name="powerConsMode" ColumnName="powerConsMode" />
+                <ScalarProperty Name="powerConsMode_Second_Drum" ColumnName="powerConsMode_Second_Drum" />
+                <ScalarProperty Name="Prog_Name" ColumnName="Prog_Name" />
+                <ScalarProperty Name="Prog_Name_Second_Drum" ColumnName="Prog_Name_Second_Drum" />
+                <ScalarProperty Name="Sold_in" ColumnName="Sold_in" />
+                <ScalarProperty Name="standbyPowerUsage" ColumnName="standbyPowerUsage" />
+                <ScalarProperty Name="standbyPowerUsage_Second_Drum" ColumnName="standbyPowerUsage_Second_Drum" />
+                <ScalarProperty Name="Submit_ID" ColumnName="Submit_ID" />
+                <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+                <ScalarProperty Name="Test_Prog_Time" ColumnName="Test_Prog_Time" />
+                <ScalarProperty Name="Test_Prog_Time_Second_Drum" ColumnName="Test_Prog_Time_Second_Drum" />
+                <ScalarProperty Name="Tot_Wat_Cons" ColumnName="Tot_Wat_Cons" />
+                <ScalarProperty Name="Tot_Wat_Cons_Second_Drum" ColumnName="Tot_Wat_Cons_Second_Drum" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Type_Second_Drum" ColumnName="Type_Second_Drum" />
+                <ScalarProperty Name="WEI" ColumnName="WEI" />
+                <ScalarProperty Name="WEI_Second_Drum" ColumnName="WEI_Second_Drum" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Width_Second_Drum" ColumnName="Width_Second_Drum" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+                <ScalarProperty Name="GrandDate" ColumnName="GrandDate" />
+                <ScalarProperty Name="Product_Class" ColumnName="Product_Class" />
+                <ScalarProperty Name="Availability_Status" ColumnName="Availability_Status" />
+                <ScalarProperty Name="Product_Website" ColumnName="Product_Website" />
+                <ScalarProperty Name="Representative_Brand_URL" ColumnName="Representative_Brand_URL" />
+                <ScalarProperty Name="Program_Time" ColumnName="Program_Time" />
+                <ScalarProperty Name="Program_Time_Second_Drum" ColumnName="Program_Time_Second_Drum" />
+                <ScalarProperty Name="Hot_Water_L" ColumnName="Hot_Water_L" />
+                <ScalarProperty Name="Hot_Water_L_Second_Drum" ColumnName="Hot_Water_L_Second_Drum" />
+                <ScalarProperty Name="Cold_Water_L" ColumnName="Cold_Water_L" />
+                <ScalarProperty Name="Cold_Water_L_Second_Drum" ColumnName="Cold_Water_L_Second_Drum" />
+                <ScalarProperty Name="Star_Rating_old" ColumnName="Star_Rating_old" />
+                <ScalarProperty Name="Star_Image_Large" ColumnName="Star_Image_Large" />
+                <ScalarProperty Name="Star_Image_Large_Second_Drum" ColumnName="Star_Image_Large_Second_Drum" />
+                <ScalarProperty Name="Star_Image_Small" ColumnName="Star_Image_Small" />
+                <ScalarProperty Name="Star_Image_Small_Second_Drum" ColumnName="Star_Image_Small_Second_Drum" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dishwashers">
+            <EntityTypeMapping TypeName="AppliancesModel.dishwasher">
+              <MappingFragment StoreEntitySet="dishwasher">
+                <ScalarProperty Name="Dishwasher_Id" ColumnName="Dishwasher_Id" />
+                <ScalarProperty Name="ApplStandard" ColumnName="ApplStandard" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Cap" ColumnName="Cap" />
+                <ScalarProperty Name="CEC" ColumnName="CEC" />
+                <ScalarProperty Name="Conn_Type" ColumnName="Conn_Type" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="delayStartMode" ColumnName="delayStartMode" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Load_Type" ColumnName="Load_Type" />
+                <ScalarProperty Name="Model_No" ColumnName="Model_No" />
+                <ScalarProperty Name="Family_Name" ColumnName="Family_Name" />
+                <ScalarProperty Name="N_Standard" ColumnName="N_Standard" />
+                <ScalarProperty Name="New_SRI" ColumnName="New_SRI" />
+                <ScalarProperty Name="New_Star" ColumnName="New_Star" />
+                <ScalarProperty Name="postProgenergy" ColumnName="postProgenergy" />
+                <ScalarProperty Name="powerConsMode" ColumnName="powerConsMode" />
+                <ScalarProperty Name="Prog_Name" ColumnName="Prog_Name" />
+                <ScalarProperty Name="Prog_Time" ColumnName="Prog_Time" />
+                <ScalarProperty Name="Sold_in" ColumnName="Sold_in" />
+                <ScalarProperty Name="standbyPowerUsage" ColumnName="standbyPowerUsage" />
+                <ScalarProperty Name="Submit_ID" ColumnName="Submit_ID" />
+                <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+                <ScalarProperty Name="Tot_Wat_Cons" ColumnName="Tot_Wat_Cons" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Water_Softener" ColumnName="Water_Softener" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+                <ScalarProperty Name="GrandDate" ColumnName="GrandDate" />
+                <ScalarProperty Name="Product_Class" ColumnName="Product_Class" />
+                <ScalarProperty Name="Availability_Status" ColumnName="Availability_Status" />
+                <ScalarProperty Name="Product_Website" ColumnName="Product_Website" />
+                <ScalarProperty Name="Representative_Brand_URL" ColumnName="Representative_Brand_URL" />
+                <ScalarProperty Name="Water_Consumption_litres" ColumnName="Water_Consumption_litres" />
+                <ScalarProperty Name="Star_Rating_old" ColumnName="Star_Rating_old" />
+                <ScalarProperty Name="Star_Image_Large" ColumnName="Star_Image_Large" />
+                <ScalarProperty Name="Star_Image_Small" ColumnName="Star_Image_Small" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="monitors">
+            <EntityTypeMapping TypeName="AppliancesModel.monitor">
+              <MappingFragment StoreEntitySet="monitor">
+                <ScalarProperty Name="Monitor_Id" ColumnName="Monitor_Id" />
+                <ScalarProperty Name="Record_ID" ColumnName="Record_ID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
+                <ScalarProperty Name="Model_Number" ColumnName="Model_Number" />
+                <ScalarProperty Name="Family_Name" ColumnName="Family_Name" />
+                <ScalarProperty Name="Selling_Countries" ColumnName="Selling_Countries" />
+                <ScalarProperty Name="Manufacturing_Countries" ColumnName="Manufacturing_Countries" />
+                <ScalarProperty Name="Screen_Size" ColumnName="Screen_Size" />
+                <ScalarProperty Name="Screen_Technology" ColumnName="Screen_Technology" />
+                <ScalarProperty Name="Comparative_Energy_Consumption" ColumnName="Comparative_Energy_Consumption" />
+                <ScalarProperty Name="Active_Standby_Power" ColumnName="Active_Standby_Power" />
+                <ScalarProperty Name="Star_Rating_Index" ColumnName="Star_Rating_Index" />
+                <ScalarProperty Name="Star_Rating" ColumnName="Star_Rating" />
+                <ScalarProperty Name="Product_Website" ColumnName="Product_Website" />
+                <ScalarProperty Name="Representative_Brand_URL" ColumnName="Representative_Brand_URL" />
+                <ScalarProperty Name="Availability_Status" ColumnName="Availability_Status" />
+                <ScalarProperty Name="Expiry_Date" ColumnName="Expiry_Date" />
+                <ScalarProperty Name="Star_Image_Large" ColumnName="Star_Image_Large" />
+                <ScalarProperty Name="Star_Image_Small" ColumnName="Star_Image_Small" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="refrigerators">
+            <EntityTypeMapping TypeName="AppliancesModel.refrigerator">
+              <MappingFragment StoreEntitySet="refrigerator">
+                <ScalarProperty Name="Refrigerator_Id" ColumnName="Refrigerator_Id" />
+                <ScalarProperty Name="Adaptive_Defrost" ColumnName="Adaptive_Defrost" />
+                <ScalarProperty Name="ApplStandard" ColumnName="ApplStandard" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="CEC" ColumnName="CEC" />
+                <ScalarProperty Name="CompartGrVol" ColumnName="CompartGrVol" />
+                <ScalarProperty Name="CompartNetVol" ColumnName="CompartNetVol" />
+                <ScalarProperty Name="CompartType" ColumnName="CompartType" />
+                <ScalarProperty Name="Configuration" ColumnName="Configuration" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="FF_Vol" ColumnName="FF_Vol" />
+                <ScalarProperty Name="FZ_Vol" ColumnName="FZ_Vol" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Icemaker" ColumnName="Icemaker" />
+                <ScalarProperty Name="MEPSApproval" ColumnName="MEPSApproval" />
+                <ScalarProperty Name="Model_No" ColumnName="Model_No" />
+                <ScalarProperty Name="Family_Name" ColumnName="Family_Name" />
+                <ScalarProperty Name="N_Standard" ColumnName="N_Standard" />
+                <ScalarProperty Name="Star2009" ColumnName="Star2009" />
+                <ScalarProperty Name="SRI2009" ColumnName="SRI2009" />
+                <ScalarProperty Name="No_Doors" ColumnName="No_Doors" />
+                <ScalarProperty Name="S_MEPS_Ad" ColumnName="S_MEPS_Ad" />
+                <ScalarProperty Name="S_MEPScutoff" ColumnName="S_MEPScutoff" />
+                <ScalarProperty Name="Sold_in" ColumnName="Sold_in" />
+                <ScalarProperty Name="Submit_ID" ColumnName="Submit_ID" />
+                <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+                <ScalarProperty Name="Tot_Vol" ColumnName="Tot_Vol" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+                <ScalarProperty Name="GrandDate" ColumnName="GrandDate" />
+                <ScalarProperty Name="Product_Class" ColumnName="Product_Class" />
+                <ScalarProperty Name="Availability_Status" ColumnName="Availability_Status" />
+                <ScalarProperty Name="Product_Website" ColumnName="Product_Website" />
+                <ScalarProperty Name="Representative_Brand_URL" ColumnName="Representative_Brand_URL" />
+                <ScalarProperty Name="Fixed_MEPS_allowance_factor" ColumnName="Fixed_MEPS_allowance_factor" />
+                <ScalarProperty Name="Variable_MEPS_allowance_factor" ColumnName="Variable_MEPS_allowance_factor" />
+                <ScalarProperty Name="Adjusted_volume" ColumnName="Adjusted_volume" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Star_Rating_old" ColumnName="Star_Rating_old" />
+                <ScalarProperty Name="Star_Image_Large" ColumnName="Star_Image_Large" />
+                <ScalarProperty Name="Star_Image_Small" ColumnName="Star_Image_Small" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="televisions">
+            <EntityTypeMapping TypeName="AppliancesModel.television">
+              <MappingFragment StoreEntitySet="television">
+                <ScalarProperty Name="Television_Id" ColumnName="Television_Id" />
+                <ScalarProperty Name="Submit_ID" ColumnName="Submit_ID" />
+                <ScalarProperty Name="Brand_Reg" ColumnName="Brand_Reg" />
+                <ScalarProperty Name="Model_No" ColumnName="Model_No" />
+                <ScalarProperty Name="Family_Name" ColumnName="Family_Name" />
+                <ScalarProperty Name="SoldIn" ColumnName="SoldIn" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="screensize" ColumnName="screensize" />
+                <ScalarProperty Name="Screen_Area" ColumnName="Screen_Area" />
+                <ScalarProperty Name="Screen_Tech" ColumnName="Screen_Tech" />
+                <ScalarProperty Name="Pasv_stnd_power" ColumnName="Pasv_stnd_power" />
+                <ScalarProperty Name="Act_stnd_power" ColumnName="Act_stnd_power" />
+                <ScalarProperty Name="Act_stnd_time" ColumnName="Act_stnd_time" />
+                <ScalarProperty Name="Avg_mode_power" ColumnName="Avg_mode_power" />
+                <ScalarProperty Name="Star" ColumnName="Star" />
+                <ScalarProperty Name="SRI" ColumnName="SRI" />
+                <ScalarProperty Name="CEC" ColumnName="CEC" />
+                <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+                <ScalarProperty Name="GrandDate" ColumnName="GrandDate" />
+                <ScalarProperty Name="Product_Class" ColumnName="Product_Class" />
+                <ScalarProperty Name="Availability_Status" ColumnName="Availability_Status" />
+                <ScalarProperty Name="Star2" ColumnName="Star2" />
+                <ScalarProperty Name="Product_Website" ColumnName="Product_Website" />
+                <ScalarProperty Name="Representative_Brand_URL" ColumnName="Representative_Brand_URL" />
+                <ScalarProperty Name="Star_Rating_Index" ColumnName="Star_Rating_Index" />
+                <ScalarProperty Name="Star_Image_Large" ColumnName="Star_Image_Large" />
+                <ScalarProperty Name="Star_Image_Small" ColumnName="Star_Image_Small" />
+                <ScalarProperty Name="Power_supply" ColumnName="Power_supply" />
+                <ScalarProperty Name="Tuner_Type" ColumnName="Tuner_Type" />
+                <ScalarProperty Name="What_test_standard_was_used" ColumnName="What_test_standard_was_used" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

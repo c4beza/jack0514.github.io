@@ -1,0 +1,220 @@
+﻿@model IEnumerable<EnvisionAGreenLife.Models.television>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Submit_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand_Reg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Family_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoldIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.screensize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Screen_Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Screen_Tech)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pasv_stnd_power)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Act_stnd_power)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Act_stnd_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avg_mode_power)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SRI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrandDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Availability_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Rating_Index)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Image_Large)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Star_Image_Small)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Power_supply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tuner_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.What_test_standard_was_used)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Registration_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Submit_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand_Reg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Family_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoldIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.screensize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Screen_Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Screen_Tech)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pasv_stnd_power)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Act_stnd_power)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Act_stnd_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avg_mode_power)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SRI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrandDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Availability_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Website)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Representative_Brand_URL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Rating_Index)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Image_Large)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_Image_Small)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Power_supply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tuner_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.What_test_standard_was_used)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registration_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appliance_types.Type_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Television_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Television_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Television_Id })
+        </td>
+    </tr>
+}
+
+</table>

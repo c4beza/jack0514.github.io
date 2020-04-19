@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="593940c948cb446f9c6bfebb2cda8413" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="AppliancesModel.air_conditioner" Width="1.5" PointX="9" PointY="39.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AppliancesModel.appliance_types" Width="1.5" PointX="0.75" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppliancesModel.clothes_dryer" Width="1.5" PointX="10.75" PointY="39.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AppliancesModel.clothes_washer" Width="1.5" PointX="3.625" PointY="39.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AppliancesModel.dishwasher" Width="1.5" PointX="5.375" PointY="39.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AppliancesModel.monitor" Width="1.5" PointX="7.25" PointY="39.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AppliancesModel.refrigerator" Width="1.5" PointX="12.5" PointY="39.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AppliancesModel.television" Width="1.5" PointX="14.25" PointY="39.5" IsExpanded="false" />
+        <AssociationConnector Association="AppliancesModel.FK__air_condi__Type___286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="AppliancesModel.FK__clothes_d__Type___25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="AppliancesModel.FK__clothes_w__Type___33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="AppliancesModel.FK__dishwashe__Type___36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="AppliancesModel.FK__monitor__Type_Id__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="AppliancesModel.FK__refrigera__Type___30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="AppliancesModel.FK__televisio__Type___2E1BDC42" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
