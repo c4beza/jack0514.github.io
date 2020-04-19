@@ -14,4 +14,25 @@
     padding-bottom: 10px;
 }
 
+.navbar-inverse {
+    width: 100%;
+    background-color: white;
+    overflow: auto;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
 
+    .navbar-inverse .navbar-nav > li > a {
+        float: left;
+        padding: 30px;
+        color: #9cbd4f;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover,
+        .navbar-inverse .navbar-nav > li > a:focus {
+            background-color: #9cbd4f;
+            color: white;
+        }

@@ -264,6 +264,7 @@
     <Content Include="Models\RecyclingCentresModel.edmx.diagram">
       <DependentUpon>RecyclingCentresModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\EnvisionAGreenLife - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
