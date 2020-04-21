@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EnvisionAGreenLife.Models;
+using PagedList;
 
 namespace EnvisionAGreenLife.Controllers
 {
@@ -15,12 +16,14 @@ namespace EnvisionAGreenLife.Controllers
         private AppliancesEntities db = new AppliancesEntities();
 
         // GET: air_conditioner
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var air_conditioner = db.air_conditioner.Include(a => a.appliance_types);
-            return View(air_conditioner.ToList());
+            int pagesize = 9, pageindex = 1;
+            pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var list = db.air_conditioner.Where(x => x.Type_Id == 2).ToList();
+            IPagedList<air_conditioner> stu = list.ToPagedList(pageindex, pagesize);
+            return View(stu);
         }
-
         // GET: air_conditioner/Details/5
         public ActionResult Details(int? id)
         {

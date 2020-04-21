@@ -146,6 +146,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\air_conditioner.cs">
       <DependentUpon>AppliancesModel.tt</DependentUpon>
     </Compile>
@@ -210,7 +211,17 @@
     <Content Include="App_Data\Appliances_log.ldf">
       <DependentUpon>Appliances.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Images\air_conditioner.png" />
+    <Content Include="Images\Clothes_Dryer.png" />
+    <Content Include="Images\Clothes_Washer.png" />
+    <Content Include="Images\dishwasher.png" />
+    <Content Include="Images\monitor.png" />
+    <Content Include="Images\refrigerator.png" />
+    <Content Include="Images\television.png" />
     <Content Include="Images\test_pic_1.jpg" />
     <Content Include="Images\test_pic_2.jpg" />
     <Content Include="Images\test_pic_3.jpg" />
@@ -264,6 +275,11 @@
     <Content Include="Models\RecyclingCentresModel.edmx.diagram">
       <DependentUpon>RecyclingCentresModel.edmx</DependentUpon>
     </Content>
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Properties\PublishProfiles\EnvisionAGreenLife - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -278,6 +294,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Styles\HomePage.css" />
     <Content Include="Styles\Layout.css" />
+    <Content Include="Styles\Applianceslayout.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -334,7 +351,6 @@
     <Content Include="Views\televisions\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Food.cshtml" />
-    <Content Include="Views\Home\Energy.cshtml" />
     <Content Include="Views\Home\AppliancesType.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
   </ItemGroup>

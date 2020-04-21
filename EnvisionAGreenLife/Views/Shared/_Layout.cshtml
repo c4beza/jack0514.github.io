@@ -11,37 +11,42 @@
 <body>
     <img class="logo" src="~/Images/TeamLogo.png" alt="project logo">
     <p class="name"> ENVISION A GREEN LIFE </p>
-    <div class="navbar navbar-inverse">
+    <div class="navbar navbar-inverse" id="Topnav">
         <div class="container">
-            @*<div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>*@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("HOME", "Index", "Home")</li>
-                    <li>@Html.ActionLink("TAKE THE QUIZ", "Quiz", "Home")</li>
-                    <li>@Html.ActionLink("REUSE", "Reuse", "Home")</li>
-                    <li>@Html.ActionLink("SAVE ENERGY", "Energy", "Home")</li>
-                    <li>@Html.ActionLink("REDUCE FOOD WASTE", "Food", "Home")</li>
-                    <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
+                    <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "classname" })</li>
+                    <li>@Html.ActionLink("TAKE THE QUIZ", "Quiz", "Home", null, new { @class = "classname" })</li>
+                    <li>@Html.ActionLink("REUSE", "Reuse", "Home", null, new { @class = "classname" })</li>
+                    <li>@Html.ActionLink("SAVE ENERGY", "AppliancesType", "Home", null, new { @class = "classname" })</li>
+                    <li>@Html.ActionLink("REDUCE FOOD WASTE", "Food", "Home", null, new { @class = "classname" })</li>
+                    <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "classname" })</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Envision a Green Life</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Envision a Green Life</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+        <script>
+            function myFunction() {
+                var x = document.getElementById("Topnav");
+                if (x.className === "navbar navbar-inverse") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "navbar navbar-inverse";
+                }
+            }
+        </script>
 </body>
 </html>
