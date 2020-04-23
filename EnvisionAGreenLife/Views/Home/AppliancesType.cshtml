@@ -15,74 +15,76 @@
             foreach (var item in Model)
             {
                 x++;
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="height:700px">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="height:600px">
                     @if (item.Type_Id == 1)
                     {
-                        <div class="card" style="height:650px;margin-top:50px">
-                            <img src="~/Images/Clothes_Dryer.png" alt="Clothes_Dryer" style="width:100%">
-                            <h1>Clothes Dryer</h1>
-                            @Html.ActionLink("Clothes Dryer", "Index", "clothes_dryer")
+                        <div class="card" style="height:550px;margin-top:50px">
+                            <a href='@Url.Action("Index", "clothes_dryer")'>
+                                <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Clothes_Dryer" style="width:100%" />
+                            </a>
+                                <h1>Clothes Dryer</h1>
+                                @Html.ActionLink("Clothes Dryer", "Index", "clothes_dryer")
                         </div>
                     }
                     else if (item.Type_Id == 2)
                     {
-                        <div class="card" style="height:650px;margin-top:50px">
-                            <img src="~/Images/air_conditioner.png" alt="Air Conditioner" style="width:100%">
+                        <div class="card" style="height:550px;margin-top:50px">
+                            <a href='@Url.Action("Index", "air_conditioner")'>
+                                <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air_conditioner" style="width:100%" />
+                            </a>
                             <h1>Air Conditioner</h1>
-                            <p class="price">$29.99</p>
-                            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
                             @Html.ActionLink("Air Conditioner", "Index", "air_conditioner")
                         </div>
                     }
                     else if (item.Type_Id == 3)
                     {
-                        <div class="card" style="height:650px;margin-top:50px">
-                            <img src="~/Images/monitor.png" alt="Monitor" style="width:100%">
+                        <div class="card" style="height:550px;margin-top:50px">
+                            <a href='@Url.Action("Index", "monitors")'>
+                                <img src='@Url.Content("~/Images/monitor3.jpg")' alt="Monitor" style="width:100%" />
+                            </a>
                             <h1>Monitor</h1>
-                            <p class="price">$39.99</p>
-                            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
                             @Html.ActionLink("Monitor", "Index", "monitors")
                         </div>
                     }
                     else if (item.Type_Id == 4)
                     {
-                        <div class="card" style="height:650px;margin-top:50px">
-                            <img src="~/Images/television.png" alt="Television" style="width:100%">
+                        <div class="card" style="height:550px;margin-top:50px">
+                            <a href='@Url.Action("Index", "televisions")'>
+                                <img src='@Url.Content("~/Images/television1.png")' alt="Television" style="width:100%" />
+                            </a>
                             <h1>Television</h1>
-                            <p class="price">$49.99</p>
-                            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
                             @Html.ActionLink("Television", "Index", "televisions")
                         </div>
                     }
                     else if (item.Type_Id == 5)
                     {
-                        <div class="card" style="height:650px;margin-top:50px">
-                            <img src="~/Images/refrigerator.png" alt="Refrigerator" style="width:100%">
+                        <div class="card" style="height:550px;margin-top:50px">
+                            <a href='@Url.Action("Index", "refrigerators")'>
+                                <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" style="width:100%" />
+                            </a>
                             <h1>Refrigerator</h1>
-                            <p class="price">$59.99</p>
-                            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
                             @Html.ActionLink("Refrigerator", "Index", "refrigerators")
                         </div>
                     }
                     else if (item.Type_Id == 6)
                     {
-                        <div class="card" style="height:650px;margin-top:50px">
-                            <img src="~/Images/Clothes_Washer.png" alt="Clothes_Washer" style="width:100%">
+                        <div class="card" style="height:550px;margin-top:50px">
+                            <a href='@Url.Action("Index", "clothes_washer")'>
+                                <img src='@Url.Content("~/Images/Clothes_Washer2.jpg")' alt="Clothes_Washer" style="width:100%" />
+                            </a>
                             <h1>Clothes Washer</h1>
-                            <p class="price">$69.99</p>
-                            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
                             @Html.ActionLink("Clothes Washer", "Index", "clothes_washer")
                         </div>
                     }
                     else
                     {
-                        <div class="card" style="height:650px;margin-top:50px">
-                            <img src="~/Images/dishwasher.png" alt="Dishwasher" style="width:100%">
-                            <h1>Dishwasher</h1>
-                            <p class="price">$79.99</p>
-                            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-                            @Html.ActionLink("Dishwasher", "Index", "dishwashers")
-                        </div>
+                          <div class="card" style="height:550px;margin-top:50px">
+                        <a href='@Url.Action("Index", "dishwashers")'>
+                            <img src='@Url.Content("~/Images/Dishwasher1.jpeg")' alt="Dishwasher" style="width:100%" />
+                        </a>
+                        <h1>Dishwasher</h1>
+                        @Html.ActionLink("Dishwasher", "Index", "dishwashers")
+                          </div>
                     }
                 </div>
             }

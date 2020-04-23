@@ -33,5 +33,6 @@ namespace EnvisionAGreenLife.Models
         public virtual DbSet<monitor> monitors { get; set; }
         public virtual DbSet<refrigerator> refrigerators { get; set; }
         public virtual DbSet<television> televisions { get; set; }
+        public object Rows { get; internal set; }
     }
 }

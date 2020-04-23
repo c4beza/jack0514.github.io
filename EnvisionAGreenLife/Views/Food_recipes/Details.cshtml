@@ -1,0 +1,91 @@
+﻿@model EnvisionAGreenLife.Models.Food_recipes
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Food_recipes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ingredients)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ingredients)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.instructions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.instructions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.preparation_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preparation_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.difficulty_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.difficulty_level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category_breakfast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category_breakfast)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category_lunch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category_lunch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category_dinner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category_dinner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category_dessert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category_dessert)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

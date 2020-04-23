@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EnvisionAGreenLife.Models;
+using EnvisionAGreenLife.ViewModel;
 using PagedList;
 
 namespace EnvisionAGreenLife.Controllers
@@ -16,13 +17,30 @@ namespace EnvisionAGreenLife.Controllers
         private AppliancesEntities db = new AppliancesEntities();
 
         // GET: air_conditioner
-        public ActionResult Index(int? page)
+        [HttpGet]
+        public ActionResult Index(int? page, AcList acList, bool? currentfilter = false)
         {
+            var results = from x in db.air_conditioner
+                           select x;
             int pagesize = 9, pageindex = 1;
+            AcList temp = new AcList();
+
+            if (acList.Ischecked != false || currentfilter == true)
+            {
+                results = results.Where(x => x.Star2010_Cool.Value == 3
+                                       );
+                ViewBag.currentfilter = true;
+            }
+            else
+            {
+                results = results.Where(x => x.Type_Id == 2);
+                ViewBag.currentfilter = false;
+            }
+
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
-            var list = db.air_conditioner.Where(x => x.Type_Id == 2).ToList();
-            IPagedList<air_conditioner> stu = list.ToPagedList(pageindex, pagesize);
-            return View(stu);
+            var list = results.ToList();
+            temp.air_Conditioners = list.ToPagedList(pageindex, pagesize);
+            return View(temp);
         }
         // GET: air_conditioner/Details/5
         public ActionResult Details(int? id)

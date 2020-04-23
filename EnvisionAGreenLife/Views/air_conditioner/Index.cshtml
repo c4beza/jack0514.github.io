@@ -1,53 +1,62 @@
 ﻿@using PagedList.Mvc
-@model  PagedList.IPagedList<EnvisionAGreenLife.Models.air_conditioner>
+@model  EnvisionAGreenLife.ViewModel.AcList
+@{ bool currentfilter = ViewBag.currentfilter; }
 
 @{
     ViewBag.Title = "Air_conditioner";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
-    <body>
-        <div class="col-lg-2">
-            <input type="checkbox" name="courselevel" value="Begineer" />
+<link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
+<body>
+    <div class="col-lg-2 col-md-2">
+        @using (Html.BeginForm("Index", "air_conditioner", FormMethod.Get))
+        {
+            <h3>Filter</h3>
             <br>
-
-            <input type="checkbox" name="courselevel" value="Begineer" />
-
-            <input type="checkbox" name="courselevel" value="Begineer" />
-
-            <input type="checkbox" name="courselevel" value="Begineer" />
-            <input type="checkbox" name="courselevel" value="Begineer" />
-            <input type="checkbox" name="courselevel" value="Begineer" />
-            <input type="checkbox" name="courselevel" value="Begineer" />
-            <input type="checkbox" name="courselevel" value="Begineer" />
+            <p>
+                @Html.Label("3 star")
+                @Html.EditorFor(g => g.Ischecked, currentfilter)                <br>
+                <input type="submit" value="search" />
+            </p>
+        }
 
 
 
-        </div>
-        <div class="row col-lg-10" style="height:auto">
-            @{int x = 0;}
-            @if (Model != null)
+    </div>
+    <div class="row col-lg-10 col-md-10" style="height:auto">
+        @{int x = 0;}
+        @if (Model != null)
+        {
+            foreach (var item in Model.air_Conditioners)
             {
-                foreach (var item in Model)
-                {
-                    x++;
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="height:650px;margin-top:25px">
-                        <div class="card" style="height:600px;margin-top:50px">
-                            <h2 style="text-align:center; height:80px;">@item.Model_No</h2>
-                            <img src="~/Images/Clothes_Dryer.png" alt="Clothes_Dryer" style="width:100%">
-                            <h1>@item.Brand</h1>
-                            <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> @Html.ActionLink("View Details", "ViewProduct", new { id = @item.Air_Conditioner_Id })</h4>
-                        </div>
-                        @*<img class="img img-responsive cimg" src="@Url.Content(item.pro_image)" style=" height:100%;width:100% ;border-radius:50px 50px 50px 50px" />*@
+                x++;
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="height:650px;margin-top:25px">
+                    <div class="card" style="height:600px;margin-top:50px">
+                        <h2 style="text-align:center; height:80px;">@item.Model_No</h2>
+                        @if (x % 3 == 1)
+                        {
+                            <img src="~/Images/air_conditioner1.png" alt="Air_conditioner" style="width:100%">
+                        }
+                        else if (x % 3 == 2)
+                        {
+                            <img src="~/Images/air_conditioner2.jpg" alt="Air_conditioner" style="width:100%">
+                        }
+                        else
+                        { <img src="~/Images/air_conditioner2.jpg" alt="Air_conditioner" style="width:100%">
+                        }
+                        <h1>@item.Brand</h1>
+                        <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> @Html.ActionLink("View Details", "ViewProduct", new { id = @item.Air_Conditioner_Id })</h4>
                     </div>
-                }
+                    @*<img class="img img-responsive cimg" src="@Url.Content(item.pro_image)" style=" height:100%;width:100% ;border-radius:50px 50px 50px 50px" />*@
+                </div>
             }
-        </div>
+        }
+    </div>
 
-        <br>
-        <br>
-        <div class="pagecount" style="margin:auto; text-align:center">
-            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
-            of @Model.PageCount   @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-        </div>
-    </body>
+    <br>
+    <br>
+    <div class="pagecount" style="margin:auto; text-align:center">
+        Page @(Model.air_Conditioners.PageCount < Model.air_Conditioners.PageNumber ? 0 : Model.air_Conditioners.PageNumber)
+        of @Model.air_Conditioners.PageCount   @Html.PagedListPager(Model.air_Conditioners, page => Url.Action("Index", new { page , currentfilter = ViewBag.currentfilter }))
+    </div>
+</body>
