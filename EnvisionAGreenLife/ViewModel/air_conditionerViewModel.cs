@@ -9,7 +9,6 @@ namespace EnvisionAGreenLife.ViewModel
 {
     public class AcList
     {
-        public PagedList.IPagedList<air_conditioner> air_Conditioners { get; set; }
-        public bool Ischecked { get; set; }
+        public IPagedList<air_conditioner> Air_Conditioners { get; set; }
     }
 }

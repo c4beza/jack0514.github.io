@@ -52,6 +52,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcBreadCrumbs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcBreadCrumbs.0.69\lib\MvcBreadCrumbs.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -224,6 +227,12 @@
       <DependentUpon>AppliancesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\televisionsViewModel.cs" />
+    <Compile Include="ViewModel\refrigeratorsViewModel.cs" />
+    <Compile Include="ViewModel\monitorsViewModel.cs" />
+    <Compile Include="ViewModel\dishwashersViewModel.cs" />
+    <Compile Include="ViewModel\clothes_washerViewModel.cs" />
+    <Compile Include="ViewModel\clothes_dryerViewModel.cs" />
     <Compile Include="ViewModel\air_conditionerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +250,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Images\air_conditioner2.jpg" />
     <Content Include="Images\air_conditioner1.png" />
+    <Content Include="Images\Appliances2.png" />
     <Content Include="Images\Appliances.jpg" />
     <Content Include="Images\breafast2.jpg" />
     <Content Include="Images\breakfast1.jpg" />
@@ -390,40 +400,19 @@
     <Content Include="Views\recycling_centres\Details.cshtml" />
     <Content Include="Views\recycling_centres\Edit.cshtml" />
     <Content Include="Views\recycling_centres\Index.cshtml" />
-    <Content Include="Views\air_conditioner\Create.cshtml" />
-    <Content Include="Views\air_conditioner\Delete.cshtml" />
     <Content Include="Views\air_conditioner\Details.cshtml" />
-    <Content Include="Views\air_conditioner\Edit.cshtml" />
     <Content Include="Views\air_conditioner\Index.cshtml" />
-    <Content Include="Views\clothes_dryer\Create.cshtml" />
-    <Content Include="Views\clothes_dryer\Delete.cshtml" />
     <Content Include="Views\clothes_dryer\Details.cshtml" />
-    <Content Include="Views\clothes_dryer\Edit.cshtml" />
     <Content Include="Views\clothes_dryer\Index.cshtml" />
-    <Content Include="Views\clothes_washer\Create.cshtml" />
-    <Content Include="Views\clothes_washer\Delete.cshtml" />
     <Content Include="Views\clothes_washer\Details.cshtml" />
-    <Content Include="Views\clothes_washer\Edit.cshtml" />
     <Content Include="Views\clothes_washer\Index.cshtml" />
-    <Content Include="Views\dishwashers\Create.cshtml" />
-    <Content Include="Views\dishwashers\Delete.cshtml" />
     <Content Include="Views\dishwashers\Details.cshtml" />
-    <Content Include="Views\dishwashers\Edit.cshtml" />
     <Content Include="Views\dishwashers\Index.cshtml" />
-    <Content Include="Views\monitors\Create.cshtml" />
-    <Content Include="Views\monitors\Delete.cshtml" />
     <Content Include="Views\monitors\Details.cshtml" />
-    <Content Include="Views\monitors\Edit.cshtml" />
     <Content Include="Views\monitors\Index.cshtml" />
-    <Content Include="Views\refrigerators\Create.cshtml" />
-    <Content Include="Views\refrigerators\Delete.cshtml" />
     <Content Include="Views\refrigerators\Details.cshtml" />
-    <Content Include="Views\refrigerators\Edit.cshtml" />
     <Content Include="Views\refrigerators\Index.cshtml" />
-    <Content Include="Views\televisions\Create.cshtml" />
-    <Content Include="Views\televisions\Delete.cshtml" />
     <Content Include="Views\televisions\Details.cshtml" />
-    <Content Include="Views\televisions\Edit.cshtml" />
     <Content Include="Views\televisions\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\LeftoverRecipe.cshtml" />

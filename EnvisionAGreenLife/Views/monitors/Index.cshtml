@@ -1,148 +1,50 @@
-﻿@model IEnumerable<EnvisionAGreenLife.Models.monitor>
+﻿@using PagedList.Mvc
+@model  EnvisionAGreenLife.ViewModel.MList
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Monitor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
+<body>
+    <form asp-action="Index" method="get" >
+        <div class="form-actions no-color">
+            <p>
+                Find by brand: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default" /> |
+                <a href="@Url.Action("Index","monitors")">Back to Full List</a>
+            </p>
+        </div>
+    </form>
 
-<h2>Index</h2>
+    <div class="row col-lg-12 col-md-12" style="height:auto">
+        @{int x = 0;}
+        @if (Model != null)
+        {
+            foreach (var item in Model.Monitors)
+            {
+                x++;
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card" style="margin-top:50px">
+                        <h2 style="text-align:center; height:50px;">@item.Brand_Name</h2>
+                        <a href='@Url.Action("Details", "dishwashers",new { id = @item.Monitor_Id})'>
+                            <img src='@Url.Content("~/Images/monitor4.jpg")' alt="Monitor" style="width:100%" />
+                        </a>
+                        <p>
+                            <button onclick="location.href='@Url.Action("Details", "monitors",new { id = @item.Monitor_Id })'" type="button" class="Button" style="height:100px">
+                                @item.Model_Number
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Record_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brand_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model_Number)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Family_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Selling_Countries)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Manufacturing_Countries)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Screen_Size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Screen_Technology)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comparative_Energy_Consumption)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Active_Standby_Power)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Star_Rating_Index)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Star_Rating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product_Website)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Availability_Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Expiry_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Star_Image_Large)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Star_Image_Small)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Record_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brand_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Model_Number)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Family_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Selling_Countries)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Manufacturing_Countries)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Screen_Size)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Screen_Technology)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comparative_Energy_Consumption)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Active_Standby_Power)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Star_Rating_Index)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Star_Rating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product_Website)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Representative_Brand_URL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Availability_Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Expiry_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Star_Image_Large)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Star_Image_Small)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.appliance_types.Type_Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Monitor_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Monitor_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Monitor_Id })
-        </td>
-    </tr>
-}
-
-</table>
+    <br>
+    <br>
+    <div class="pagecount" style="margin:auto; text-align:center">
+        Page @(Model.Monitors.PageCount < Model.Monitors.PageNumber ? 0 : Model.Monitors.PageNumber)
+        of @Model.Monitors.PageCount   @Html.PagedListPager(Model.Monitors, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
+    </div>
+</body>

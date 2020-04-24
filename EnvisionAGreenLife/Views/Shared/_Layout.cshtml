@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using MvcBreadCrumbs
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,42 +12,46 @@
 </head>
 <body>
     @*<img class="logo" src="~/Images/TeamLogo.png" alt="project logo">
-    <p class="name"> ENVISION A GREEN LIFE </p>
-    <div class="navbar navbar-inverse" id="Topnav">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "classname" })</li>
-                    <li>@Html.ActionLink("TAKE THE QUIZ", "Quiz", "Home", null, new { @class = "classname" })</li>
-                    <li>@Html.ActionLink("REUSE", "Reuse", "Home", null, new { @class = "classname" })</li>
-                    <li>@Html.ActionLink("SAVE ENERGY", "AppliancesType", "Home", null, new { @class = "classname" })</li>
-                    <li>@Html.ActionLink("REDUCE FOOD WASTE", "ReduceFoodWaste", "Home", null, new { @class = "classname" })</li>
-                    <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "classname" })</li>
-                </ul>
+        <p class="name"> ENVISION A GREEN LIFE </p>
+        <div class="navbar navbar-inverse" id="Topnav">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "classname" })</li>
+                        <li>@Html.ActionLink("TAKE THE QUIZ", "Quiz", "Home", null, new { @class = "classname" })</li>
+                        <li>@Html.ActionLink("REUSE", "Reuse", "Home", null, new { @class = "classname" })</li>
+                        <li>@Html.ActionLink("SAVE ENERGY", "AppliancesType", "Home", null, new { @class = "classname" })</li>
+                        <li>@Html.ActionLink("REDUCE FOOD WASTE", "ReduceFoodWaste", "Home", null, new { @class = "classname" })</li>
+                        <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "classname" })</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 
     <div class="topnav" id="myTopnav">
-            <img class="logo" src="~/Images/TeamLogo.png" alt="project logo" />
-        <a href="#home" class="active">Home</a>
-        <a href="#news">Take the quiz</a>
-        <div class="dropdown">
+        <img class="logo" src="~/Images/TeamLogo.png" alt="project logo" style="margin-left:10px; margin-top:2.5px; width:90px; height:90px" />
+        <a style="margin-left:9.5%" href="#home" class="active">Home</a>
+        <a href="@Url.Action("Quiz","Home")">Take the quiz</a>
+        <div class="dropdown" style="margin-top:16px">
             <button class="dropbtn">
-                More Info
+                <strong>
+                    More Info
+                </strong>
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="#">REUSE</a>
-                <a href="#">SAVE ENERGY</a>
-                <a href="#">REDUCE FOOD WASTE</a>
+                <a href="@Url.Action("AppliancesType","Home")">SAVE ENERGY</a>
+                <a href="@Url.Action("ReduceFoodWaste","Home")">REDUCE FOOD WASTE</a>
+                <a href="@Url.Action("Reuse","Home")">REUSE</a>
             </div>
         </div>
-        <a href="#about">About</a>
+        <a href="@Url.Action("About","Home")">About</a>
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
 
     <div class="container body-content">
+        <br/>
+        @Html.Raw(BreadCrumb.Display())
         @RenderBody()
         <hr />
         <footer>

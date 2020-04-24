@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
+<link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
 <body>
     <div class="row">
         @{int x = 0;}
@@ -15,76 +15,98 @@
             foreach (var item in Model)
             {
                 x++;
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="height:600px">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     @if (item.Type_Id == 1)
                     {
-                        <div class="card" style="height:550px;margin-top:50px">
-                            <a href='@Url.Action("Index", "clothes_dryer")'>
-                                <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Clothes_Dryer" style="width:100%" />
+                        <div class="card" style="margin-top:50px">
+                            <a href='@Url.Action("Index", "televisions")'>
+                                <img src='@Url.Content("~/Images/television1.png")' alt="Television" style="width:100%" />
                             </a>
-                                <h1>Clothes Dryer</h1>
-                                @Html.ActionLink("Clothes Dryer", "Index", "clothes_dryer")
+                            <p>
+                                <button onclick="location.href='@Url.Action("Index", "televisions")'" type="button" class="Button">
+                                    Television
+                                </button>
+                            </p>
                         </div>
                     }
                     else if (item.Type_Id == 2)
                     {
-                        <div class="card" style="height:550px;margin-top:50px">
-                            <a href='@Url.Action("Index", "air_conditioner")'>
-                                <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air_conditioner" style="width:100%" />
+                        <div class="card" style="margin-top:50px">
+                            <a href='@Url.Action("Index", "refrigerators")'>
+                                <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" style="width:100%" />
                             </a>
-                            <h1>Air Conditioner</h1>
-                            @Html.ActionLink("Air Conditioner", "Index", "air_conditioner")
+                            <p>
+                                <button onclick="location.href='@Url.Action("Index", "refrigerators")'" type="button" class="Button">
+                                    Refrigerator
+                                </button>
+                            </p>
                         </div>
                     }
                     else if (item.Type_Id == 3)
                     {
-                        <div class="card" style="height:550px;margin-top:50px">
+                        <div class="card" style="margin-top:50px">
                             <a href='@Url.Action("Index", "monitors")'>
                                 <img src='@Url.Content("~/Images/monitor3.jpg")' alt="Monitor" style="width:100%" />
                             </a>
-                            <h1>Monitor</h1>
-                            @Html.ActionLink("Monitor", "Index", "monitors")
+                            <p>
+                                <button onclick="location.href='@Url.Action("Index", "monitors")'" type="button" class="Button">
+                                    Monitor
+                                </button>
+                            </p>
                         </div>
                     }
                     else if (item.Type_Id == 4)
                     {
-                        <div class="card" style="height:550px;margin-top:50px">
-                            <a href='@Url.Action("Index", "televisions")'>
-                                <img src='@Url.Content("~/Images/television1.png")' alt="Television" style="width:100%" />
+                        <div class="card" style="margin-top:50px">
+                            <a href='@Url.Action("Index", "dishwashers")'>
+                                <img src='@Url.Content("~/Images/Dishwasher1.jpeg")' alt="Dishwasher" style="width:100%" />
                             </a>
-                            <h1>Television</h1>
-                            @Html.ActionLink("Television", "Index", "televisions")
+                            <p>
+                                <button onclick="location.href='@Url.Action("Index", "dishwashers")'" type="button" class="Button">
+                                    Dishwasher
+                                </button>
+                            </p>
                         </div>
                     }
                     else if (item.Type_Id == 5)
                     {
-                        <div class="card" style="height:550px;margin-top:50px">
-                            <a href='@Url.Action("Index", "refrigerators")'>
-                                <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" style="width:100%" />
+
+                        <div class="card" style="margin-top:50px">
+                            <a href='@Url.Action("Index", "clothes_washer")'>
+                                <img src='@Url.Content("~/Images/Clothes_Washer2.jpg")' alt="Clothes_Washer" style="width:100%" />
                             </a>
-                            <h1>Refrigerator</h1>
-                            @Html.ActionLink("Refrigerator", "Index", "refrigerators")
+                            <p>
+                                <button onclick="location.href='@Url.Action("Index", "clothes_washer")'" type="button" class="Button">
+                                    Clothes Washer
+                                </button>
+                            </p>
                         </div>
                     }
                     else if (item.Type_Id == 6)
                     {
-                        <div class="card" style="height:550px;margin-top:50px">
-                            <a href='@Url.Action("Index", "clothes_washer")'>
-                                <img src='@Url.Content("~/Images/Clothes_Washer2.jpg")' alt="Clothes_Washer" style="width:100%" />
+                        <div class="card" style="margin-top:50px">
+                            <a href='@Url.Action("Index", "clothes_dryer")'>
+                                <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Clothes_Dryer" style="width:100%" />
                             </a>
-                            <h1>Clothes Washer</h1>
-                            @Html.ActionLink("Clothes Washer", "Index", "clothes_washer")
+                            <p>
+                                <button onclick="location.href='@Url.Action("Index", "clothes_dryer")'" type="button" class="Button">
+                                    Clothes Dryer
+                                </button>
+                            </p>
                         </div>
                     }
                     else
                     {
-                          <div class="card" style="height:550px;margin-top:50px">
-                        <a href='@Url.Action("Index", "dishwashers")'>
-                            <img src='@Url.Content("~/Images/Dishwasher1.jpeg")' alt="Dishwasher" style="width:100%" />
-                        </a>
-                        <h1>Dishwasher</h1>
-                        @Html.ActionLink("Dishwasher", "Index", "dishwashers")
-                          </div>
+                        <div class="card" style="margin-top:50px">
+                            <a href='@Url.Action("Index", "air_conditioner")'>
+                                <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air_conditioner" style="width:100%" />
+                            </a>
+                            <p>
+                                <button onclick="location.href='@Url.Action("Index", "air_conditioner")'" type="button" class="Button">
+                                    Air Conditioner
+                                </button>
+                            </p>
+                        </div>
                     }
                 </div>
             }
@@ -93,8 +115,8 @@
 
 
     <div class="pagecount" style="margin: auto;text-align:center">
-            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
-            of @Model.PageCount   @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount   @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
     </div>
 
 </body>

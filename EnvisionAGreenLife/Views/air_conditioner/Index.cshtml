@@ -1,6 +1,5 @@
 ﻿@using PagedList.Mvc
 @model  EnvisionAGreenLife.ViewModel.AcList
-@{ bool currentfilter = ViewBag.currentfilter; }
 
 @{
     ViewBag.Title = "Air_conditioner";
@@ -8,46 +7,37 @@
 }
 <link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
 <body>
-    <div class="col-lg-2 col-md-2">
-        @using (Html.BeginForm("Index", "air_conditioner", FormMethod.Get))
-        {
-            <h3>Filter</h3>
-            <br>
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
             <p>
-                @Html.Label("3 star")
-                @Html.EditorFor(g => g.Ischecked, currentfilter)                <br>
-                <input type="submit" value="search" />
+                Find by brand: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default" /> |
+                <a href="@Url.Action("Index","air_conditioner")">Back to Full List</a>
             </p>
-        }
+        </div>
+    </form>
 
-
-
-    </div>
-    <div class="row col-lg-10 col-md-10" style="height:auto">
+    <div class="row col-lg-12 col-md-12" style="height:auto">
         @{int x = 0;}
         @if (Model != null)
         {
-            foreach (var item in Model.air_Conditioners)
+            foreach (var item in Model.Air_Conditioners)
             {
                 x++;
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="height:650px;margin-top:25px">
-                    <div class="card" style="height:600px;margin-top:50px">
-                        <h2 style="text-align:center; height:80px;">@item.Model_No</h2>
-                        @if (x % 3 == 1)
-                        {
-                            <img src="~/Images/air_conditioner1.png" alt="Air_conditioner" style="width:100%">
-                        }
-                        else if (x % 3 == 2)
-                        {
-                            <img src="~/Images/air_conditioner2.jpg" alt="Air_conditioner" style="width:100%">
-                        }
-                        else
-                        { <img src="~/Images/air_conditioner2.jpg" alt="Air_conditioner" style="width:100%">
-                        }
-                        <h1>@item.Brand</h1>
-                        <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> @Html.ActionLink("View Details", "ViewProduct", new { id = @item.Air_Conditioner_Id })</h4>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card" style="margin-top: 50px">
+                        <h2 style="        text-align: center;       height: 50px;">
+                            @item.Brand
+                        </h2>
+                        <a href='@Url.Action("Details", "refrigerators",new { id = @item.Air_Conditioner_Id })'>
+                            <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air_conditione" style="width:100%" />
+                        </a>
+                        <p>
+                            <button onclick="location.href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="Button" style="height:100px">
+                                @item.Model_No
+                            </button>
+                        </p>
                     </div>
-                    @*<img class="img img-responsive cimg" src="@Url.Content(item.pro_image)" style=" height:100%;width:100% ;border-radius:50px 50px 50px 50px" />*@
                 </div>
             }
         }
@@ -56,7 +46,7 @@
     <br>
     <br>
     <div class="pagecount" style="margin:auto; text-align:center">
-        Page @(Model.air_Conditioners.PageCount < Model.air_Conditioners.PageNumber ? 0 : Model.air_Conditioners.PageNumber)
-        of @Model.air_Conditioners.PageCount   @Html.PagedListPager(Model.air_Conditioners, page => Url.Action("Index", new { page , currentfilter = ViewBag.currentfilter }))
+        Page @(Model.Air_Conditioners.PageCount < Model.Air_Conditioners.PageNumber ? 0 : Model.Air_Conditioners.PageNumber)
+        of @Model.Air_Conditioners.PageCount   @Html.PagedListPager(Model.Air_Conditioners, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
     </div>
 </body>

@@ -7,6 +7,10 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EnvisionAGreenLife.Models;
+using EnvisionAGreenLife.ViewModel;
+using MvcBreadCrumbs;
+using PagedList;
+
 
 namespace EnvisionAGreenLife.Controllers
 {
@@ -15,10 +19,45 @@ namespace EnvisionAGreenLife.Controllers
         private AppliancesEntities db = new AppliancesEntities();
 
         // GET: refrigerators
-        public ActionResult Index()
+        [BreadCrumb(Clear = true, Label = "Refrigerator")]
+        [HttpGet]
+        public ActionResult Index(int? page, string searchString, string currentFilter)
         {
-            var refrigerators = db.refrigerators.Include(r => r.appliance_types);
-            return View(refrigerators.ToList());
+            var results = from x in db.refrigerators
+                          select x;
+            int pagesize = 9, pageindex = 1;
+            RList temp = new RList();
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                results = results.Where(s => s.Brand.Contains(searchString));
+            }
+            //if (acList.h1star != false || currentfilter == true)
+            //{
+            //    results = results.Where(x => x.Star2010_Cool.Value == 3
+            //                           );
+            //    ViewBag.currentfilter = true;
+            //}
+            else
+            {
+                results = results.Where(x => x.Type_Id == 5);
+            }
+
+            pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var list = results.ToList();
+            temp.Refrigerators = list.ToPagedList(pageindex, pagesize);
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            return View(temp);
         }
 
         // GET: refrigerators/Details/5
@@ -33,100 +72,11 @@ namespace EnvisionAGreenLife.Controllers
             {
                 return HttpNotFound();
             }
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("Index", "refrigerators"), "Refrigerator");
             return View(refrigerator);
-        }
-
-        // GET: refrigerators/Create
-        public ActionResult Create()
-        {
-            ViewBag.Type_Id = new SelectList(db.appliance_types, "Type_Id", "Type_Name");
-            return View();
-        }
-
-        // POST: refrigerators/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Refrigerator_Id,Adaptive_Defrost,ApplStandard,Brand,CEC,CompartGrVol,CompartNetVol,CompartType,Configuration,Country,Depth,Designation,FF_Vol,FZ_Vol,Group,Height,Icemaker,MEPSApproval,Model_No,Family_Name,N_Standard,Star2009,SRI2009,No_Doors,S_MEPS_Ad,S_MEPScutoff,Sold_in,Submit_ID,SubmitStatus,Tot_Vol,Width,ExpDate,GrandDate,Product_Class,Availability_Status,Product_Website,Representative_Brand_URL,Fixed_MEPS_allowance_factor,Variable_MEPS_allowance_factor,Adjusted_volume,Type,Star_Rating_old,Star_Image_Large,Star_Image_Small,Registration_Number,Type_Id")] refrigerator refrigerator)
-        {
-            if (ModelState.IsValid)
-            {
-                db.refrigerators.Add(refrigerator);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Type_Id = new SelectList(db.appliance_types, "Type_Id", "Type_Name", refrigerator.Type_Id);
-            return View(refrigerator);
-        }
-
-        // GET: refrigerators/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            refrigerator refrigerator = db.refrigerators.Find(id);
-            if (refrigerator == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.Type_Id = new SelectList(db.appliance_types, "Type_Id", "Type_Name", refrigerator.Type_Id);
-            return View(refrigerator);
-        }
-
-        // POST: refrigerators/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Refrigerator_Id,Adaptive_Defrost,ApplStandard,Brand,CEC,CompartGrVol,CompartNetVol,CompartType,Configuration,Country,Depth,Designation,FF_Vol,FZ_Vol,Group,Height,Icemaker,MEPSApproval,Model_No,Family_Name,N_Standard,Star2009,SRI2009,No_Doors,S_MEPS_Ad,S_MEPScutoff,Sold_in,Submit_ID,SubmitStatus,Tot_Vol,Width,ExpDate,GrandDate,Product_Class,Availability_Status,Product_Website,Representative_Brand_URL,Fixed_MEPS_allowance_factor,Variable_MEPS_allowance_factor,Adjusted_volume,Type,Star_Rating_old,Star_Image_Large,Star_Image_Small,Registration_Number,Type_Id")] refrigerator refrigerator)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(refrigerator).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.Type_Id = new SelectList(db.appliance_types, "Type_Id", "Type_Name", refrigerator.Type_Id);
-            return View(refrigerator);
-        }
-
-        // GET: refrigerators/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            refrigerator refrigerator = db.refrigerators.Find(id);
-            if (refrigerator == null)
-            {
-                return HttpNotFound();
-            }
-            return View(refrigerator);
-        }
-
-        // POST: refrigerators/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            refrigerator refrigerator = db.refrigerators.Find(id);
-            db.refrigerators.Remove(refrigerator);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
