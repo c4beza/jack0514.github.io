@@ -249,6 +249,7 @@
     <Content Include="Images\breakfastfin.jpg" />
     <Content Include="Images\Clothes_Dryer.png" />
     <Content Include="Images\Clothes_Washer1.png" />
+    <Content Include="Images\compost.png" />
     <Content Include="Images\dessert.jpg" />
     <Content Include="Images\dessertfin.jpg" />
     <Content Include="Images\dinner.jpg" />
@@ -259,7 +260,9 @@
     <Content Include="Images\Dishwasher4.png" />
     <Content Include="Images\FoodRecipes.jpg" />
     <Content Include="Images\GrowYourHerb.jpg" />
+    <Content Include="Images\herbs.png" />
     <Content Include="Images\Ingredients.jpg" />
+    <Content Include="Images\leftoverfood.jpg" />
     <Content Include="Images\refrigerator2.jpg" />
     <Content Include="Images\refrigerator3.jpg" />
     <Content Include="Images\refrigerator4.jpeg" />
@@ -293,6 +296,7 @@
     <Content Include="Images\Clothes_Washer2.jpg" />
     <Content Include="Images\Clothes_Washer3.jpg" />
     <Content Include="Images\Clothes_Washer4.jpg" />
+    <Content Include="Images\title3.png" />
     <Content Include="Models\AppliancesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppliancesModel.Context.cs</LastGenOutput>
@@ -366,6 +370,7 @@
     <Content Include="Styles\HomePage.css" />
     <Content Include="Styles\Layout.css" />
     <Content Include="Styles\Applianceslayout.css" />
+    <Content Include="Styles\HomeIndex.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -421,13 +426,14 @@
     <Content Include="Views\televisions\Edit.cshtml" />
     <Content Include="Views\televisions\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Food.cshtml" />
+    <Content Include="Views\Home\LeftoverRecipe.cshtml" />
     <Content Include="Views\Home\AppliancesType.cshtml" />
     <Content Include="Views\Food_recipes\Create.cshtml" />
     <Content Include="Views\Food_recipes\Delete.cshtml" />
     <Content Include="Views\Food_recipes\Details.cshtml" />
     <Content Include="Views\Food_recipes\Edit.cshtml" />
     <Content Include="Views\Food_recipes\Index.cshtml" />
+    <Content Include="Views\Home\ReduceFoodWaste.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

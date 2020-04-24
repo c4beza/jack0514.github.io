@@ -7,9 +7,10 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Styles/Layout.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
-    <img class="logo" src="~/Images/TeamLogo.png" alt="project logo">
+    @*<img class="logo" src="~/Images/TeamLogo.png" alt="project logo">
     <p class="name"> ENVISION A GREEN LIFE </p>
     <div class="navbar navbar-inverse" id="Topnav">
         <div class="container">
@@ -19,34 +20,52 @@
                     <li>@Html.ActionLink("TAKE THE QUIZ", "Quiz", "Home", null, new { @class = "classname" })</li>
                     <li>@Html.ActionLink("REUSE", "Reuse", "Home", null, new { @class = "classname" })</li>
                     <li>@Html.ActionLink("SAVE ENERGY", "AppliancesType", "Home", null, new { @class = "classname" })</li>
-                    <li>@Html.ActionLink("REDUCE FOOD WASTE", "Food", "Home", null, new { @class = "classname" })</li>
+                    <li>@Html.ActionLink("REDUCE FOOD WASTE", "ReduceFoodWaste", "Home", null, new { @class = "classname" })</li>
                     <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "classname" })</li>
                 </ul>
             </div>
         </div>
+    </div>*@
+
+    <div class="topnav" id="myTopnav">
+            <img class="logo" src="~/Images/TeamLogo.png" alt="project logo" />
+        <a href="#home" class="active">Home</a>
+        <a href="#news">Take the quiz</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                More Info
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">REUSE</a>
+                <a href="#">SAVE ENERGY</a>
+                <a href="#">REDUCE FOOD WASTE</a>
+            </div>
+        </div>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
 
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Envision a Green Life</p>
+        </footer>
+    </div>
 
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Envision a Green Life</p>
-            </footer>
-        </div>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-        <script>
-            function myFunction() {
-                var x = document.getElementById("Topnav");
-                if (x.className === "navbar navbar-inverse") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "navbar navbar-inverse";
-                }
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
             }
-        </script>
+        }
+    </script>
 </body>
 </html>

@@ -1,32 +1,40 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-    <link href="~/Styles/HomePage.css" rel="stylesheet" />
+    <link href="~/Styles/HomeIndex.css" rel="stylesheet" />
 <!-- Slideshow container -->
 
 <div class="container">
     <div class="mySlides">
         <div class="numbertext">1 / 4</div>
-        <a href='@Url.Action("AppliancesType", "Home")'>
             <img class="slideimages" src='@Url.Content("~/Images/Appliances.jpg")' style="width:100%" />
-        </a>
+            <button onclick="location.href='@Url.Action("AppliancesType", "Home")'" type="button" class="slideButton">
+                Save Your Energy!
+            </button>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">2 / 4</div>
-        <a href='@Url.Action("Food", "Home")'>
-            <img class="slideimages" src='@Url.Content("~/Images/FoodRecipes.jpg")' style="width:100%"/>
-        </a>
+        <img class="slideimages" src='@Url.Content("~/Images/FoodRecipes.jpg")' style="width:100%" />
+        <button onclick="location.href='@Url.Action("ReduceFoodWaste", "Home")'" type="button" class="slideButton">
+        Reduce Your Food Waste!
+        </button>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">3 / 4</div>
-        <img class="slideimages" src="~/Images/Ingredients.jpg" style="width:100%">
+        <img class="slideimages" src='@Url.Content("~/Images/Ingredients.jpg")' style="width:100%" />
+        <button onclick="location.href='#'" type="button" class="slideButton">
+            Compost Your Food Scraps!
+        </button>
     </div>
 
     <div class="mySlides">
-        <div class="numbertext">4 / 4</div>
-        <img class="slideimages" src="~/Images/GrowYourHerb.jpg" style="width:100%">
+        <div class="numbertext">3 / 4</div>
+        <img class="slideimages" src='@Url.Content("~/Images/GrowYourHerb.jpg")' style="width:100%" />
+        <button onclick="location.href='#'" type="button" class="slideButton">
+            Grow Your Herb!
+        </button>
     </div>
 
 
@@ -47,7 +55,6 @@
     function showSlides(n) {
         var i;
         var slides = document.getElementsByClassName("mySlides");
-        var captionText = document.getElementById("caption");
         if (n > slides.length) { slideIndex = 1 }
         if (n < 1) { slideIndex = slides.length }
         for (i = 0; i < slides.length; i++) {
@@ -55,6 +62,5 @@
         }
 
         slides[slideIndex - 1].style.display = "block";
-        captionText.innerHTML = dots[slideIndex - 1].alt;
     }
 </script>

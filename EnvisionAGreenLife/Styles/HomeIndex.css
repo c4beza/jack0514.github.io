@@ -1,0 +1,91 @@
+﻿body {
+    font-family: Arial;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Style images of the slide*/
+.slideimages {
+    vertical-align: middle;
+    width: 970px;
+    height: 545px;
+    filter: brightness(50%);
+    
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+ 
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Style buttons in the slide */
+button.slideButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 30px;
+    padding: 12px 24px;
+    border-color: white;
+    cursor: pointer;
+    border-radius: 100px;
+    text-align: center;
+    font-weight: bolder;
+    border-width: thick;
+    border-style: solid;
+}
+
+    button.slideButton:hover {
+        background-color: #9bcd4f;
+    }

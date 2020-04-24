@@ -9,8 +9,9 @@
 
 .slideimages {
     vertical-align: middle;
-    width:970px;
-    height:545px;
+    width: 970px;
+    height: 545px;
+    filter: brightness(50%);
 }
 
 /* Position the image container (needed to position the left and right arrows) */
@@ -117,3 +118,71 @@ img {
     padding: 2px 16px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+    margin: 0 -5px;
+}
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #9cbd4f;
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+/* Style buttons in the slide */
+button.slideButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 30px;
+    padding: 12px 24px;
+    border-color: white;
+    cursor: pointer;
+    border-radius: 100px;
+    text-align: center;
+    font-weight: bolder;
+    border-width: thick;
+    border-style: solid;
+}
+    button.slideButton:hover {
+        background-color: #9bcd4f;
+    }

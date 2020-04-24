@@ -37,9 +37,16 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
-        public ActionResult Food()
+        public ActionResult ReduceFoodWaste()
         {
             ViewBag.Message = "Reduce food waste";
+
+            return View();
+        }
+
+        public ActionResult LeftoverRecipe()
+        {
+            ViewBag.Message = "LeftoverRecipe";
 
             return View();
         }
