@@ -29,7 +29,7 @@ body {
     .topnav a {
         float: left;
         display: block;
-        padding: 30px;
+        padding: 38px;
         color: #9cbd4f;
         background-color: white;
         text-align: center;
@@ -141,4 +141,11 @@ a.active {
             width: 100%;
             text-align: left;
         }
+}
+
+img.slogan {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
 }

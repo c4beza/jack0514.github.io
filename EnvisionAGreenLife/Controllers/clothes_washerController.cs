@@ -56,6 +56,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add("", "Clothes Washers");
             return View(temp);
         }
         // GET: clothes_dryer/Details/5
@@ -74,6 +75,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
             BreadCrumb.Add(Url.Action("Index", "clothes_washer"), "Clothes Washer");
+            BreadCrumb.Add("", clothes_Washer.Model_No);
             return View(clothes_Washer);
         }
     }

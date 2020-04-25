@@ -1,0 +1,61 @@
+﻿.applianceImage {
+    float: left;
+    display: inline;
+    height: 500px;
+    width: 50%;
+}
+
+.applianceIntro {
+    float: right;
+    display: inline;
+    height: 500px;
+    max-width: 40%;
+}
+
+p {
+    word-wrap: break-word;
+    word-break: normal;
+    overflow: hidden;
+}
+img {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.specification dt {
+    width: 300px;
+    text-align: left;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    border-color: #9bcd4f;
+    border-style: double;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #9bcd4f;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+    .card button:hover {
+        opacity: 0.7;
+    }
+
+p {
+    margin: 0 0 0px;
+}
+

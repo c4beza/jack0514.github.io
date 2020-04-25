@@ -57,6 +57,8 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add("", "Air conditioners");
+
             return View(temp);
         }
         // GET: air_conditioner/Details/5
@@ -76,6 +78,11 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
             BreadCrumb.Add(Url.Action("Index", "air_conditioner"), "Air Conditioner");
+            BreadCrumb.Add("", air_conditioner.Model_No);
+            var results = from x in db.air_conditioner
+                          select x;
+            var list = results.Where(x => x.Brand.Contains(air_conditioner.Brand)).Take(3).ToList();
+            ViewData["SimilarProducts"] = list;
             return View(air_conditioner);
         }
     }

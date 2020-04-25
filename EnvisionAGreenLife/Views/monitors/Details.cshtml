@@ -1,179 +1,137 @@
 ﻿@model EnvisionAGreenLife.Models.monitor
 
-@{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.monitor>;}
 
-<h2>Details</h2>
 
-<div>
-    <h4>monitor</h4>
+    @{
+        ViewBag.Title = "Monitor Details";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
+    <h1>@Model.Brand_Name @Model.Model_Number</h1>
+    <div class="applianceImage">
+        <img src='@Url.Content("~/Images/monitor4.jpg")' alt="Monitor" />
+    </div>
+    <div class="applianceIntro">
+        <h2>@Model.Brand_Name @Model.Screen_Size" @Model.Screen_Technology Monitor</h2>
+        <br />
+        <h3>Energy Rating: @Model.Star_Rating </h3>
+        <br />
+        <br />
+        <br />
+        <p>
+            Elevate your home entertainment with this @Model.Brand_Name @Model.Screen_Size" @Model.Screen_Technology Monitor.
+            Watch and enjoy vivid colours and clearer detail thanks to the
+            Quad Core Processor 4K and watch movies like the director intended
+            with the unique Film Maker Mode™. The wide viewing angle on this Monitor
+            makes it simple to enjoy your content clearly, no matter what seat you have
+            in the room. Available in a wide range of screen sizes, this Monitor will fit in any space in your home.
+        </p>
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Record_ID)
-        </dt>
+    <div class="specification">
+        <h3>Specification</h3>
+        <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.Record_ID)
-        </dd>
+            <dt>
+                Brand Name:
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Brand_Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
+            <dt>
+                Model Number:
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Brand_Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Model_Number)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Brand_Name)
-        </dd>
+            <dt>
+                Selling countries:
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Model_Number)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Selling_Countries)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Model_Number)
-        </dd>
+            <dt>
+                Made in:
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Family_Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Manufacturing_Countries)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Family_Name)
-        </dd>
+            <dt>
+                Screen size (Inches):
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Selling_Countries)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Screen_Size)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Selling_Countries)
-        </dd>
+            <dt>
+                Screen techonology:
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Manufacturing_Countries)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Screen_Technology)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Manufacturing_Countries)
-        </dd>
+            <dt>
+                Energy consumption (KW):
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Screen_Size)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Comparative_Energy_Consumption)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Screen_Size)
-        </dd>
+            <dt>
+                Rating:
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Screen_Technology)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Star_Rating)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Screen_Technology)
-        </dd>
+            <dt>
+                Product website:
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Comparative_Energy_Consumption)
-        </dt>
+            <dd>
+                <a>@Model.Product_Website</a>
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Comparative_Energy_Consumption)
-        </dd>
+            <dt>
+                Brand Url:
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Active_Standby_Power)
-        </dt>
+            <dd>
+                <a>@Model.Representative_Brand_URL</a>
+            </dd>
+        </dl>
+        <hr>
+        <div>
+            <h3>Similar products</h3>
+            <br>
+            @foreach (var item in SpList)
+            {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <h2 style="text-align:center; height:50px;">@item.Brand_Name</h2>
+                        <a href='@Url.Action("Details", "monitors",new { id = @item.Monitor_Id})'>
+                            <img src='@Url.Content("~/Images/monitor4.jpg")' alt="Monitor" style="width:100%" />
+                        </a>
+                        <p>
+                            <button onclick="location.href='@Url.Action("Details", "monitors",new { id = @item.Monitor_Id })'" type="button" class="Button" style="height:100px">
+                                Model Number: @item.Model_Number
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            }
 
-        <dd>
-            @Html.DisplayFor(model => model.Active_Standby_Power)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Rating_Index)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Rating_Index)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Rating)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Website)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Website)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Representative_Brand_URL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Availability_Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Availability_Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Expiry_Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Expiry_Date)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Large)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Large)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Small)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Small)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.appliance_types.Type_Name)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Monitor_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </div>
+    </div>

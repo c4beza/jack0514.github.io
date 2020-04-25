@@ -1,627 +1,219 @@
 ﻿@model EnvisionAGreenLife.Models.air_conditioner
 
+@{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.air_conditioner>;}
+
+
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Air Conditioner Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>air_conditioner</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplStandard)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApplStandard)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MEPSComp)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MEPSComp)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.N_Standard)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.N_Standard)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Model_No)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Model_No)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Family_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Family_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.avg_pwr_standby_mode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.avg_pwr_standby_mode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brand)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brand)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.C_Dehumid_Rated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.C_Dehumid_Rated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Configuration1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Configuration1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Configuration2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Configuration2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Configuration2_unitmount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Configuration2_unitmount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Configuration3_Sink)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Configuration3_Sink)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Configuration3_Source)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Configuration3_Source)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Country)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Country)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.C_Power_Inp_Rated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.C_Power_Inp_Rated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.C_Sens_Cool_Rated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.C_Sens_Cool_Rated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.C_Total_Cool_Rated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.C_Total_Cool_Rated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Depth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Depth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.H2_COP)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.H2_COP)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.H2_HeatPwrCapacity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.H2_HeatPwrCapacity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.H2_HeatPwrInput)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.H2_HeatPwrInput)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.H_Power_Inp_Rated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.H_Power_Inp_Rated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.H_Total_Heat_Rated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.H_Total_Heat_Rated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.indoorType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.indoorType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EERtestAvg)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EERtestAvg)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.COPtestAvg)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.COPtestAvg)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Invert)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Invert)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Setting_cool)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Setting_cool)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Setting_heat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Setting_heat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pnoc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pnoc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pnoh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pnoh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.VSCP_EER50)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.VSCP_EER50)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.VSCP_COP50)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.VSCP_COP50)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AnnualOutputEER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnnualOutputEER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AnnualOutputCOP)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnnualOutputCOP)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.sri2010_cool)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.sri2010_cool)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.sri2010_heat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.sri2010_heat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star2010_Cool)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star2010_Cool)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star2010_Heat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star2010_Heat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.outdoortype)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.outdoortype)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Phase)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Phase)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Refrigerant)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Refrigerant)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sold_in)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sold_in)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Submit_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Submit_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ExpDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ExpDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GrandDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GrandDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SubmitStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SubmitStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Width)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Width)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Class)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Class)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Demand_Response_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Demand_Response_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Demand_Response_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Demand_Response_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Demand_Response_4)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Demand_Response_4)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Demand_Response_5)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Demand_Response_5)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Demand_Response_6)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Demand_Response_6)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Demand_Response_7)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Demand_Response_7)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PartNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PartNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Availability_Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Availability_Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.star2000_cool)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.star2000_cool)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.star2000_heat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.star2000_heat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Website)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Website)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Representative_Brand_URL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Variable_Output_Compressor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Variable_Output_Compressor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Large)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Large)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Small)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Small)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Registration_Number)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Registration_Number)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Is_variable_speed)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Is_variable_speed)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type_variable_output)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type_variable_output)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Var_output_compressor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Var_output_compressor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rated_cooling_power_input_kW)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rated_cooling_power_input_kW)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rated_heating_power_input_kW)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rated_heating_power_input_kW)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rated_AEER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rated_AEER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rated_ACOP)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rated_ACOP)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.appliance_types.Type_Name)
-        </dd>
-
-    </dl>
+<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
+<h1>@Model.Brand @Model.Model_No</h1>
+<div class="applianceImage">
+    <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air Conditioner" />
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Air_Conditioner_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="applianceIntro">
+    <h2>@Model.Brand @Model.C_Dehumid_Rated KW @Model.Configuration1 @Model.Configuration2 Air conditioner</h2>
+    <br />
+    <h3>Energy Rating - Cooling: @Model.Star2010_Cool </h3>
+    <h3>Energy Rating - Heating: @Model.Star2010_Heat </h3>
+    <br />
+    <br />
+    <br />
+    <p>
+        Keeping a relaxed home environment shouldn’t cost the world. This @Model.Brand @Model.C_Total_Cool_Rated KW
+        @Model.Type Air Conditioner is perfect for smaller rooms in your home
+        and offers convenient solutions with its 3D Airflow for evenly distributed air.
+        Cool or heat with cleaner air thanks to the high-density filter which has @Model.COPtestAvg times more holes
+        to trap unwanted particles. For your convenience, you can even control the air conditioner
+        remotely via your smartphone.
+    </p>
+</div>
+<hr />
+<div class="specification">
+    <h3>Specification</h3>
+        <dl class="dl-horizontal">
+            <dt>
+                Legal standard
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ApplStandard)
+            </dd>
+
+            <dt>
+                Model number
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Model_No)
+            </dd>
+
+            <dt>
+                Brand
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Brand)
+            </dd>
+
+            <dt>
+                Dehumidifying power (kW)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.C_Dehumid_Rated)
+            </dd>
+
+            <dt>
+                Indoor air distribution
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Configuration1)
+            </dd>
+
+            <dt>
+                Made in
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+
+            <dt>
+                Cooling capacity (KW)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.C_Total_Cool_Rated)
+            </dd>
+
+            <dt>
+                Depth (mm)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Depth)
+            </dd>
+
+            <dt>
+                Width (mm)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Width)
+            </dd>
+
+            <dt>
+                Height (mm)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Height)
+            </dd>
+
+            <dt>
+                Heating capacity (KW)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.H_Total_Heat_Rated)
+            </dd>
+
+            <dt>
+                Energy efficiency ratio - cooling
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EERtestAvg)
+            </dd>
+
+            <dt>
+                Energy efficiency ratio - Heating
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.COPtestAvg)
+            </dd>
+
+            <dt>
+                Energy rating - cooling
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Star2010_Cool)
+            </dd>
+
+            <dt>
+                Energy rating - Heating
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Star2010_Heat)
+            </dd>
+
+            <dt>
+                Phase
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phase)
+            </dd>
+
+            <dt>
+                Sold in
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sold_in)
+            </dd>
+
+            <dt>
+                Type
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            <dt>
+                Product website
+            </dt>
+
+            <dd>
+
+                <a>@Model.Product_Website </a>
+            </dd>
+
+            <dt>
+                Brand Url
+            </dt>
+
+            <dd>
+                <a>@Model.Representative_Brand_URL </a>
+            </dd>
+        </dl>
+        <hr>
+        <div>
+            <h3>Similar products</h3>
+            <br>
+            @foreach (var item in SpList)
+            {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <h2 style="text-align:center; height:50px;">@item.Brand</h2>
+                        <a href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id})'>
+                            <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air Conditioner" style="width:100%" />
+                        </a>
+                        <p>
+                            <button onclick="location.href='@Url.Action("Details", "air-conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="Button" style="height:100px">
+                                Model Number: @item.Model_No
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+

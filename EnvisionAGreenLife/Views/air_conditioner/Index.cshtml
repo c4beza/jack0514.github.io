@@ -8,7 +8,7 @@
 <link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
 <body>
     <form asp-action="Index" method="get">
-        <div class="form-actions no-color">
+        <div class="form-actions no-color" style="margin-left:320px">
             <p>
                 Find by brand: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
                 <input type="submit" value="Search" class="btn btn-default" /> |
@@ -34,7 +34,7 @@
                         </a>
                         <p>
                             <button onclick="location.href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="Button" style="height:100px">
-                                @item.Model_No
+                                Model Number: @item.Model_No
                             </button>
                         </p>
                     </div>

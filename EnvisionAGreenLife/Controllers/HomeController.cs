@@ -14,7 +14,6 @@ namespace EnvisionAGreenLife.Controllers
     {
         AppliancesEntities db = new AppliancesEntities();
 
-        [BreadCrumb(Clear = true, Label = "Home")]
         [HttpGet]
         public ActionResult Index()
         {
@@ -25,7 +24,9 @@ namespace EnvisionAGreenLife.Controllers
         public ActionResult Quiz()
         {
             ViewBag.Message = "How much do you know about saving money and energy?";
-
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add("", "Quiz");
             return View();
         }
 
@@ -33,38 +34,43 @@ namespace EnvisionAGreenLife.Controllers
         public ActionResult Reuse()
         {
             ViewBag.Message = "Reuse";
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add("", "Reuse");
 
             return View();
         }
 
-        [BreadCrumb(Clear = true, Label = "About")]
         [HttpGet]
         public ActionResult About()
         {
             ViewBag.Message = "Description";
-
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add("", "About");
             return View();
         }
 
-        [BreadCrumb(Clear = true, Label = "Reduce Food Waste")]
         [HttpGet]
         public ActionResult ReduceFoodWaste()
         {
             ViewBag.Message = "Reduce food waste";
-
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add("", "Reduce Food Waste");
             return View();
         }
 
-        [BreadCrumb(Clear = true, Label = "Leftover Recipe type")]
         [HttpGet]
         public ActionResult LeftoverRecipe()
         {
             ViewBag.Message = "LeftoverRecipe";
-
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add("", "Leftover Recipe type");
             return View();
         }
 
-        [BreadCrumb(Clear = true, Label = "Appliance Type")]
         [HttpGet]
         public ActionResult AppliancesType(int? page)
         {
@@ -74,6 +80,7 @@ namespace EnvisionAGreenLife.Controllers
             IPagedList<appliance_types> stu = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add("", "Appliance type");
             return View(stu);
         }
     }

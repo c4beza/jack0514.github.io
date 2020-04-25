@@ -55,6 +55,8 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add("", "Dishwashers");
+
             return View(temp);
         }
 
@@ -74,6 +76,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
             BreadCrumb.Add(Url.Action("Index", "dishwashers"), "Dishwasher");
+            BreadCrumb.Add("", dishwasher.Model_No);
             return View(dishwasher);
         }
     }

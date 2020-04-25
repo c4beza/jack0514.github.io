@@ -226,6 +226,7 @@
     <Compile Include="Models\television.cs">
       <DependentUpon>AppliancesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PasswordProtect\BasicAuthenticationAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\televisionsViewModel.cs" />
     <Compile Include="ViewModel\refrigeratorsViewModel.cs" />
@@ -284,6 +285,7 @@
     <Content Include="Images\monitor3.jpg" />
     <Content Include="Images\monitor4.jpg" />
     <Content Include="Images\refrigerator1.png" />
+    <Content Include="Images\Slogan.png" />
     <Content Include="Images\television1.png" />
     <Content Include="App_Data\RecyclingCentres.mdf" />
     <Content Include="App_Data\RecyclingCentres_log.ldf">
@@ -381,6 +383,7 @@
     <Content Include="Styles\Layout.css" />
     <Content Include="Styles\Applianceslayout.css" />
     <Content Include="Styles\HomeIndex.css" />
+    <Content Include="Styles\ApplianceDetail.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

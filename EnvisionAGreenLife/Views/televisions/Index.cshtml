@@ -7,7 +7,7 @@
 }
 <link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
 <body>
-    <form asp-action="Index" method="get">
+    <form asp-action="Index" method="get" style="margin-left:320px">
         <div class="form-actions no-color">
             <p>
                 Find by brand: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
@@ -32,7 +32,7 @@
                         </a>
                         <p>
                             <button onclick="location.href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'" type="button" class="Button" style="height:100px">
-                                @item.Model_No
+                                Model Number: @item.Model_No
                             </button>
                         </p>
                     </div>

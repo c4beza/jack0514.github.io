@@ -11,31 +11,16 @@
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
-    @*<img class="logo" src="~/Images/TeamLogo.png" alt="project logo">
-        <p class="name"> ENVISION A GREEN LIFE </p>
-        <div class="navbar navbar-inverse" id="Topnav">
-            <div class="container">
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "classname" })</li>
-                        <li>@Html.ActionLink("TAKE THE QUIZ", "Quiz", "Home", null, new { @class = "classname" })</li>
-                        <li>@Html.ActionLink("REUSE", "Reuse", "Home", null, new { @class = "classname" })</li>
-                        <li>@Html.ActionLink("SAVE ENERGY", "AppliancesType", "Home", null, new { @class = "classname" })</li>
-                        <li>@Html.ActionLink("REDUCE FOOD WASTE", "ReduceFoodWaste", "Home", null, new { @class = "classname" })</li>
-                        <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { @class = "classname" })</li>
-                    </ul>
-                </div>
-            </div>
-        </div>*@
-
+    <img class="slogan" src="~/Images/Slogan.png" alt="project slogan">
     <div class="topnav" id="myTopnav">
         <img class="logo" src="~/Images/TeamLogo.png" alt="project logo" style="margin-left:10px; margin-top:2.5px; width:90px; height:90px" />
-        <a style="margin-left:9.5%" href="#home" class="active">Home</a>
+        <a style="margin-left:9.5%" href="@Url.Action("Index","Home")" class="active">Home</a>
         <a href="@Url.Action("Quiz","Home")">Take the quiz</a>
-        <div class="dropdown" style="margin-top:16px">
-            <button class="dropbtn">
+        <div class="dropdown" style="height:inherit">
+
+            <button class="dropbtn" style="height:inherit">
                 <strong>
-                    More Info
+                    What We Offer
                 </strong>
                 <i class="fa fa-caret-down"></i>
             </button>
@@ -71,6 +56,7 @@
                 x.className = "topnav";
             }
         }
+
     </script>
 </body>
 </html>

@@ -56,6 +56,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add("", "Monitors");
             return View(temp);
         }
 
@@ -70,11 +71,16 @@ namespace EnvisionAGreenLife.Controllers
             if (monitor == null)
             {
                 return HttpNotFound();
-            }
+            }            
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
             BreadCrumb.Add(Url.Action("Index", "monitors"), "Monitor");
+            BreadCrumb.Add("", monitor.Model_Number);
+            var results = from x in db.monitors
+                          select x;
+            var list = results.Where(x => x.Brand_Name.Contains(monitor.Brand_Name)).Take(3).ToList();
+            ViewData["SimilarProducts"] = list;
             return View(monitor);
         }
     }
