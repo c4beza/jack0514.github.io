@@ -1,18 +1,38 @@
 ﻿@model EnvisionAGreenLife.Models.clothes_dryer
 
+@{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.clothes_dryer>;}
+
+
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Clothes Dryer Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>clothes_dryer</h4>
-    <hr />
+<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
+<h1>@Model.Brand @Model.Model_No</h1>
+<div class="applianceImage">
+    <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Clothes Dryer" />
+</div>
+<div class="applianceIntro">
+    <h2>@Model.Brand @Model.Cap Kg @Model.Control Clothes Dryer</h2>
+    <br />
+    <h3>Energy Rating: @Model.New_Star </h3>
+    <br />
+    <br />
+    <br />
+    <p>
+        This @Model.Brand @Model.Control dryer has the capacity to dry
+        @Model.Cap kg, which is
+        perfect for households of three or four. A heat pump dryer dries fabrics
+        more carefully and efficiently than other types of dryers, which protects
+        clothes and helps with power bill savings. Heat pump .
+    </p>
+</div>
+<hr />
+<div class="specification">
+    <h3>Specification</h3>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ApplStandard)
+            Legal standard
         </dt>
 
         <dd>
@@ -20,7 +40,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Brand)
+            Brand
         </dt>
 
         <dd>
@@ -28,55 +48,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Cap)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cap)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Combination)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Combination)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Control)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Control)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Country)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Country)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Depth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Depth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Model_No)
+            Model number
         </dt>
 
         <dd>
@@ -84,63 +56,31 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Family_Name)
+            Rated capacity
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Family_Name)
+            @Html.DisplayFor(model => model.Cap)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.N_Standard)
+            Control
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.N_Standard)
+            @Html.DisplayFor(model => model.Control)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.New_CEC)
+            Made in
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.New_CEC)
+            @Html.DisplayFor(model => model.Country)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.New_SRI)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.New_SRI)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.New_Star)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.New_Star)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Prog_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Prog_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Prog_Time)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Prog_Time)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sold_in)
+            Sold in
         </dt>
 
         <dd>
@@ -148,39 +88,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SubmitStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SubmitStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Submit_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Submit_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Test_Moist_Remove)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Test_Moist_Remove)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tot_Wat_Cons)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tot_Wat_Cons)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
+            Type
         </dt>
 
         <dd>
@@ -188,96 +96,43 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Width)
+            Product website
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Width)
+            <a href="@Model.Product_Website">@Model.Product_Website </a>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ExpDate)
+            Brand Url
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ExpDate)
-        </dd>
+            <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL </a>
+            </dd>
+            </dl>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GrandDate)
-        </dt>
+            <div style="height:700px">
+                <h3>Similar products</h3>
+                <br>
+                @foreach (var item in SpList)
+                {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="card">
+                            <h2 style="text-align:center; height:50px;">@item.Brand</h2>
+                            <a href='@Url.Action("Details", "clothes_dryer",new { id = @item.Clothes_Dryer_Id})'>
+                                <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Clothes Dryer" style="width:100%" />
+                            </a>
+                            <p>
+                                <button onclick="location.href='@Url.Action("Details", "clothes_dryer",new { id = @item.Clothes_Dryer_Id })'" type="button" class="Button" style="height:100px">
+                                    Model Number: @item.Model_No
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                }
 
-        <dd>
-            @Html.DisplayFor(model => model.GrandDate)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Class)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Product_Class)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Availability_Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Availability_Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Website)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Website)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Representative_Brand_URL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Rating_old)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Rating_old)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Large)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Large)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Small)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Small)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.appliance_types.Type_Name)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Clothes_Dryer_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -27,12 +27,12 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="card" style="margin-top:50px">
                         <h2 style="text-align:center; height:50px;">@item.Brand</h2>
-                        <a href='@Url.Action("Details", "clothes_dryer",new { id = @item.Clothes_Dryer_Id})'>
-                            <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Clothes_Dryer" style="width:100%" />
+                        <a href='@Url.Action("Details", "Clothes_dryer",new { id = @item.Clothes_Dryer_Id})'>
+                            <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Monitor" style="width:100%" />
                         </a>
                         <p>
-                            <button onclick="location.href='@Url.Action("Details", "clothes_dryer",new { id = @item.Clothes_Dryer_Id })'" type="button" class="Button" style="height:100px">
-                                Model Number: @item.Model_No
+                            <button onclick="location.href='@Url.Action("Details", "Clothes_dryer",new { id = @item.Clothes_Dryer_Id })'" type="button" class="Button" style="height:100px">
+                                @item.Model_No
                             </button>
                         </p>
                     </div>

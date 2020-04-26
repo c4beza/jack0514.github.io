@@ -55,7 +55,7 @@ namespace EnvisionAGreenLife.Controllers
             temp.Televisions = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add("","Televisions");
             return View(temp);
         }
@@ -73,9 +73,13 @@ namespace EnvisionAGreenLife.Controllers
             }
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "televisions"), "Television");
             BreadCrumb.Add("", television.Model_No);
+            var results = from x in db.televisions
+                          select x;
+            var list = results.Where(x => x.Brand_Reg.Contains(television.Brand_Reg)).Take(3).ToList();
+            ViewData["SimilarProducts"] = list;
             return View(television);
         }
     }

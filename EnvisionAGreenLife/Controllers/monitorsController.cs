@@ -55,7 +55,7 @@ namespace EnvisionAGreenLife.Controllers
             temp.Monitors = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add("", "Monitors");
             return View(temp);
         }
@@ -74,7 +74,7 @@ namespace EnvisionAGreenLife.Controllers
             }            
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "monitors"), "Monitor");
             BreadCrumb.Add("", monitor.Model_Number);
             var results = from x in db.monitors

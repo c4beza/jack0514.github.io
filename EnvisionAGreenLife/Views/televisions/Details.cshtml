@@ -1,26 +1,42 @@
 ﻿@model EnvisionAGreenLife.Models.television
 
+@{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.television>;}
+
+
 @{
-    ViewBag.Title = Model.Model_No;
+    ViewBag.Title = "Television Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-<div>
-    <h2>@Model.Model_No Details</h2>
-    <hr />
-    <h3>Specifications</h3>
+<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
+<h1>@Model.Brand_Reg @Model.Model_No</h1>
+<div class="applianceImage">
+    <img src='@Url.Content("~/Images/television1.png")' alt="Television" />
+</div>
+<div class="applianceIntro">
+    <h2>@Model.Brand_Reg @Model.screensize @Model.Screen_Tech Television</h2>
+    <br />
+    <h3>Energy Rating: @Model.Star2</h3>
+    <br />
+    <br />
+    <br />
+    <p>
+        In a large screen size for optimal viewing, this @Model.Brand_Reg
+        @Model.screensize” TV offers amazing colour quality 
+        with its Quantum Dot Technology. With smart connectivity,
+        this TV easily lets you access your favourites from
+        popular streaming services including Netflix, Amazon 
+        Prime and Disney+. Built-in voice assistant makes it 
+        simple to control your viewing and the slim bezel-less 
+        design is simply stunning to watch.
+    </p>
+</div>
+<hr />
+<div class="specification">
+    <h3>Specification</h3>
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Submit_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Submit_ID)
-        </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Brand_Reg)
+            Brand
         </dt>
 
         <dd>
@@ -28,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Model_No)
+            Model number
         </dt>
 
         <dd>
@@ -36,23 +52,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Family_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Family_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SoldIn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SoldIn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Country)
+            Made in
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.screensize)
+            Screen size
         </dt>
 
         <dd>
@@ -68,7 +68,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Screen_Area)
+            Screen area
         </dt>
 
         <dd>
@@ -76,7 +76,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Screen_Tech)
+            Screen technology
         </dt>
 
         <dd>
@@ -84,39 +84,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Pasv_stnd_power)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pasv_stnd_power)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Act_stnd_power)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Act_stnd_power)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Act_stnd_time)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Act_stnd_time)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Avg_mode_power)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Avg_mode_power)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star)
+            Energy Rating
         </dt>
 
         <dd>
@@ -124,119 +92,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SRI)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SRI)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CEC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CEC)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SubmitStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SubmitStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ExpDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ExpDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GrandDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GrandDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Class)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Class)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Availability_Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Availability_Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Website)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Website)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Representative_Brand_URL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Rating_Index)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Rating_Index)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Large)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Large)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Small)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Small)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Power_supply)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Power_supply)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tuner_Type)
+            Tuner Type
         </dt>
 
         <dd>
@@ -244,32 +100,46 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.What_test_standard_was_used)
+            Power supply
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.What_test_standard_was_used)
+            @Html.DisplayFor(model => model.Power_supply)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Registration_Number)
+            Product website
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Registration_Number)
+            <a href="@Model.Product_Website">@Model.Product_Website</a>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
+            Representive brand Url
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.appliance_types.Type_Name)
+            <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
         </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Television_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<hr>
+<div>
+    <h3>Similar products</h3>
+    <br>
+    @foreach (var item in SpList)
+    {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+                <h2 style="text-align:center; height:50px;">@item.Brand_Reg</h2>
+                <a href='@Url.Action("Details", "televisions",new { id = @item.Television_Id})'>
+                    <img src='@Url.Content("~/Images/television4.jpg")' alt="Television" style="width:100%" />
+                </a>
+                <p>
+                    <button onclick="location.href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'" type="button" class="Button" style="height:100px">
+                        Model Number: @item.Model_No
+                    </button>
+                </p>
+            </div>
+        </div>
+    }
+</div>

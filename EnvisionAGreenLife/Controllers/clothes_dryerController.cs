@@ -55,9 +55,7 @@ namespace EnvisionAGreenLife.Controllers
             temp.Clothes_dryers = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
-            BreadCrumb.Add("", "Clothes dryers");
-
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             return View(temp);
         }
         // GET: clothes_dryer/Details/5
@@ -74,9 +72,13 @@ namespace EnvisionAGreenLife.Controllers
             }
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "clothes_dryer"), "Clothes Dryer");
-            BreadCrumb.Add("",clothes_dryer.Model_No);
+            BreadCrumb.Add("", clothes_dryer.Model_No);
+            var results = from x in db.clothes_dryer
+                          select x;
+            var list = results.Where(x => x.Brand.Contains(clothes_dryer.Brand)).Take(3).ToList();
+            ViewData["SimilarProducts"] = list;
             return View(clothes_dryer);
         }
     }

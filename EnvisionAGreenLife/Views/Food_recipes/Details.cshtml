@@ -1,91 +1,46 @@
 ﻿@model EnvisionAGreenLife.Models.Food_recipes
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Leftover Recipe Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>Food_recipes</h4>
+<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
+<h1>@Model.title</h1>
+<div style="height:600px;">
+    <div class="applianceImage">
+        @if (Model.category_breakfast == true)
+        {
+            <img src='@Url.Content("~/Images/breakfast3.jpg")' alt="Breakfast" style="width:500px;height:500px;" />
+        }
+        else
+            if (Model.category_lunch == true)
+        {
+            <img src='@Url.Content("~/Images/lunch.jpg")' alt="Lunch" style="width:500px;height:500px;"/>
+        }
+        else
+            if (Model.category_dinner == true)
+        {
+            <img src='@Url.Content("~/Images/dinner.jpg")' alt="Dinner" style="width:500px;height:500px;" />
+        }
+        else
+            if (Model.category_dessert == true)
+        {
+            <img src='@Url.Content("~/Images/dessert.jpg")' alt="Dessert" style="width:500px;height:500px;" />
+        }
+    </div>
+    <div class="applianceIntro" style="width:50%">
+        <h2>@Model.title</h2>
+        <br />
+        <h3>Difficulty level: @Model.difficulty_level </h3>
+        <h3>Esitmated time: @Model.preparation_time </h3>
+        <hr>
+        <p>Ingredients: @Model.ingredients </p>
+        <br />
+        <p>Instructions: @Model.instructions </p>
+        <br />
+        <br />
+        <br />
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ingredients)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ingredients)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.instructions)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.instructions)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.preparation_time)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.preparation_time)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.difficulty_level)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.difficulty_level)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.category_breakfast)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.category_breakfast)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.category_lunch)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.category_lunch)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.category_dinner)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.category_dinner)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.category_dessert)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.category_dessert)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

@@ -10,17 +10,18 @@
     <link href="~/Styles/Layout.css" rel="stylesheet" />
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 </head>
-<body>
-    <img class="slogan" src="~/Images/Slogan.png" alt="project slogan">
+<body sytle="padding-top:0px">
+    @*Put the slogan at the top of the page*@
+    <h1 class="slogan" style="color:#9bcd4f;text-align:center">Gearing Towards a Zero Waste Sustainable Lifestyle!</h1>
+    @* Navigation bar with dropdown list *@
     <div class="topnav" id="myTopnav">
         <img class="logo" src="~/Images/TeamLogo.png" alt="project logo" style="margin-left:10px; margin-top:2.5px; width:90px; height:90px" />
-        <a style="margin-left:9.5%" href="@Url.Action("Index","Home")" class="active">Home</a>
-        <a href="@Url.Action("Quiz","Home")">Take the quiz</a>
+        <a style="margin-left:9.5%" href="@Url.Action("Index","Home")" class="active">HOME</a>
+        <a href="@Url.Action("Quiz","Home")">TAKE THE QUIZ</a>
         <div class="dropdown" style="height:inherit">
-
             <button class="dropbtn" style="height:inherit">
                 <strong>
-                    What We Offer
+                    WHAT WE OFFER
                 </strong>
                 <i class="fa fa-caret-down"></i>
             </button>
@@ -30,13 +31,15 @@
                 <a href="@Url.Action("Reuse","Home")">REUSE</a>
             </div>
         </div>
-        <a href="@Url.Action("About","Home")">About</a>
+        <a href="@Url.Action("About","Home")">ABOUT</a>
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
-
+    @* Render the body of the content *@
     <div class="container body-content">
         <br/>
+        <div class="breadcrum" style="margin-left:20px">
         @Html.Raw(BreadCrumb.Display())
+            </div>
         @RenderBody()
         <hr />
         <footer>

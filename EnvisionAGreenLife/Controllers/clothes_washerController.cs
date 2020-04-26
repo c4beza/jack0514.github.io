@@ -17,7 +17,7 @@ namespace EnvisionAGreenLife.Controllers
     {
         private AppliancesEntities db = new AppliancesEntities();
 
-        // GET: clothes_dryer
+        // GET: clothes_washer
         [BreadCrumb(Clear = true, Label = "Clothes Washer")]
         [HttpGet]
         public ActionResult Index(int? page, string searchString, string currentFilter)
@@ -55,8 +55,7 @@ namespace EnvisionAGreenLife.Controllers
             temp.Clothes_Washers = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
-            BreadCrumb.Add("", "Clothes Washers");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             return View(temp);
         }
         // GET: clothes_dryer/Details/5
@@ -73,9 +72,13 @@ namespace EnvisionAGreenLife.Controllers
             }
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "clothes_washer"), "Clothes Washer");
             BreadCrumb.Add("", clothes_Washer.Model_No);
+            var results = from x in db.clothes_washer
+                          select x;
+            var list = results.Where(x => x.Brand.Contains(clothes_Washer.Brand)).Take(3).ToList();
+            ViewData["SimilarProducts"] = list;
             return View(clothes_Washer);
         }
     }

@@ -1,5 +1,6 @@
 ﻿@{
-    ViewBag.Title = "Food";
+    ViewBag.Title = "Recipes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Styles/HomePage.css" rel="stylesheet" />
 <div class="container">
@@ -25,89 +26,50 @@
         </div>
     </div>
 </div>
-<section class="container body-content">
+
+<div class="container body-content">
+
+    <h3>
+        Recipe collections
+    </h3>
 
     <div class="container body-content">
-
-        <h3>
-            Recipe collections
-        </h3>
-
-        <div class="container body-content">
-
-            <div class="column flexible-tile__column is-one-third">
-
-                <a href="Breakfast" class="flexible-tile__column-wrap">
-
-                    <div>
-                        <img src="~/Images/breakfastfin.jpg" />
-
-
-
-                    </div>
-                    <div class="flexible-tile__content">
-                        <h3 class="flexible-tile__title">
-                            Breakfast recipes
-                        </h3>
-                        <div class="button flexible-tile__button">Find out more</div>
-                    </div>
-                </a>
-
-
+        <div class="row" style="margin: 0 -30px;">
+            <div class="column" style="width:250px;padding: 0 0px;">
+                <div class="card" style="padding:0px;">
+                    <img src="~/Images/breakfastfin.jpg" style="width:250px; height:250px; filter: brightness(70%);" />
+                    <button onclick="location.href='@Url.Action("breakfast_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 110px;width: 240px;font-size:20px;">
+                        Breakfast Recipes
+                    </button>
+                </div>
             </div>
 
-            <div class="column flexible-tile__column is-one-third">
-
-                <a href="Lunch" class="flexible-tile__column-wrap">
-
-                    <div>
-                        <img src="~/Images/lunchfin.jpg" />
-                    </div>
-                    <div class="flexible-tile__content">
-                        <h3 class="flexible-tile__title">
-                            Lunch recipes
-                        </h3>
-                        <div class="button flexible-tile__button">Find out more</div>
-                    </div>
-                </a>
-
+            <div class="column" style="width:250px;padding: 0 0px;margin-left:33px;">
+                <div class="card" style="padding:0px;">
+                    <img src="~/Images/lunchfin.jpg" style="width:250px; height:250px; filter: brightness(70%);" />
+                    <button onclick="location.href='@Url.Action("lunch_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 395px;width: 240px;font-size:20px;">
+                        Lunch Recipes
+                    </button>
+                </div>
             </div>
-            <div class="column flexible-tile__column is-one-third">
 
-                <a href="Dinner" class="flexible-tile__column-wrap">
-
-                    <div>
-
-                        <img src="~/Images/dinnerfin.jpg" />
-                    </div>
-                    <div class="flexible-tile__content">
-                        <h3 class="flexible-tile__title">
-                            Dinner recipes
-                        </h3>
-                        <div class="button flexible-tile__button">Find out more</div>
-                    </div>
-                </a>
-
+            <div class="column" style="width: 250px;padding: 0 0px;margin-left:33px;">
+                <div class="card" style="padding:0px;">
+                    <img src="~/Images/dinnerfin.jpg" style="width:250px; height:250px; filter: brightness(70%);" />
+                    <button onclick="location.href='@Url.Action("dinner_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 675px;width: 240px;font-size:20px;">
+                        Dinner Recipes
+                    </button>
+                </div>
             </div>
-            <div class="column flexible-tile__column is-one-third">
-
-                <a href="Dessert" class="flexible-tile__column-wrap">
-
-                    <div>
-
-                        <img src="~/Images/dessertfin.jpg" />
-                    </div>
-                    <div class="flexible-tile__content">
-                        <h3 class="flexible-tile__title">
-                            Dessert recipes
-                        </h3>
-                        <div class="button flexible-tile__button">Find out more</div>
-                    </div>
-                </a>
-
+            <div class="column" style="width:250px;padding: 0 0px;margin-left:33px;">
+                <div class="card" style="padding:0px;">
+                    <img src="~/Images/dessertfin2.png" style="width:250px; height:250px; filter: brightness(70%);" />
+                    <button onclick="location.href='@Url.Action("dessert_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 960px;width: 240px;font-size:20px;">
+                        Dessert Recipes
+                    </button>
+                </div>
             </div>
 
         </div>
     </div>
-</section>
-
+</div>

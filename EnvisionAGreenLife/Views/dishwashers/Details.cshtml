@@ -1,26 +1,37 @@
 ﻿@model EnvisionAGreenLife.Models.dishwasher
 
+@{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.dishwasher>;}
+
+
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Dishwasher Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>dishwasher</h4>
-    <hr />
+<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
+<h1>@Model.Brand @Model.Model_No</h1>
+<div class="applianceImage">
+    <img src='@Url.Content("~/Images/Dishwasher3.jpeg")' alt="Dishwasher" />
+</div>
+<div class="applianceIntro">
+    <h2>@Model.Brand @Model.Type Dishwasher</h2>
+    <br />
+    <h3>Energy Rating: @Model.New_Star </h3>
+    <br />
+    <br />
+    <br />
+    <p>
+        The @Model.Brand @Model.Height @Model.Type dishwasher
+        is a great time and money saver thanks to its @Model.New_Star Star Water
+        Rating and @Model.Cap place settings.
+    </p>
+</div>
+<hr />
+<div class="specification">
+    <h3>Specification</h3>
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplStandard)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApplStandard)
-        </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Brand)
+            Brand
         </dt>
 
         <dd>
@@ -28,7 +39,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Cap)
+            Place settings
         </dt>
 
         <dd>
@@ -36,7 +47,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CEC)
+            Energy consumption Kw
         </dt>
 
         <dd>
@@ -44,7 +55,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Conn_Type)
+            Water conncetion type
         </dt>
 
         <dd>
@@ -52,7 +63,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Country)
+            Made in
         </dt>
 
         <dd>
@@ -60,167 +71,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.delayStartMode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.delayStartMode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Depth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Depth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Load_Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Load_Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Model_No)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Model_No)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Family_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Family_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.N_Standard)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.N_Standard)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.New_SRI)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.New_SRI)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.New_Star)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.New_Star)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.postProgenergy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.postProgenergy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.powerConsMode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.powerConsMode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Prog_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Prog_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Prog_Time)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Prog_Time)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sold_in)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sold_in)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.standbyPowerUsage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.standbyPowerUsage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Submit_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Submit_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SubmitStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SubmitStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tot_Wat_Cons)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tot_Wat_Cons)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Water_Softener)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Water_Softener)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Width)
+            Width
         </dt>
 
         <dd>
@@ -228,96 +79,90 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ExpDate)
+            Depth
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ExpDate)
+            @Html.DisplayFor(model => model.Depth)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.GrandDate)
+            Height
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GrandDate)
+            @Html.DisplayFor(model => model.Height)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Product_Class)
+            Model number
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Product_Class)
+            @Html.DisplayFor(model => model.Model_No)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Availability_Status)
+            star rating
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Availability_Status)
+            @Html.DisplayFor(model => model.New_Star)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Product_Website)
+            Typt
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Product_Website)
+            @Html.DisplayFor(model => model.Type)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
+            Water softener
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Representative_Brand_URL)
+            @Html.DisplayFor(model => model.Water_Softener)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Water_Consumption_litres)
+            Product_Website
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Water_Consumption_litres)
+            <a href="@Model.Product_Website">@Model.Product_Website</a>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Star_Rating_old)
+            Representative_Brand_URL
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Star_Rating_old)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Large)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Large)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Small)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Small)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.appliance_types.Type_Name)
+            <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Dishwasher_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<hr>
+<div>
+    <h3>Similar products</h3>
+    <br>
+    @foreach (var item in SpList)
+    {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+                <h2 style="text-align:center; height:50px;">@item.Brand</h2>
+                <a href='@Url.Action("Details", "dishwashers",new { id = @item.Dishwasher_Id})'>
+                    <img src='@Url.Content("~/Images/Dishwasher3.jpeg")' alt="Dishwasher" style="width:100%" />
+                </a>
+                <p>
+                    <button onclick="location.href='@Url.Action("Details", "dishwashers",new { id = @item.Dishwasher_Id })'" type="button" class="Button" style="height:100px">
+                        Model Number: @item.Model_No
+                    </button>
+                </p>
+            </div>
+        </div>
+    }
+
+</div>
+

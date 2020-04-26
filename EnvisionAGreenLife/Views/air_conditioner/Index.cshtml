@@ -26,10 +26,8 @@
                 x++;
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="card" style="margin-top: 50px">
-                        <h2 style="        text-align: center;       height: 50px;">
-                            @item.Brand
-                        </h2>
-                        <a href='@Url.Action("Details", "refrigerators",new { id = @item.Air_Conditioner_Id })'>
+                        <h2 style="text-align: center;height: 50px;">@item.Brand</h2>
+                        <a href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'>
                             <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air_conditione" style="width:100%" />
                         </a>
                         <p>

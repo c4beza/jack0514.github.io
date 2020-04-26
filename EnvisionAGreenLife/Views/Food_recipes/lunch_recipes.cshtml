@@ -1,0 +1,52 @@
+﻿@using PagedList.Mvc
+@model  EnvisionAGreenLife.ViewModel.lunchList
+
+@{
+    ViewBag.Title = "Lunch_Recipes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
+<body>
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color" style="margin-left:320px">
+            <p>
+                Find by ingredients: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default" /> |
+                <a href="@Url.Action("lunch_recipes","Food_recipes")">Back to Full List</a>
+            </p>
+        </div>
+    </form>
+
+    <div class="row col-lg-12 col-md-12" style="height:auto">
+        @{int x = 0;}
+        @if (Model != null)
+        {
+            foreach (var item in Model.Lunch)
+            {
+                x++;
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card" style="margin-top: 50px">
+                        <h2 style="        text-align: center;       height: 50px;">
+                            @item.title
+                        </h2>
+                        <a href='#'>
+                            <img src='@Url.Content("~/Images/lunchfin.jpg")' alt="Lunch" style="width:100%" />
+                        </a>
+                        <p>
+                            <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.id})'" type="button" class="Button" style="height:100px">
+                                View details
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <br>
+    <br>
+    <div class="pagecount" style="margin:auto; text-align:center">
+        Page @(Model.Lunch.PageCount < Model.Lunch.PageNumber ? 0 : Model.Lunch.PageNumber)
+        of @Model.Lunch.PageCount   @Html.PagedListPager(Model.Lunch, page => Url.Action("lunch_recipes", new { page, currentfilter = ViewBag.currentfilter }))
+    </div>
+</body>

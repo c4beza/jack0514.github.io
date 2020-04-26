@@ -228,6 +228,10 @@
     </Compile>
     <Compile Include="PasswordProtect\BasicAuthenticationAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\breakfastViewModel.cs" />
+    <Compile Include="ViewModel\DessertViewModel.cs" />
+    <Compile Include="ViewModel\DinnerViewModel.cs" />
+    <Compile Include="ViewModel\LunchViewModel.cs" />
     <Compile Include="ViewModel\televisionsViewModel.cs" />
     <Compile Include="ViewModel\refrigeratorsViewModel.cs" />
     <Compile Include="ViewModel\monitorsViewModel.cs" />
@@ -263,6 +267,7 @@
     <Content Include="Images\compost.png" />
     <Content Include="Images\dessert.jpg" />
     <Content Include="Images\dessertfin.jpg" />
+    <Content Include="Images\dessertfin2.png" />
     <Content Include="Images\dinner.jpg" />
     <Content Include="Images\dinnerfin.jpg" />
     <Content Include="Images\Dishwasher2.jpeg" />
@@ -309,6 +314,8 @@
     <Content Include="Images\Clothes_Washer3.jpg" />
     <Content Include="Images\Clothes_Washer4.jpg" />
     <Content Include="Images\title3.png" />
+    <Content Include="Images\Visualisation1.png" />
+    <Content Include="Images\Visualisation2.jpg" />
     <Content Include="Models\AppliancesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppliancesModel.Context.cs</LastGenOutput>
@@ -408,7 +415,6 @@
     <Content Include="Views\clothes_dryer\Details.cshtml" />
     <Content Include="Views\clothes_dryer\Index.cshtml" />
     <Content Include="Views\clothes_washer\Details.cshtml" />
-    <Content Include="Views\clothes_washer\Index.cshtml" />
     <Content Include="Views\dishwashers\Details.cshtml" />
     <Content Include="Views\dishwashers\Index.cshtml" />
     <Content Include="Views\monitors\Details.cshtml" />
@@ -420,12 +426,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\LeftoverRecipe.cshtml" />
     <Content Include="Views\Home\AppliancesType.cshtml" />
-    <Content Include="Views\Food_recipes\Create.cshtml" />
-    <Content Include="Views\Food_recipes\Delete.cshtml" />
-    <Content Include="Views\Food_recipes\Details.cshtml" />
-    <Content Include="Views\Food_recipes\Edit.cshtml" />
-    <Content Include="Views\Food_recipes\Index.cshtml" />
     <Content Include="Views\Home\ReduceFoodWaste.cshtml" />
+    <Content Include="Views\Food_recipes\breakfast_recipes.cshtml" />
+    <Content Include="Views\Food_recipes\dessert_recipes.cshtml" />
+    <Content Include="Views\Food_recipes\dinner_recipes.cshtml" />
+    <Content Include="Views\Food_recipes\Details.cshtml" />
+    <Content Include="Views\Food_recipes\lunch_recipes.cshtml" />
+    <Content Include="Views\clothes_washer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

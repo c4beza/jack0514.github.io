@@ -183,7 +183,7 @@
 
             <dd>
 
-                <a>@Model.Product_Website </a>
+                <a href="@Model.Product_Website">@Model.Product_Website </a>
             </dd>
 
             <dt>
@@ -191,11 +191,12 @@
             </dt>
 
             <dd>
-                <a>@Model.Representative_Brand_URL </a>
+                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL </a>
             </dd>
         </dl>
+    </div>
         <hr>
-        <div>
+        <div style="height:700px">
             <h3>Similar products</h3>
             <br>
             @foreach (var item in SpList)
@@ -215,5 +216,4 @@
             }
 
         </div>
-    </div>
 

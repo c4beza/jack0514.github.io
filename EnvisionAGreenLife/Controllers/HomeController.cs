@@ -17,6 +17,7 @@ namespace EnvisionAGreenLife.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            BreadCrumb.Clear();
             return View();
         }
 
@@ -67,7 +68,8 @@ namespace EnvisionAGreenLife.Controllers
             ViewBag.Message = "LeftoverRecipe";
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add("", "Leftover Recipe type");
+            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
+            BreadCrumb.Add("", "Leftover Recipes");
             return View();
         }
 
@@ -80,7 +82,7 @@ namespace EnvisionAGreenLife.Controllers
             IPagedList<appliance_types> stu = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add("", "Appliance type");
+            BreadCrumb.Add("", "Save Energy");
             return View(stu);
         }
     }

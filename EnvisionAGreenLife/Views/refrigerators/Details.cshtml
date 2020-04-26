@@ -1,34 +1,39 @@
 ﻿@model EnvisionAGreenLife.Models.refrigerator
 
+@{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.refrigerator>;}
+
+
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Refrigerator Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>refrigerator</h4>
-    <hr />
+<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
+<h1>@Model.Brand @Model.Model_No</h1>
+<div class="applianceImage">
+    <img src='@Url.Content("~/Images/refrigerator4.jpeg")' alt="Refrigerator" />
+</div>
+<div class="applianceIntro">
+    <h2>@Model.Brand @Model.Designation</h2>
+    <br />
+    <h3>Energy Rating: @Model.Star2009 </h3>
+    <br />
+    <br />
+    <br />
+    <p>
+        This @Model.Tot_Vol L @Model.Configuration @Model.Designation from @Model.Brand is packed with a
+        range of great features that will not only help you keep your
+        food fresher for longer, but will look stylish in your kitchen
+    </p>
+</div>
+<hr />
+<div class="specification">
+    <h3>Specification</h3>
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Adaptive_Defrost)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Adaptive_Defrost)
-        </dd>
+
 
         <dt>
-            @Html.DisplayNameFor(model => model.ApplStandard)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApplStandard)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brand)
+            Brand
         </dt>
 
         <dd>
@@ -36,119 +41,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CEC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CEC)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CompartGrVol)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompartGrVol)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CompartNetVol)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompartNetVol)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CompartType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompartType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Configuration)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Configuration)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Country)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Country)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Depth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Depth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Designation)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Designation)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FF_Vol)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FF_Vol)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FZ_Vol)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FZ_Vol)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Group)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Group)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Icemaker)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Icemaker)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MEPSApproval)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MEPSApproval)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Model_No)
+            Model number
         </dt>
 
         <dd>
@@ -156,23 +49,103 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Family_Name)
+            Energy consumption Kw
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Family_Name)
+            @Html.DisplayFor(model => model.CEC)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.N_Standard)
+            Compartment gross volume L
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.N_Standard)
+            @Html.DisplayFor(model => model.CompartGrVol)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Star2009)
+            Compartment net volume L
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompartNetVol)
+        </dd>
+
+        <dt>
+            Compartment type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompartType)
+        </dd>
+
+        <dt>
+            Configuration type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Configuration)
+        </dd>
+
+        <dt>
+            Appliance type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt>
+            Made in
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            Depth
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Depth)
+        </dd>
+
+        <dt>
+            Height
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+        <dt>
+            Width
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Width)
+        </dd>
+
+
+        <dt>
+            Fresh food volumn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FF_Vol)
+        </dd>
+
+        <dt>
+            Freezer volumn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FZ_Vol)
+        </dd>
+
+        <dt>
+            Energy rating
         </dt>
 
         <dd>
@@ -180,63 +153,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SRI2009)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SRI2009)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.No_Doors)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.No_Doors)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.S_MEPS_Ad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.S_MEPS_Ad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.S_MEPScutoff)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.S_MEPScutoff)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sold_in)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sold_in)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Submit_ID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Submit_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SubmitStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SubmitStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tot_Vol)
+            Total volumn
         </dt>
 
         <dd>
@@ -244,136 +161,40 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Width)
+            Product website
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Width)
+            <a href="@Model.Product_Website">@Model.Product_Website</a>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ExpDate)
+            Representative brand Url
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ExpDate)
+            <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GrandDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GrandDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Class)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Class)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Availability_Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Availability_Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product_Website)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product_Website)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Representative_Brand_URL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Representative_Brand_URL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fixed_MEPS_allowance_factor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fixed_MEPS_allowance_factor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Variable_MEPS_allowance_factor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Variable_MEPS_allowance_factor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Adjusted_volume)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Adjusted_volume)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Rating_old)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Rating_old)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Large)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Large)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Star_Image_Small)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star_Image_Small)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Registration_Number)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Registration_Number)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.appliance_types.Type_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.appliance_types.Type_Name)
-        </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Refrigerator_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<hr>
+<div>
+    <h3>Similar products</h3>
+    <br>
+    @foreach (var item in SpList)
+    {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+                <h2 style="text-align:center; height:50px;">@item.Brand</h2>
+                <a href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id})'>
+                    <img src='@Url.Content("~/Images/refrigerator4.jpeg")' alt="Refrigerator" style="width:100%" />
+                </a>
+                <p>
+                    <button onclick="location.href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'" type="button" class="Button" style="height:100px">
+                        Model Number: @item.Model_No
+                    </button>
+                </p>
+            </div>
+        </div>
+    }
+
+</div>

@@ -54,9 +54,7 @@ namespace EnvisionAGreenLife.Controllers
             temp.Dishwashers = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
-            BreadCrumb.Add("", "Dishwashers");
-
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy"); 
             return View(temp);
         }
 
@@ -72,9 +70,13 @@ namespace EnvisionAGreenLife.Controllers
             {
                 return HttpNotFound();
             }
+            var results = from x in db.dishwashers
+                          select x;
+            var list = results.Where(x => x.Brand.Contains(dishwasher.Brand)).Take(3).ToList();
+            ViewData["SimilarProducts"] = list;
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "dishwashers"), "Dishwasher");
             BreadCrumb.Add("", dishwasher.Model_No);
             return View(dishwasher);

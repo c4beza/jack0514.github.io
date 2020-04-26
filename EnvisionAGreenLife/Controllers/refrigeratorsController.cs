@@ -56,11 +56,11 @@ namespace EnvisionAGreenLife.Controllers
             temp.Refrigerators = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add("", "Refrigerators");
             return View(temp);
         }
-
+        
         // GET: refrigerators/Details/5
         public ActionResult Details(int? id)
         {
@@ -75,9 +75,13 @@ namespace EnvisionAGreenLife.Controllers
             }
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Appliance Type");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "refrigerators"), "Refrigerator");
             BreadCrumb.Add("", refrigerator.Model_No);
+            var results = from x in db.refrigerators
+                          select x;
+            var list = results.Where(x => x.Brand.Contains(refrigerator.Brand)).Take(3).ToList();
+            ViewData["SimilarProducts"] = list;
             return View(refrigerator);
         }
     }
