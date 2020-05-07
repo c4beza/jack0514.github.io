@@ -13,6 +13,7 @@ namespace EnvisionAGreenLife.Controllers
     public class HomeController : Controller
     {
         AppliancesEntities db = new AppliancesEntities();
+        LeftoverRecipesEntities recipesEntities = new LeftoverRecipesEntities();
 
         [HttpGet]
         public ActionResult Index()
@@ -70,6 +71,12 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
             BreadCrumb.Add("", "Leftover Recipes");
+            List<SelectListItem> Difficulty_level = new List<SelectListItem>();
+            Difficulty_level.Add(new SelectListItem() { Text = "All", Value = null });
+            Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
+            Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
+            Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
+            this.ViewBag.Difficulty = new SelectList(Difficulty_level, "Value", "Text");
             return View();
         }
 

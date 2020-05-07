@@ -9,6 +9,6 @@ namespace EnvisionAGreenLife.ViewModel
 {
     public class breakfastList
     {
-        public IPagedList<Food_recipes> Breakfasts { get; set; }
+        public IPagedList<recipe> Breakfasts { get; set; }
     }
 }

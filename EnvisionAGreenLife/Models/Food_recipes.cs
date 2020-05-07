@@ -16,9 +16,9 @@ namespace EnvisionAGreenLife.Models
     {
         public int id { get; set; }
         public string title { get; set; }
-        public string ingredients { get; set; }
-        public string instructions { get; set; }
         public Nullable<int> preparation_time { get; set; }
+        public string instructions { get; set; }
+        public string ingredients { get; set; }
         public string difficulty_level { get; set; }
         public Nullable<bool> category_breakfast { get; set; }
         public Nullable<bool> category_lunch { get; set; }

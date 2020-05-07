@@ -6,10 +6,10 @@
 
 <link href="~/Styles/HomeIndex.css" rel="stylesheet" />
 <link href="~/Styles/HomePage.css" rel="stylesheet" />
-<div class="container">
+@*<div class="container">
 
     <img src="~/Images/title3.png" height="400" width="1100">
-</div>
+</div>*@
 
 <div class="container body-content">
     <div class="section">
@@ -19,7 +19,7 @@
             <br />
             <div>
                 <p>
-                    If you are ready to reduce food water, below are some great ideas provided by us to get you started!!!!
+                    If you are ready to reduce food water, below are some great ideas provided by us to get you started!
                 </p>
             </div>
         </div>
@@ -32,31 +32,29 @@
     </h3>
 
     <div class="container body-content">
-
-        <div class="row">
-            <div class="column" style="margin-right:120px">
-
+        <div class="row" style="width:1200px">
+            <div class="column" style="margin-right:120px; width:270px;">
                 <div class="card" style="padding:0px">
                     <img src="~/Images/leftoverfood.jpg" style="width:100%;    filter: brightness(50%);" />
-                    <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="slideButton" style="top: 140px;left: 154px;width: 260px;font-size:20px;">
+                    <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="slideButton" style="top: 140px;left: 145px;width: 240px;font-size:20px;">
                         Left-Over Food Recipes
                     </button>
                 </div>
             </div>
 
-            <div class="column" style="margin-right:120px">
+            <div class="column" style="margin-right:120px; width:270px;">
                 <div class="card" style="padding:0px">
                     <img src="~/Images/compost.png" style="width:100%;    filter: brightness(50%);" />
-                    <button onclick="location.href='#'" type="button" class="slideButton" style="top: 140px;left: 562px;width: 260px;font-size:20px;">
+                    <button onclick="location.href='#'" type="button" class="slideButton" style="top: 140px;left: 536px;width: 240px;font-size:20px;">
                         Composting Guide
                     </button>
                 </div>
             </div>
 
-            <div class="column">
+            <div class="column"; style="width:270px;">
                 <div class="card" style="padding:0px;">
                     <img src="~/Images/herbs.png" style="width:100%;    filter: brightness(50%);" />
-                    <button onclick="location.href='#'" type="button" class="slideButton" style="top: 140px;left: 970px;width: 260px;font-size:20px;">
+                    <button onclick="location.href='#'" type="button" class="slideButton" style="top: 140px;left: 925px;width: 240px;font-size:20px;">
                         Grow Your Own Herbs
                     </button>
                 </div>

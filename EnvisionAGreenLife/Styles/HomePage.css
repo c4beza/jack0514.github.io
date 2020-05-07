@@ -17,6 +17,7 @@
 /* Position the image container (needed to position the left and right arrows) */
 .container {
     position: relative;
+    overflow:hidden;
 }
 
 /* Hide the images by default */
@@ -58,14 +59,6 @@
         background-color: rgba(0, 0, 0, 0.8);
     }
 
-/* Number text (1/3 etc) */
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
 
 /* Container for image text */
 .caption-container {
@@ -81,12 +74,6 @@
     clear: both;
 }
 
-/* Six columns side by side */
-.column {
-    float: left;
-    width: 16.66%;
-}
-
 /* Add a transparency effect for thumnbail images */
 .demo {
     opacity: 0.6;
@@ -96,12 +83,6 @@
     .demo:hover {
         opacity: 1;
     }
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
-}
 
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
@@ -186,3 +167,8 @@ button.slideButton {
     button.slideButton:hover {
         background-color: #9bcd4f;
     }
+
+.recipeSearchBar {
+    max-width: 500px;
+    height: 26px;
+}

@@ -39,6 +39,22 @@ body {
         font-weight: bold;
     }
 
+/* Page content */
+.content {
+    padding: 16px;
+}  
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky + .content {
+        padding-top: 60px;
+    }
+
 a.active {
     background-color: #9cbd4f;
     color: white;
@@ -67,13 +83,18 @@ a.active {
         width: 250px;
     }
 
+.active {
+    background-color: #9cbd4f;
+    color: white;
+    height: inherit;
+}
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: white;
     min-width: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 1000;
 }
 
     .dropdown-content a {

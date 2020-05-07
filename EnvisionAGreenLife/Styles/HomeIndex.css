@@ -18,13 +18,24 @@
 
 /* Position the image container (needed to position the left and right arrows) */
 .container {
-    position: relative;
- 
+    position: relative; 
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
+.text {
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 350px;
+    top: 10%;
+    text-align: left;
+    width: 60%;
+    font-size: 40px;
+    color: white;
+    overflow: hidden;
+}
+    /* Next & previous buttons */
+    .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -33,7 +44,7 @@
     margin-top: -50px;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
@@ -46,7 +57,7 @@
 
 /* Position the "next button" to the right */
 .next {
-    right: 0;
+    right: 16px;
     border-radius: 3px 0 0 3px;
 }
 
@@ -68,8 +79,8 @@
 /* Style buttons in the slide */
 button.slideButton {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 80%;
+    left: 82%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: transparent;
@@ -89,3 +100,7 @@ button.slideButton {
     button.slideButton:hover {
         background-color: #9bcd4f;
     }
+
+.body-content {
+    padding: 16px;
+}

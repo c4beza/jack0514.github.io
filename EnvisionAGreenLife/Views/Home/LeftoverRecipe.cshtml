@@ -2,15 +2,27 @@
     ViewBag.Title = "Recipes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Styles/HomePage.css" rel="stylesheet" />
-<div class="container">
 
-    <img src="~/Images/title2.jpg" height="400" width="1100">
-</div>
+
+<link href="~/Styles/HomePage.css" rel="stylesheet" />
+@*<div class="container">
+
+        <img src="~/Images/title2.jpg" height="400" width="1100">
+    </div>*@
 
 <div class="container body-content">
-    <div class="section">
+    <div style="margin-left:250px">
+        @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get))
+        {
+            <div>
+                Search all recipes: @Html.TextBox("SearchString", null, new { style = "width: 380px;", @class = "recipeSearchBar", @placeholder = "Find by name, ingredients, time, difficulty level" })
+                Difficulty: @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipeSearchBar" })
+                <input type="submit" value="Search" />
+            </div>
+        }
+    </div>
 
+    <div class="section">
         <div class="columns">
 
             <div>
@@ -38,7 +50,7 @@
             <div class="column" style="width:250px;padding: 0 0px;">
                 <div class="card" style="padding:0px;">
                     <img src="~/Images/breakfastfin.jpg" style="width:250px; height:250px; filter: brightness(70%);" />
-                    <button onclick="location.href='@Url.Action("breakfast_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 110px;width: 240px;font-size:20px;">
+                    <button onclick="location.href='@Url.Action("breakfast_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 118px;width: 240px;font-size:20px;">
                         Breakfast Recipes
                     </button>
                 </div>

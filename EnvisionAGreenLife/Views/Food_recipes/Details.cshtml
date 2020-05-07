@@ -1,46 +1,57 @@
-﻿@model EnvisionAGreenLife.Models.Food_recipes
+﻿@model EnvisionAGreenLife.Models.recipe
 
 @{
     ViewBag.Title = "Leftover Recipe Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
-<h1>@Model.title</h1>
-<div style="height:600px;">
-    <div class="applianceImage">
-        @if (Model.category_breakfast == true)
+<div class="container body-content">
+    <div style="margin-left:250px">
+        @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get))
         {
-            <img src='@Url.Content("~/Images/breakfast3.jpg")' alt="Breakfast" style="width:500px;height:500px;" />
-        }
-        else
-            if (Model.category_lunch == true)
-        {
-            <img src='@Url.Content("~/Images/lunch.jpg")' alt="Lunch" style="width:500px;height:500px;"/>
-        }
-        else
-            if (Model.category_dinner == true)
-        {
-            <img src='@Url.Content("~/Images/dinner.jpg")' alt="Dinner" style="width:500px;height:500px;" />
-        }
-        else
-            if (Model.category_dessert == true)
-        {
-            <img src='@Url.Content("~/Images/dessert.jpg")' alt="Dessert" style="width:500px;height:500px;" />
+            <div>
+                Search all recipes: @Html.TextBox("SearchString", null, new { style = "width: 380px;", @class = "recipeSearchBar", @placeholder = "Find by name, ingredients, time, difficulty level" })
+                Difficulty: @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipeSearchBar" })
+                <input type="submit" value="Search" />
+            </div>
         }
     </div>
-    <div class="applianceIntro" style="width:50%">
-        <h2>@Model.title</h2>
-        <br />
-        <h3>Difficulty level: @Model.difficulty_level </h3>
-        <h3>Esitmated time: @Model.preparation_time </h3>
-        <hr>
-        <p>Ingredients: @Model.ingredients </p>
-        <br />
-        <p>Instructions: @Model.instructions </p>
-        <br />
-        <br />
-        <br />
+    <h1>@Model.name</h1>
+    <div style="height:600px;">
+        <div class="applianceImage">
+            @if (Model.recipe_type_id == 1)
+            {
+                <img src='@Url.Content("~/Images/breakfast1.jpg")' alt="Breakfast" style="width:500px;height:500px;" />
+            }
+            else
+                if (Model.recipe_type_id == 2)
+            {
+                <img src='@Url.Content("~/Images/lunch.jpg")' alt="Lunch" style="width:500px;height:500px;" />
+            }
+            else
+                if (Model.recipe_type_id == 3)
+            {
+                <img src='@Url.Content("~/Images/dinnerfin.jpg")' alt="Dinner" style="width:500px;height:500px;" />
+            }
+            else
+                if (Model.recipe_type_id == 4)
+            {
+                <img src='@Url.Content("~/Images/dessertfin2.png")' alt="Dessert" style="width:500px;height:500px;" />
+            }
+        </div>
+        <div class="applianceIntro" style="width:50%">
+            <h2><b>@Model.name</b></h2>
+            <br />
+            <h4><b>Difficulty level:</b> @Model.difficulty_assignment </h4>
+            <h4><b>Estimated time:</b> @Model.minutes </h4>
+            <hr>
+            <p><b>Ingredients:</b><br /> @Model.ingredients </p>
+            <br />
+            <p><b>Instructions:</b><br /> @Html.Raw(Model.steps)</p>
+            <br />
+            <br />
+            <br />
+        </div>
+        <hr />
     </div>
-    <hr />
 </div>
-

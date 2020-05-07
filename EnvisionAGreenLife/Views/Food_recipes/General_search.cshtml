@@ -1,0 +1,74 @@
+﻿@using PagedList.Mvc
+@model  EnvisionAGreenLife.ViewModel.recipeList
+
+@{
+    ViewBag.Title = "Recipes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
+<body>
+    <div style="margin-left:250px">
+        @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get))
+        {
+            <div>
+                Search all recipes: @Html.TextBox("SearchString", null, new { style = "width: 380px;", @class = "recipeSearchBar", @placeholder = "Find by name, ingredients, time, difficulty level" })
+                Difficulty: @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipeSearchBar" })
+                <input type="submit" value="Search" />
+            </div>
+        }
+    </div>
+
+    <div class="row col-lg-12 col-md-12" style="height:auto">
+        @{int x = 0;}
+        @if (Model != null)
+        {
+            foreach (var item in Model.recipes)
+            {
+                x++;
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
+                    <div class="card" style="margin-top: 50px">
+                        <h2 style="margin-top:10px;     text-align: center;       height: 100px;">
+                            @item.name
+                        </h2>
+                        @if (item.recipe_type_id == 1)
+                        {
+                            <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'>
+                                <img src='@Url.Content("~/Images/breakfastfin.jpg")' alt="Breakfast" style="width:295.2px; height:308.1px" />
+                            </a>
+                        }
+                        else if (item.recipe_type_id == 2)
+                        {
+                            <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'>
+                                <img src='@Url.Content("~/Images/lunchfin.jpg")' alt="Lunch" style="width:295.2px; height:308.1px" />
+                            </a>
+                        }
+                        else if (item.recipe_type_id == 3)
+                        {
+                            <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'>
+                                <img src='@Url.Content("~/Images/dinnerfin.jpg")' alt="Dinner" style="width:295.2px; height:308.1px" />
+                            </a>
+                        }
+                        else if (item.recipe_type_id == 4)
+                        {
+                            <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'>
+                                <img src='@Url.Content("~/Images/dessertfin2.png")' alt="Dessert" style="width:295.2px; height:308.1px" />
+                            </a>
+                        }
+                        <p>
+                            <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="Button" style="height:70px">
+                                View details
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <br>
+    <br>
+    <div class="pagecount" style="margin:auto; text-align:center">
+        Page @(Model.recipes.PageCount < Model.recipes.PageNumber ? 0 : Model.recipes.PageNumber)
+        of @Model.recipes.PageCount   @Html.PagedListPager(Model.recipes, page => Url.Action("General_search", new { page, currentfilter = ViewBag.currentfilter, currentDifficulty = ViewBag.currentDifficulty }))
+    </div>
+</body>

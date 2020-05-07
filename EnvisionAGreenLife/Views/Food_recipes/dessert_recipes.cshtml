@@ -7,15 +7,16 @@
 }
 <link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
 <body>
-    <form asp-action="Index" method="get">
-        <div class="form-actions no-color" style="margin-left:320px">
-            <p>
-                Find by ingredients: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-                <input type="submit" value="Search" class="btn btn-default" /> |
-                <a href="@Url.Action("dessert_recipes","Food_recipes")">Back to Full List</a>
-            </p>
-        </div>
-    </form>
+    <div style="margin-left:250px">
+        @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get))
+        {
+            <div>
+                Search all recipes: @Html.TextBox("SearchString", null, new { style = "width: 380px;", @class = "recipeSearchBar", @placeholder = "Find by name, ingredients, time, difficulty level" })
+                Difficulty: @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipeSearchBar" })
+                <input type="submit" value="Search" />
+            </div>
+        }
+    </div>
 
     <div class="row col-lg-12 col-md-12" style="height:auto">
         @{int x = 0;}
@@ -24,16 +25,16 @@
             foreach (var item in Model.Dessert)
             {
                 x++;
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
                     <div class="card" style="margin-top: 50px">
-                        <h2 style="        text-align: center;       height: 50px;">
-                            @item.title
+                        <h2 style="margin-top:10px;     text-align: center;       height: 100px;">
+                            @item.name
                         </h2>
-                        <a href='#'>
-                            <img src='@Url.Content("~/Images/breakfastfin.jpg")' alt="Breakfast" style="width:100%" />
+                        <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'>
+                            <img src='@Url.Content("~/Images/dessertfin2.png")' alt="Dessert" style="width:100%" />
                         </a>
                         <p>
-                            <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.id })'" type="button" class="Button" style="height:100px">
+                            <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="Button" style="height:70px">
                                 View details
                             </button>
                         </p>

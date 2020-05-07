@@ -1,39 +1,52 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-    <link href="~/Styles/HomeIndex.css" rel="stylesheet" />
+<link href="~/Styles/HomeIndex.css" rel="stylesheet" />
+<link href="~/Styles/Flipcard.css" rel="stylesheet" />
 <!-- Slideshow container -->
 
 <div class="container ">
     <div class="mySlides">
         <div class="numbertext">1 / 4</div>
-            <img class="slideimages" src='@Url.Content("~/Images/Appliances.jpg")' style="width:100%" />
-            <button onclick="location.href='@Url.Action("AppliancesType", "Home")'" type="button" class="slideButton">
-                Save Your Energy!
-            </button>
+        <img class="slideimages" src='@Url.Content("~/Images/Appliances.jpg")' style="width:100%" />
+        <div class="text">
+            <p>Want to see the energy consumption of your appliances?</p>
+        </div>
+        <button onclick="location.href='@Url.Action("AppliancesType", "Home")'" type="button" class="slideButton">
+            Click here!
+        </button>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">2 / 4</div>
         <img class="slideimages" src='@Url.Content("~/Images/FoodRecipes.jpg")' style="width:100%" />
+        <div class="text">
+            <p>Want to reduce your food waste?</p>
+        </div>
         <button onclick="location.href='@Url.Action("ReduceFoodWaste", "Home")'" type="button" class="slideButton">
-        Reduce Your Food Waste!
+            Click here!
         </button>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">3 / 4</div>
         <img class="slideimages" src='@Url.Content("~/Images/Ingredients.jpg")' style="width:100%" />
+        <div class="text">
+            <p>Want to compost your food scraps?</p>
+        </div>
         <button onclick="location.href='#'" type="button" class="slideButton">
-            Compost Your Food Scraps!
+            Click here!
         </button>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">3 / 4</div>
         <img class="slideimages" src='@Url.Content("~/Images/GrowYourHerb.jpg")' style="width:100%" />
+        <div class="text">
+            <p>Want to grow your own herb?</p>
+        </div>
         <button onclick="location.href='#'" type="button" class="slideButton">
-            Grow Your Herb!
+            Click here!
         </button>
     </div>
 
@@ -43,14 +56,74 @@
 
 </div>
 <br>
-<div class="visualisation" style="height: 420px;">
-    <div class="visualisation1 col-lg-6" style="height: 420px;">
-        <img src="~/Images/Visualisation2.jpg" style="width: 500px; height: 380px; " />
+@*<div class="visualisation" style="height: 420px;">
+        <div class="visualisation1 col-lg-6" style="height: 420px;">
+            <img src="~/Images/Visualisation2.jpg" style="width: 500px; height: 380px; " />
+        </div>
+
+        <img src="~/Images/Visualisation1.png" style="width:50%;" class="col-lg-6" />
+
+
+    </div>*@
+
+<div class="container body-content">
+    <div class="row">
+        <div class="column" style="margin-right:120px">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="~/Images/homepage1.png" style="width:300px;height:300px;">
+
+                        <p>
+                            <h3 style="color:aliceblue; margin-top:35px"> Save Your Energy!</h3>
+                        </p>
+                    </div>
+
+                    <div class="flip-card-back">
+
+                        <p style="margin-top:100px;font-size:medium">Want to switch to energy efficient appliances to save on your energy bills?</p>
+                        <p><button onclick="" type="button" style="font-size:16px;color:black;border-radius:5px;box-shadow:0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">Learn More!</button></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column" style="margin-right:120px">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="~/Images/homepage2.png" style="width:300px;height:300px;">
+                        <p>
+                            <h3 style="color:aliceblue; margin-top:35px"> Reduce Your Food Waste!</h3>
+                        </p>
+
+                    </div>
+                    <div class="flip-card-back">
+
+                        <p style="margin-top:100px; font-size:medium">Want to learn how to cook healthy recipes from leftover food?</p>
+                        <p><button onclick="" type="button" style="font-size:16px;color:black;border-radius:5px;box-shadow:0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">Learn More!</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="~/Images/homepage3.png" style="width:300px;height:300px;">
+                        <p>
+                            <h3 style="color:aliceblue; margin-top:35px"> Learn to Reuse!</h3>
+                        </p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p style="margin-top:100px;font-size:medium">Plastic Bags?Glass Bottles?Paper Bags? We'll guide you how to reuse them!</p>
+                        <p><button onclick="" type="button" style="font-size:16px;color:black;border-radius:5px;box-shadow:0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">Learn More!</button></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <img src="~/Images/Visualisation1.png" style="width:50%;" class="col-lg-6" />
-
-
 </div>
 
 <script>

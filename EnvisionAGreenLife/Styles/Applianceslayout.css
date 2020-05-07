@@ -31,4 +31,9 @@
     p {
         margin:0 0 0px;
     }
+   
+    .recipeSearchBar {
+        max-width:500px;
+        height:26px;
+    }
 

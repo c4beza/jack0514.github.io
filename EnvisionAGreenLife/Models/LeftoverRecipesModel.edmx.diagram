@@ -5,7 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6c7a573a92e1424199aefc90ee972fca" Name="Diagram1">
-        <EntityTypeShape EntityType="LeftoverRecipesModel.Food_recipes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeftoverRecipesModel.Food_recipes" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LeftoverRecipesModel.recipe" Width="1.5" PointX="5.625" PointY="1" />
+        <EntityTypeShape EntityType="LeftoverRecipesModel.recipe_type" Width="1.5" PointX="3.375" PointY="1.375" />
+        <AssociationConnector Association="LeftoverRecipesModel.FK__recipe__recipe_t__2B0A656D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

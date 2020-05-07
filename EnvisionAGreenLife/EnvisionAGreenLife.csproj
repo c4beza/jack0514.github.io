@@ -202,6 +202,12 @@
     <Compile Include="Models\monitor.cs">
       <DependentUpon>AppliancesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\recipe.cs">
+      <DependentUpon>LeftoverRecipesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\recipe_type.cs">
+      <DependentUpon>LeftoverRecipesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RecyclingCentresModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -228,6 +234,7 @@
     </Compile>
     <Compile Include="PasswordProtect\BasicAuthenticationAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\recipeViewModel.cs" />
     <Compile Include="ViewModel\breakfastViewModel.cs" />
     <Compile Include="ViewModel\DessertViewModel.cs" />
     <Compile Include="ViewModel\DinnerViewModel.cs" />
@@ -277,6 +284,9 @@
     <Content Include="Images\FoodRecipes.jpg" />
     <Content Include="Images\GrowYourHerb.jpg" />
     <Content Include="Images\herbs.png" />
+    <Content Include="Images\homepage1.png" />
+    <Content Include="Images\homepage2.png" />
+    <Content Include="Images\homepage3.png" />
     <Content Include="Images\Ingredients.jpg" />
     <Content Include="Images\leftoverfood.jpg" />
     <Content Include="Images\refrigerator2.jpg" />
@@ -386,6 +396,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Styles\Flipcard.css" />
     <Content Include="Styles\HomePage.css" />
     <Content Include="Styles\Layout.css" />
     <Content Include="Styles\Applianceslayout.css" />
@@ -433,6 +444,7 @@
     <Content Include="Views\Food_recipes\Details.cshtml" />
     <Content Include="Views\Food_recipes\lunch_recipes.cshtml" />
     <Content Include="Views\clothes_washer\Index.cshtml" />
+    <Content Include="Views\Food_recipes\General_search.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -4,49 +4,124 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LeftoverRecipesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LeftoverRecipesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Food_recipes">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="title" Type="varchar(max)" />
-          <Property Name="ingredients" Type="varchar(max)" />
-          <Property Name="instructions" Type="varchar(max)" />
+          <Property Name="title" Type="nvarchar" MaxLength="64" />
           <Property Name="preparation_time" Type="int" />
-          <Property Name="difficulty_level" Type="varchar" MaxLength="100" />
+          <Property Name="instructions" Type="nvarchar(max)" />
+          <Property Name="ingredients" Type="nvarchar" MaxLength="432" />
+          <Property Name="difficulty_level" Type="nvarchar" MaxLength="11" />
           <Property Name="category_breakfast" Type="bit" />
           <Property Name="category_lunch" Type="bit" />
           <Property Name="category_dinner" Type="bit" />
           <Property Name="category_dessert" Type="bit" />
         </EntityType>
+        <EntityType Name="recipe">
+          <Key>
+            <PropertyRef Name="recipe_id" />
+          </Key>
+          <Property Name="recipe_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="63" />
+          <Property Name="minutes" Type="nvarchar" MaxLength="11" />
+          <Property Name="steps" Type="nvarchar" MaxLength="3343" />
+          <Property Name="ingredients" Type="nvarchar" MaxLength="253" />
+          <Property Name="difficulty_assignment" Type="nvarchar" MaxLength="11" />
+          <Property Name="recipe_type_id" Type="int" />
+        </EntityType>
+        <EntityType Name="recipe_type">
+          <Key>
+            <PropertyRef Name="recipe_type_id" />
+          </Key>
+          <Property Name="recipe_type_id" Type="int" Nullable="false" />
+          <Property Name="recipe_type_name" Type="nvarchar" MaxLength="54" />
+        </EntityType>
+        <Association Name="FK__recipe__recipe_t__2B0A656D">
+          <End Role="recipe_type" Type="Self.recipe_type" Multiplicity="0..1" />
+          <End Role="recipe" Type="Self.recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="recipe_type">
+              <PropertyRef Name="recipe_type_id" />
+            </Principal>
+            <Dependent Role="recipe">
+              <PropertyRef Name="recipe_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="LeftoverRecipesModelStoreContainer">
           <EntitySet Name="Food_recipes" EntityType="Self.Food_recipes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="recipe" EntityType="Self.recipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="recipe_type" EntityType="Self.recipe_type" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__recipe__recipe_t__2B0A656D" Association="Self.FK__recipe__recipe_t__2B0A656D">
+            <End Role="recipe_type" EntitySet="recipe_type" />
+            <End Role="recipe" EntitySet="recipe" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LeftoverRecipesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LeftoverRecipesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Food_recipes" EntityType="LeftoverRecipesModel.Food_recipes" />
+          <EntitySet Name="recipes" EntityType="LeftoverRecipesModel.recipe" />
+          <EntitySet Name="recipe_type" EntityType="LeftoverRecipesModel.recipe_type" />
+          <AssociationSet Name="FK__recipe__recipe_t__2B0A656D" Association="LeftoverRecipesModel.FK__recipe__recipe_t__2B0A656D">
+            <End Role="recipe_type" EntitySet="recipe_type" />
+            <End Role="recipe" EntitySet="recipes" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Food_recipes">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ingredients" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="instructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="title" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="preparation_time" Type="Int32" />
-          <Property Name="difficulty_level" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="instructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ingredients" Type="String" MaxLength="432" FixedLength="false" Unicode="true" />
+          <Property Name="difficulty_level" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="category_breakfast" Type="Boolean" />
           <Property Name="category_lunch" Type="Boolean" />
           <Property Name="category_dinner" Type="Boolean" />
           <Property Name="category_dessert" Type="Boolean" />
         </EntityType>
-        <EntityContainer Name="LeftoverRecipesEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Food_recipes" EntityType="Self.Food_recipes" />
-        </EntityContainer>
-      </Schema>
+        <EntityType Name="recipe">
+          <Key>
+            <PropertyRef Name="recipe_id" />
+          </Key>
+          <Property Name="recipe_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="63" FixedLength="false" Unicode="true" />
+          <Property Name="minutes" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="steps" Type="String" MaxLength="3343" FixedLength="false" Unicode="true" />
+          <Property Name="ingredients" Type="String" MaxLength="253" FixedLength="false" Unicode="true" />
+          <Property Name="difficulty_assignment" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="recipe_type_id" Type="Int32" />
+          <NavigationProperty Name="recipe_type" Relationship="LeftoverRecipesModel.FK__recipe__recipe_t__2B0A656D" FromRole="recipe" ToRole="recipe_type" />
+        </EntityType>
+        <EntityType Name="recipe_type">
+          <Key>
+            <PropertyRef Name="recipe_type_id" />
+          </Key>
+          <Property Name="recipe_type_id" Type="Int32" Nullable="false" />
+          <Property Name="recipe_type_name" Type="String" MaxLength="54" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="recipes" Relationship="LeftoverRecipesModel.FK__recipe__recipe_t__2B0A656D" FromRole="recipe_type" ToRole="recipe" />
+        </EntityType>
+        <Association Name="FK__recipe__recipe_t__2B0A656D">
+          <End Type="LeftoverRecipesModel.recipe_type" Role="recipe_type" Multiplicity="0..1" />
+          <End Type="LeftoverRecipesModel.recipe" Role="recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="recipe_type">
+              <PropertyRef Name="recipe_type_id" />
+            </Principal>
+            <Dependent Role="recipe">
+              <PropertyRef Name="recipe_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -55,16 +130,37 @@
           <EntitySetMapping Name="Food_recipes">
             <EntityTypeMapping TypeName="LeftoverRecipesModel.Food_recipes">
               <MappingFragment StoreEntitySet="Food_recipes">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="category_dessert" ColumnName="category_dessert" />
+                <ScalarProperty Name="category_dinner" ColumnName="category_dinner" />
+                <ScalarProperty Name="category_lunch" ColumnName="category_lunch" />
+                <ScalarProperty Name="category_breakfast" ColumnName="category_breakfast" />
+                <ScalarProperty Name="difficulty_level" ColumnName="difficulty_level" />
                 <ScalarProperty Name="ingredients" ColumnName="ingredients" />
                 <ScalarProperty Name="instructions" ColumnName="instructions" />
                 <ScalarProperty Name="preparation_time" ColumnName="preparation_time" />
-                <ScalarProperty Name="difficulty_level" ColumnName="difficulty_level" />
-                <ScalarProperty Name="category_breakfast" ColumnName="category_breakfast" />
-                <ScalarProperty Name="category_lunch" ColumnName="category_lunch" />
-                <ScalarProperty Name="category_dinner" ColumnName="category_dinner" />
-                <ScalarProperty Name="category_dessert" ColumnName="category_dessert" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="recipes">
+            <EntityTypeMapping TypeName="LeftoverRecipesModel.recipe">
+              <MappingFragment StoreEntitySet="recipe">
+                <ScalarProperty Name="recipe_type_id" ColumnName="recipe_type_id" />
+                <ScalarProperty Name="difficulty_assignment" ColumnName="difficulty_assignment" />
+                <ScalarProperty Name="ingredients" ColumnName="ingredients" />
+                <ScalarProperty Name="steps" ColumnName="steps" />
+                <ScalarProperty Name="minutes" ColumnName="minutes" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="recipe_id" ColumnName="recipe_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="recipe_type">
+            <EntityTypeMapping TypeName="LeftoverRecipesModel.recipe_type">
+              <MappingFragment StoreEntitySet="recipe_type">
+                <ScalarProperty Name="recipe_type_name" ColumnName="recipe_type_name" />
+                <ScalarProperty Name="recipe_type_id" ColumnName="recipe_type_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

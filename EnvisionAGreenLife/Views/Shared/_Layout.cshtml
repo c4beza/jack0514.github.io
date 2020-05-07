@@ -8,16 +8,15 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Styles/Layout.css" rel="stylesheet" />
-    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body sytle="padding-top:0px">
     @*Put the slogan at the top of the page*@
     <h1 class="slogan" style="color:#9bcd4f;text-align:center">Gearing Towards a Zero Waste Sustainable Lifestyle!</h1>
     @* Navigation bar with dropdown list *@
-    <div class="topnav" id="myTopnav">
+    <div class="topnav" id="myTopnav" style="z-index:999">
         <img class="logo" src="~/Images/TeamLogo.png" alt="project logo" style="margin-left:10px; margin-top:2.5px; width:90px; height:90px" />
-        <a style="margin-left:9.5%" href="@Url.Action("Index","Home")" class="active">HOME</a>
-        <a href="@Url.Action("Quiz","Home")">TAKE THE QUIZ</a>
+        <a style="margin-left:9.5%" href="@Url.Action("Index","Home")" class="menu">HOME</a>
+        <a href="@Url.Action("Quiz","Home")" class="menu">TAKE THE QUIZ</a>
         <div class="dropdown" style="height:inherit">
             <button class="dropbtn" style="height:inherit">
                 <strong>
@@ -32,14 +31,15 @@
             </div>
         </div>
         <a href="@Url.Action("About","Home")">ABOUT</a>
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        @*<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>*@
     </div>
+
     @* Render the body of the content *@
     <div class="container body-content">
-        <br/>
+        <br />
         <div class="breadcrum" style="margin-left:20px">
-        @Html.Raw(BreadCrumb.Display())
-            </div>
+            @Html.Raw(BreadCrumb.Display())
+        </div>
         @RenderBody()
         <hr />
         <footer>
@@ -51,15 +51,18 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script>
+        window.onscroll = function () { myFunction() };
+
+        var topnav = document.getElementById("myTopnav");
+        var sticky = myTopnav.offsetTop;
+
         function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
+            if (window.pageYOffset >= sticky) {
+                myTopnav.classList.add("sticky")
             } else {
-                x.className = "topnav";
+                myTopnav.classList.remove("sticky");
             }
         }
-
     </script>
 </body>
 </html>
