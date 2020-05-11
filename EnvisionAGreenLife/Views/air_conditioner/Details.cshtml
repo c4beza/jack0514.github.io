@@ -1,4 +1,5 @@
-﻿@model EnvisionAGreenLife.Models.air_conditioner
+﻿@using MvcBreadCrumbs
+@model EnvisionAGreenLife.Models.air_conditioner
 
 @{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.air_conditioner>;}
 
@@ -8,212 +9,318 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
-<h1>@Model.Brand @Model.Model_No</h1>
-<div class="applianceImage">
-    <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air Conditioner" />
-</div>
-<div class="applianceIntro">
-    <h2>@Model.Brand @Model.C_Dehumid_Rated KW @Model.Configuration1 @Model.Configuration2 Air conditioner</h2>
-    <br />
-    <h3>Energy Rating - Cooling: @Model.Star2010_Cool </h3>
-    <h3>Energy Rating - Heating: @Model.Star2010_Heat </h3>
-    <br />
-    <br />
-    <br />
-    <p>
-        Keeping a relaxed home environment shouldn’t cost the world. This @Model.Brand @Model.C_Total_Cool_Rated KW
-        @Model.Type Air Conditioner is perfect for smaller rooms in your home
-        and offers convenient solutions with its 3D Airflow for evenly distributed air.
-        Cool or heat with cleaner air thanks to the high-density filter which has @Model.COPtestAvg times more holes
-        to trap unwanted particles. For your convenience, you can even control the air conditioner
-        remotely via your smartphone.
-    </p>
-</div>
-<hr />
-<div class="specification">
-    <h3>Specification</h3>
-        <dl class="dl-horizontal">
-            <dt>
-                Legal standard
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ApplStandard)
-            </dd>
-
-            <dt>
-                Model number
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Model_No)
-            </dd>
-
-            <dt>
-                Brand
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Brand)
-            </dd>
-
-            <dt>
-                Dehumidifying power (kW)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.C_Dehumid_Rated)
-            </dd>
-
-            <dt>
-                Indoor air distribution
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Configuration1)
-            </dd>
-
-            <dt>
-                Made in
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Country)
-            </dd>
-
-            <dt>
-                Cooling capacity (KW)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.C_Total_Cool_Rated)
-            </dd>
-
-            <dt>
-                Depth (mm)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Depth)
-            </dd>
-
-            <dt>
-                Width (mm)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Width)
-            </dd>
-
-            <dt>
-                Height (mm)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Height)
-            </dd>
-
-            <dt>
-                Heating capacity (KW)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.H_Total_Heat_Rated)
-            </dd>
-
-            <dt>
-                Energy efficiency ratio - cooling
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.EERtestAvg)
-            </dd>
-
-            <dt>
-                Energy efficiency ratio - Heating
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.COPtestAvg)
-            </dd>
-
-            <dt>
-                Energy rating - cooling
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Star2010_Cool)
-            </dd>
-
-            <dt>
-                Energy rating - Heating
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Star2010_Heat)
-            </dd>
-
-            <dt>
-                Phase
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Phase)
-            </dd>
-
-            <dt>
-                Sold in
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Sold_in)
-            </dd>
-
-            <dt>
-                Type
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Type)
-            </dd>
-
-            <dt>
-                Product website
-            </dt>
-
-            <dd>
-
-                <a href="@Model.Product_Website">@Model.Product_Website </a>
-            </dd>
-
-            <dt>
-                Brand Url
-            </dt>
-
-            <dd>
-                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL </a>
-            </dd>
-        </dl>
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">@Model.Brand - @Model.Model_No</h1>
     </div>
-        <hr>
-        <div style="height:700px">
-            <h3>Similar products</h3>
-            <br>
+</div>
+
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
+</div>
+
+<div class="section-3" style="margin-top:40px">
+    <div class="w-row">
+        <div class="w-col w-col-6">
+            <div class="appliance-detail-image-wrapper">
+                            @if (Model.Air_Conditioner_Id % 9 == 1)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner1.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+                            else
+                            if (Model.Air_Conditioner_Id % 9 == 2)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner2.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+                            else
+                            if (Model.Air_Conditioner_Id % 9 == 3)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner3.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+                            else
+                            if (Model.Air_Conditioner_Id % 9 == 4)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner4.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+                            else
+                            if (Model.Air_Conditioner_Id % 9 == 5)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner5.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+                            else
+                            if (Model.Air_Conditioner_Id % 9 == 6)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner6.jpg")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+                            else
+                            if (Model.Air_Conditioner_Id % 9 == 7)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner7.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+                            else
+                            if (Model.Air_Conditioner_Id % 9 == 8)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner8.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+                            else
+                            if (Model.Air_Conditioner_Id % 9 == 0)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner9.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                            }
+            </div>
+        </div>
+        <div class="column-6 w-col w-col-6">
+            <p class="paragraph-3">Energy Rating - Cooling: @Model.Star2010_Cool</p>
+            <p class="paragraph-3">Energy Rating - Heating: @Model.Star2010_Heat</p>
+            <hr />
+            <p class="paragraph-2">
+                <strong>AIR CONDITONER DESCRIPTION:<br></strong>Keeping a relaxed home environment shouldn’t cost the world. This @Model.Brand @Model.C_Total_Cool_Rated KW
+                @Model.Type Air Conditioner is perfect for smaller rooms in your home
+                and offers convenient solutions with its 3D Airflow for evenly distributed air.
+                Cool or heat with cleaner air thanks to the high-density filter which has @Model.COPtestAvg times more holes
+                to trap unwanted particles. For your convenience, you can even control the air conditioner
+                remotely via your smartphone.
+            </p>
+            <hr />
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h4 class="heading-7">Specification                        +</h4>
+                    </div>
+                    <div class="accordion-item-content">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                Legal standard
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ApplStandard)
+                            </dd>
+
+                            <dt>
+                                Model number
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Model_No)
+                            </dd>
+
+                            <dt>
+                                Brand
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Brand)
+                            </dd>
+
+                            <dt>
+                                Dehumidifying power (kW)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.C_Dehumid_Rated)
+                            </dd>
+
+                            <dt>
+                                Indoor air distribution
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Configuration1)
+                            </dd>
+
+                            <dt>
+                                Made in
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Country)
+                            </dd>
+
+                            <dt>
+                                Cooling capacity (KW)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.C_Total_Cool_Rated)
+                            </dd>
+
+                            <dt>
+                                Depth (mm)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Depth)
+                            </dd>
+
+                            <dt>
+                                Width (mm)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Width)
+                            </dd>
+
+                            <dt>
+                                Height (mm)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Height)
+                            </dd>
+
+                            <dt>
+                                Heating capacity (KW)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.H_Total_Heat_Rated)
+                            </dd>
+
+                            <dt>
+                                Energy efficiency ratio - cooling
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EERtestAvg)
+                            </dd>
+
+                            <dt>
+                                Energy efficiency ratio - Heating
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.COPtestAvg)
+                            </dd>
+
+                            <dt>
+                                Energy rating - cooling
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Star2010_Cool)
+                            </dd>
+
+                            <dt>
+                                Energy rating - Heating
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Star2010_Heat)
+                            </dd>
+
+                            <dt>
+                                Phase
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Phase)
+                            </dd>
+
+                            <dt>
+                                Sold in
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Sold_in)
+                            </dd>
+
+                            <dt>
+                                Type
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Type)
+                            </dd>
+
+                            <dt>
+                                Product website
+                            </dt>
+
+                            <dd>
+
+                                <a href="@Model.Product_Website">@Model.Product_Website </a>
+                            </dd>
+
+                            <dt>
+                                Brand Url
+                            </dt>
+
+                            <dd>
+                                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL </a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h2 class="heading-5">Our recommendations</h2>
+    <div class="container">
+        <div class="w-row">
+
             @foreach (var item in SpList)
-            {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="card">
-                        <h2 style="text-align:center; height:50px;">@item.Brand</h2>
+            {
+                <div class="w-col w-col-4">
+                    <div class="appliance-card">
                         <a href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id})'>
-                            <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air Conditioner" style="width:100%" />
+                            @if (item.Air_Conditioner_Id % 9 == 1)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner1.png")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Air_Conditioner_Id % 9 == 2)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner2.png")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Air_Conditioner_Id % 9 == 3)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner3.png")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Air_Conditioner_Id % 9 == 4)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner4.png")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Air_Conditioner_Id % 9 == 5)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner5.png")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Air_Conditioner_Id % 9 == 6)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner6.jpg")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Air_Conditioner_Id % 9 == 7)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner7.png")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Air_Conditioner_Id % 9 == 8)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner8.png")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Air_Conditioner_Id % 9 == 0)
+                            {
+                                <img src='@Url.Content("~/Images/air_conditioner9.png")' alt="Air_conditioner" class="appliance-card-image" />
+                            }
                         </a>
-                        <p>
-                            <button onclick="location.href='@Url.Action("Details", "air-conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="Button" style="height:100px">
-                                Model Number: @item.Model_No
-                            </button>
-                        </p>
+                        <button onclick="location.href='@Url.Action("Details", "air-conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="appliance-card-but w-button">
+                            @item.Brand: @item.Model_No
+                        </button>
                     </div>
                 </div>
             }
 
         </div>
+    </div>
+</div>
+
 

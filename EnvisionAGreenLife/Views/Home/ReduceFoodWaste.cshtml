@@ -1,72 +1,52 @@
-﻿
+﻿@using MvcBreadCrumbs
 @{
     ViewBag.Title = "ReduceFoodWaste";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link href="~/Styles/HomeIndex.css" rel="stylesheet" />
-<link href="~/Styles/HomePage.css" rel="stylesheet" />
-@*<div class="container">
 
-    <img src="~/Images/title3.png" height="400" width="1100">
-</div>*@
 
-<div class="container body-content">
-    <div class="section">
-
-        <div class="columns">
-            <h1>Reduce Food Waste</h1>
-            <br />
-            <div>
-                <p>
-                    If you are ready to reduce food water, below are some great ideas provided by us to get you started!
-                </p>
-            </div>
-        </div>
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">Reduce Food Waste</h1>
     </div>
 </div>
 
-<div class="container body-content">
-    <h3>
-        Get Started! It's Easy!
-    </h3>
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
+</div>
 
-    <div class="container body-content">
-        <div class="row" style="width:1200px">
-            <div class="column" style="margin-right:120px; width:270px;">
-                <div class="card" style="padding:0px">
-                    <img src="~/Images/leftoverfood.jpg" style="width:100%;    filter: brightness(50%);" />
-                    <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="slideButton" style="top: 140px;left: 145px;width: 240px;font-size:20px;">
-                        Left-Over Food Recipes
-                    </button>
+<section id="cards-section" class="cards-section">
+    <div class="centered-container w-container">
+        <h2>Get Started Its Easy.</h2>
+        <p>If you are ready to reduce your household food waste, below are some ideas to get you started on your own.<br></p>
+        <div class="columns-2 w-row">
+            <div class="column-4 w-col w-col-6">
+                <div class="div-block-2">
+                    <div class="cards-image-mask">
+                        <img src="~/Images/leftoverfood.jpg" class="cards-image" />
+                        <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%">
+                            Learn More
+                        </button>
+                    </div>
+                    <h3>Left-Over Food Recipes</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
                 </div>
             </div>
 
-            <div class="column" style="margin-right:120px; width:270px;">
-                <div class="card" style="padding:0px">
-                    <img src="~/Images/compost.png" style="width:100%;    filter: brightness(50%);" />
-                    <button onclick="location.href='#'" type="button" class="slideButton" style="top: 140px;left: 536px;width: 240px;font-size:20px;">
-                        Composting Guide
-                    </button>
-                </div>
-            </div>
-
-            <div class="column"; style="width:270px;">
-                <div class="card" style="padding:0px;">
-                    <img src="~/Images/herbs.png" style="width:100%;    filter: brightness(50%);" />
-                    <button onclick="location.href='#'" type="button" class="slideButton" style="top: 140px;left: 925px;width: 240px;font-size:20px;">
-                        Grow Your Own Herbs
-                    </button>
+            <div class="column-5 w-col w-col-6">
+                <div class="div-block">
+                    <div class="cards-image-mask">
+                        <img src="~/Images/herbs.png" alt="" class="cards-image">
+                        <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%">
+                            Learn More
+                        </button>
+                    </div>
+                    <h3 id="w-node-e8c45c7a2617-d77e0d3d">Grow Your Own Herbs</h3>
+                    <p id="w-node-e8c45c7a2619-d77e0d3d" class="paragraph-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
+</section>

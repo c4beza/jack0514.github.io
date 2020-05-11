@@ -1,87 +1,68 @@
-﻿@{
+﻿@using MvcBreadCrumbs
+@{
     ViewBag.Title = "Recipes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">Left-Over Food Recipes</h1>
+    </div>
+</div>
 
-<link href="~/Styles/HomePage.css" rel="stylesheet" />
-@*<div class="container">
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
+</div>
 
-        <img src="~/Images/title2.jpg" height="400" width="1100">
-    </div>*@
-
-<div class="container body-content">
-    <div style="margin-left:250px">
-        @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get))
+<section id="cards-section" class="cards-section-2">
+    <div class="centered-container-2 w-container">
+        <p style="text-align:center;">Have a go at these recipes. Easy to make, less waste, and possibly a new family favourite waiting to be discovered!.</p>
+        @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "appliance-collection-search-bar w-form" }))
         {
             <div>
-                Search all recipes: @Html.TextBox("SearchString", null, new { style = "width: 380px;", @class = "recipeSearchBar", @placeholder = "Find by name, ingredients, time, difficulty level" })
-                Difficulty: @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipeSearchBar" })
-                <input type="submit" value="Search" />
+                @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Search recipes and appliances..." })
+                @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown"})
+                <input type="submit" value="Search" class="appliancec-collection-search-but w-button" />
             </div>
         }
-    </div>
 
-    <div class="section">
-        <div class="columns">
-
-            <div>
-                <h1>Leftover Recipes</h1>
-                <br />
-                <div>
-                    <p>
-                        Have a go at these recipes. Easy to make, less waste, and possibly a new family favourite waiting to
-                        be discovered!
-                    </p>
+        <div class="cards-grid-container-2">
+            <div id="w-node-53bfe8321652-e832164b">
+                <div class="cards-image-mask">
+                    <a href='@Url.Action("breakfast_recipes", "Food_recipes")'>
+                        <img src='@Url.Content("~/Images/breakfast1.jpg")' alt="Breakfast" class="cards-image-2" />
+                    </a>
+                    <a href="@Url.Action("breakfast_recipes", "Food_recipes")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
                 </div>
+                <h4 class="appliance-name">Breakfast Recipes</h4>
+            </div>
+            <div id="w-node-53bfe8321658-e832164b">
+                <div class="cards-image-mask">
+                    <a href='@Url.Action("lunch_recipes", "Food_recipes")'>
+                        <img src='@Url.Content("~/Images/lunchfin.jpg")' alt="Lunch" class="cards-image-2" />
+                    </a>
+                    <a href="@Url.Action("lunch_recipes", "Food_recipes")" class="btn light outline w-button" style="margin-left:-75px; left:50%";>Learn More</a>
+                </div>
+                <h4 class="appliance-name">Lunch Recipes</h4>
+            </div>
+            <div id="w-node-53bfe832165d-e832164b">
+                <div class="cards-image-mask">
+                    <a href='@Url.Action("dinner_recipes", "Food_recipes")'>
+                        <img src='@Url.Content("~/Images/dinnerfin.jpg")' alt="Dinner" class="cards-image-2" />
+                    </a>
+                    <a href="@Url.Action("dinner_recipes", "Food_recipes")" class="btn light outline w-button" style="margin-left:-75px; left:50%";>Learn More</a>
+                </div>
+                <h4 class="appliance-name">Dinner Recipes</h4> </div>
+            <div id="w-node-53bfe8321663-e832164b">
+                <div class="cards-image-mask">
+                    <a href='@Url.Action("dessert_recipes", "Food_recipes")'>
+                        <img src='@Url.Content("~/Images/dessertfin2.png")' alt="Dessert" class="cards-image-2" />
+                    </a>
+                    <a href="@Url.Action("dessert_recipes", "Food_recipes")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
+                </div>
+                <h4 class="appliance-name">Dessert Recipes</h4>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="container body-content">
-
-    <h3>
-        Recipe collections
-    </h3>
-
-    <div class="container body-content">
-        <div class="row" style="margin: 0 -30px;">
-            <div class="column" style="width:250px;padding: 0 0px;">
-                <div class="card" style="padding:0px;">
-                    <img src="~/Images/breakfastfin.jpg" style="width:250px; height:250px; filter: brightness(70%);" />
-                    <button onclick="location.href='@Url.Action("breakfast_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 118px;width: 240px;font-size:20px;">
-                        Breakfast Recipes
-                    </button>
-                </div>
-            </div>
-
-            <div class="column" style="width:250px;padding: 0 0px;margin-left:33px;">
-                <div class="card" style="padding:0px;">
-                    <img src="~/Images/lunchfin.jpg" style="width:250px; height:250px; filter: brightness(70%);" />
-                    <button onclick="location.href='@Url.Action("lunch_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 395px;width: 240px;font-size:20px;">
-                        Lunch Recipes
-                    </button>
-                </div>
-            </div>
-
-            <div class="column" style="width: 250px;padding: 0 0px;margin-left:33px;">
-                <div class="card" style="padding:0px;">
-                    <img src="~/Images/dinnerfin.jpg" style="width:250px; height:250px; filter: brightness(70%);" />
-                    <button onclick="location.href='@Url.Action("dinner_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 675px;width: 240px;font-size:20px;">
-                        Dinner Recipes
-                    </button>
-                </div>
-            </div>
-            <div class="column" style="width:250px;padding: 0 0px;margin-left:33px;">
-                <div class="card" style="padding:0px;">
-                    <img src="~/Images/dessertfin2.png" style="width:250px; height:250px; filter: brightness(70%);" />
-                    <button onclick="location.href='@Url.Action("dessert_recipes", "Food_recipes")'" type="button" class="slideButton" style="top: 140px;left: 960px;width: 240px;font-size:20px;">
-                        Dessert Recipes
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>

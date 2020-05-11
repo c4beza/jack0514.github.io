@@ -1,4 +1,4 @@
-﻿@using PagedList.Mvc
+﻿@using MvcBreadCrumbs
 @model  PagedList.IPagedList<EnvisionAGreenLife.Models.appliance_types>
 
 @{
@@ -8,118 +8,91 @@
 
 <link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
 <body>
-    <h1>Choose a type of appliance to Save Energy!</h1>
-    <div class="row">
-        @{int x = 0;}
-        @if (Model != null)
-        {
-            foreach (var item in Model)
-            {
-                x++;
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    @if (item.Type_Id == 1)
-                    {
-                        <div class="card" style="margin-top:50px">
-                            <a href='@Url.Action("Index", "televisions")'>
-                                <img src='@Url.Content("~/Images/television1.png")' alt="Television" style="width:100%" />
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Index", "televisions")'" type="button" class="Button">
-                                    Television
-                                </button>
-                            </p>
-                        </div>
-                    }
-                    else if (item.Type_Id == 2)
-                    {
-                        <div class="card" style="margin-top:50px">
-                            <a href='@Url.Action("Index", "refrigerators")'>
-                                <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" style="width:100%" />
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Index", "refrigerators")'" type="button" class="Button">
-                                    Refrigerator
-                                </button>
-                            </p>
-                        </div>
-                    }
-                    else if (item.Type_Id == 3)
-                    {
-                        <div class="card" style="margin-top:50px">
-                            <a href='@Url.Action("Index", "monitors")'>
-                                <img src='@Url.Content("~/Images/monitor3.jpg")' alt="Monitor" style="width:100%" />
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Index", "monitors")'" type="button" class="Button">
-                                    Monitor
-                                </button>
-                            </p>
-                        </div>
-                    }
-                    else if (item.Type_Id == 4)
-                    {
-                        <div class="card" style="margin-top:50px">
-                            <a href='@Url.Action("Index", "dishwashers")'>
-                                <img src='@Url.Content("~/Images/Dishwasher1.jpeg")' alt="Dishwasher" style="width:100%" />
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Index", "dishwashers")'" type="button" class="Button">
-                                    Dishwasher
-                                </button>
-                            </p>
-                        </div>
-                    }
-                    else if (item.Type_Id == 5)
-                    {
-
-                        <div class="card" style="margin-top:50px">
-                            <a href='@Url.Action("Index", "clothes_washer")'>
-                                <img src='@Url.Content("~/Images/Clothes_Washer2.jpg")' alt="Clothes_Washer" style="width:100%" />
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Index", "clothes_washer")'" type="button" class="Button">
-                                    Clothes Washer
-                                </button>
-                            </p>
-                        </div>
-                    }
-                    else if (item.Type_Id == 6)
-                    {
-                        <div class="card" style="margin-top:50px">
-                            <a href='@Url.Action("Index", "clothes_dryer")'>
-                                <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Clothes_Dryer" style="width:100%" />
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Index", "clothes_dryer")'" type="button" class="Button">
-                                    Clothes Dryer
-                                </button>
-                            </p>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="card" style="margin-top:50px">
-                            <a href='@Url.Action("Index", "air_conditioner")'>
-                                <img src='@Url.Content("~/Images/air_conditioner2.jpg")' alt="Air_conditioner" style="width:100%" />
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Index", "air_conditioner")'" type="button" class="Button">
-                                    Air Conditioner
-                                </button>
-                            </p>
-                        </div>
-                    }
+    <div class="page-title-section">
+        <div class="container">
+            <h1 class="page-title" style="padding-left:20px;">Save Energy</h1>
+        </div>
+    </div>
+    <div class="breadcrum" style="margin-left:10%">
+        @Html.Raw(BreadCrumb.Display())
+    </div>
+    <div class="cards-section">
+        <div class="centered-container-2 w-container">
+            <p><b>Choose a type of appliance, and find the energy consumption of the appliance in your house</b></p><br />
+                @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "appliance-collection-search-bar w-form" }))
+                {
+                    <div>
+                        @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Search..." })
+                        <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+                    </div>
+                }
+            <div class="cards-grid-container-2">
+                <div>
+                    <div class="cards-image-mask">
+                        <a href='@Url.Action("Index", "air_conditioner")'>
+                            <img src='@Url.Content("~/Images/air_conditioner1.png")' alt="Air_conditioner" class="cards-image-2" />
+                        </a>
+                        <a href="@Url.Action("Index", "air_conditioner")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
+                    </div>
+                    <h4 class="appliance-name">AIR CONDITIONER</h4>
                 </div>
-            }
-        }
+                <div id="w-node-9c9d69aee442-f67e0d43">
+                    <div class="cards-image-mask">
+                        <a href='@Url.Action("Index", "clothes_washer")'>
+                            <img src='@Url.Content("~/Images/Clothes_Washer2.jpg")' alt="Clothes_Washer" class="cards-image-2" />
+                        </a>
+                        <a href="@Url.Action("Index", "clothes_washer")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
+                    </div>
+                    <h4 class="appliance-name">CLOTHES WASHER</h4>
+                </div>
+                <div id="w-node-9c9d69aee448-f67e0d43">
+                    <div class="cards-image-mask">
+                        <a href='@Url.Action("Index", "clothes_dryer")'>
+                            <img src='@Url.Content("~/Images/Clothes_Dryer.png")' alt="Clothes_Dryer" class="cards-image-2" />
+                        </a>
+                        <a href="@Url.Action("Index", "clothes_dryer")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
+                    </div>
+                    <h4 id="w-node-9c9d69aee44b-f67e0d43" class="appliance-name">CLOTHES DRYER</h4>
+                </div>
+                <div id="w-node-9c9d69aee44d-f67e0d43">
+                    <div class="cards-image-mask">
+                        <a href='@Url.Action("Index", "dishwashers")'>
+                            <img src='@Url.Content("~/Images/Dishwasher1.jpeg")' alt="Dishwasher" class="cards-image-2" />
+                        </a>
+                        <a href="@Url.Action("Index", "dishwashers")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
+                    </div>
+                    <h4 id="w-node-9c9d69aee451-f67e0d43" class="appliance-name">DISHWASHER</h4>
+                </div>
+                <div id="w-node-9c9d69aee453-f67e0d43">
+                    <div class="cards-image-mask">
+                        <a href='@Url.Action("Index", "monitors")'>
+                            <img src='@Url.Content("~/Images/monitor3.jpg")' alt="Monitor" class="cards-image-2" />
+                        </a>
+                        <a href="@Url.Action("Index", "monitors")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
+                    </div>
+                    <h4 id="w-node-9c9d69aee457-f67e0d43" class="appliance-name">MONITOR</h4>
+                </div>
+                <div id="w-node-eae23b7853e9-f67e0d43">
+                    <div class="cards-image-mask">
+                        <a href='@Url.Action("Index", "refrigerators")'>
+                            <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" class="cards-image-2" />
+                        </a>
+                        <a href="@Url.Action("Index", "refrigerators")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
+                    </div>
+                    <h4 class="appliance-name">REFRIGERATOR</h4>
+                </div>
+                <div id="w-node-06e4a0cd410c-f67e0d43">
+                    <div class="cards-image-mask">
+                        <a href='@Url.Action("Index", "televisions")'>
+                            <img src='@Url.Content("~/Images/television1.png")' alt="Television" class="cards-image-2" />
+                        </a>
+                        <a href="@Url.Action("Index", "televisions")" class="btn light outline w-button" style="margin-left:-75px; left:50%;">Learn More</a>
+                    </div>
+                    <h4 class="appliance-name">TELEVISION</h4>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <div class="pagecount" style="margin: auto;text-align:center">
-        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
-        of @Model.PageCount   @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-    </div>
-
 </body>
 
 

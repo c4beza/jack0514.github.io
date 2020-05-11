@@ -70,7 +70,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
-            BreadCrumb.Add("", "Leftover Recipes");
+            BreadCrumb.Add("", "Left-Over Food Recipes");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "All", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -81,16 +81,12 @@ namespace EnvisionAGreenLife.Controllers
         }
 
         [HttpGet]
-        public ActionResult AppliancesType(int? page)
+        public ActionResult AppliancesType()
         {
-            int pagesize = 9, pageindex = 1;
-            pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
-            var list = db.appliance_types.OrderByDescending(x => x.Type_Id).ToList();
-            IPagedList<appliance_types> stu = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add("", "Save Energy");
-            return View(stu);
+            return View();
         }
     }
 }

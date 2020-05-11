@@ -260,8 +260,15 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="Images\air_conditioner2.jpg" />
     <Content Include="Images\air_conditioner1.png" />
+    <Content Include="Images\air_conditioner2.png" />
+    <Content Include="Images\air_conditioner3.png" />
+    <Content Include="Images\air_conditioner4.png" />
+    <Content Include="Images\air_conditioner5.png" />
+    <Content Include="Images\air_conditioner6.jpg" />
+    <Content Include="Images\air_conditioner7.png" />
+    <Content Include="Images\air_conditioner8.png" />
+    <Content Include="Images\air_conditioner9.png" />
     <Content Include="Images\Appliances2.png" />
     <Content Include="Images\Appliances.jpg" />
     <Content Include="Images\breafast2.jpg" />
@@ -269,6 +276,10 @@
     <Content Include="Images\breakfast2.jpg" />
     <Content Include="Images\breakfast3.jpg" />
     <Content Include="Images\breakfastfin.jpg" />
+    <Content Include="Images\Circle.svg" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\homepage4.jpg" />
+    <Content Include="Images\homepage5.jpg" />
     <Content Include="Images\Clothes_Dryer.png" />
     <Content Include="Images\Clothes_Washer1.png" />
     <Content Include="Images\compost.png" />
@@ -289,7 +300,10 @@
     <Content Include="Images\homepage3.png" />
     <Content Include="Images\Ingredients.jpg" />
     <Content Include="Images\leftoverfood.jpg" />
-    <Content Include="Images\refrigerator2.jpg" />
+    <Content Include="Images\r1.jpeg" />
+    <Content Include="Images\r2.jpeg" />
+    <Content Include="Images\refrigerator10.jpg" />
+    <Content Include="Images\refrigerator2.png" />
     <Content Include="Images\refrigerator3.jpg" />
     <Content Include="Images\refrigerator4.jpeg" />
     <Content Include="Images\imagesbreakfast.jpg" />
@@ -300,7 +314,13 @@
     <Content Include="Images\monitor3.jpg" />
     <Content Include="Images\monitor4.jpg" />
     <Content Include="Images\refrigerator1.png" />
+    <Content Include="Images\refrigerator5.png" />
+    <Content Include="Images\refrigerator6.png" />
+    <Content Include="Images\refrigerator7.jpg" />
+    <Content Include="Images\refrigerator8.jpg" />
+    <Content Include="Images\refrigerator9.png" />
     <Content Include="Images\Slogan.png" />
+    <Content Include="Images\TeamLogo-p-500.png" />
     <Content Include="Images\television1.png" />
     <Content Include="App_Data\RecyclingCentres.mdf" />
     <Content Include="App_Data\RecyclingCentres_log.ldf">
@@ -324,6 +344,9 @@
     <Content Include="Images\Clothes_Washer3.jpg" />
     <Content Include="Images\Clothes_Washer4.jpg" />
     <Content Include="Images\title3.png" />
+    <Content Include="Images\transport.svg" />
+    <Content Include="Images\Triangle.svg" />
+    <Content Include="Images\verified.svg" />
     <Content Include="Images\Visualisation1.png" />
     <Content Include="Images\Visualisation2.jpg" />
     <Content Include="Models\AppliancesModel.Context.tt">
@@ -396,12 +419,17 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\webflow.js" />
+    <Content Include="Styles\Breadcrumb.css" />
     <Content Include="Styles\Flipcard.css" />
+    <Content Include="Styles\global.css" />
     <Content Include="Styles\HomePage.css" />
     <Content Include="Styles\Layout.css" />
     <Content Include="Styles\Applianceslayout.css" />
     <Content Include="Styles\HomeIndex.css" />
     <Content Include="Styles\ApplianceDetail.css" />
+    <Content Include="Styles\normalize.css" />
+    <Content Include="Styles\webflow.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -445,6 +473,7 @@
     <Content Include="Views\Food_recipes\lunch_recipes.cshtml" />
     <Content Include="Views\clothes_washer\Index.cshtml" />
     <Content Include="Views\Food_recipes\General_search.cshtml" />
+    <Content Include="Views\air_conditioner\TopRecommendations.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

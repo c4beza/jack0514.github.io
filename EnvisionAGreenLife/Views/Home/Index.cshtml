@@ -1,124 +1,91 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<link href="~/Styles/HomeIndex.css" rel="stylesheet" />
-<link href="~/Styles/Flipcard.css" rel="stylesheet" />
-<!-- Slideshow container -->
 
-<div class="container ">
-    <div class="mySlides">
-        <div class="numbertext">1 / 4</div>
-        <img class="slideimages" src='@Url.Content("~/Images/Appliances.jpg")' style="width:100%" />
-        <div class="text">
-            <p>Want to see the energy consumption of your appliances?</p>
+<div class="hero-section">
+    <div class="container">
+        <div class="columns w-row">
+            <div class="w-col w-col-6">
+                <div class="hero-wrapper">
+                    <h1 class="hero-heading">Victorian Households</h1>
+                    <p class="hero-paragraph">Take Quiz. Get Feedback. Live A Sustainable Life.</p>
+                    <div class="hero-button-wrapper">
+                        <a href="@Url.Action("Quiz","Home")" class="btn light outline w-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column-2 w-col w-col-6">
+                @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "home-search w-form" }))
+                {
+                    <div>
+                        @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "home-search-bar w-input", @placeholder = "Search recipes and appliances..." })
+                        <input type="submit" value="Search" class="home-search-but w-button">
+                    </div>
+                }
+            </div>
         </div>
-        <button onclick="location.href='@Url.Action("AppliancesType", "Home")'" type="button" class="slideButton">
-            Click here!
-        </button>
     </div>
-
-    <div class="mySlides">
-        <div class="numbertext">2 / 4</div>
-        <img class="slideimages" src='@Url.Content("~/Images/FoodRecipes.jpg")' style="width:100%" />
-        <div class="text">
-            <p>Want to reduce your food waste?</p>
-        </div>
-        <button onclick="location.href='@Url.Action("ReduceFoodWaste", "Home")'" type="button" class="slideButton">
-            Click here!
-        </button>
-    </div>
-
-    <div class="mySlides">
-        <div class="numbertext">3 / 4</div>
-        <img class="slideimages" src='@Url.Content("~/Images/Ingredients.jpg")' style="width:100%" />
-        <div class="text">
-            <p>Want to compost your food scraps?</p>
-        </div>
-        <button onclick="location.href='#'" type="button" class="slideButton">
-            Click here!
-        </button>
-    </div>
-
-    <div class="mySlides">
-        <div class="numbertext">3 / 4</div>
-        <img class="slideimages" src='@Url.Content("~/Images/GrowYourHerb.jpg")' style="width:100%" />
-        <div class="text">
-            <p>Want to grow your own herb?</p>
-        </div>
-        <button onclick="location.href='#'" type="button" class="slideButton">
-            Click here!
-        </button>
-    </div>
-
-
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-
 </div>
-<br>
-@*<div class="visualisation" style="height: 420px;">
-        <div class="visualisation1 col-lg-6" style="height: 420px;">
-            <img src="~/Images/Visualisation2.jpg" style="width: 500px; height: 380px; " />
-        </div>
-
-        <img src="~/Images/Visualisation1.png" style="width:50%;" class="col-lg-6" />
-
-
-    </div>*@
-
-<div class="container body-content">
-    <div class="row">
-        <div class="column" style="margin-right:120px">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="~/Images/homepage1.png" style="width:300px;height:300px;">
-
-                        <p>
-                            <h3 style="color:aliceblue; margin-top:35px"> Save Your Energy!</h3>
-                        </p>
+<div class="support-section">
+    <div class="container">
+        <div class="support-wrapper">
+            <div class="support-column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="support-square">
+                                <div class="support-square-text">Save <br>energy</div><img src="images/Circle.svg" alt="Circle Decoration in Shop Products Block" class="support-square-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="support-square">
+                                <h5>Look for 5 star appliances and reduce your energy bills.<br><br><br></h5>
+                                <div class="hero-button-wrapper" style="margin-left:60px">
+                                    <a href="#" class="btn light outline w-button">Learn More</a>
+                                </div>
+                                    <img src="images/Circle.svg" alt="Circle Decoration in Shop Products Block" class="support-square-image">
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="flip-card-back">
-
-                        <p style="margin-top:100px;font-size:medium">Want to switch to energy efficient appliances to save on your energy bills?</p>
-                        <p><button onclick="" type="button" style="font-size:16px;color:black;border-radius:5px;box-shadow:0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">Learn More!</button></p>
-
+                </div>
+            </div>
+            <div class="support-column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="support-square">
+                                <div class="support-square-text">Reduce waste</div>
+                                <img src="images/Triangle.svg" alt="Triangle Decoration in Donate Block" class="support-square-image triangle">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="support-square">
+                                <h5>Reduce food wastes by cooking delicious recipes from leftover food or by growing your own herbs.<br><br><br></h5>
+                                <div class="hero-button-wrapper" style="margin-left:60px">
+                                    <a href="#" class="btn light outline w-button">Learn More</a></div>
+                                    <img src="images/Triangle.svg" alt="Triangle Decoration in Donate Block" class="support-square-image triangle">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column" style="margin-right:120px">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="~/Images/homepage2.png" style="width:300px;height:300px;">
-                        <p>
-                            <h3 style="color:aliceblue; margin-top:35px"> Reduce Your Food Waste!</h3>
-                        </p>
-
-                    </div>
-                    <div class="flip-card-back">
-
-                        <p style="margin-top:100px; font-size:medium">Want to learn how to cook healthy recipes from leftover food?</p>
-                        <p><button onclick="" type="button" style="font-size:16px;color:black;border-radius:5px;box-shadow:0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">Learn More!</button></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="~/Images/homepage3.png" style="width:300px;height:300px;">
-                        <p>
-                            <h3 style="color:aliceblue; margin-top:35px"> Learn to Reuse!</h3>
-                        </p>
-                    </div>
-                    <div class="flip-card-back">
-                        <p style="margin-top:100px;font-size:medium">Plastic Bags?Glass Bottles?Paper Bags? We'll guide you how to reuse them!</p>
-                        <p><button onclick="" type="button" style="font-size:16px;color:black;border-radius:5px;box-shadow:0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">Learn More!</button></p>
-
+            <div class="support-column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="support-square">
+                                <div class="support-square-text">Learn to<br>Reuse</div><img src="images/Rectangle.svg" alt="Rectangle Decoration in Buy Gift Cards Block" class="support-square-image rectangle">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="support-square">
+                                <h5>Look for the nearest recycling centres or learn more about composting.<br><br><br></h5>
+                                <div class="hero-button-wrapper" style="margin-left:60px">
+                                    <a href="#" class="btn light outline w-button">Learn More</a></div>
+                                <img src="images/Rectangle.svg" alt="Rectangle Decoration in Buy Gift Cards Block" class="support-square-image rectangle">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,23 +93,5 @@
     </div>
 </div>
 
-<script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
 
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-    }
-</script>

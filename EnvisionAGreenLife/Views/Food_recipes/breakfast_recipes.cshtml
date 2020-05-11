@@ -1,53 +1,61 @@
 ﻿@using PagedList.Mvc
+@using MvcBreadCrumbs
 @model  EnvisionAGreenLife.ViewModel.breakfastList
 
 @{
     ViewBag.Title = "Breakfast_Recipes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
-<body>
-    <div style="margin-left:250px">
-        @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get))
-        {
-            <div>
-                Search all recipes: @Html.TextBox("SearchString", null, new { style = "width: 380px;", @class = "recipeSearchBar", @placeholder = "Find by name, ingredients, time, difficulty level" })
-                Difficulty: @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipeSearchBar" })
-                <input type="submit" value="Search" />
+    <body>
+        <div class="page-title-section">
+            <div class="container">
+                <h1 class="page-title">Breakfast Recipes</h1>
             </div>
-        }
-    </div>
+        </div>
 
-    <div class="row col-lg-12 col-md-12" style="height:auto">
-        @{int x = 0;}
-        @if (Model != null)
-        {
-            foreach (var item in Model.Breakfasts)
+        <div class="breadcrum" style="margin-left:10%">
+            @Html.Raw(BreadCrumb.Display())
+        </div>
+
+        <div class="content-section" style="padding-top: 35px;">
+            <p class="paragraph">Keep your home cool and comfortable with a high efficiency air conditioner</p><br />
+            <form action="@Url.Action("General_search", "Food_recipes")" method="get" class="appliance-collection-search-bar w-form">
+                <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by name, ingredients, time.." id="search" required="">
+                @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown" })
+                <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+            </form>
+        </div>
+
+        <div class="row col-lg-12 col-md-12" style="height:auto">
+            @{int x = 0;}
+            @if (Model != null)
             {
-                x++;
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="card" style="margin-top: 50px">
-                        <h2 style="   margin-top:10px;     text-align: center;       height: 100px;">
-                            @item.name
-                        </h2>
-                        <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'>
-                            <img src='@Url.Content("~/Images/breakfastfin.jpg")' alt="Breakfast" style="width:100%" />
-                        </a>
-                        <p>
-                            <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="Button" style="height:70px">
-                                View details
-                            </button>
-                        </p>
+                foreach (var item in Model.Breakfasts)
+                {
+                    x++;
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="card" style="margin-top: 50px">
+                            <h2 style="   margin-top:10px;     text-align: center;       height: 100px;">
+                                @item.name
+                            </h2>
+                            <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'>
+                                <img src='@Url.Content("~/Images/breakfastfin.jpg")' alt="Breakfast" style="width:100%" />
+                            </a>
+                            <p>
+                                <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="Button" style="height:70px">
+                                    View details
+                                </button>
+                            </p>
+                        </div>
                     </div>
-                </div>
+                }
             }
-        }
-    </div>
+        </div>
 
-    <br>
-    <br>
-    <div class="pagecount" style="margin:auto; text-align:center">
-        Page @(Model.Breakfasts.PageCount < Model.Breakfasts.PageNumber ? 0 : Model.Breakfasts.PageNumber)
-        of @Model.Breakfasts.PageCount   @Html.PagedListPager(Model.Breakfasts, page => Url.Action("breakfast_recipes", new { page, currentfilter = ViewBag.currentfilter }))
-    </div>
-</body>
+        <br>
+        <br>
+        <div class="pagecount" style="margin:auto; text-align:center">
+            Page @(Model.Breakfasts.PageCount < Model.Breakfasts.PageNumber ? 0 : Model.Breakfasts.PageNumber)
+            of @Model.Breakfasts.PageCount   @Html.PagedListPager(Model.Breakfasts, page => Url.Action("breakfast_recipes", new { page, currentfilter = ViewBag.currentfilter }))
+        </div>
+    </body>
