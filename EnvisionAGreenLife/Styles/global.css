@@ -1595,8 +1595,9 @@ blockquote {
 }
 
 .content-section {
-  padding-top: 65px;
-  padding-bottom: 65px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+    background-color: #aeaeae;
 }
 
 .content-section.why-acme-sections {
@@ -2858,6 +2859,10 @@ blockquote {
     background-color: #ffffff;
     border: 1px solid #cccccc;
     height: 38px;
+}
+
+.body {
+    background-color: #aeaeae;
 }
 
 @media screen and (max-width: 991px) {

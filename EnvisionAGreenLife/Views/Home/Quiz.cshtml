@@ -1,10 +1,16 @@
-﻿@{
+﻿@using MvcBreadCrumbs
+@{
     ViewBag.Title = "Quiz";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">Quiz</h1>
+    </div>
+</div>
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
+</div>
 
 <div class="riddle_target" data-rid-id="245907" data-fg="#14BBA2" data-bg="rgb(32, 32, 32)" style="margin:0 auto;max-width:100%;width:640px;" data-auto-scroll="true" data-auto-scroll-offset="5">
     <script src="https://www.riddle.com/files/js/embed.js"></script>
