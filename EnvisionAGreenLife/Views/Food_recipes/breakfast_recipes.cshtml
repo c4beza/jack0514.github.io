@@ -18,7 +18,7 @@
         </div>
 
         <div class="content-section" style="padding-top: 35px;">
-            <p class="paragraph">Keep your home cool and comfortable with a high efficiency air conditioner</p><br />
+            <p class="paragraph">Some text</p><br />
             <form action="@Url.Action("General_search", "Food_recipes")" method="get" class="appliance-collection-search-bar w-form">
                 <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by name, ingredients, time.." id="search" required="">
                 @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown" })
@@ -26,30 +26,70 @@
             </form>
         </div>
 
-        <div class="row col-lg-12 col-md-12" style="height:auto">
-            @{int x = 0;}
-            @if (Model != null)
-            {
-                foreach (var item in Model.Breakfasts)
+        <div class="section-3">
+            <div class="w-layout-grid grid-3">
+                @{int x = 0;}
+                @if (Model != null)
                 {
-                    x++;
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card" style="margin-top: 50px">
-                            <h2 style="   margin-top:10px;     text-align: center;       height: 100px;">
-                                @item.name
-                            </h2>
-                            <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'>
-                                <img src='@Url.Content("~/Images/breakfastfin.jpg")' alt="Breakfast" style="width:100%" />
+                    foreach (var item in Model.Breakfasts)
+                    {
+                        x++;
+                        <div class="appliance-card">
+                            <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id})'>
+                                @if (item.recipe_id % 9 == 1)
+                                {
+                                    <img src='@Url.Content("~/Images/b1.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 2)
+                                {
+                                    <img src='@Url.Content("~/Images/b2.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 3)
+                                {
+                                    <img src='@Url.Content("~/Images/b3.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 4)
+                                {
+                                    <img src='@Url.Content("~/Images/b4.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 5)
+                                {
+                                    <img src='@Url.Content("~/Images/b5.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 6)
+                                {
+                                    <img src='@Url.Content("~/Images/b6.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 7)
+                                {
+                                    <img src='@Url.Content("~/Images/b7.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 8)
+                                {
+                                    <img src='@Url.Content("~/Images/b8.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 0)
+                                {
+                                    <img src='@Url.Content("~/Images/b9.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
                             </a>
                             <p>
-                                <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="Button" style="height:70px">
-                                    View details
+                                <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="appliance-card-but w-button" style="height:100px">
+                                    @item.name
                                 </button>
                             </p>
                         </div>
-                    </div>
+                    }
                 }
-            }
+            </div>
         </div>
 
         <br>

@@ -26,6 +26,7 @@
         </div>
     </div>
 </div>
+
 <div class="support-section">
     <div class="container">
         <div class="support-wrapper">
@@ -34,16 +35,16 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="support-square">
-                                <div class="support-square-text">Save <br>energy</div><img src="images/Circle.svg" alt="Circle Decoration in Shop Products Block" class="support-square-image">
+                                <div class="support-square-text">Save <br>energy</div><img src="~/Images/Circle.svg" alt="Circle Decoration in Shop Products Block" class="support-square-image">
                             </div>
                         </div>
                         <div class="flip-card-back">
                             <div class="support-square">
-                                <h5>Look for 5 star appliances and reduce your energy bills.<br><br><br></h5>
-                                <div class="hero-button-wrapper" style="margin-left:60px">
-                                    <a href="#" class="btn light outline w-button">Learn More</a>
+                                <div class="support-square-text">
+                                        <a href="@Url.Action("AppliacnesType", "Home")">
+                                            <img src="~/Images/SaveEnergy.png">
+                                        </a>
                                 </div>
-                                    <img src="images/Circle.svg" alt="Circle Decoration in Shop Products Block" class="support-square-image">
                             </div>
                         </div>
                     </div>
@@ -55,16 +56,14 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="support-square">
-                                <div class="support-square-text">Reduce waste</div>
-                                <img src="images/Triangle.svg" alt="Triangle Decoration in Donate Block" class="support-square-image triangle">
+                                <div class="support-square-text">Reduce waste</div><img src="~/Images/Triangle.svg" alt="Triangle Decoration in Donate Block" class="support-square-image triangle">
                             </div>
                         </div>
                         <div class="flip-card-back">
                             <div class="support-square">
-                                <h5>Reduce food wastes by cooking delicious recipes from leftover food or by growing your own herbs.<br><br><br></h5>
-                                <div class="hero-button-wrapper" style="margin-left:60px">
-                                    <a href="#" class="btn light outline w-button">Learn More</a></div>
-                                    <img src="images/Triangle.svg" alt="Triangle Decoration in Donate Block" class="support-square-image triangle">
+                               <a href="@Url.Action("ReduceFoodWaste", "Home")">
+                                        <img src="~/Images/FoodWaste.png">
+                                    </a>
                             </div>
                         </div>
                     </div>
@@ -75,15 +74,14 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="support-square">
-                                <div class="support-square-text">Learn to<br>Reuse</div><img src="images/Rectangle.svg" alt="Rectangle Decoration in Buy Gift Cards Block" class="support-square-image rectangle">
+                                <div class="support-square-text">Learn to<br>Reuse</div><img src="~/Images/Rectangle.svg" alt="Rectangle Decoration in Buy Gift Cards Block" class="support-square-image rectangle">
                             </div>
                         </div>
                         <div class="flip-card-back">
                             <div class="support-square">
-                                <h5>Look for the nearest recycling centres or learn more about composting.<br><br><br></h5>
-                                <div class="hero-button-wrapper" style="margin-left:60px">
-                                    <a href="#" class="btn light outline w-button">Learn More</a></div>
-                                <img src="images/Rectangle.svg" alt="Rectangle Decoration in Buy Gift Cards Block" class="support-square-image rectangle">
+                                    <a href="@Url.Action("Comingsoon", "Home")">
+                                        <img src="~/Images/reuse.png">
+                                    </a>
                             </div>
                         </div>
                     </div>
@@ -92,6 +90,4 @@
         </div>
     </div>
 </div>
-
-
 

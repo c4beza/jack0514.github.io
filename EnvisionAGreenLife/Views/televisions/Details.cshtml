@@ -1,4 +1,5 @@
-﻿@model EnvisionAGreenLife.Models.television
+﻿@using MvcBreadCrumbs
+@model EnvisionAGreenLife.Models.television
 
 @{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.television>;}
 
@@ -7,139 +8,246 @@
     ViewBag.Title = "Television Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
-<h1>@Model.Brand_Reg @Model.Model_No</h1>
-<div class="applianceImage">
-    <img src='@Url.Content("~/Images/television1.png")' alt="Television" />
+
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">@Model.Brand_Reg - @Model.Model_No</h1>
+    </div>
 </div>
-<div class="applianceIntro">
-    <h2>@Model.Brand_Reg @Model.screensize @Model.Screen_Tech Television</h2>
-    <br />
-    <h3>Energy Rating: @Model.Star2</h3>
-    <br />
-    <br />
-    <br />
-    <p>
-        In a large screen size for optimal viewing, this @Model.Brand_Reg
-        @Model.screensize” TV offers amazing colour quality 
-        with its Quantum Dot Technology. With smart connectivity,
-        this TV easily lets you access your favourites from
-        popular streaming services including Netflix, Amazon 
-        Prime and Disney+. Built-in voice assistant makes it 
-        simple to control your viewing and the slim bezel-less 
-        design is simply stunning to watch.
-    </p>
+
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
 </div>
-<hr />
-<div class="specification">
-    <h3>Specification</h3>
-    <dl class="dl-horizontal">
 
-        <dt>
-            Brand
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brand_Reg)
-        </dd>
-
-        <dt>
-            Model number
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Model_No)
-        </dd>
-
-        <dt>
-            Made in
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Country)
-        </dd>
-
-        <dt>
-            Screen size
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.screensize)
-        </dd>
-
-        <dt>
-            Screen area
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Screen_Area)
-        </dd>
-
-        <dt>
-            Screen technology
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Screen_Tech)
-        </dd>
-
-        <dt>
-            Energy Rating
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Star)
-        </dd>
-
-        <dt>
-            Tuner Type
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tuner_Type)
-        </dd>
-
-        <dt>
-            Power supply
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Power_supply)
-        </dd>
-
-        <dt>
-            Product website
-        </dt>
-
-        <dd>
-            <a href="@Model.Product_Website">@Model.Product_Website</a>
-        </dd>
-
-        <dt>
-            Representive brand Url
-        </dt>
-        <dd>
-            <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
-        </dd>
-    </dl>
-</div>
-<hr>
-<div>
-    <h3>Similar products</h3>
-    <br>
-    @foreach (var item in SpList)
-    {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <div class="card">
-                <h2 style="text-align:center; height:50px;">@item.Brand_Reg</h2>
-                <a href='@Url.Action("Details", "televisions",new { id = @item.Television_Id})'>
-                    <img src='@Url.Content("~/Images/television4.jpg")' alt="Television" style="width:100%" />
-                </a>
-                <p>
-                    <button onclick="location.href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'" type="button" class="Button" style="height:100px">
-                        Model Number: @item.Model_No
-                    </button>
-                </p>
+<div class="section-3" style="margin-top:40px">
+    <div class="w-row">
+        <div class="w-col w-col-6">
+            <div class="appliance-detail-image-wrapper">
+                @if (Model.Television_Id % 9 == 1)
+                {
+                    <img src='@Url.Content("~/Images/tv1.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Television_Id % 9 == 2)
+                {
+                    <img src='@Url.Content("~/Images/tv2.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Television_Id % 9 == 3)
+                {
+                    <img src='@Url.Content("~/Images/tv3.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Television_Id % 9 == 4)
+                {
+                    <img src='@Url.Content("~/Images/tv4.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Television_Id % 9 == 5)
+                {
+                    <img src='@Url.Content("~/Images/tv5.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Television_Id % 9 == 6)
+                {
+                    <img src='@Url.Content("~/Images/tv6.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Television_Id % 9 == 7)
+                {
+                    <img src='@Url.Content("~/Images/tv7.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Television_Id % 9 == 8)
+                {
+                    <img src='@Url.Content("~/Images/tv8.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Television_Id % 9 == 0)
+                {
+                    <img src='@Url.Content("~/Images/tv.png")' alt="Television" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
             </div>
         </div>
-    }
+        <div class="column-6 w-col w-col-6" style="padding-top: 0px;">
+            <p class="paragraph-3"><b>@Model.Brand_Reg @Model.screensize @Model.Screen_Tech Television</b></p>
+            <p class="paragraph-3">Energy Rating: @Model.Star2</p>
+            <hr />
+            <p class="paragraph-2">
+                <strong>AIR CONDITONER DESCRIPTION:<br></strong>In a large screen size for optimal viewing, this @Model.Brand_Reg
+                @Model.screensize” TV offers amazing colour quality
+                with its Quantum Dot Technology. With smart connectivity,
+                this TV easily lets you access your favourites from
+                popular streaming services including Netflix, Amazon
+                Prime and Disney+. Built-in voice assistant makes it
+                simple to control your viewing and the slim bezel-less
+                design is simply stunning to watch.
+            </p>
+            <hr />
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h4 class="heading-7">Specification                        +</h4>
+                    </div>
+                    <div class="accordion-item-content">
+                        <dl class="dl-horizontal">
+
+                            <dt>
+                                Brand
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Brand_Reg)
+                            </dd>
+
+                            <dt>
+                                Model number
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Model_No)
+                            </dd>
+
+                            <dt>
+                                Made in
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Country)
+                            </dd>
+
+                            <dt>
+                                Screen size
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.screensize)
+                            </dd>
+
+                            <dt>
+                                Screen area
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Screen_Area)
+                            </dd>
+
+                            <dt>
+                                Screen technology
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Screen_Tech)
+                            </dd>
+
+                            <dt>
+                                Energy Rating
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Star)
+                            </dd>
+
+                            <dt>
+                                Tuner Type
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Tuner_Type)
+                            </dd>
+
+                            <dt>
+                                Power supply
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Power_supply)
+                            </dd>
+
+                            <dt>
+                                Product website
+                            </dt>
+
+                            <dd>
+                                <a href="@Model.Product_Website">@Model.Product_Website</a>
+                            </dd>
+
+                            <dt>
+                                Representive brand Url
+                            </dt>
+                            <dd>
+                                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<div>
+    <h2 class="heading-5">Review Similar Products</h2>
+    <div class="container">
+        <div class="w-row">
+
+            @foreach (var item in SpList)
+            {
+                <div class="w-col w-col-4">
+                    <div class="appliance-card">
+                        <a href='@Url.Action("Details", "televisions",new { id = @item.Television_Id})'>
+                            @if (item.Television_Id % 9 == 1)
+                            {
+                                <img src='@Url.Content("~/Images/tv1.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 2)
+                            {
+                                <img src='@Url.Content("~/Images/tv2.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 3)
+                            {
+                                <img src='@Url.Content("~/Images/tv3.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 4)
+                            {
+                                <img src='@Url.Content("~/Images/tv4.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 5)
+                            {
+                                <img src='@Url.Content("~/Images/tv5.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 6)
+                            {
+                                <img src='@Url.Content("~/Images/tv6.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 7)
+                            {
+                                <img src='@Url.Content("~/Images/tv7.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 8)
+                            {
+                                <img src='@Url.Content("~/Images/tv8.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 0)
+                            {
+                                <img src='@Url.Content("~/Images/tv9.png")' alt="Television" class="appliance-card-image" />
+                            }
+                        </a>
+                        <button onclick="location.href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'" type="button" class="appliance-card-but w-button">
+                            @item.Brand_Reg: @item.Model_No
+                        </button>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+

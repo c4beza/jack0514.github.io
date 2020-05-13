@@ -1,57 +1,453 @@
-﻿@model EnvisionAGreenLife.Models.recipe
+﻿@using MvcBreadCrumbs
+@model EnvisionAGreenLife.Models.recipe
+
+@{ var SrList = ViewData["SimilarRecipes"] as List<EnvisionAGreenLife.Models.recipe>;}
+
 
 @{
-    ViewBag.Title = "Leftover Recipe Details";
+    ViewBag.Title = "Recipe Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
-<div class="container body-content">
-    <div style="margin-left:250px">
-        @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get))
-        {
-            <div>
-                Search all recipes: @Html.TextBox("SearchString", null, new { style = "width: 380px;", @class = "recipeSearchBar", @placeholder = "Find by name, ingredients, time, difficulty level" })
-                Difficulty: @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipeSearchBar" })
-                <input type="submit" value="Search" />
-            </div>
-        }
-    </div>
-    <h1>@Model.name</h1>
-    <div style="height:600px;">
-        <div class="applianceImage">
-            @if (Model.recipe_type_id == 1)
-            {
-                <img src='@Url.Content("~/Images/breakfast1.jpg")' alt="Breakfast" style="width:500px;height:500px;" />
-            }
-            else
-                if (Model.recipe_type_id == 2)
-            {
-                <img src='@Url.Content("~/Images/lunch.jpg")' alt="Lunch" style="width:500px;height:500px;" />
-            }
-            else
-                if (Model.recipe_type_id == 3)
-            {
-                <img src='@Url.Content("~/Images/dinnerfin.jpg")' alt="Dinner" style="width:500px;height:500px;" />
-            }
-            else
-                if (Model.recipe_type_id == 4)
-            {
-                <img src='@Url.Content("~/Images/dessertfin2.png")' alt="Dessert" style="width:500px;height:500px;" />
-            }
-        </div>
-        <div class="applianceIntro" style="width:50%">
-            <h2><b>@Model.name</b></h2>
-            <br />
-            <h4><b>Difficulty level:</b> @Model.difficulty_assignment </h4>
-            <h4><b>Estimated time:</b> @Model.minutes </h4>
-            <hr>
-            <p><b>Ingredients:</b><br /> @Model.ingredients </p>
-            <br />
-            <p><b>Instructions:</b><br /> @Html.Raw(Model.steps)</p>
-            <br />
-            <br />
-            <br />
-        </div>
-        <hr />
+
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">@Model.name</h1>
     </div>
 </div>
+
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
+</div>
+
+<div class="section-3" style="margin-top:40px">
+    <div class="w-row">
+        <div class="w-col w-col-6">
+            <div class="appliance-detail-image-wrapper">
+
+                @if (Model.recipe_type_id == 1)
+                {
+                    if (Model.recipe_id % 9 == 1)
+                    {
+                        <img src='@Url.Content("~/Images/b1.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 2)
+                    {
+                        <img src='@Url.Content("~/Images/b2.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 3)
+                    {
+                        <img src='@Url.Content("~/Images/b3.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 4)
+                    {
+                        <img src='@Url.Content("~/Images/b4.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 5)
+                    {
+                        <img src='@Url.Content("~/Images/b5.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 6)
+                    {
+                        <img src='@Url.Content("~/Images/b6.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 7)
+                    {
+                        <img src='@Url.Content("~/Images/b7.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 8)
+                    {
+                        <img src='@Url.Content("~/Images/b8.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 0)
+                    {
+                        <img src='@Url.Content("~/Images/b9.png")' alt="Breakfast" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                }
+                else
+                    if (Model.recipe_type_id == 2)
+                {
+                    if (Model.recipe_id % 9 == 1)
+                    {
+                        <img src='@Url.Content("~/Images/l1.png")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 2)
+                    {
+                        <img src='@Url.Content("~/Images/l2.png")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 3)
+                    {
+                        <img src='@Url.Content("~/Images/l3.png")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 4)
+                    {
+                        <img src='@Url.Content("~/Images/l4.png")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 5)
+                    {
+                        <img src='@Url.Content("~/Images/l5.png")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 6)
+                    {
+                        <img src='@Url.Content("~/Images/l6.jpg")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 7)
+                    {
+                        <img src='@Url.Content("~/Images/l7.png")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 8)
+                    {
+                        <img src='@Url.Content("~/Images/l8.png")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 0)
+                    {
+                        <img src='@Url.Content("~/Images/l9.png")' alt="Lunch" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                }
+                else
+                    if (Model.recipe_type_id == 3)
+                {
+                    if (Model.recipe_id % 9 == 1)
+                    {
+                        <img src='@Url.Content("~/Images/dinner1.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 2)
+                    {
+                        <img src='@Url.Content("~/Images/dinner2.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 3)
+                    {
+                        <img src='@Url.Content("~/Images/dinner3.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 4)
+                    {
+                        <img src='@Url.Content("~/Images/dinner4.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 5)
+                    {
+                        <img src='@Url.Content("~/Images/dinner5.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 6)
+                    {
+                        <img src='@Url.Content("~/Images/dinner6.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 7)
+                    {
+                        <img src='@Url.Content("~/Images/dinner7.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 8)
+                    {
+                        <img src='@Url.Content("~/Images/dinner8.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 0)
+                    {
+                        <img src='@Url.Content("~/Images/dinner9.png")' alt="Dinner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                }
+                else
+                    if (Model.recipe_type_id == 4)
+                {
+                    if (Model.recipe_id % 9 == 1)
+                    {
+                        <img src='@Url.Content("~/Images/dessert1.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 2)
+                    {
+                        <img src='@Url.Content("~/Images/dessert2.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 3)
+                    {
+                        <img src='@Url.Content("~/Images/dessert3.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 4)
+                    {
+                        <img src='@Url.Content("~/Images/dessert4.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 5)
+                    {
+                        <img src='@Url.Content("~/Images/dessert5.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 6)
+                    {
+                        <img src='@Url.Content("~/Images/dessert6.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 7)
+                    {
+                        <img src='@Url.Content("~/Images/dessert7.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 8)
+                    {
+                        <img src='@Url.Content("~/Images/dessert8.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                    else
+                    if (Model.recipe_id % 9 == 0)
+                    {
+                        <img src='@Url.Content("~/Images/dessert9.png")' alt="Dessert" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                    }
+                }
+            </div>
+        </div>
+        <div class="column-6 w-col w-col-6">
+            <p class="paragraph-3"><b>Difficulty Level: </b><br>@Model.difficulty_assignment</p>
+            <hr />
+            <p class="paragraph-3"><b>Estimated Time: </b><br>@Model.minutes</p>
+            <hr />
+            <p class="paragraph-3"><b>Ingredients: </b><br>@Model.ingredients</p>
+            <hr />
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h4 class="heading-7">Instructions                        +</h4>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p> @Html.Raw(Model.steps)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h2 class="heading-5">Review Similar Recipes</h2>
+    <div class="container">
+        <div class="w-row">
+            @foreach (var item in SrList)
+            {
+                <div class="w-col w-col-4">
+                    <div class="appliance-card">
+                        <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id})'>
+                            @if (item.recipe_type_id == 1)
+                            {
+                                if (item.recipe_id % 9 == 1)
+                                {
+                                    <img src='@Url.Content("~/Images/b1.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 2)
+                                {
+                                    <img src='@Url.Content("~/Images/b2.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 3)
+                                {
+                                    <img src='@Url.Content("~/Images/b3.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 4)
+                                {
+                                    <img src='@Url.Content("~/Images/b4.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 5)
+                                {
+                                    <img src='@Url.Content("~/Images/b5.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 6)
+                                {
+                                    <img src='@Url.Content("~/Images/b6.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 7)
+                                {
+                                    <img src='@Url.Content("~/Images/b7.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 8)
+                                {
+                                    <img src='@Url.Content("~/Images/b8.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 0)
+                                {
+                                    <img src='@Url.Content("~/Images/b9.png")' alt="Breakfast" class="appliance-card-image" />
+                                }
+                            }
+                            else
+                                if (item.recipe_type_id == 2)
+                            {
+                                if (item.recipe_id % 9 == 1)
+                                {
+                                    <img src='@Url.Content("~/Images/l1.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 2)
+                                {
+                                    <img src='@Url.Content("~/Images/l2.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 3)
+                                {
+                                    <img src='@Url.Content("~/Images/l3.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 4)
+                                {
+                                    <img src='@Url.Content("~/Images/l4.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 5)
+                                {
+                                    <img src='@Url.Content("~/Images/l5.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 6)
+                                {
+                                    <img src='@Url.Content("~/Images/l6.jpg")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 7)
+                                {
+                                    <img src='@Url.Content("~/Images/l7.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 8)
+                                {
+                                    <img src='@Url.Content("~/Images/l8.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 0)
+                                {
+                                    <img src='@Url.Content("~/Images/l9.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                            }
+                            else
+                                if (item.recipe_type_id == 3)
+                            {
+                                if (item.recipe_id % 9 == 1)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner1.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 2)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner2.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 3)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner3.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 4)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner4.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 5)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner5.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 6)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner6.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 7)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner7.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 8)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner8.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 0)
+                                {
+                                    <img src='@Url.Content("~/Images/dinner9.png")' alt="Dinner" class="appliance-card-image" />
+                                }
+                            }
+                            else
+                                if (item.recipe_type_id == 4)
+                            {
+                                if (item.recipe_id % 9 == 1)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert1.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 2)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert2.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 3)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert3.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 4)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert4.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 5)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert5.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 6)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert6.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 7)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert7.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 8)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert8.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 0)
+                                {
+                                    <img src='@Url.Content("~/Images/dessert9.png")' alt="Dessert" class="appliance-card-image" />
+                                }
+                            }
+                        </a>
+                        <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="appliance-card-but w-button">
+                            @item.name
+                        </button>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+

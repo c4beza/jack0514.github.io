@@ -57,7 +57,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
-            Difficulty_level.Add(new SelectListItem() { Text = "All Levels", Value = null });
+            Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
             Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
             Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
@@ -104,7 +104,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
-            Difficulty_level.Add(new SelectListItem() { Text = "All Levels", Value = null });
+            Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
             Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
             Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
@@ -151,7 +151,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
-            Difficulty_level.Add(new SelectListItem() { Text = "All Levels", Value = null });
+            Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
             Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
             Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
@@ -198,7 +198,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
-            Difficulty_level.Add(new SelectListItem() { Text = "All Levels", Value = null });
+            Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
             Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
             Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
@@ -265,7 +265,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
-            Difficulty_level.Add(new SelectListItem() { Text = "All Levels", Value = null });
+            Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
             Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
             Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
@@ -292,11 +292,15 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("LeftoverRecipe", "Home"), "Leftover Recipes");
             BreadCrumb.Add("", recipes.name);
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
-            Difficulty_level.Add(new SelectListItem() { Text = "All Levels", Value = null });
+            Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
             Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
             Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
             this.ViewBag.Difficulty = new SelectList(Difficulty_level, "Value", "Text");
+            var results = from x in db.recipe
+                          select x;
+            var list = results.Where(x => x.difficulty_assignment.Contains(recipes.difficulty_assignment) && x.recipe_type_id == recipes.recipe_type_id).OrderBy(x => Guid.NewGuid()).Take(3).ToList();
+            ViewData["SimilarRecipes"] = list;
             return View(recipes);
         }
 

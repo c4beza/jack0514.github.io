@@ -49,7 +49,7 @@ namespace EnvisionAGreenLife.Controllers
             ViewBag.Message = "Description";
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add("", "About");
+            BreadCrumb.Add("", "Learn More");
             return View();
         }
 
@@ -86,6 +86,13 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add("", "Save Energy");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Comingsoon()
+        {
+            BreadCrumb.Clear();
             return View();
         }
     }

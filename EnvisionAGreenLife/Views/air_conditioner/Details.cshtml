@@ -8,7 +8,7 @@
     ViewBag.Title = "Air Conditioner Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
+
 <div class="page-title-section">
     <div class="container">
         <h1 class="page-title">@Model.Brand - @Model.Model_No</h1>
@@ -50,7 +50,7 @@
                             else
                             if (Model.Air_Conditioner_Id % 9 == 6)
                             {
-                                <img src='@Url.Content("~/Images/air_conditioner6.jpg")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                                <img src='@Url.Content("~/Images/air_conditioner6.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
                             }
                             else
                             if (Model.Air_Conditioner_Id % 9 == 7)
@@ -69,7 +69,8 @@
                             }
             </div>
         </div>
-        <div class="column-6 w-col w-col-6">
+        <div class="column-6 w-col w-col-6" style="padding-top: 0px;">
+            <p class="paragraph-3"><b>@Model.Brand @Model.C_Dehumid_Rated KW @Model.Configuration1 @Model.Configuration2 Air conditioner</b></p>
             <p class="paragraph-3">Energy Rating - Cooling: @Model.Star2010_Cool</p>
             <p class="paragraph-3">Energy Rating - Heating: @Model.Star2010_Heat</p>
             <hr />
@@ -258,7 +259,7 @@
 </div>
 
 <div>
-    <h2 class="heading-5">Our recommendations</h2>
+    <h2 class="heading-5">Review Similar Products</h2>
     <div class="container">
         <div class="w-row">
 
@@ -294,7 +295,7 @@
                             else
                             if (item.Air_Conditioner_Id % 9 == 6)
                             {
-                                <img src='@Url.Content("~/Images/air_conditioner6.jpg")' alt="Air_conditioner" class="appliance-card-image" />
+                                <img src='@Url.Content("~/Images/air_conditioner6.png")' alt="Air_conditioner" class="appliance-card-image" />
                             }
                             else
                             if (item.Air_Conditioner_Id % 9 == 7)
@@ -312,7 +313,7 @@
                                 <img src='@Url.Content("~/Images/air_conditioner9.png")' alt="Air_conditioner" class="appliance-card-image" />
                             }
                         </a>
-                        <button onclick="location.href='@Url.Action("Details", "air-conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="appliance-card-but w-button">
+                        <button onclick="location.href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="appliance-card-but w-button">
                             @item.Brand: @item.Model_No
                         </button>
                     </div>

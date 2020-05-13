@@ -13,6 +13,7 @@ using PagedList;
 
 namespace EnvisionAGreenLife.Controllers
 {
+    [BreadCrumb]
     public class televisionsController : Controller
     {
         private AppliancesEntities db = new AppliancesEntities();
@@ -20,31 +21,47 @@ namespace EnvisionAGreenLife.Controllers
         // GET: televisions
         [BreadCrumb(Clear = true, Label = "Television")]
         [HttpGet]
-        public ActionResult Index(int? page, string searchString, string currentFilter)
+        public ActionResult Index(int? page, string searchString, string currentFilter, string Ratings, string currentRatings)
         {
+            decimal rating;
+            if (!String.IsNullOrEmpty(Ratings))
+            {
+                rating = decimal.Parse(Ratings);
+            }
+            else
+            {
+                rating = -1;
+            }
             var results = from x in db.televisions
                           select x;
             int pagesize = 9, pageindex = 1;
             TList temp = new TList();
-            if (searchString != null)
+            if (searchString != null || rating != -1)
             {
                 page = 1;
             }
             else
             {
+                Ratings = currentRatings;
                 searchString = currentFilter;
             }
+            ViewData["CurrentRatings"] = Ratings;
             ViewData["CurrentFilter"] = searchString;
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchString) && rating != -1)
+            {
+                results = results.Where(s => s.Brand_Reg.Contains(searchString) && s.Star2 < (rating + 1) && s.Star2 >= rating);
+            }
+            else
+            if (!String.IsNullOrEmpty(searchString) && rating == -1)
             {
                 results = results.Where(s => s.Brand_Reg.Contains(searchString));
             }
-            //if (acList.h1star != false || currentfilter == true)
-            //{
-            //    results = results.Where(x => x.Star2010_Cool.Value == 3
-            //                           );
-            //    ViewBag.currentfilter = true;
-            //}
+            else
+            if (String.IsNullOrEmpty(searchString) && rating != -1)
+            {
+                results = results.Where(s => s.Star2 < (rating + 1) && s.Star2 >= rating);
+
+            }
             else
             {
                 results = results.Where(x => x.Type_Id == 4);
@@ -56,10 +73,20 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
-            BreadCrumb.Add("","Televisions");
+            BreadCrumb.Add("", "Televisions");
+            List<SelectListItem> Ratings_level = new List<SelectListItem>();
+            Ratings_level.Add(new SelectListItem() { Text = "All Ratings", Value = "-1" });
+            Ratings_level.Add(new SelectListItem() { Text = "1 Star", Value = "1" });
+            Ratings_level.Add(new SelectListItem() { Text = "2 Star", Value = "2" });
+            Ratings_level.Add(new SelectListItem() { Text = "3 Star", Value = "3" });
+            Ratings_level.Add(new SelectListItem() { Text = "4 Star", Value = "4" });
+            Ratings_level.Add(new SelectListItem() { Text = "5 Star", Value = "5" });
+            this.ViewBag.Ratings = new SelectList(Ratings_level, "Value", "Text", currentRatings);
             return View(temp);
         }
+
         // GET: televisions/Details/5
+        [HttpGet]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -78,9 +105,37 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add("", television.Model_No);
             var results = from x in db.televisions
                           select x;
-            var list = results.Where(x => x.Brand_Reg.Contains(television.Brand_Reg)).Take(3).ToList();
+            var list = results.Where(x => x.Brand_Reg.Contains(television.Brand_Reg)).OrderBy(x => Guid.NewGuid()).Take(3).ToList();
             ViewData["SimilarProducts"] = list;
             return View(television);
+        }
+
+        // GET: Top recommendations
+        [HttpGet]
+        public ActionResult TopRecommendations()
+        {
+
+            var results = from x in db.televisions
+                          select x;
+            int pagesize = 9, pageindex = 1;
+            TList temp = new TList();
+            results = results.Where(x => x.Star2 >= 5).OrderBy(x => Guid.NewGuid()).Take(9);
+            var list = results.ToList();
+            temp.Televisions = list.ToPagedList(pageindex, pagesize);
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
+            BreadCrumb.Add(Url.Action("Index", "televisions"), "Television");
+            BreadCrumb.Add("", "Top Recommendations");
+            List<SelectListItem> Ratings_level = new List<SelectListItem>();
+            Ratings_level.Add(new SelectListItem() { Text = "All Ratings", Value = "-1" });
+            Ratings_level.Add(new SelectListItem() { Text = "1 Star", Value = "1" });
+            Ratings_level.Add(new SelectListItem() { Text = "2 Star", Value = "2" });
+            Ratings_level.Add(new SelectListItem() { Text = "3 Star", Value = "3" });
+            Ratings_level.Add(new SelectListItem() { Text = "4 Star", Value = "4" });
+            Ratings_level.Add(new SelectListItem() { Text = "5 Star", Value = "5" });
+            this.ViewBag.Ratings = new SelectList(Ratings_level, "Value", "Text");
+            return View(temp);
         }
     }
 }

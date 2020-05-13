@@ -1,0 +1,97 @@
+﻿@using PagedList.Mvc
+@using MvcBreadCrumbs
+@model  EnvisionAGreenLife.ViewModel.TList
+
+@{
+    ViewBag.Title = "Television Top Recommendations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="page-title-section">
+        <div class="container">
+            <h1 class="page-title">Television Top Recommendations</h1>
+        </div>
+    </div>
+    <div class="breadcrum" style="margin-left:10%">
+        @Html.Raw(BreadCrumb.Display())
+    </div>
+    <div class="content-section" style="padding-top: 35px;">
+        <p class="paragraph">Netflix and chill on highly efficient TVs</p><br />
+        <form asp-action="Index" method="get" class="appliance-collection-search-bar w-form">
+            <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by brand…" id="search" required="">
+            @Html.DropDownList("Ratings", null, htmlAttributes: new { @class = "recipe-dropdown" })
+            <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+        </form>
+        <a href="@Url.Action("TopRecommendations", "televisions")" class="button-3 w-button">Top Recommendations</a>
+    </div>
+
+    <div class="section-3">
+        <div class="w-layout-grid grid-3">
+            @{int x = 0;}
+            @if (Model != null)
+            {
+                foreach (var item in Model.Televisions)
+                {
+                    x++;
+                    <div class="appliance-card">
+                        <a href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'>
+                            @if (item.Television_Id % 9 == 1)
+                            {
+                                <img src='@Url.Content("~/Images/tv1.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 2)
+                            {
+                                <img src='@Url.Content("~/Images/tv2.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 3)
+                            {
+                                <img src='@Url.Content("~/Images/tv3.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 4)
+                            {
+                                <img src='@Url.Content("~/Images/tv4.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 5)
+                            {
+                                <img src='@Url.Content("~/Images/tv5.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 6)
+                            {
+                                <img src='@Url.Content("~/Images/tv6.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 7)
+                            {
+                                <img src='@Url.Content("~/Images/tv7.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 8)
+                            {
+                                <img src='@Url.Content("~/Images/tv8.png")' alt="Television" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Television_Id % 9 == 0)
+                            {
+                                <img src='@Url.Content("~/Images/tv9.png")' alt="Television" class="appliance-card-image" />
+                            }
+                        </a>
+                        <p>
+                            <button onclick="location.href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
+                                @item.Brand_Reg: @item.Model_No
+                            </button>
+                        </p>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <br>
+    <br>
+</body>

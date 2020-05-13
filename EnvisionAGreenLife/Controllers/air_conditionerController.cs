@@ -104,7 +104,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add("", air_conditioner.Model_No);
             var results = from x in db.air_conditioner
                           select x;
-            var list = results.Where(x => x.Brand.Contains(air_conditioner.Brand)).Take(3).ToList();
+            var list = results.Where(x => x.Brand.Contains(air_conditioner.Brand)).OrderBy(x => Guid.NewGuid()).Take(3).ToList();
             ViewData["SimilarProducts"] = list;
             return View(air_conditioner);
         }
@@ -118,7 +118,7 @@ namespace EnvisionAGreenLife.Controllers
                           select x;
             int pagesize = 9, pageindex = 1;
             AcList temp = new AcList();
-            results = results.Where(x => x.sri2010_cool >= 5).Take(9);
+            results = results.Where(x => x.sri2010_cool >= 5).OrderBy(x => Guid.NewGuid()).Take(9);
             var list = results.ToList();
             temp.Air_Conditioners = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();

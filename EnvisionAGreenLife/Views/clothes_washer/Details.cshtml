@@ -1,4 +1,5 @@
-﻿@model EnvisionAGreenLife.Models.clothes_washer
+﻿@using MvcBreadCrumbs
+@model EnvisionAGreenLife.Models.clothes_washer
 
 @{ var SpList = ViewData["SimilarProducts"] as List<EnvisionAGreenLife.Models.clothes_washer>;}
 
@@ -7,176 +8,283 @@
     ViewBag.Title = "Clothes Washer Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Styles/ApplianceDetail.css" rel="stylesheet" />
-<h1>@Model.Brand @Model.Model_No</h1>
-<div class="applianceImage">
-    <img src='@Url.Content("~/Images/Clothes_Washer1.png")' alt="Clothes Washer" />
-</div>
-<div class="applianceIntro">
-    <h2>@Model.Brand @Model.Cap Kg @Model.Loading Loading Clothes Washer</h2>
-    <br />
-    <h3>Energy Rating: @Model.New_Star </h3>
-    <br />
-    <br />
-    <br />
-    <p>
-        Incorporating SmartDrive™ technology, this innovative Washsmart  @Model.Loading Loader
-        from @Model.Brand provides the greatest care for your clothes in every single
-        wash. With a large @Model.Cap kg capacity, this washer is perfect for large households or families!
-    </p>
-</div>
-<hr />
-<div class="specification">
-    <h3>Specification</h3>
-    <dl class="dl-horizontal">
 
-        <dt>
-            Brand
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brand)
-        </dd>
-
-        <dt>
-            Model number
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Model_No)
-        </dd>
-        <dt>
-            Capacity
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cap)
-        </dd>
-
-        <dt>
-            Energy consumption - cold wash
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CEC_Cold)
-        </dd>
-
-        <dt>
-            Energy consumption - warm wash
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CEC)
-        </dd>
-
-
-        <dt>
-            Code water consumption
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cold_Wat_Cons)
-        </dd>
-
-        <dt>
-            Made in
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Country)
-        </dd>
-
-        <dt>
-            Width
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Width)
-        </dd>
-
-        <dt>
-            Depth
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Depth)
-        </dd>
-
-        <dt>
-            Height
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-
-        <dt>
-            Hot water consumption
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Hot_Wat_Cons)
-        </dd>
-
-        <dt>
-            Loading Kg
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Loading)
-        </dd>
-
-        <dt>
-            Energy rating
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.New_Star)
-        </dd>
-
-        <dt>
-            Type
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-        <dt>
-            Product website
-        </dt>
-
-        <dd>
-            <a href="@Model.Product_Website">@Model.Product_Website </a>
-        </dd>
-
-        <dt>
-            Brand URL
-        </dt>
-
-        <dd>
-            <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL </a>
-        </dd>
-    </dl>
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">@Model.Brand - @Model.Model_No</h1>
+    </div>
 </div>
 
-<div style="height:700px">
-    <h3>Similar products</h3>
-    <br>
-    @foreach (var item in SpList)
-    {<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <div class="card">
-                <h2 style="text-align:center; height:50px;">@item.Brand</h2>
-                <a href='@Url.Action("Details", "clothes_dryer",new { id = @item.Clothes_Washer_Id})'>
-                    <img src='@Url.Content("~/Images/Clothes_Washer1.png")' alt="Clothes Washer" style="width:100%" />
-                </a>
-                <p>
-                    <button onclick="location.href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id })'" type="button" class="Button" style="height:100px">
-                        Model Number: @item.Model_No
-                    </button>
-                </p>
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
+</div>
+
+<div class="section-3" style="margin-top:40px">
+    <div class="w-row">
+        <div class="w-col w-col-6">
+            <div class="appliance-detail-image-wrapper">
+                @if (Model.Clothes_Washer_Id % 9 == 1)
+                {
+                    <img src='@Url.Content("~/Images/cw9.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Clothes_Washer_Id % 9 == 2)
+                {
+                    <img src='@Url.Content("~/Images/cw8.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Clothes_Washer_Id % 9 == 3)
+                {
+                    <img src='@Url.Content("~/Images/cw7.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Clothes_Washer_Id % 9 == 4)
+                {
+                    <img src='@Url.Content("~/Images/cw6.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Clothes_Washer_Id % 9 == 5)
+                {
+                    <img src='@Url.Content("~/Images/cw5.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Clothes_Washer_Id % 9 == 6)
+                {
+                    <img src='@Url.Content("~/Images/cw4.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Clothes_Washer_Id % 9 == 7)
+                {
+                    <img src='@Url.Content("~/Images/cw3.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Clothes_Washer_Id % 9 == 8)
+                {
+                    <img src='@Url.Content("~/Images/cw2.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Clothes_Washer_Id % 9 == 0)
+                {
+                    <img src='@Url.Content("~/Images/cw1.png")' alt="Clothes_washer" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
             </div>
         </div>
-    }
+        <div class="column-6 w-col w-col-6" style="padding-top: 0px;">
+            <p class="paragraph-3"><b>@Model.Brand @Model.Cap Kg @Model.Loading Loading Clothes Washer</b></p>
+            <p class="paragraph-3">Energy Rating: @Model.New_Star</p>
+            <hr />
+            <p class="paragraph-2">
+                <strong>Clothes Washer Description:<br></strong> Incorporating SmartDrive™ technology, this innovative Washsmart  @Model.Loading Loader
+                from @Model.Brand provides the greatest care for your clothes in every single
+                wash. With a large @Model.Cap kg capacity, this washer is perfect for large households or families!
+            </p>
+            <hr />
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h4 class="heading-7">Specification                        +</h4>
+                    </div>
+                    <div class="accordion-item-content">
+                        <dl class="dl-horizontal">
 
+                            <dt>
+                                Brand
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Brand)
+                            </dd>
+
+                            <dt>
+                                Model number
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Model_No)
+                            </dd>
+                            <dt>
+                                Capacity
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Cap)
+                            </dd>
+
+                            <dt>
+                                Energy consumption - cold wash
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CEC_Cold)
+                            </dd>
+
+                            <dt>
+                                Energy consumption - warm wash
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CEC)
+                            </dd>
+
+
+                            <dt>
+                                Code water consumption
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Cold_Wat_Cons)
+                            </dd>
+
+                            <dt>
+                                Made in
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Country)
+                            </dd>
+
+                            <dt>
+                                Width
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Width)
+                            </dd>
+
+                            <dt>
+                                Depth
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Depth)
+                            </dd>
+
+                            <dt>
+                                Height
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Height)
+                            </dd>
+
+                            <dt>
+                                Hot water consumption
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Hot_Wat_Cons)
+                            </dd>
+
+                            <dt>
+                                Loading Kg
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Loading)
+                            </dd>
+
+                            <dt>
+                                Energy rating
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.New_Star)
+                            </dd>
+
+                            <dt>
+                                Type
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Type)
+                            </dd>
+
+                            <dt>
+                                Product website
+                            </dt>
+
+                            <dd>
+                                <a href="@Model.Product_Website">@Model.Product_Website </a>
+                            </dd>
+
+                            <dt>
+                                Brand URL
+                            </dt>
+
+                            <dd>
+                                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL </a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div>
+    <h2 class="heading-5">Review Similar Products</h2>
+    <div class="container">
+        <div class="w-row">
+
+            @foreach (var item in SpList)
+            {
+                <div class="w-col w-col-4">
+                    <div class="appliance-card">
+                        <a href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id})'>
+                            @if (item.Clothes_Washer_Id % 9 == 1)
+                            {
+                                <img src='@Url.Content("~/Images/cw9.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Clothes_Washer_Id % 9 == 2)
+                            {
+                                <img src='@Url.Content("~/Images/cw8.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Clothes_Washer_Id % 9 == 3)
+                            {
+                                <img src='@Url.Content("~/Images/cw7.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Clothes_Washer_Id % 9 == 4)
+                            {
+                                <img src='@Url.Content("~/Images/cw6.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Clothes_Washer_Id % 9 == 5)
+                            {
+                                <img src='@Url.Content("~/Images/cw5.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Clothes_Washer_Id % 9 == 6)
+                            {
+                                <img src='@Url.Content("~/Images/cw4.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Clothes_Washer_Id % 9 == 7)
+                            {
+                                <img src='@Url.Content("~/Images/cw3.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Clothes_Washer_Id % 9 == 8)
+                            {
+                                <img src='@Url.Content("~/Images/cw2.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Clothes_Washer_Id % 9 == 0)
+                            {
+                                <img src='@Url.Content("~/Images/cw1.png")' alt="Clothes_washer" class="appliance-card-image" />
+                            }
+                        </a>
+                        <button onclick="location.href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id })'" type="button" class="appliance-card-but w-button">
+                            @item.Brand: @item.Model_No
+                        </button>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+

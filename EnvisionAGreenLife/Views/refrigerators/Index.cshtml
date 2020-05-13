@@ -1,50 +1,101 @@
 ﻿@using PagedList.Mvc
+@using PagedList.Mvc
+@using MvcBreadCrumbs
 @model  EnvisionAGreenLife.ViewModel.RList
 
 @{
     ViewBag.Title = "Refrigerator";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
-<body>
-    <form asp-action="Index" method="get">
-        <div class="form-actions no-color" style="margin-left:320px">
-            <p>
-                Find by brand: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-                <input type="submit" value="Search" class="btn btn-default" /> |
-                <a href="@Url.Action("Index","refrigerators")">Back to Full List</a>
-            </p>
-        </div>
-    </form>
 
-    <div class="row col-lg-12 col-md-12" style="height:auto">
-        @{int x = 0;}
-        @if (Model != null)
-        {
-            foreach (var item in Model.Refrigerators)
+<body>
+    <div class="page-title-section">
+        <div class="container">
+            <h1 class="page-title">Refrigerator</h1>
+        </div>
+    </div>
+    <div class="breadcrum" style="margin-left:10%">
+        @Html.Raw(BreadCrumb.Display())
+    </div>
+    <div class="content-section" style="padding-top: 35px;">
+        <p class="paragraph">Keep your food or drinks chilled by using an energy efficient refrigerator</p><br />
+        <form asp-action="Index" method="get" class="appliance-collection-search-bar w-form">
+            <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by brand…" id="search" required="">
+            @Html.DropDownList("Ratings", null, htmlAttributes: new { @class = "recipe-dropdown" })
+            <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+        </form>
+        <a href="@Url.Action("TopRecommendations", "refrigerators")" class="button-3 w-button">Top Recommendations</a>
+    </div>
+
+    <div class="section-3">
+        <div class="w-layout-grid grid-3">
+            @{int x = 0;}
+            @if (Model != null)
             {
-                x++;
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="card" style="margin-top:50px">
-                        <h2 style="text-align:center; height:50px;">@item.Brand</h2>
-                        <a href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id})'>
-                            <img src='@Url.Content("~/Images/refrigerator4.jpeg")' alt="Refrigerator" style="width:100%" />
+                foreach (var item in Model.Refrigerators)
+                {
+                    x++;
+                    <div class="appliance-card">
+                        <a href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'>
+                            @if (item.Refrigerator_Id % 9 == 1)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Refrigerator_Id % 9 == 2)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator2.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Refrigerator_Id % 9 == 3)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator3.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Refrigerator_Id % 9 == 4)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator4.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Refrigerator_Id % 9 == 5)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator5.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Refrigerator_Id % 9 == 6)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator6.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Refrigerator_Id % 9 == 7)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator7.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Refrigerator_Id % 9 == 8)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator8.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
+                            else
+                            if (item.Refrigerator_Id % 9 == 0)
+                            {
+                                <img src='@Url.Content("~/Images/refrigerator9.png")' alt="Refrigerator" class="appliance-card-image" />
+                            }
                         </a>
                         <p>
-                            <button onclick="location.href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'" type="button" class="Button" style="height:100px">
-                                Model Number: @item.Model_No
+                            <button onclick="location.href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
+                                @item.Brand: @item.Model_No
                             </button>
                         </p>
                     </div>
-                </div>
+                }
             }
-        }
+        </div>
     </div>
-
     <br>
     <br>
     <div class="pagecount" style="margin:auto; text-align:center">
         Page @(Model.Refrigerators.PageCount < Model.Refrigerators.PageNumber ? 0 : Model.Refrigerators.PageNumber)
-        of @Model.Refrigerators.PageCount   @Html.PagedListPager(Model.Refrigerators, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
+        of @Model.Refrigerators.PageCount   @Html.PagedListPager(Model.Refrigerators, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter, currentRatings = ViewBag.currentRatings }))
     </div>
 </body>
