@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="LeftoverRecipesModel.recipe" Width="1.5" PointX="5.625" PointY="1" />
         <EntityTypeShape EntityType="LeftoverRecipesModel.recipe_type" Width="1.5" PointX="3.375" PointY="1.375" />
         <AssociationConnector Association="LeftoverRecipesModel.FK__recipe__recipe_t__2B0A656D" />
+        <EntityTypeShape EntityType="LeftoverRecipesModel.Herb" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

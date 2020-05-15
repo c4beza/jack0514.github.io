@@ -22,7 +22,7 @@ namespace EnvisionAGreenLife.Controllers
         [HttpGet]
         public ActionResult breakfast_recipes(int? page, string searchString, string currentFilter)
         {
-            var results = from x in db.recipe
+            var results = from x in db.recipes
                           select x;
             int pagesize = 9, pageindex = 1;
             breakfastList temp = new breakfastList();
@@ -69,7 +69,7 @@ namespace EnvisionAGreenLife.Controllers
         [HttpGet]
         public ActionResult lunch_recipes(int? page, string searchString, string currentFilter)
         {
-            var results = from x in db.recipe
+            var results = from x in db.recipes
                           select x;
             int pagesize = 9, pageindex = 1;
             lunchList temp = new lunchList();
@@ -116,7 +116,7 @@ namespace EnvisionAGreenLife.Controllers
         [HttpGet]
         public ActionResult dinner_recipes(int? page, string searchString, string currentFilter)
         {
-            var results = from x in db.recipe
+            var results = from x in db.recipes
                           select x;
             int pagesize = 9, pageindex = 1;
             dinnerList temp = new dinnerList();
@@ -163,7 +163,7 @@ namespace EnvisionAGreenLife.Controllers
         [HttpGet]
         public ActionResult dessert_recipes(int? page, string searchString, string currentFilter)
         {
-            var results = from x in db.recipe
+            var results = from x in db.recipes
                           select x;
             int pagesize = 9, pageindex = 1;
             dessertList temp = new dessertList();
@@ -212,7 +212,7 @@ namespace EnvisionAGreenLife.Controllers
         [HttpGet]
         public ActionResult General_search(int? page, string searchString, string currentFilter, string Difficulty, string currentDifficulty)
         {
-            var results = from x in db.recipe
+            var results = from x in db.recipes
                           select x;
             int pagesize = 9, pageindex = 1;
             recipeList temp = new recipeList();
@@ -281,7 +281,7 @@ namespace EnvisionAGreenLife.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            recipe recipes = db.recipe.Find(id);
+            recipe recipes = db.recipes.Find(id);
             if (recipes == null)
             {
                 return HttpNotFound();
@@ -297,7 +297,7 @@ namespace EnvisionAGreenLife.Controllers
             Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
             Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
             this.ViewBag.Difficulty = new SelectList(Difficulty_level, "Value", "Text");
-            var results = from x in db.recipe
+            var results = from x in db.recipes
                           select x;
             var list = results.Where(x => x.difficulty_assignment.Contains(recipes.difficulty_assignment) && x.recipe_type_id == recipes.recipe_type_id).OrderBy(x => Guid.NewGuid()).Take(3).ToList();
             ViewData["SimilarRecipes"] = list;

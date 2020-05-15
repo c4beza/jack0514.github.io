@@ -26,7 +26,8 @@ namespace EnvisionAGreenLife.Models
         }
     
         public virtual DbSet<Food_recipes> Food_recipes { get; set; }
-        public virtual DbSet<recipe> recipe { get; set; }
+        public virtual DbSet<recipe> recipes { get; set; }
         public virtual DbSet<recipe_type> recipe_type { get; set; }
+        public virtual DbSet<Herb> Herbs { get; set; }
     }
 }

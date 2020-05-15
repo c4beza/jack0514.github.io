@@ -142,6 +142,7 @@
     <Compile Include="Controllers\clothes_washerController.cs" />
     <Compile Include="Controllers\dishwashersController.cs" />
     <Compile Include="Controllers\Food_recipesController.cs" />
+    <Compile Include="Controllers\HerbsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\monitorsController.cs" />
     <Compile Include="Controllers\recycling_centresController.cs" />
@@ -182,6 +183,9 @@
       <DependentUpon>AppliancesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Food_recipes.cs">
+      <DependentUpon>LeftoverRecipesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Herb.cs">
       <DependentUpon>LeftoverRecipesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LeftoverRecipesModel.Context.cs">
@@ -278,7 +282,10 @@
     <Content Include="Images\b7.png" />
     <Content Include="Images\b8.png" />
     <Content Include="Images\b9.png" />
+    <Content Include="Images\Basil.png" />
     <Content Include="Images\breakfast1.jpg" />
+    <Content Include="Images\challenging.png" />
+    <Content Include="Images\Chives.png" />
     <Content Include="Images\Circle.svg" />
     <Content Include="Images\cw1.png" />
     <Content Include="Images\cw2.png" />
@@ -316,22 +323,22 @@
     <Content Include="Images\dishwasher7.png" />
     <Content Include="Images\dishwasher8.png" />
     <Content Include="Images\dishwasher9.png" />
+    <Content Include="Images\Easy.png" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\foodRecipes.png" />
     <Content Include="Images\FoodWaste.png" />
     <Content Include="Images\homepage4.jpg" />
-    <Content Include="Images\homepage5.jpg" />
     <Content Include="Images\compost.png" />
     <Content Include="Images\dessertfin.jpg" />
     <Content Include="Images\dessertfin2.png" />
     <Content Include="Images\dinner.jpg" />
     <Content Include="Images\dinnerfin.jpg" />
-    <Content Include="Images\FoodRecipes.jpg" />
     <Content Include="Images\GrowYourHerb.jpg" />
     <Content Include="Images\herbs.png" />
     <Content Include="Images\homepage1.png" />
     <Content Include="Images\homepage2.png" />
     <Content Include="Images\homepage3.png" />
-    <Content Include="Images\Ingredients.jpg" />
+    <Content Include="Images\intermediate.png" />
     <Content Include="Images\l1.png" />
     <Content Include="Images\l2.png" />
     <Content Include="Images\l3.png" />
@@ -349,6 +356,7 @@
     <Content Include="Images\monitor7.png" />
     <Content Include="Images\monitor8.png" />
     <Content Include="Images\monitor9.png" />
+    <Content Include="Images\parsley.png" />
     <Content Include="Images\Rectangle.svg" />
     <Content Include="Images\refrigerator2.png" />
     <Content Include="Images\refrigerator3.png" />
@@ -364,7 +372,11 @@
     <Content Include="Images\refrigerator8.png" />
     <Content Include="Images\refrigerator9.png" />
     <Content Include="Images\reuse.png" />
+    <Content Include="Images\Rosemary.png" />
+    <Content Include="Images\Sage.png" />
     <Content Include="Images\SaveEnergy.png" />
+    <Content Include="Images\shopping.png" />
+    <Content Include="Images\soil.png" />
     <Content Include="Images\TeamLogo-p-500.png" />
     <Content Include="App_Data\RecyclingCentres.mdf" />
     <Content Include="App_Data\RecyclingCentres_log.ldf">
@@ -379,6 +391,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Thyme.png" />
+    <Content Include="Images\time.png" />
     <Content Include="Images\transport.svg" />
     <Content Include="Images\Triangle.svg" />
     <Content Include="Images\tv1.png" />
@@ -525,6 +539,8 @@
     <Content Include="Views\clothes_washer\TopRecommendations.cshtml" />
     <Content Include="Views\clothes_dryer\TopRecommendations.cshtml" />
     <Content Include="Views\Home\Comingsoon.cshtml" />
+    <Content Include="Views\Herbs\Details.cshtml" />
+    <Content Include="Views\Herbs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

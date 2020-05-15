@@ -572,6 +572,10 @@
     -ms-flex-direction: column;
     flex-direction: column;
   }
+    .herb-collapse {
+        padding-right: 0%;
+        padding-left: 0%;
+    }
 }
 
 body {
@@ -1194,6 +1198,130 @@ blockquote {
   position: relative;
   top: auto;
 }
+
+
+.support-section {
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.container {
+    display: block;
+    max-width: 1200px;
+    margin: 0px auto 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.support-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.support-column {
+    width: 30%;
+    min-height: 200px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 350px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: black;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.support-square {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    min-height: 350px;
+    margin-bottom: 45px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #222;
+    box-shadow: 1px 1px 3px 0 #000;
+}
+
+.support-square-text {
+    color: #f9f9f9;
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.support-square-image {
+    position: absolute;
+    left: auto;
+    top: auto;
+    right: -25%;
+    bottom: -25%;
+}
+
+    .support-square-image.triangle {
+        right: -11%;
+        bottom: -17%;
+    }
+
+    .support-square-image.rectangle {
+        right: -14%;
+        bottom: -31%;
+    }
+
+.infogram-embed {
+    margin: 30px 210px;
+}
+
+
 .flip-card {
   background-color: transparent;
     width:  100%;
@@ -3054,6 +3182,14 @@ blockquote {
   .support-square-text {
         font-size: 30px;
   }
+
+    .infogram-embed {
+        margin: 30px 80px;
+    }
+
+    .herb-heading {
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -3314,10 +3450,15 @@ blockquote {
     .recipe-dropdown {
         left: 212px;
     }
+
+    .infogram-embed {
+        margin: 30px 20px;
+    }
 }
 
+
 @media screen and (max-width: 479px) {
-  .banner {
+    .banner {
     font-size: 15px;
   }
   .btn.light.hero.safe {
@@ -3800,120 +3941,76 @@ dt {
     font-weight: bold;
 }
 
-.support-section {
-    padding-top: 10px;
-    padding-bottom: 0px;
-}
-
-.container {
-    display: block;
-    max-width: 1200px;
-    margin: 0px auto 40px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-.support-wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.support-column {
-    width: 30%;
-    min-height: 200px;
-}
-
-.flip-card {
-    background-color: transparent;
-    width: 100%;
-    height: 350px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.herb-collection-section {
+    margin-top: 40px;
     text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+    margin-bottom:40px;
 }
 
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+.herb-collection-column {
+    margin-top: 3%;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-}
-
-.flip-card-front {
-    background-color: black;
-    color: black;
-}
-
-.flip-card-back {
-    background-color: black;
-    color: white;
-    transform: rotateY(180deg);
-}
-
-.support-square {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: hidden;
-    min-height: 350px;
-    margin-bottom: 45px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: #222;
-    box-shadow: 1px 1px 3px 0 #000;
-}
-
-.support-square-text {
-    color: #f9f9f9;
-    font-size: 40px;
-    line-height: 1.2;
-    font-weight: 700;
+.herb-column2 {
+    padding-top: 0%;
+    padding-right: 5%;
+    padding-left: 5%;
     text-align: center;
-    text-transform: uppercase;
 }
 
-.support-square-image {
-    position: absolute;
+.herb-column {
+    padding-right: 10%;
+    padding-left: 10%;
+    text-align: left;
+}
+
+.herb-image {
+    position: relative;
     left: auto;
-    top: auto;
-    right: -25%;
-    bottom: -25%;
+    width: auto;
+    height: auto;
+    margin-left: auto;
 }
 
-.support-square-image.triangle {
-        right: -11%;
-        bottom: -17%;
-    }
+.herb-description {
+    text-align: left;
+}
 
-.support-square-image.rectangle {
-        right: -14%;
-        bottom: -31%;
-    }
+.herb-collapse {
+    margin-top: 5%;
+    padding-right: 0%;
+    padding-left: 0%;
+    text-align: center;
+}
 
+
+.herb-property-container {
+    margin-top: 5%;
+}
+
+.herb-property {
+    padding-left: 0px;
+    text-align: center;
+}
+
+.herb-shopping-btn {
+    border-radius: 16px;
+}
+
+.herb-step-section {
+    margin-top: 2%;
+    padding-right: 0%;
+    padding-left: 0%;
+    text-align: left;
+}
+
+.herb-collapse-container {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.herb-heading {
+    margin-top: 0px;
+}

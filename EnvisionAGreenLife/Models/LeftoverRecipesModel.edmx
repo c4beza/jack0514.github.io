@@ -20,6 +20,18 @@
           <Property Name="category_dinner" Type="bit" />
           <Property Name="category_dessert" Type="bit" />
         </EntityType>
+        <EntityType Name="Herbs">
+          <Key>
+            <PropertyRef Name="Herb_Id" />
+          </Key>
+          <Property Name="Herb_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Herb_Categories" Type="nvarchar" MaxLength="8" />
+          <Property Name="Difficulty" Type="nvarchar" MaxLength="12" />
+          <Property Name="Soil_Environment" Type="nvarchar" MaxLength="36" />
+          <Property Name="Steps" Type="nvarchar" MaxLength="1296" />
+          <Property Name="Growing_Time" Type="nvarchar" MaxLength="62" />
+          <Property Name="Where_to_buy" Type="nvarchar" MaxLength="78" />
+        </EntityType>
         <EntityType Name="recipe">
           <Key>
             <PropertyRef Name="recipe_id" />
@@ -27,7 +39,7 @@
           <Property Name="recipe_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="63" />
           <Property Name="minutes" Type="nvarchar" MaxLength="11" />
-          <Property Name="steps" Type="nvarchar" MaxLength="3343" />
+          <Property Name="steps" Type="nvarchar" MaxLength="3600" />
           <Property Name="ingredients" Type="nvarchar" MaxLength="253" />
           <Property Name="difficulty_assignment" Type="nvarchar" MaxLength="11" />
           <Property Name="recipe_type_id" Type="int" />
@@ -39,7 +51,7 @@
           <Property Name="recipe_type_id" Type="int" Nullable="false" />
           <Property Name="recipe_type_name" Type="nvarchar" MaxLength="54" />
         </EntityType>
-        <Association Name="FK__recipe__recipe_t__2B0A656D">
+        <Association Name="FK__recipe__recipe_t__3552E9B6">
           <End Role="recipe_type" Type="Self.recipe_type" Multiplicity="0..1" />
           <End Role="recipe" Type="Self.recipe" Multiplicity="*" />
           <ReferentialConstraint>
@@ -53,9 +65,10 @@
         </Association>
         <EntityContainer Name="LeftoverRecipesModelStoreContainer">
           <EntitySet Name="Food_recipes" EntityType="Self.Food_recipes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Herbs" EntityType="Self.Herbs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="recipe" EntityType="Self.recipe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="recipe_type" EntityType="Self.recipe_type" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__recipe__recipe_t__2B0A656D" Association="Self.FK__recipe__recipe_t__2B0A656D">
+          <AssociationSet Name="FK__recipe__recipe_t__3552E9B6" Association="Self.FK__recipe__recipe_t__3552E9B6">
             <End Role="recipe_type" EntitySet="recipe_type" />
             <End Role="recipe" EntitySet="recipe" />
           </AssociationSet>
@@ -72,6 +85,7 @@
             <End Role="recipe_type" EntitySet="recipe_type" />
             <End Role="recipe" EntitySet="recipes" />
           </AssociationSet>
+          <EntitySet Name="Herbs" EntityType="LeftoverRecipesModel.Herb" />
         </EntityContainer>
         <EntityType Name="Food_recipes">
           <Key>
@@ -95,7 +109,7 @@
           <Property Name="recipe_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="63" FixedLength="false" Unicode="true" />
           <Property Name="minutes" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="steps" Type="String" MaxLength="3343" FixedLength="false" Unicode="true" />
+          <Property Name="steps" Type="String" MaxLength="3600" FixedLength="false" Unicode="true" />
           <Property Name="ingredients" Type="String" MaxLength="253" FixedLength="false" Unicode="true" />
           <Property Name="difficulty_assignment" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="recipe_type_id" Type="Int32" />
@@ -121,6 +135,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Herb">
+          <Key>
+            <PropertyRef Name="Herb_Id" />
+          </Key>
+          <Property Name="Herb_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Herb_Categories" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Difficulty" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Soil_Environment" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="Steps" Type="String" MaxLength="1296" FixedLength="false" Unicode="true" />
+          <Property Name="Growing_Time" Type="String" MaxLength="62" FixedLength="false" Unicode="true" />
+          <Property Name="Where_to_buy" Type="String" MaxLength="78" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -161,6 +187,19 @@
               <MappingFragment StoreEntitySet="recipe_type">
                 <ScalarProperty Name="recipe_type_name" ColumnName="recipe_type_name" />
                 <ScalarProperty Name="recipe_type_id" ColumnName="recipe_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Herbs">
+            <EntityTypeMapping TypeName="LeftoverRecipesModel.Herb">
+              <MappingFragment StoreEntitySet="Herbs">
+                <ScalarProperty Name="Where_to_buy" ColumnName="Where_to_buy" />
+                <ScalarProperty Name="Growing_Time" ColumnName="Growing_Time" />
+                <ScalarProperty Name="Steps" ColumnName="Steps" />
+                <ScalarProperty Name="Soil_Environment" ColumnName="Soil_Environment" />
+                <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
+                <ScalarProperty Name="Herb_Categories" ColumnName="Herb_Categories" />
+                <ScalarProperty Name="Herb_Id" ColumnName="Herb_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

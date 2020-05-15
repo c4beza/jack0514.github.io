@@ -1,0 +1,160 @@
+﻿@model EnvisionAGreenLife.Models.Herb
+@using MvcBreadCrumbs
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+    <div class="page-title-section">
+        <div class="container">
+            <h1 class="page-title">@Model.Herb_Categories</h1>
+        </div>
+    </div>
+
+    <div class="breadcrum" style="margin-left:10%">
+        @Html.Raw(BreadCrumb.Display())
+    </div>
+
+    <div class="section-2">
+        <div class="herb-column w-row">
+            <div class="herb-column1 w-col w-col-4 w-col-stack">
+                <div class="herb-image-wrapper">
+                    @if (Model.Herb_Id == 1)
+                    {
+                        <img src="~/Images/Basil.png" alt="Basil" class="herb-image">
+                    }
+                    else
+                    if (Model.Herb_Id == 2)
+                    {
+                        <img src="~/Images/parsley.png" alt="Parsley" class="herb-image">
+                    }
+                    else
+                    if (Model.Herb_Id == 3)
+                    {
+                        <img src="~/Images/Rosemary.png" alt="Rosemary" class="herb-image">
+                    }
+                    else
+                    if (Model.Herb_Id == 4)
+                    {
+                        <img src="~/Images/Sage.png" alt="Sage" class="herb-image">
+                    }
+                    else
+                    if (Model.Herb_Id == 5)
+                    {
+                        <img src="~/Images/Thyme.png" alt="Thyme" class="herb-image">
+                    }
+                    else
+                    if (Model.Herb_Id == 6)
+                    {
+                        <img src="~/Images/Chives.png" alt="Chives" class="herb-image">
+                    }
+                </div>
+            </div>
+            <div class="herb-column2 w-col w-col-8 w-col-stack">
+                <h2 class="herb-heading">Description</h2>
+                @if (Model.Herb_Id == 1)
+                {
+                    <p class="herb-description">
+                        <strong>Basil is a deliciously fragrant, quick growing herb that pairs perfectly with tomatoes, garlic and lemon. It is an annual in most areas, so it will die down in winter. Be sure to pick all the leaves before it does and dry or freeze them into butter cubes to make the most of your harvest!</strong>
+                    </p>
+                }
+                else
+                   if (Model.Herb_Id == 2)
+                {
+                    <p class="herb-description">
+                        <strong>Did you know that parsley is said to mask garlic breath? It’s worth growing just to try! And if bad breath doesn’t bother you, at least parsley is perfect for making tabouleh as well as flavouring pasta and meat dishes.</strong>
+                    </p>
+                }
+                else
+                   if (Model.Herb_Id == 3)
+                {
+                    <p class="herb-description">
+                        <strong>Rosemary is a very attractive perennial with needle-like leaves that combine well with lamb dishes. The shrub can grow up to 1.5 - 2 m tall, with lavender blue small flowers that are attractive to bees. The plant is very drought, cold tolerant and can be grown in pots or large tubs.</strong>
+                    </p>
+                }
+                else
+                   if (Model.Herb_Id == 4)
+                {
+                    <p class="herb-description">
+                        <strong>A gorgeous aroma and flowers to boot, sage is the perfect garden companion. The flowers help attract bees to the garden and can even be tossed into salads for a splash of colour. Don’t forget its traditional uses, too – flavouring pork or poultry dishes, adding to stuffing or mixed into egg dishes. It’s certainly a herb worth growing in your garden or balcony!</strong>
+                    </p>
+                }
+                else
+                   if (Model.Herb_Id == 5)
+                {
+                    <p class="herb-description">
+                        <strong>If you haven’t got any ‘thyme’ for anything, then grow some! This herb makes an attractive ground cover and is also perfect for flavouring stock, stuffing and sauces. Give it full sun, well drained soil and once it’s established, thyme won’t need much attention at all.</strong>
+                    </p>
+                }
+                else
+                   if (Model.Herb_Id == 6)
+                {
+                    <p class="herb-description">
+                        <strong>An incredibly versatile herb, chives can add a mild garlic or onion flavour to your dishes. Pick and use to flavour fish, poultry, eggs or sandwiches or garnish soups and salads. They also look great in the garden, with their attractive grass-like foliage and edible purple flowers. </strong>
+                    </p>
+                }
+                <div class="herb-property-container w-container">
+                    <div class="herb-property-columns w-row">
+                        <div class="herb-property-column w-col w-col-3 w-col-stack">
+                            <div class="herb-property">
+                                @if (Model.Difficulty == "Easy")
+                                {
+                                    <img src="~/Images/Easy.png" width="100" height="100" alt="Easy">
+                                    <p style=" padding-right:5px;">Easy</p>
+                                }
+                                else
+                                    if (Model.Difficulty == "intermediate")
+                                {
+                                    <img src="~/Images/intermediate.png" width="100" height="100" alt="intermediate">
+                                    <p style=" padding-right:5px;">Intermediate</p>
+                                }
+                                else
+                                    if (Model.Difficulty == "Challenging")
+                                {
+                                    <img src="~/Images/challenging.png" width="100" height="100" alt="challenging">
+                                    <p style="padding-right:5px;">Challenging</p>
+                                }
+                            </div>
+                        </div>
+                        <div class="herb-property-column w-col w-col-3 w-col-stack">
+                            <div class="herb-property">
+                                <img src="~/Images/soil.png" width="100" height="100" alt="soil">
+                                <p style="padding-left:5px; padding-right:5px;">@Model.Soil_Environment</p>
+                            </div>
+                        </div>
+                        <div class="herb-property-column w-col w-col-3 w-col-stack">
+                            <div class="herb-property">
+                                <img src="~/Images/time.png" width="100" height="100" alt="time">
+                                <p style="padding-left:5px; padding-right:5px;">@Html.Raw(Model.Growing_Time)</p>
+                            </div>
+                        </div>
+                        <div class="herb-property-column w-col w-col-3 w-col-stack">
+                            <div class="herb-property">
+                                <img src="~/Images/shopping.png" width="100" height="100" alt="shopping">
+                                <div><a href="@Model.Where_to_buy" class="herb-shopping-btn w-button">Click to buy seeds</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="herb-step-section">
+        <div class="herb-collapse-container w-container">
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h4 class="heading-7" style="text-align:center;">Steps   +</h4>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>@Html.Raw(Model.Steps)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
