@@ -26,6 +26,8 @@ namespace EnvisionAGreenLife
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.min.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/mapbox").Include(
+            "~/Scripts/map.js"));
         }
     }
 }

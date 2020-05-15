@@ -15,6 +15,12 @@
     <link href="~/Images/favicon.png" rel="apple-touch-icon">
     <link href="~/Content/PagedList.css" rel="stylesheet" />
     <link href="~/Styles/Breadcrumb.css" rel="stylesheet" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+          type="text/css" />
 </head>
 <body>
     <div class="menu-wrapper">
@@ -22,7 +28,8 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <a href="@Url.Action("Index","Home")" aria-current="page" class="brand w-nav-brand w--current">
-                    <img src="~/Images/TeamLogo.png" width="60" height="60" srcset="~/Images/TeamLogo-p-500.png 500w, ~/Images/TeamLogo.png 800w" sizes="60px" style="margin-left:10px;" alt=""></a>
+                        <img src="~/Images/TeamLogo.png" width="60" height="60" srcset="~/Images/TeamLogo-p-500.png 500w, ~/Images/TeamLogo.png 800w" sizes="60px" style="margin-left:10px;" alt="">
+                    </a>
                     <div class="cart-nav-wrapper">
                         <nav role="navigation" class="nav-menu w-nav-menu">
                             <a href="@Url.Action("Index","Home")" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
@@ -34,7 +41,7 @@
                                     <div class="dropdown-link">Save Energy</div>
                                 </div>
                                 <nav class="w-dropdown-list">
-                                <a href="@Url.Action("AppliancesType","Home")" class="sub-dropdown-list-item w-dropdown-link">Search Appliance</a>
+                                    <a href="@Url.Action("AppliancesType","Home")" class="sub-dropdown-list-item w-dropdown-link">Search Appliance</a>
                                 </nav>
                             </div>
                             <div data-hover="1" data-delay="0" class="w-dropdown">
@@ -43,8 +50,9 @@
                                     <div class="dropdown-link">Reuse</div>
                                 </div>
                                 <nav class="w-dropdown-list">
-                                <a href="@Url.Action("Comingsoon", "Home")" class="sub-dropdown-list-item w-dropdown-link">Composting</a>
-                                <a href="@Url.Action("Comingsoon", "Home")" class="sub-dropdown-list-item w-dropdown-link">Recycling centre map</a></nav>
+                                    <a href="@Url.Action("Comingsoon", "Home")" class="sub-dropdown-list-item w-dropdown-link">Composting</a>
+                                    <a href="@Url.Action("Index", "recycling_centres")" class="sub-dropdown-list-item w-dropdown-link">Recycling centre map</a>
+                                </nav>
                             </div>
                             <a href="@Url.Action("About","Home")" class="nav-link w-nav-link">Learn More</a>
                         </nav>
@@ -68,5 +76,6 @@
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eb3cb2d67bd4c5c1fcfb790" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="~/Scripts/webflow.js" type="text/javascript"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

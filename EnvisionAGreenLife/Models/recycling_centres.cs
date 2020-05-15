@@ -11,12 +11,16 @@ namespace EnvisionAGreenLife.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class recycling_centres
     {
+        public int centre_id { get; set; }
         public string Address { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
         public Nullable<decimal> Lattitude { get; set; }
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
         public Nullable<decimal> Longitude { get; set; }
-        public int CentresId { get; set; }
     }
 }

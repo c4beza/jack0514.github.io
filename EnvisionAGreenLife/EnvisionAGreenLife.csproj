@@ -446,13 +446,6 @@
     <Content Include="Models\AppliancesModel.edmx.diagram">
       <DependentUpon>AppliancesModel.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\RecyclingCentresModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RecyclingCentresModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\RecyclingCentresModel.edmx.diagram">
-      <DependentUpon>RecyclingCentresModel.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -464,6 +457,13 @@
     </EntityDeploy>
     <Content Include="Models\LeftoverRecipesModel.edmx.diagram">
       <DependentUpon>LeftoverRecipesModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\RecyclingCentresModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RecyclingCentresModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RecyclingCentresModel.edmx.diagram">
+      <DependentUpon>RecyclingCentresModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\EnvisionAGreenLife - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -486,6 +486,7 @@
     <Content Include="Styles\Applianceslayout.css" />
     <Content Include="Styles\HomeIndex.css" />
     <Content Include="Styles\ApplianceDetail.css" />
+    <Content Include="Scripts\map.js" />
     <Content Include="Styles\normalize.css" />
     <Content Include="Styles\webflow.css" />
     <Content Include="Web.config" />
@@ -502,10 +503,6 @@
     <Content Include="Views\Home\Quiz.cshtml" />
     <Content Include="Views\Home\Reuse.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\recycling_centres\Create.cshtml" />
-    <Content Include="Views\recycling_centres\Delete.cshtml" />
-    <Content Include="Views\recycling_centres\Details.cshtml" />
-    <Content Include="Views\recycling_centres\Edit.cshtml" />
     <Content Include="Views\recycling_centres\Index.cshtml" />
     <Content Include="Views\air_conditioner\Details.cshtml" />
     <Content Include="Views\air_conditioner\Index.cshtml" />

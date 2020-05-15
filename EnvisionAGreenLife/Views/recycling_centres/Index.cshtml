@@ -1,16 +1,24 @@
 ﻿@model IEnumerable<EnvisionAGreenLife.Models.recycling_centres>
+@using MvcBreadCrumbs
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Recycling Center";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">Recycling Center Map</h1>
+    </div>
+</div>
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
+</div>
+<div id="map" style="height:600px"></div>
+<br />
+
+<table class="table" style="display:none;">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Address)
@@ -24,23 +32,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lattitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Longitude)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CentresId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CentresId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CentresId })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr class="coordinates">
+            <td class="Address">
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td class="Latitude">
+                @Html.DisplayFor(modelItem => item.Lattitude)
+            </td>
+            <td class="Longitude">
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+        </tr>
+    }
 </table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/mapbox")
+}

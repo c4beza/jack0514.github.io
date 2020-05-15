@@ -13,10 +13,10 @@ namespace EnvisionAGreenLife.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RecyclingCentresEntities : DbContext
+    public partial class RecyclingCentre_dbEntities : DbContext
     {
-        public RecyclingCentresEntities()
-            : base("name=RecyclingCentresEntities")
+        public RecyclingCentre_dbEntities()
+            : base("name=RecyclingCentre_dbEntities")
         {
         }
     

@@ -18,7 +18,6 @@
         </div>
 
         <div class="content-section" style="padding-top: 35px;">
-            <p class="paragraph">Some text</p><br />
             <form action="@Url.Action("General_search", "Food_recipes")" method="get" class="appliance-collection-search-bar w-form">
                 <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by name, ingredients, time.." id="search" required="">
                 @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown" })
