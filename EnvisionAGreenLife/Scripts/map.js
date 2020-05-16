@@ -21,7 +21,7 @@ for (i = 0; i < locations.length; i++) {
         "type": "Feature",
         "properties": {
             "Address": locations[i].Address,
-            "icon": "circle-15"
+            "icon": "town-hall-15",
         },
         "geometry": {
             "type": "Point",
@@ -30,6 +30,26 @@ for (i = 0; i < locations.length; i++) {
     };
     data.push(feature)
 }
+
+function forwardGeocoder(query) {
+    var matchingFeatures = [];
+    for (var i = 0; i < data.length; i++) {
+        var feature = data[i];
+        // handle queries with different capitalization than the source data by calling toLowerCase()
+        if (
+            feature.properties.Address
+                .toLowerCase()
+                .search(query.toLowerCase()) !== -1
+        ) {
+            feature['place_name'] = '🌲' + feature.properties.Address;
+            feature['center'] = feature.geometry.coordinates;
+            feature['place_type'] = ['Recycling Centre'];
+            matchingFeatures.push(feature);
+        }
+    }
+    return matchingFeatures;
+}
+
 mapboxgl.accessToken = TOKEN;
 var map = new mapboxgl.Map({
     container: 'map',
@@ -37,10 +57,6 @@ var map = new mapboxgl.Map({
     zoom: 11,
     center: [locations[0].Longitude, locations[0].Latitude]
 });
-
-
-
-
 
 map.on('load', function () {
     // Add a layer showing the places.
@@ -60,9 +76,24 @@ map.on('load', function () {
         }
     });
     map.addControl(new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken
+        accessToken: mapboxgl.accessToken,
+        localGeocoder: forwardGeocoder,
+        marker: {
+            color: 'orange'
+        },
+        language: 'en-US',
+        mapboxgl: mapboxgl
     }));;
     map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.FullscreenControl());
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        })
+    );
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', 'places', function (e) {

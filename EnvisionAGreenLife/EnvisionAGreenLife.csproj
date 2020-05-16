@@ -273,6 +273,7 @@
     <Content Include="Images\air_conditioner7.png" />
     <Content Include="Images\air_conditioner8.png" />
     <Content Include="Images\air_conditioner9.png" />
+    <Content Include="Images\apartment.png" />
     <Content Include="Images\b1.png" />
     <Content Include="Images\b2.png" />
     <Content Include="Images\b3.png" />
@@ -287,6 +288,7 @@
     <Content Include="Images\challenging.png" />
     <Content Include="Images\Chives.png" />
     <Content Include="Images\Circle.svg" />
+    <Content Include="Images\composting_type.jpg" />
     <Content Include="Images\cw1.png" />
     <Content Include="Images\cw2.png" />
     <Content Include="Images\cw3.png" />
@@ -323,6 +325,9 @@
     <Content Include="Images\dishwasher7.png" />
     <Content Include="Images\dishwasher8.png" />
     <Content Include="Images\dishwasher9.png" />
+    <Content Include="Images\do.jpg" />
+    <Content Include="Images\donot.jpg" />
+    <Content Include="Images\down-arrow.png" />
     <Content Include="Images\Easy.png" />
     <Content Include="Images\favicon.png" />
     <Content Include="Images\foodRecipes.png" />
@@ -373,10 +378,12 @@
     <Content Include="Images\refrigerator9.png" />
     <Content Include="Images\reuse.png" />
     <Content Include="Images\Rosemary.png" />
+    <Content Include="Images\rural.png" />
     <Content Include="Images\Sage.png" />
     <Content Include="Images\SaveEnergy.png" />
     <Content Include="Images\shopping.png" />
     <Content Include="Images\soil.png" />
+    <Content Include="Images\Suburban_household.png" />
     <Content Include="Images\TeamLogo-p-500.png" />
     <Content Include="App_Data\RecyclingCentres.mdf" />
     <Content Include="App_Data\RecyclingCentres_log.ldf">
@@ -393,6 +400,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\Thyme.png" />
     <Content Include="Images\time.png" />
+    <Content Include="Images\townhouse.png" />
     <Content Include="Images\transport.svg" />
     <Content Include="Images\Triangle.svg" />
     <Content Include="Images\tv1.png" />
@@ -407,6 +415,7 @@
     <Content Include="Images\verified.svg" />
     <Content Include="Images\Visualisation1.png" />
     <Content Include="Images\Visualisation2.jpg" />
+    <Content Include="Images\waste_type.png" />
     <Content Include="Models\AppliancesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppliancesModel.Context.cs</LastGenOutput>
@@ -538,6 +547,11 @@
     <Content Include="Views\Home\Comingsoon.cshtml" />
     <Content Include="Views\Herbs\Details.cshtml" />
     <Content Include="Views\Herbs\Index.cshtml" />
+    <Content Include="Views\Home\Composting.cshtml" />
+    <Content Include="Views\Home\apartment.cshtml" />
+    <Content Include="Views\Home\townhouse.cshtml" />
+    <Content Include="Views\Home\suburban_household.cshtml" />
+    <Content Include="Views\Home\rural_household.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

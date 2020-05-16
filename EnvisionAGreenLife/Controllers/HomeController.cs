@@ -95,5 +95,54 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Composting()
+        {
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add("", "Composting");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult apartment()
+        {
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("Composting", "Home"), "Composting");
+            BreadCrumb.Add("", "Apartment");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult townhouse()
+        {
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("Composting", "Home"), "Composting");
+            BreadCrumb.Add("", "Townhouse");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult suburban_household()
+        {
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("Composting", "Home"), "Composting");
+            BreadCrumb.Add("", "Suburban Household");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult rural_household()
+        {
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("Composting", "Home"), "Composting");
+            BreadCrumb.Add("", "Rural Household");
+            return View();
+        }
     }
 }

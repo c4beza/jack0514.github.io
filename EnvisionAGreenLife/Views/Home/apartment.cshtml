@@ -1,0 +1,163 @@
+﻿@using MvcBreadCrumbs
+@{
+    ViewBag.Title = "Compost In Apartment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .composting-detail-section {
+        margin-top: 65px;
+    }
+
+    .composting-columns {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    .compost-image-wrapper {
+        text-align: center;
+    }
+
+    .compost-property-column {
+        margin-top: 3%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .compost-property {
+        padding-right: 0px;
+        text-align: center;
+    }
+
+    .compost-collapse-columns {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    .compost-collapse-heading-column {
+        margin-top: 21px;
+    }
+
+    .heading-7 {
+        margin-top: 10px;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .column-9 {
+        text-align: center;
+    }
+
+    .column-8 {
+        text-align: center;
+    }
+
+    .column-12 {
+        border-left: 1px solid #000;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="page-title-section">
+        <div class="container">
+            <h1 class="page-title">Compost in Apartment</h1>
+        </div>
+    </div>
+
+    <div class="breadcrum" style="margin-left:10%">
+        @Html.Raw(BreadCrumb.Display())
+    </div>
+
+    <div class="composting-detail-section">
+        <div class="composting-columns w-row">
+            <div class="w-col w-col-4 w-col-stack">
+                <div class="compost-image-wrapper">
+                    <img src="~/Images/apartment.png" alt="apartment">
+                </div>
+            </div>
+            <div class="compost-property-column w-col w-col-8 w-col-stack">
+                <div class="w-row">
+                    <div class="compost-property w-col w-col-4 w-col-stack">
+                        <h4>Compost Type</h4>
+                        <div class="herb-property">
+                            <img src="~/Images/composting_type.jpg" width="100" height="100" alt="composting_type">
+                            <p> Vermicomposting</p>
+
+                        </div>
+                    </div>
+                    <div class="column-8 w-col w-col-4 w-col-stack">
+                        <div class="herb-property">
+                            <h4>Waste Type</h4><img src="~/Images/waste_type.png" width="100" height="100" alt="waste_type">
+                            <p>Kitchen scraps</p>
+                        </div>
+                    </div>
+                    <div class="column-9 w-col w-col-4 w-col-stack">
+                        <div class="herb-property">
+                            <h4>Purchase</h4><img src="~/Images/shopping.png" width="100" height="100" alt="shopping">
+                            <div><a href="https://www.bunnings.com.au/maze-worm-farm-with-worms-wooden-legs-blanket_p0137791?gclid=EAIaIQobChMI9Pe_soS46QIVBnZgCh3XYA2OEAQYASABEgLvp_D_BwE&gclsrc=aw.ds" class="herb-shopping-btn w-button">Click to buy</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="herb-step-section" style="padding-top:2%;">
+        <div class="compost-collapse-columns w-row">
+            <div class="w-col w-col-6">
+                <div class="herb-collapse-container w-container">
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-item-trigger">
+                                <div class="w-row">
+                                    <div class="w-col w-col-3"><img src="~/Images/do.jpg" width="80" height="80" alt="" class="image-3"></div>
+                                    <div class="compost-collapse-heading-column w-col w-col-9">
+                                        <h4 class="heading-7">What to compost                +</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item-content">
+                                <p style="padding-top: 5%;">
+                                    •	Fruits and vegetables<br>
+                                    •	Eggshells<br>
+                                    •	Coffee grounds and filters<br>
+                                    •	Tea bags<br>
+                                    •	Nut shells<br>
+                                    •	Houseplants<br>
+                                    •	Leaves<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-12 w-col w-col-6">
+                <div class="herb-collapse-container w-container">
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-item-trigger">
+                                <div class="w-row">
+                                    <div class="w-col w-col-3"><img src="~/Images/donot.jpg" width="80" height="80" alt=""></div>
+                                    <div class="compost-collapse-heading-column w-col w-col-9">
+                                        <h4 class="heading-7">What to compost                +</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item-content">
+                                <p style="text-align:left; padding-top: 5%;">
+                                    •	Dairy,yoghurt, cheese, milks<br>
+                                    •	Bread, rice, pasta, processed foods - you can add the odd crust or bits of cooked rice off the dinner plate, but don't add lots of starchy foods. Worms don't like them and they may go off or attract pests.<br>
+                                    •	Animal products - bones, meat, fish, shellfish<br>
+                                    •	Acidic foods - citrus, pineapple, garlic and onions.<br>
+                                    •	Spicy foods - worms are plain eaters, and don’t like spicy food such as chillies, chives, curries etc.<br>
+                                    •	Oils - won't be processed by the worms so may cause smells or an unfriendly environment<br>
+                                    •	Chemicals - avoid any materials contaminated with toxic chemicals, such as sawdust from treated wood, paper towel used with cleaning sprays, disinfectant wipes etc.<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

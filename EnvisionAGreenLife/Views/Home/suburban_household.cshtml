@@ -1,0 +1,184 @@
+﻿@using MvcBreadCrumbs
+@{
+    ViewBag.Title = "Compost In Suburban Household";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .composting-detail-section {
+        margin-top: 65px;
+    }
+
+    .composting-columns {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    .compost-image-wrapper {
+        text-align: center;
+    }
+
+    .compost-property-column {
+        margin-top: 3%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .compost-property {
+        padding-right: 0px;
+        text-align: center;
+    }
+
+    .compost-collapse-columns {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    .compost-collapse-heading-column {
+        margin-top: 21px;
+    }
+
+    .heading-7 {
+        margin-top: 10px;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .column-9 {
+        text-align: center;
+    }
+
+    .column-8 {
+        text-align: center;
+    }
+
+    .column-12 {
+        border-left: 1px solid #000;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="page-title-section">
+        <div class="container">
+            <h1 class="page-title">Compost in Suburban household</h1>
+        </div>
+    </div>
+
+    <div class="breadcrum" style="margin-left:10%">
+        @Html.Raw(BreadCrumb.Display())
+    </div>
+
+    <div class="composting-detail-section">
+        <div class="composting-columns w-row">
+            <div class="w-col w-col-4 w-col-stack">
+                <div class="compost-image-wrapper">
+                    <img src="~/Images/rural.png" alt="rural">
+                </div>
+            </div>
+            <div class="compost-property-column w-col w-col-8 w-col-stack">
+                <div class="w-row">
+                    <div class="compost-property w-col w-col-4 w-col-stack">
+                        <h4>Compost Type</h4>
+                        <div class="herb-property">
+                            <img src="~/Images/composting_type.jpg" width="100" height="100" alt="composting_type">
+                            <p> Enclosed bin <br> Compost tumbler <br> DIY bins</p>
+
+                        </div>
+                    </div>
+                    <div class="column-8 w-col w-col-4 w-col-stack">
+                        <div class="herb-property">
+                            <h4>Waste Type</h4><img src="~/Images/waste_type.png" width="100" height="100" alt="waste_type">
+                            <p>Kitchen waste<br>Garden wastes <br> Household  wastes</p>
+                        </div>
+                    </div>
+                    <div class="column-9 w-col w-col-4 w-col-stack">
+                        <div class="herb-property">
+                            <h4>Purchase</h4><img src="~/Images/shopping.png" width="100" height="100" alt="shopping">
+                            <div><a href="https://www.etsy.com/au/listing/697974078/diy-single-double-compost-bin-plans-with?gpla=1&gao=1&&utm_source=google&utm_medium=cpc&utm_campaign=shopping_au_en_au_b-craft_supplies_and_tools-other-other&utm_custom1=5f4ba87f-e361-4746-a286-b563022efb8f&utm_content=go_344340968_19782570128_78803052728_pla-350250224874_c__697974078enau&utm_custom2=344340968&gclid=EAIaIQobChMI0srAwf-46QIVmh0rCh1w_gVmEAQYAyABEgKKq_D_BwE" class="herb-shopping-btn w-button">Click to buy</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="herb-step-section" style="padding-top:2%;">
+        <div class="compost-collapse-columns w-row">
+            <div class="w-col w-col-6">
+                <div class="herb-collapse-container w-container">
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-item-trigger">
+                                <div class="w-row">
+                                    <div class="w-col w-col-3"><img src="~/Images/do.jpg" width="80" height="80" alt="" class="image-3"></div>
+                                    <div class="compost-collapse-heading-column w-col w-col-9">
+                                        <h4 class="heading-7">What to compost                +</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item-content">
+                                <p style="padding-top: 5%;">
+                                    •	Fruits and vegetables<br>
+                                    •	Eggshells<br>
+                                    •	Coffee grounds and filters<br>
+                                    •	Tea bags<br>
+                                    •	Nut shells<br>
+                                    •	Shredded newspaper<br>
+                                    •	Cardboard<br>
+                                    •	Paper<br>
+                                    •	Yard trimmings<br>
+                                    •	Grass clippings<br>
+                                    •	Houseplants<br>
+                                    •	Hay and straw<br>
+                                    •	Leaves<br>
+                                    •	Sawdust<br>
+                                    •	Wood chips<br>
+                                    •	Cotton and Wool Rags<br>
+                                    •	Dryer and vacuum cleaner lint<br>
+                                    •	Hair and fur<br>
+                                    •	Fireplace ashes<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-12 w-col w-col-6">
+                <div class="herb-collapse-container w-container">
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-item-trigger">
+                                <div class="w-row">
+                                    <div class="w-col w-col-3"><img src="~/Images/donot.jpg" width="80" height="80" alt=""></div>
+                                    <div class="compost-collapse-heading-column w-col w-col-9">
+                                        <h4 class="heading-7">What to compost                +</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item-content">
+                                <p style="text-align:left; padding-top: 5%;">
+                                    •	Black walnut tree leaves or twigs<br>
+                                    - Releases substances that might be harmful to plants<br>
+                                    •	Coal or charcoal ash<br>
+                                    - Might contain substances harmful to plants<br>
+                                    •	Dairy products (e.g., butter, milk, sour cream, yogurt) and eggs <br>
+                                    - Create odor problems and attract pests such as rodents and flies<br>
+                                    •	Diseased or insect-ridden plants<br>
+                                    - Diseases or insects might survive and be transferred back to other plants<br>
+                                    •	Fats, grease, lard, or oils <br>
+                                    - Create odor problems and attract pests such as rodents and flies<br>
+                                    •	Meat or fish bones and scraps <br>
+                                    - Create odor problems and attract pests such as rodents and flies<br>
+                                    •	Pet wastes (e.g., dog or cat feces, soiled cat litter) <br>
+                                    - Might contain parasites, bacteria, germs, pathogens, and viruses harmful to humans<br>
+                                    •	Yard trimmings treated with chemical pesticides<br>
+                                    - Might kill beneficial composting organisms<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
