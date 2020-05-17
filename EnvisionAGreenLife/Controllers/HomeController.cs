@@ -56,10 +56,10 @@ namespace EnvisionAGreenLife.Controllers
         [HttpGet]
         public ActionResult ReduceFoodWaste()
         {
-            ViewBag.Message = "Reduce food waste";
+            ViewBag.Message = "Reduce waste";
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add("", "Reduce Food Waste");
+            BreadCrumb.Add("", "Reduce Waste");
             return View();
         }
 
@@ -69,7 +69,7 @@ namespace EnvisionAGreenLife.Controllers
             ViewBag.Message = "LeftoverRecipe";
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
+            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
             BreadCrumb.Add("", "Left-Over Food Recipes");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "All", Value = null });
@@ -142,6 +142,36 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("Composting", "Home"), "Composting");
             BreadCrumb.Add("", "Rural Household");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EnergyQuiz()
+        {
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Quiz");
+            BreadCrumb.Add("", "Save Energy Quiz");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ReuseQuiz()
+        {
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Quiz");
+            BreadCrumb.Add("", "Reuse Quiz");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ReduceWasteQuiz()
+        {
+            BreadCrumb.Clear();
+            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Quiz");
+            BreadCrumb.Add("", "Reduce Waste Quiz");
             return View();
         }
     }

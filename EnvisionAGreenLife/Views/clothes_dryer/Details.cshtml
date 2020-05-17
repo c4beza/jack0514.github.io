@@ -73,7 +73,7 @@
             <p class="paragraph-3"><b>@Model.Brand @Model.Cap Kg @Model.Control Clothes Dryer</b></p>
             <p class="paragraph-3">Energy Rating: @Model.New_Star</p>
             <hr />
-            <p class="paragraph-2">
+            <p class="paragraph-2" style="text-align:justify">
                 <strong>Clothes Dryer Description:<br></strong>This @Model.Brand @Model.Control dryer has the capacity to dry
                 @Model.Cap kg, which is perfect for households of three or four. A heat pump dryer dries fabrics
                 more carefully and efficiently than other types of dryers, which protects
@@ -87,14 +87,6 @@
                     </div>
                     <div class="accordion-item-content">
                         <dl class="dl-horizontal">
-                            <dt>
-                                Legal standard
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.ApplStandard)
-                            </dd>
-
                             <dt>
                                 Brand
                             </dt>
@@ -116,15 +108,7 @@
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.Cap)
-                            </dd>
-
-                            <dt>
-                                Control
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Control)
+                                @Html.DisplayFor(model => model.Cap) KG
                             </dd>
 
                             <dt>
@@ -143,30 +127,28 @@
                                 @Html.DisplayFor(model => model.Sold_in)
                             </dd>
 
-                            <dt>
-                                Type
-                            </dt>
+                            @if (Model.Product_Website != null)
+                            {
+                                <dt>
+                                    Product website
+                                </dt>
 
-                            <dd>
-                                @Html.DisplayFor(model => model.Type)
-                            </dd>
+                                <dd>
+                                    <a href="@Model.Product_Website">@Model.Product_Website </a>
+                                </dd>
+                            }
 
-                            <dt>
-                                Product website
-                            </dt>
+                            @if (Model.Representative_Brand_URL != null)
+                            {
+                                <dt>
+                                    Brand Url
+                                </dt>
 
-                            <dd>
-                                <a href="@Model.Product_Website">@Model.Product_Website </a>
-                            </dd>
-
-                            <dt>
-                                Brand Url
-                            </dt>
-
-                            <dd>
-                                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL </a>
-                            </dd>
-                        </dl>
+                                <dd>
+                                    <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL </a>
+                                </dd>
+                            }
+                            </dl>
                     </div>
                 </div>
             </div>

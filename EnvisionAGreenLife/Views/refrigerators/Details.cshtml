@@ -73,7 +73,7 @@
             <p class="paragraph-3"><b>@Model.Brand @Model.Designation</b></p>
             <p class="paragraph-3">Energy Rating: @Model.Star2009 </p>
             <hr />
-            <p class="paragraph-2">
+            <p class="paragraph-2" style="text-align:justify">
                 <strong>Refrigerator Description:<br></strong>This @Model.Tot_Vol L @Model.Configuration @Model.Designation from @Model.Brand is packed with a
                 range of great features that will not only help you keep your
                 food fresher for longer, but will look stylish in your kitchen
@@ -86,9 +86,6 @@
                     </div>
                     <div class="accordion-item-content">
                         <dl class="dl-horizontal">
-
-
-
                             <dt>
                                 Brand
                             </dt>
@@ -106,51 +103,11 @@
                             </dd>
 
                             <dt>
-                                Energy consumption Kw
+                                Energy consumption
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.CEC)
-                            </dd>
-
-                            <dt>
-                                Compartment gross volume L
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.CompartGrVol)
-                            </dd>
-
-                            <dt>
-                                Compartment net volume L
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.CompartNetVol)
-                            </dd>
-
-                            <dt>
-                                Compartment type
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.CompartType)
-                            </dd>
-
-                            <dt>
-                                Configuration type
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Configuration)
-                            </dd>
-
-                            <dt>
-                                Appliance type
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Designation)
+                                @Html.DisplayFor(model => model.CEC) Kw
                             </dd>
 
                             <dt>
@@ -162,76 +119,36 @@
                             </dd>
 
                             <dt>
-                                Depth
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Depth)
-                            </dd>
-
-                            <dt>
-                                Height
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Height)
-                            </dd>
-                            <dt>
-                                Width
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Width)
-                            </dd>
-
-
-                            <dt>
-                                Fresh food volumn
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.FF_Vol)
-                            </dd>
-
-                            <dt>
-                                Freezer volumn
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.FZ_Vol)
-                            </dd>
-
-                            <dt>
-                                Energy rating
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Star2009)
-                            </dd>
-
-                            <dt>
-                                Total volumn
+                                Total volume
                             </dt>
 
                             <dd>
                                 @Html.DisplayFor(model => model.Tot_Vol)
                             </dd>
 
-                            <dt>
-                                Product website
-                            </dt>
+                            @if (Model.Product_Website != null)
+                            {
+                                <dt>
+                                    Product website
+                                </dt>
 
-                            <dd>
-                                <a href="@Model.Product_Website">@Model.Product_Website</a>
-                            </dd>
+                                <dd>
+                                    <a href="@Model.Product_Website">@Model.Product_Website</a>
+                                </dd>
 
-                            <dt>
-                                Representative brand Url
-                            </dt>
+                            }
 
-                            <dd>
-                                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
-                            </dd>
+                            @if (Model.Representative_Brand_URL != null)
+                            {
+                                <dt>
+                                    Representative brand Url
+                                </dt>
+
+                                <dd>
+                                    <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
+                                </dd>
+                            }
+
                         </dl>
                     </div>
                 </div>

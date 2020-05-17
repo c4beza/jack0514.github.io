@@ -73,7 +73,7 @@
             <p class="paragraph-3"><b>@Model.Brand_Reg @Model.screensize @Model.Screen_Tech Television</b></p>
             <p class="paragraph-3">Energy Rating: @Model.Star2</p>
             <hr />
-            <p class="paragraph-2">
+            <p class="paragraph-2" style="text-align:justify">
                 <strong>AIR CONDITONER DESCRIPTION:<br></strong>In a large screen size for optimal viewing, this @Model.Brand_Reg
                 @Model.screensize” TV offers amazing colour quality
                 with its Quantum Dot Technology. With smart connectivity,
@@ -121,15 +121,7 @@
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.screensize)
-                            </dd>
-
-                            <dt>
-                                Screen area
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Screen_Area)
+                                @Html.DisplayFor(model => model.screensize) Inches
                             </dd>
 
                             <dt>
@@ -140,44 +132,27 @@
                                 @Html.DisplayFor(model => model.Screen_Tech)
                             </dd>
 
-                            <dt>
-                                Energy Rating
-                            </dt>
+                            @if (Model.Product_Website != null)
+                            {
+                                <dt>
+                                    Product website
+                                </dt>
 
-                            <dd>
-                                @Html.DisplayFor(model => model.Star)
-                            </dd>
+                                <dd>
+                                    <a href="@Model.Product_Website">@Model.Product_Website</a>
+                                </dd>
+                            }
 
-                            <dt>
-                                Tuner Type
-                            </dt>
+                            @if (Model.Representative_Brand_URL != null)
+                            {
+                                <dt>
+                                    Representive brand Url
+                                </dt>
+                                <dd>
+                                    <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
+                                </dd>
+                            }
 
-                            <dd>
-                                @Html.DisplayFor(model => model.Tuner_Type)
-                            </dd>
-
-                            <dt>
-                                Power supply
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Power_supply)
-                            </dd>
-
-                            <dt>
-                                Product website
-                            </dt>
-
-                            <dd>
-                                <a href="@Model.Product_Website">@Model.Product_Website</a>
-                            </dd>
-
-                            <dt>
-                                Representive brand Url
-                            </dt>
-                            <dd>
-                                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
-                            </dd>
                         </dl>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
-            BreadCrumb.Add(Url.Action(""), "Grow Your Own Herb");
+            BreadCrumb.Add("", "Grow Your Own Herb");
             return View(db.Herbs.ToList());
         }
 

@@ -119,7 +119,7 @@ namespace EnvisionAGreenLife.Controllers
                           select x;
             int pagesize = 9, pageindex = 1;
             DwList temp = new DwList();
-            results = results.Where(x => x.New_Star >= 5).OrderBy(x => Guid.NewGuid()).Take(9);
+            results = results.Where(x => x.New_Star >= 4).OrderBy(x => Guid.NewGuid()).Take(9);
             var list = results.ToList();
             temp.Dishwashers = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();

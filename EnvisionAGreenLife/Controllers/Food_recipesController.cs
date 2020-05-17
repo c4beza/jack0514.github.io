@@ -54,8 +54,9 @@ namespace EnvisionAGreenLife.Controllers
             temp.Breakfasts = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
-            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
+            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
+            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
+            BreadCrumb.Add("", "Breakfast");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -101,8 +102,9 @@ namespace EnvisionAGreenLife.Controllers
             temp.Lunch = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
-            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
+            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
+            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
+            BreadCrumb.Add("", "Lunch");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -148,8 +150,9 @@ namespace EnvisionAGreenLife.Controllers
             temp.Dinner = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
-            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
+            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
+            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
+            BreadCrumb.Add("", "Dinner");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -159,7 +162,7 @@ namespace EnvisionAGreenLife.Controllers
             return View(temp);
         }
 
-        [BreadCrumb(Clear = true, Label = "Dinner Recipes")]
+        [BreadCrumb(Clear = true, Label = "Dessert Recipes")]
         [HttpGet]
         public ActionResult dessert_recipes(int? page, string searchString, string currentFilter)
         {
@@ -195,8 +198,9 @@ namespace EnvisionAGreenLife.Controllers
             temp.Dessert = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
-            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
+            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
+            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
+            BreadCrumb.Add("", "Dessert");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -262,8 +266,9 @@ namespace EnvisionAGreenLife.Controllers
             temp.recipes = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home"); 
-            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
-            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left Over Recpies");
+            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
+            BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
+            BreadCrumb.Add("", "General Search");
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -288,8 +293,8 @@ namespace EnvisionAGreenLife.Controllers
             }
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");
-            BreadCrumb.Add(Url.Action("LeftoverRecipe", "Home"), "Leftover Recipes");
+            BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
+            BreadCrumb.Add(Url.Action("LeftoverRecipe", "Home"), "Left-Over Food Recipes");
             BreadCrumb.Add("", recipes.name);
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });

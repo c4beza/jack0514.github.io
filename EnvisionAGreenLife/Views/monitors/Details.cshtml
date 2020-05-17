@@ -73,7 +73,7 @@
             <p class="paragraph-3"><b>@Model.Brand_Name @Model.Screen_Size" @Model.Screen_Technology Monitor</b></p>
             <p class="paragraph-3">Energy Rating: @Model.Star_Rating</p>
             <hr />
-            <p class="paragraph-2">
+            <p class="paragraph-2" style="text-align:justify">
                 <strong>Monitor Description:<br></strong>Elevate your home entertainment with this @Model.Brand_Name @Model.Screen_Size" @Model.Screen_Technology Monitor.
                 Watch and enjoy vivid colours and clearer detail thanks to the
                 Quad Core Processor 4K and watch movies like the director intended
@@ -123,11 +123,11 @@
                             </dd>
 
                             <dt>
-                                Screen size (Inches)
+                                Screen size
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.Screen_Size)
+                                @Html.DisplayFor(model => model.Screen_Size) Inches
                             </dd>
 
                             <dt>
@@ -139,36 +139,36 @@
                             </dd>
 
                             <dt>
-                                Energy consumption (KW)
+                                Energy consumption
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.Comparative_Energy_Consumption)
+                                @Html.DisplayFor(model => model.Comparative_Energy_Consumption) Kw
                             </dd>
 
-                            <dt>
-                                Rating
-                            </dt>
+                            @if (Model.Product_Website != null)
+                            {
+                                <dt>
+                                    Product website
+                                </dt>
 
-                            <dd>
-                                @Html.DisplayFor(model => model.Star_Rating)
-                            </dd>
+                                <dd>
+                                    <a href="@Model.Product_Website">@Model.Product_Website</a>
+                                </dd>
+                            }
 
-                            <dt>
-                                Product website
-                            </dt>
+                            @if (Model.Representative_Brand_URL != null)
+                            {
 
-                            <dd>
-                                <a href="@Model.Product_Website">@Model.Product_Website</a>
-                            </dd>
+                                <dt>
+                                    Representative brand Url
+                                </dt>
 
-                            <dt>
-                                Representative brand Url
-                            </dt>
+                                <dd>
+                                    <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
+                                </dd>
+                            }
 
-                            <dd>
-                                <a href="@Model.Representative_Brand_URL">@Model.Representative_Brand_URL</a>
-                            </dd>
                         </dl>
                     </div>
                 </div>

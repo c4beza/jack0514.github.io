@@ -1,0 +1,23 @@
+﻿@using MvcBreadCrumbs
+@{
+    ViewBag.Title = "Energy Quiz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">Energy Quiz</h1>
+    </div>
+</div>
+
+
+<div class="breadcrum" style="margin-left:10%">
+    @Html.Raw(BreadCrumb.Display())
+</div>
+
+<div class="section">
+    <div class="container" style="height:auto;">
+        <div id="interact-5ebe9e12cfe15c0014b0eb7f"></div>
+        <script type="text/javascript">var app_5ebe9e12cfe15c0014b0eb7f;(function(d, t){var s=d.createElement(t),options={"appId":"5ebe9e12cfe15c0014b0eb7f","aspect_ratio":"80%","async":true,"host":"quiz.tryinteract.com","no_cover":true,"footer":"show"};s.src='https://i.tryinteract.com/embed/app.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs)if(rs!='complete')if(rs!='loaded')return;try{app_5ebe9e12cfe15c0014b0eb7f=new InteractApp();app_5ebe9e12cfe15c0014b0eb7f.initialize(options);app_5ebe9e12cfe15c0014b0eb7f.display();}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr);})(document,'script');</script>
+    </div>
+</div>

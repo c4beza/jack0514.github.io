@@ -2,28 +2,74 @@
 @using MvcBreadCrumbs
 
 @{
-    ViewBag.Title = "Recycling Center";
+    ViewBag.Title = "Recycling Centre";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <style>
-        #geocoder-container > div {
-            min-width: 50%;
-            margin-left: 25%;
-        }
+<style>
+    #geocoder-container > div {
+        min-width: 50%;
+        margin-left: 25%;
+    }
 
-    </style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
 
 <div class="page-title-section">
     <div class="container">
-        <h1 class="page-title">Recycling Center Map</h1>
+        <h1 class="page-title">Recycling Centre Map</h1>
     </div>
 </div>
 <div class="breadcrum" style="margin-left:10%">
     @Html.Raw(BreadCrumb.Display())
 </div>
-<div id="map" style="height:600px"></div>
-<br />
+
+<p style="text-align:center;margin-top:3%;">Find places to recycle near<br></p>
+
+<div class="section-4" ">
+    <div class="container">
+        <div class="w-row">
+            <div class="w-col w-col-6" style="margin-top:3%;">
+                <table>
+                    <tr>
+                        <th>
+                            Recycling Centre Address
+                        </th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="Address">
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+
+            <div class="w-col w-col-6" style="margin-top:3%;">
+                <div class="div-block-3">
+                    <div id="map" style="height:950px"></div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <table class="table" style="display:none;">

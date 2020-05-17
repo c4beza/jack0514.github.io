@@ -4015,3 +4015,134 @@ dt {
 .herb-heading {
     margin-top: 0px;
 }
+
+
+
+.home-search-bar {
+    position: relative;
+    left: auto;
+    top: auto;
+    right: 0px;
+    width: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 18px;
+}
+
+.home-search-but {
+    position: absolute;
+    left: 199px;
+    top: 1px;
+    bottom: auto;
+    height: 36px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-style: none none none solid;
+    border-width: 1px;
+    border-color: #f9f9f9;
+    border-radius: 18px;
+    background-color: #f9f9f9;
+    opacity: 1;
+    direction: ltr;
+    color: #517c63;
+    font-weight: 800;
+    text-transform: none;
+}
+
+.home-search {
+    position: fixed;
+    left: auto;
+    top: 72px;
+    right: 15%;
+    bottom: auto;
+    z-index: 1000;
+    margin: auto;
+    padding-left: 0px;
+}
+
+@media screen and (max-width: 991px) {
+    .home-search-bar {
+        width: 200px;
+        margin-top: auto;
+    }
+
+    .home-search-but {
+        left: 142px;
+    }
+
+    .home-search {
+        top: 42px;
+        right: 50%;
+        display: block;
+        margin-top: auto;
+        margin-right: -100px;
+    }
+
+    .sub-dropdown-list-item {
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .home-search-bar {
+        left: 50%;
+        top: -19px;
+        margin-left: -100px;
+        width:200px;
+    }
+
+    .home-search-but {
+        position: relative;
+        left: 142px;
+        top: auto;
+        right: auto;
+        bottom: 56px;
+        width: auto;
+        margin-left: auto;
+    }
+
+    .home-search {
+        position: fixed;
+        left: 50%;
+        top: 51px;
+        right: auto;
+        width: 200px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-left: -100px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .home-search-bar {
+        left: 50%;
+        top: -19px;
+        margin-left: -100px;
+        width:200px;
+    }
+
+    .home-search-but {
+        position: relative;
+        left: 142px;
+        top: auto;
+        right: auto;
+        bottom: 56px;
+        width: auto;
+        margin-left: auto;
+    }
+
+    .home-search {
+        position: fixed;
+        left: 50%;
+        top: 51px;
+        right: auto;
+        width: 200px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-left: -100px;
+    }
+}
+

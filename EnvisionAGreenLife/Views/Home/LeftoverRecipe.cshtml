@@ -16,11 +16,11 @@
 
 <section id="cards-section" class="cards-section-2">
     <div class="centered-container-2 w-container">
-        <p style="text-align:center;">Have a go at these recipes. Easy to make, less waste, and possibly a new family favourite waiting to be discovered!.</p>
+        <p style="text-align:center;">Have a go at these recipes. Easy to make, less waste, and possibly a new family favourite waiting to be discovered!</p>
         @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "appliance-collection-search-bar w-form" }))
         {
             <div>
-                @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Search recipes and appliances..." })
+                @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Find by name, ingredients, time.." })
                 @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown"})
                 <input type="submit" value="Search" class="appliancec-collection-search-but w-button" />
             </div>

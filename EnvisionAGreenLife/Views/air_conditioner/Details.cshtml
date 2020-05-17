@@ -74,7 +74,7 @@
             <p class="paragraph-3">Energy Rating - Cooling: @Model.Star2010_Cool</p>
             <p class="paragraph-3">Energy Rating - Heating: @Model.Star2010_Heat</p>
             <hr />
-            <p class="paragraph-2">
+            <p class="paragraph-2" style="text-align:justify">
                 <strong>AIR CONDITONER DESCRIPTION:<br></strong>Keeping a relaxed home environment shouldn’t cost the world. This @Model.Brand @Model.C_Total_Cool_Rated KW
                 @Model.Type Air Conditioner is perfect for smaller rooms in your home
                 and offers convenient solutions with its 3D Airflow for evenly distributed air.
@@ -91,14 +91,6 @@
                     <div class="accordion-item-content">
                         <dl class="dl-horizontal">
                             <dt>
-                                Legal standard
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.ApplStandard)
-                            </dd>
-
-                            <dt>
                                 Model number
                             </dt>
 
@@ -112,22 +104,6 @@
 
                             <dd>
                                 @Html.DisplayFor(model => model.Brand)
-                            </dd>
-
-                            <dt>
-                                Dehumidifying power (kW)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.C_Dehumid_Rated)
-                            </dd>
-
-                            <dt>
-                                Indoor air distribution
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Configuration1)
                             </dd>
 
                             <dt>
@@ -147,30 +123,6 @@
                             </dd>
 
                             <dt>
-                                Depth (mm)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Depth)
-                            </dd>
-
-                            <dt>
-                                Width (mm)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Width)
-                            </dd>
-
-                            <dt>
-                                Height (mm)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Height)
-                            </dd>
-
-                            <dt>
                                 Heating capacity (KW)
                             </dt>
 
@@ -179,59 +131,11 @@
                             </dd>
 
                             <dt>
-                                Energy efficiency ratio - cooling
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.EERtestAvg)
-                            </dd>
-
-                            <dt>
-                                Energy efficiency ratio - Heating
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.COPtestAvg)
-                            </dd>
-
-                            <dt>
-                                Energy rating - cooling
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Star2010_Cool)
-                            </dd>
-
-                            <dt>
-                                Energy rating - Heating
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Star2010_Heat)
-                            </dd>
-
-                            <dt>
-                                Phase
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Phase)
-                            </dd>
-
-                            <dt>
                                 Sold in
                             </dt>
 
                             <dd>
                                 @Html.DisplayFor(model => model.Sold_in)
-                            </dd>
-
-                            <dt>
-                                Type
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Type)
                             </dd>
 
                             <dt>

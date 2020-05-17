@@ -19,9 +19,12 @@
     }
 
     .compost-property-column {
-        margin-top: 3%;
         padding-right: 5%;
         padding-left: 5%;
+    }
+
+    .herb-heading {
+        text-align: center;
     }
 
     .compost-property {
@@ -56,6 +59,10 @@
         border-left: 1px solid #000;
         text-align: center;
     }
+
+    .accordion-item-content {
+        width: auto;
+    }
 </style>
 
 <body>
@@ -73,10 +80,13 @@
         <div class="composting-columns w-row">
             <div class="w-col w-col-4 w-col-stack">
                 <div class="compost-image-wrapper">
-                    <img src="~/Images/apartment.png" alt="apartment">
+                    <img src="~/Images/apartment_bin.png" alt="apartment_bin">
                 </div>
             </div>
             <div class="compost-property-column w-col w-col-8 w-col-stack">
+                <p class="herb-description" style="text-align:justify">
+                    <strong>Yes! Composting is doable even in apartment too. Vermicomposting is one of the worm bin indoor composting methods.  It is important to keep the nitrogen and carbon ratio right for those little creatures. Check out more in what can and cannot be put into the vermicomposting box and the buying guides.  </strong>
+                </p>
                 <div class="w-row">
                     <div class="compost-property w-col w-col-4 w-col-stack">
                         <h4>Compost Type</h4>
@@ -139,7 +149,7 @@
                                 <div class="w-row">
                                     <div class="w-col w-col-3"><img src="~/Images/donot.jpg" width="80" height="80" alt=""></div>
                                     <div class="compost-collapse-heading-column w-col w-col-9">
-                                        <h4 class="heading-7">What to compost                +</h4>
+                                        <h4 class="heading-7">What not to compost                +</h4>
                                     </div>
                                 </div>
                             </div>

@@ -274,6 +274,7 @@
     <Content Include="Images\air_conditioner8.png" />
     <Content Include="Images\air_conditioner9.png" />
     <Content Include="Images\apartment.png" />
+    <Content Include="Images\apartment_bin.png" />
     <Content Include="Images\b1.png" />
     <Content Include="Images\b2.png" />
     <Content Include="Images\b3.png" />
@@ -284,7 +285,6 @@
     <Content Include="Images\b8.png" />
     <Content Include="Images\b9.png" />
     <Content Include="Images\Basil.png" />
-    <Content Include="Images\breakfast1.jpg" />
     <Content Include="Images\challenging.png" />
     <Content Include="Images\Chives.png" />
     <Content Include="Images\Circle.svg" />
@@ -329,6 +329,7 @@
     <Content Include="Images\donot.jpg" />
     <Content Include="Images\down-arrow.png" />
     <Content Include="Images\Easy.png" />
+    <Content Include="Images\energy.png" />
     <Content Include="Images\favicon.png" />
     <Content Include="Images\foodRecipes.png" />
     <Content Include="Images\FoodWaste.png" />
@@ -363,6 +364,7 @@
     <Content Include="Images\monitor9.png" />
     <Content Include="Images\parsley.png" />
     <Content Include="Images\Rectangle.svg" />
+    <Content Include="Images\reduce.png" />
     <Content Include="Images\refrigerator2.png" />
     <Content Include="Images\refrigerator3.png" />
     <Content Include="Images\monitor1.png" />
@@ -377,12 +379,15 @@
     <Content Include="Images\refrigerator8.png" />
     <Content Include="Images\refrigerator9.png" />
     <Content Include="Images\reuse.png" />
+    <Content Include="Images\reuse_quiz.png" />
     <Content Include="Images\Rosemary.png" />
     <Content Include="Images\rural.png" />
+    <Content Include="Images\rural_bin.png" />
     <Content Include="Images\Sage.png" />
     <Content Include="Images\SaveEnergy.png" />
     <Content Include="Images\shopping.png" />
     <Content Include="Images\soil.png" />
+    <Content Include="Images\suburban_bin.png" />
     <Content Include="Images\Suburban_household.png" />
     <Content Include="Images\TeamLogo-p-500.png" />
     <Content Include="App_Data\RecyclingCentres.mdf" />
@@ -401,6 +406,7 @@
     <Content Include="Images\Thyme.png" />
     <Content Include="Images\time.png" />
     <Content Include="Images\townhouse.png" />
+    <Content Include="Images\townhouse_bin.png" />
     <Content Include="Images\transport.svg" />
     <Content Include="Images\Triangle.svg" />
     <Content Include="Images\tv1.png" />
@@ -552,6 +558,9 @@
     <Content Include="Views\Home\townhouse.cshtml" />
     <Content Include="Views\Home\suburban_household.cshtml" />
     <Content Include="Views\Home\rural_household.cshtml" />
+    <Content Include="Views\Home\EnergyQuiz.cshtml" />
+    <Content Include="Views\Home\ReuseQuiz.cshtml" />
+    <Content Include="Views\Home\ReduceWasteQuiz.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
