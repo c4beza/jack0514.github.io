@@ -36,7 +36,7 @@
                 @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "home-search w-form" }))
                 {
                     <div>
-                        @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "home-search-bar w-input", @placeholder = "Search..." })
+                        @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "home-search-bar w-input", @placeholder = "Search Recipes (eg:egg ..)" })
                         <input type="submit" value="🔍" class="home-search-but w-button">
                     </div>
                 }
