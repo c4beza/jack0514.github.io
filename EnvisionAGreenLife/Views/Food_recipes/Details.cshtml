@@ -9,6 +9,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@* logic where based on user click showing either of the 4 recipes with cards containing images and name of the recipes *@
+
 <div class="page-title-section">
     <div class="container">
         <h1 class="page-title">@Model.name</h1>
@@ -217,6 +219,9 @@
                 }
             </div>
         </div>
+
+        @* this is the view page to display the detailes of the particular recipes selected with all the details and collapse-able instrucvtions getting the info from the main controller class*@
+
         <div class="column-6 w-col w-col-6">
             <p class="paragraph-3"><b>Difficulty Level: </b><br>@Model.difficulty_assignment</p>
             <hr />
@@ -237,6 +242,8 @@
         </div>
     </div>
 </div>
+
+@* logic to display the similar recipes using the controller class result for all the 4 different categories.*@
 
 <div>
     <h2 class="heading-5">Review Similar Recipes</h2>

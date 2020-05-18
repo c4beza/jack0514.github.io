@@ -9,6 +9,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@* this page contains the view logic for the appliance details page design *@
 <div class="page-title-section">
     <div class="container">
         <h1 class="page-title">@Model.Brand_Name - @Model.Model_Number</h1>
@@ -19,6 +20,7 @@
     @Html.Raw(BreadCrumb.Display())
 </div>
 
+@* code to display the different appliance in a grid of cards consiting images and model number of AC *@
 <div class="section-3" style="margin-top:40px">
     <div class="w-row">
         <div class="w-col w-col-6">
@@ -69,6 +71,9 @@
                 }
             </div>
         </div>
+
+        @* code to display the details of the selected appliance with collapse-able specification. *@
+
         <div class="column-6 w-col w-col-6" style="padding-top: 0px;">
             <p class="paragraph-3"><b>@Model.Brand_Name @Model.Screen_Size" @Model.Screen_Technology Monitor</b></p>
             <p class="paragraph-3">Energy Rating: @Model.Star_Rating</p>
@@ -176,6 +181,9 @@
         </div>
     </div>
 </div>
+
+@* code to show the similar products in grid of cards using the logic from the controller class. *@
+
 <div>
     <h2 class="heading-5">Review Similar Products</h2>
     <div class="container">

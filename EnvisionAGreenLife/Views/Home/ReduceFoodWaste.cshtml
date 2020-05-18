@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+<!-- this is the view logic page to display the results when the user clicks on the reduce wadte from the navigation bar-->
 
 <div class="page-title-section">
     <div class="container">
@@ -16,6 +16,8 @@
     @Html.Raw(BreadCrumb.Display())
 </div>
 
+<!-- this is the logic to place all the elements like left over food recipes and grow your own herbs on the page with the card grid with images and button-->
+
 <section id="cards-section" class="cards-section">
     <div class="centered-container w-container">
         <h2>Get Started. It's Easy</h2>
@@ -26,10 +28,10 @@
                     <div class="cards-image-mask">
                         <a href='@Url.Action("LeftoverRecipe", "Home")'>
                             <img src="~/Images/FoodRecipes.png" class="cards-image" />
-                            </a>
-                            <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%; top:77%; ">
-                                Learn More
-                            </button>
+                        </a>
+                        <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%; top:77%; ">
+                            Learn More
+                        </button>
                     </div>
                     <h3>Left-Over Food Recipes</h3>
                     <p>Food recipes categorized into breakfast, lunch, dinner and dessert and difficulty level ranging from easy to challenging or search by ingredient. We have it all. Growing your own herbs ka content. </p>
@@ -41,10 +43,10 @@
                     <div class="cards-image-mask">
                         <a href='@Url.Action("Index", "Herbs")'>
                             <img src="~/Images/herbs.png" alt="" class="cards-image">
-                            </a>
-                            <button onclick="location.href='@Url.Action("Index", "Herbs")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%; top:77%;">
-                                Learn More
-                            </button>
+                        </a>
+                        <button onclick="location.href='@Url.Action("Index", "Herbs")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%; top:77%;">
+                            Learn More
+                        </button>
                     </div>
                     <h3 id="w-node-e8c45c7a2617-d77e0d3d">Grow Your Own Herbs</h3>
                     <p id="w-node-e8c45c7a2619-d77e0d3d" class="paragraph-4">All the herbs with their growing time, soil type, steps and difficulty level sorted in one place. Grow now and thank us later. </p>

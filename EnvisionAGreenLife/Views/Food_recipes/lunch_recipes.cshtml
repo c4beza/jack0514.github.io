@@ -6,95 +6,103 @@
     ViewBag.Title = "Lunch_Recipes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body>
-    <div class="page-title-section">
-        <div class="container">
-            <h1 class="page-title">Lunch Recipes</h1>
+
+@* this page contains the view logic for the recipe page design *@
+
+    <body>
+        <div class="page-title-section">
+            <div class="container">
+                <h1 class="page-title">Lunch Recipes</h1>
+            </div>
         </div>
-    </div>
 
-    <div class="breadcrum" style="margin-left:10%">
-        @Html.Raw(BreadCrumb.Display())
-    </div>
+        <div class="breadcrum" style="margin-left:10%">
+            @Html.Raw(BreadCrumb.Display())
+        </div>
 
-    <div class="content-section" style="padding-top: 35px;">
-        <form action="@Url.Action("General_search", "Food_recipes")" method="get" class="appliance-collection-search-bar w-form">
-            <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by name, ingredients, time.." id="search" required="">
-            @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown" })
-            <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
-        </form>
-    </div>
+        <div class="content-section" style="padding-top: 35px;">
+            <form action="@Url.Action("General_search", "Food_recipes")" method="get" class="appliance-collection-search-bar w-form">
+                <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by name, ingredients, time.." id="search" required="">
+                @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown" })
+                <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+            </form>
+        </div>
 
-    <div class="section-3">
-        <div class="w-layout-grid grid-3">
-            @{int x = 0;}
-            @if (Model != null)
-            {
-                foreach (var item in Model.Lunch)
+        @* iterative code to display all the recipes in database in grids of cards.  *@
+
+        <div class="section-3">
+            <div class="w-layout-grid grid-3">
+                @{int x = 0;}
+                @if (Model != null)
                 {
-                    x++;
-                    <div class="appliance-card">
-                        <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id})'>
-                            @if (item.recipe_id % 9 == 1)
-                            {
-                                <img src='@Url.Content("~/Images/l1.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.recipe_id % 9 == 2)
-                            {
-                                <img src='@Url.Content("~/Images/l2.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.recipe_id % 9 == 3)
-                            {
-                                <img src='@Url.Content("~/Images/l3.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.recipe_id % 9 == 4)
-                            {
-                                <img src='@Url.Content("~/Images/l4.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.recipe_id % 9 == 5)
-                            {
-                                <img src='@Url.Content("~/Images/l5.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.recipe_id % 9 == 6)
-                            {
-                                <img src='@Url.Content("~/Images/l6.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.recipe_id % 9 == 7)
-                            {
-                                <img src='@Url.Content("~/Images/l7.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.recipe_id % 9 == 8)
-                            {
-                                <img src='@Url.Content("~/Images/l8.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.recipe_id % 9 == 0)
-                            {
-                                <img src='@Url.Content("~/Images/l9.png")' alt="Lunch" class="appliance-card-image" />
-                            }
-                        </a>
-                        <p>
-                            <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="appliance-card-but w-button" style="height:100px">
-                                @item.name
-                            </button>
-                        </p>
-                    </div>
+                    foreach (var item in Model.Lunch)
+                    {
+                        x++;
+                        <div class="appliance-card">
+                            <a href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id})'>
+                                @if (item.recipe_id % 9 == 1)
+                                {
+                                    <img src='@Url.Content("~/Images/l1.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 2)
+                                {
+                                    <img src='@Url.Content("~/Images/l2.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 3)
+                                {
+                                    <img src='@Url.Content("~/Images/l3.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 4)
+                                {
+                                    <img src='@Url.Content("~/Images/l4.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 5)
+                                {
+                                    <img src='@Url.Content("~/Images/l5.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 6)
+                                {
+                                    <img src='@Url.Content("~/Images/l6.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 7)
+                                {
+                                    <img src='@Url.Content("~/Images/l7.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 8)
+                                {
+                                    <img src='@Url.Content("~/Images/l8.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.recipe_id % 9 == 0)
+                                {
+                                    <img src='@Url.Content("~/Images/l9.png")' alt="Lunch" class="appliance-card-image" />
+                                }
+                            </a>
+                            <p>
+                                <button onclick="location.href='@Url.Action("Details", "Food_recipes",new { id = @item.recipe_id })'" type="button" class="appliance-card-but w-button" style="height:100px">
+                                    @item.name
+                                </button>
+                            </p>
+                        </div>
+                    }
                 }
-            }
+            </div>
         </div>
-    </div>
 
-    <br>
-    <br>
-    <div class="pagecount" style="margin:auto; text-align:center">
-        Page @(Model.Lunch.PageCount < Model.Lunch.PageNumber ? 0 : Model.Lunch.PageNumber)
-        of @Model.Lunch.PageCount   @Html.PagedListPager(Model.Lunch, page => Url.Action("lunch_recipes", new { page, currentfilter = ViewBag.currentfilter }))
-    </div>
-</body>
+        <br>
+        <br>
+
+        @* code to display page count based on the data in the database. *@
+
+        <div class="pagecount" style="margin:auto; text-align:center">
+            Page @(Model.Lunch.PageCount < Model.Lunch.PageNumber ? 0 : Model.Lunch.PageNumber)
+            of @Model.Lunch.PageCount   @Html.PagedListPager(Model.Lunch, page => Url.Action("lunch_recipes", new { page, currentfilter = ViewBag.currentfilter }))
+        </div>
+    </body>

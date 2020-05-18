@@ -6,6 +6,8 @@
     ViewBag.Title = "Breakfast_Recipes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@* this page contains the view logic for the recipe page design *@
+
     <body>
         <div class="page-title-section">
             <div class="container">
@@ -24,6 +26,8 @@
                 <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
             </form>
         </div>
+
+        @* iterative code to display all the recipes in database in grids of cards.  *@
 
         <div class="section-3">
             <div class="w-layout-grid grid-3">
@@ -93,6 +97,9 @@
 
         <br>
         <br>
+
+        @* code to display page count based on the data in the database. *@
+
         <div class="pagecount" style="margin:auto; text-align:center">
             Page @(Model.Breakfasts.PageCount < Model.Breakfasts.PageNumber ? 0 : Model.Breakfasts.PageNumber)
             of @Model.Breakfasts.PageCount   @Html.PagedListPager(Model.Breakfasts, page => Url.Action("breakfast_recipes", new { page, currentfilter = ViewBag.currentfilter }))

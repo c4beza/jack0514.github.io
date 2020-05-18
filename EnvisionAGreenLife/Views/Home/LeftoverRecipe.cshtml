@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!-- this is the view logic page to display the results when the user clicks the leftover recipe  from the reduce waste dropdown-->
+
 <div class="page-title-section">
     <div class="container">
         <h1 class="page-title">Left-Over Food Recipes</h1>
@@ -14,6 +16,8 @@
     @Html.Raw(BreadCrumb.Display())
 </div>
 
+<!-- this is the logic to place all the elements like search bar, difficulty dropdown etc on the page with the card grid for different recipe category with images and names-->
+
 <section id="cards-section" class="cards-section-2">
     <div class="centered-container-2 w-container">
         <p style="text-align:center;">Have a go at these recipes. Easy to make, less waste, and possibly a new family favourite waiting to be discovered!</p>
@@ -21,7 +25,7 @@
         {
             <div>
                 @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Find by name, ingredients, time.." })
-                @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown"})
+                @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown" })
                 <input type="submit" value="Search" class="appliancec-collection-search-but w-button" />
             </div>
         }
@@ -41,7 +45,7 @@
                     <a href='@Url.Action("lunch_recipes", "Food_recipes")'>
                         <img src='@Url.Content("~/Images/l1.png")' alt="Lunch" class="cards-image-2" />
                     </a>
-                    <a href="@Url.Action("lunch_recipes", "Food_recipes")" class="btn light outline w-button" style="margin-left:-75px; left:50%";>Learn More</a>
+                    <a href="@Url.Action("lunch_recipes", "Food_recipes")" class="btn light outline w-button" style="margin-left:-75px; left:50%" ;>Learn More</a>
                 </div>
                 <h4 class="appliance-name">Lunch Recipes</h4>
             </div>
@@ -50,9 +54,10 @@
                     <a href='@Url.Action("dinner_recipes", "Food_recipes")'>
                         <img src='@Url.Content("~/Images/dinner1.png")' alt="Dinner" class="cards-image-2" />
                     </a>
-                    <a href="@Url.Action("dinner_recipes", "Food_recipes")" class="btn light outline w-button" style="margin-left:-75px; left:50%";>Learn More</a>
+                    <a href="@Url.Action("dinner_recipes", "Food_recipes")" class="btn light outline w-button" style="margin-left:-75px; left:50%" ;>Learn More</a>
                 </div>
-                <h4 class="appliance-name">Dinner Recipes</h4> </div>
+                <h4 class="appliance-name">Dinner Recipes</h4>
+            </div>
             <div id="w-node-53bfe8321663-e832164b">
                 <div class="cards-image-mask">
                     <a href='@Url.Action("dessert_recipes", "Food_recipes")'>

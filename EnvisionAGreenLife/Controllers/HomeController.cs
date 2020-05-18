@@ -15,6 +15,7 @@ namespace EnvisionAGreenLife.Controllers
         AppliancesEntities db = new AppliancesEntities();
         LeftoverRecipesEntities recipesEntities = new LeftoverRecipesEntities();
 
+        //logic leading to the home page from the homepage
         [HttpGet]
         public ActionResult Index()
         {
@@ -22,6 +23,7 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
+        //logic leading to the quiz page from the home page.
         [HttpGet]
         public ActionResult Quiz()
         {
@@ -32,17 +34,7 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Reuse()
-        {
-            ViewBag.Message = "Reuse";
-            BreadCrumb.Clear();
-            BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add("", "Reuse");
-
-            return View();
-        }
-
+        //logic leading to the about page from the home page.
         [HttpGet]
         public ActionResult About()
         {
@@ -53,6 +45,7 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
+        //logic leading to the reduce food page from the home page.
         [HttpGet]
         public ActionResult ReduceFoodWaste()
         {
@@ -63,6 +56,7 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
+        //logic leading to the leftover recipe page selected from the food waste dropdown list while on the the home page.
         [HttpGet]
         public ActionResult LeftoverRecipe()
         {
@@ -80,6 +74,7 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
+        //logic leading to the  appliance page page selected from the  save energy dropdown list while on the the home page.
         [HttpGet]
         public ActionResult AppliancesType()
         {
@@ -96,6 +91,7 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
+        //logic leading to the composting page selected from the  reuse dropdown list while on the the home page.
         [HttpGet]
         public ActionResult Composting()
         {
@@ -105,6 +101,7 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
+        //logic leading to different page related to different types of compsot categories.
         [HttpGet]
         public ActionResult apartment()
         {
@@ -145,6 +142,7 @@ namespace EnvisionAGreenLife.Controllers
             return View();
         }
 
+        //logic leading to energy quiz page
         [HttpGet]
         public ActionResult EnergyQuiz()
         {

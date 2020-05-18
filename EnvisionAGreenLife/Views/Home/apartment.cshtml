@@ -3,7 +3,7 @@
     ViewBag.Title = "Compost In Apartment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<!-- display logic for the apartment category of composting page-->
 <style>
     .composting-detail-section {
         margin-top: 65px;
@@ -75,6 +75,8 @@
     <div class="breadcrum" style="margin-left:10%">
         @Html.Raw(BreadCrumb.Display())
     </div>
+
+    <!-- logic for the view displaying all the info related to the related category-->
 
     <div class="composting-detail-section">
         <div class="composting-columns w-row">

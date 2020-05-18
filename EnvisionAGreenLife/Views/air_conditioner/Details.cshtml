@@ -9,6 +9,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@* this page contains the view logic for the air conditioner details page design *@
 <div class="page-title-section">
     <div class="container">
         <h1 class="page-title">@Model.Brand - @Model.Model_No</h1>
@@ -19,56 +20,59 @@
     @Html.Raw(BreadCrumb.Display())
 </div>
 
+@* code to display the different airconditioner in a grid of cards consiting images and model number of AC *@
 <div class="section-3" style="margin-top:40px">
     <div class="w-row">
         <div class="w-col w-col-6">
             <div class="appliance-detail-image-wrapper">
-                            @if (Model.Air_Conditioner_Id % 9 == 1)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner1.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
-                            else
-                            if (Model.Air_Conditioner_Id % 9 == 2)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner2.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
-                            else
-                            if (Model.Air_Conditioner_Id % 9 == 3)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner3.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
-                            else
-                            if (Model.Air_Conditioner_Id % 9 == 4)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner4.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
-                            else
-                            if (Model.Air_Conditioner_Id % 9 == 5)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner5.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
-                            else
-                            if (Model.Air_Conditioner_Id % 9 == 6)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner6.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
-                            else
-                            if (Model.Air_Conditioner_Id % 9 == 7)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner7.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
-                            else
-                            if (Model.Air_Conditioner_Id % 9 == 8)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner8.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
-                            else
-                            if (Model.Air_Conditioner_Id % 9 == 0)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner9.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
-                            }
+                @if (Model.Air_Conditioner_Id % 9 == 1)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner1.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Air_Conditioner_Id % 9 == 2)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner2.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Air_Conditioner_Id % 9 == 3)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner3.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Air_Conditioner_Id % 9 == 4)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner4.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Air_Conditioner_Id % 9 == 5)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner5.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Air_Conditioner_Id % 9 == 6)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner6.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Air_Conditioner_Id % 9 == 7)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner7.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Air_Conditioner_Id % 9 == 8)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner8.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
+                else
+                if (Model.Air_Conditioner_Id % 9 == 0)
+                {
+                    <img src='@Url.Content("~/Images/air_conditioner9.png")' alt="Air_conditioner" class="appliance-card-image" style="width:80%; border-color:transparent;" />
+                }
             </div>
         </div>
+
+        @* code to display the details of the selected AC with collapse-able specification. *@
         <div class="column-6 w-col w-col-6" style="padding-top: 0px;">
             <p class="paragraph-3"><b>@Model.Brand @Model.C_Dehumid_Rated KW @Model.Configuration1 @Model.Configuration2 Air conditioner</b></p>
             <p class="paragraph-3">Energy Rating - Cooling: @Model.Star2010_Cool</p>
@@ -162,6 +166,7 @@
     </div>
 </div>
 
+@* code to show the similar products in grid of cards using the logic from the controller class. *@
 <div>
     <h2 class="heading-5">Review Similar Products</h2>
     <div class="container">

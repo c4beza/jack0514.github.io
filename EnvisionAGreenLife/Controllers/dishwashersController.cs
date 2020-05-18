@@ -45,6 +45,9 @@ namespace EnvisionAGreenLife.Controllers
                 Ratings = currentRatings;
                 searchString = currentFilter;
             }
+
+            // Showing data based on the search query string and the star rating selected from the dropdown.
+
             ViewData["CurrentRatings"] = Ratings;
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString) && rating != -1)
@@ -70,11 +73,17 @@ namespace EnvisionAGreenLife.Controllers
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Dishwashers = list.ToPagedList(pageindex, pagesize);
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add("", "Dishwasher");
             List<SelectListItem> Ratings_level = new List<SelectListItem>();
+
+            //adding the values in dropdown list
+
             Ratings_level.Add(new SelectListItem() { Text = "All Ratings", Value = "-1" });
             Ratings_level.Add(new SelectListItem() { Text = "1 Star", Value = "1" });
             Ratings_level.Add(new SelectListItem() { Text = "2 Star", Value = "2" });
@@ -103,6 +112,9 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "dishwashers"), "Dishwasher");
             BreadCrumb.Add("", dishwasher.Model_No);
+
+            // Smiliar products display logic
+
             var results = from x in db.dishwashers
                           select x;
             var list = results.Where(x => x.Brand.Contains(dishwasher.Brand)).OrderBy(x => Guid.NewGuid()).Take(3).ToList();

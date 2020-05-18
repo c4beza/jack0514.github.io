@@ -7,94 +7,96 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<body>
-    <div class="page-title-section">
-        <div class="container">
-            <h1 class="page-title">Clothes Washer Top Recommendations</h1>
+    <body>
+        <div class="page-title-section">
+            <div class="container">
+                <h1 class="page-title">Clothes Washer Top Recommendations</h1>
+            </div>
         </div>
-    </div>
-    <div class="breadcrum" style="margin-left:10%">
-        @Html.Raw(BreadCrumb.Display())
-    </div>
-    <div class="content-section" style="padding-top: 35px;">
-        <p class="paragraph">Wash your clothes with an energy efficient washing machine</p><br />
-        <form asp-action="Index" method="get" class="appliance-collection-search-bar w-form">
-            <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by brand…" id="search" required="">
-            @Html.DropDownList("Ratings", null, htmlAttributes: new { @class = "recipe-dropdown" })
-            <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
-        </form>
-        <a href="@Url.Action("TopRecommendations", "clothes_washer")" class="button-3 w-button">Top Recommendations</a>
-    </div>
+        <div class="breadcrum" style="margin-left:10%">
+            @Html.Raw(BreadCrumb.Display())
+        </div>
+        <div class="content-section" style="padding-top: 35px;">
+            <p class="paragraph">Wash your clothes with an energy efficient washing machine</p><br />
+            <form asp-action="Index" method="get" class="appliance-collection-search-bar w-form">
+                <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by brand…" id="search" required="">
+                @Html.DropDownList("Ratings", null, htmlAttributes: new { @class = "recipe-dropdown" })
+                <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+            </form>
+            <a href="@Url.Action("TopRecommendations", "clothes_washer")" class="button-3 w-button">Top Recommendations</a>
+        </div>
 
-    <div class="section-3">
-        <div class="w-layout-grid grid-3">
-            @{int x = 0;}
-            @if (Model != null)
-            {
-                foreach (var item in Model.Clothes_Washers)
+        @* code to display all the top recommendated appliance in grids of cards fetching them through the controller logic.  *@
+
+        <div class="section-3">
+            <div class="w-layout-grid grid-3">
+                @{int x = 0;}
+                @if (Model != null)
                 {
-                    x++;
-                    <div class="appliance-card">
-                        <a href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id })'>
-                            @if (item.Clothes_Washer_Id % 9 == 1)
-                            {
-                                <img src='@Url.Content("~/Images/cw9.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Clothes_Washer_Id % 9 == 2)
-                            {
-                                <img src='@Url.Content("~/Images/cw8.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Clothes_Washer_Id % 9 == 3)
-                            {
-                                <img src='@Url.Content("~/Images/cw7.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Clothes_Washer_Id % 9 == 4)
-                            {
-                                <img src='@Url.Content("~/Images/cw6.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Clothes_Washer_Id % 9 == 5)
-                            {
-                                <img src='@Url.Content("~/Images/cw5.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Clothes_Washer_Id % 9 == 6)
-                            {
-                                <img src='@Url.Content("~/Images/cw4.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Clothes_Washer_Id % 9 == 7)
-                            {
-                                <img src='@Url.Content("~/Images/cw3.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Clothes_Washer_Id % 9 == 8)
-                            {
-                                <img src='@Url.Content("~/Images/cw2.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Clothes_Washer_Id % 9 == 0)
-                            {
-                                <img src='@Url.Content("~/Images/cw1.png")' alt="Clothes Washer" class="appliance-card-image" />
-                            }
-                        </a>
-                        <p>
-                            <button onclick="location.href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
-                                @item.Brand: @item.Model_No
-                            </button>
-                        </p>
-                    </div>
+                    foreach (var item in Model.Clothes_Washers)
+                    {
+                        x++;
+                        <div class="appliance-card">
+                            <a href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id })'>
+                                @if (item.Clothes_Washer_Id % 9 == 1)
+                                {
+                                    <img src='@Url.Content("~/Images/cw9.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Clothes_Washer_Id % 9 == 2)
+                                {
+                                    <img src='@Url.Content("~/Images/cw8.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Clothes_Washer_Id % 9 == 3)
+                                {
+                                    <img src='@Url.Content("~/Images/cw7.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Clothes_Washer_Id % 9 == 4)
+                                {
+                                    <img src='@Url.Content("~/Images/cw6.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Clothes_Washer_Id % 9 == 5)
+                                {
+                                    <img src='@Url.Content("~/Images/cw5.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Clothes_Washer_Id % 9 == 6)
+                                {
+                                    <img src='@Url.Content("~/Images/cw4.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Clothes_Washer_Id % 9 == 7)
+                                {
+                                    <img src='@Url.Content("~/Images/cw3.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Clothes_Washer_Id % 9 == 8)
+                                {
+                                    <img src='@Url.Content("~/Images/cw2.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Clothes_Washer_Id % 9 == 0)
+                                {
+                                    <img src='@Url.Content("~/Images/cw1.png")' alt="Clothes Washer" class="appliance-card-image" />
+                                }
+                            </a>
+                            <p>
+                                <button onclick="location.href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
+                                    @item.Brand: @item.Model_No
+                                </button>
+                            </p>
+                        </div>
+                    }
                 }
-            }
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <div class="pagecount" style="margin:auto; text-align:center">
-        Page @(Model.Clothes_Washers.PageCount < Model.Clothes_Washers.PageNumber ? 0 : Model.Clothes_Washers.PageNumber)
-        of @Model.Clothes_Washers.PageCount   @Html.PagedListPager(Model.Clothes_Washers, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter, currentRatings = ViewBag.currentRatings }))
-    </div>
-</body>
+        <br>
+        <br>
+        <div class="pagecount" style="margin:auto; text-align:center">
+            Page @(Model.Clothes_Washers.PageCount < Model.Clothes_Washers.PageNumber ? 0 : Model.Clothes_Washers.PageNumber)
+            of @Model.Clothes_Washers.PageCount   @Html.PagedListPager(Model.Clothes_Washers, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter, currentRatings = ViewBag.currentRatings }))
+        </div>
+    </body>

@@ -6,18 +6,21 @@ using System.Web.Mvc;
 
 namespace EnvisionAGreenLife.PasswordProtect
 {
+    //logic implemented to password protect our website.
     public class BasicAuthenticationAttribute : ActionFilterAttribute
     {
         public string BasicRealm { get; set; }
         protected string Username { get; set; }
         protected string Password { get; set; }
 
+        //logic that required a valid username and valid password to enter the website.
         public BasicAuthenticationAttribute(string username, string password)
         {
             this.Username = username;
             this.Password = password;
         }
 
+        //logic on what happens when we enter username and password and press enter.
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var req = filterContext.HttpContext.Request;

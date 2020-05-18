@@ -45,6 +45,9 @@ namespace EnvisionAGreenLife.Controllers
                 Ratings = currentRatings;
                 searchString = currentFilter;
             }
+
+            // Showing data based on the search query string and the star rating selected from the dropdown.
+
             ViewData["CurrentRatings"] = Ratings;
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString) && rating != -1)
@@ -70,6 +73,9 @@ namespace EnvisionAGreenLife.Controllers
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Televisions = list.ToPagedList(pageindex, pagesize);
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
@@ -103,6 +109,9 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "televisions"), "Television");
             BreadCrumb.Add("", television.Model_No);
+
+            // Smiliar products display logic
+
             var results = from x in db.televisions
                           select x;
             var list = results.Where(x => x.Brand_Reg.Contains(television.Brand_Reg)).OrderBy(x => Guid.NewGuid()).Take(3).ToList();

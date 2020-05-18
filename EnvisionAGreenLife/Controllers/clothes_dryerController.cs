@@ -45,6 +45,9 @@ namespace EnvisionAGreenLife.Controllers
                 Ratings = currentRatings;
                 searchString = currentFilter;
             }
+
+            // Showing data based on the search query string and the star rating selected from the dropdown.
+
             ViewData["CurrentRatings"] = Ratings;
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString) && rating != -1)
@@ -70,10 +73,16 @@ namespace EnvisionAGreenLife.Controllers
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Clothes_dryers = list.ToPagedList(pageindex, pagesize);
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add("", "Clothes Dryers");
+
+            //adding the values in dropdown list
+
             List<SelectListItem> Ratings_level = new List<SelectListItem>();
             Ratings_level.Add(new SelectListItem() { Text = "All Ratings", Value = "-1" });
             Ratings_level.Add(new SelectListItem() { Text = "1 Star", Value = "1" });
@@ -102,6 +111,9 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "clothes_dryer"), "Clothes Dryer");
             BreadCrumb.Add("", clothes_dryer.Model_No);
+
+            // Smiliar products display logic
+
             var results = from x in db.clothes_dryer
                           select x;
             var list = results.Where(x => x.Brand.Contains(clothes_dryer.Brand)).OrderBy(x => Guid.NewGuid()).Take(3).ToList();

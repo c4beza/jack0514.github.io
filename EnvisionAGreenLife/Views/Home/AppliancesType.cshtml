@@ -6,6 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!-- this is the view logic page to display the results when the user clicks the appliance type from the save energy dropdown-->
 <link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
 <body>
     <div class="page-title-section">
@@ -19,13 +20,13 @@
     <div class="cards-section">
         <div class="centered-container-2 w-container">
             <p>Choose a type of appliance, and find the energy consumption of the appliance in your house</p><br />
-                @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "appliance-collection-search-bar w-form" }))
-                {
-                    <div>
-                        @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Search..." })
-                        <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
-                    </div>
-                }
+            @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "appliance-collection-search-bar w-form" }))
+            {
+                <div>
+                    @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Search..." })
+                    <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+                </div>
+            }
             <div class="cards-grid-container-2">
                 <div>
                     <div class="cards-image-mask">

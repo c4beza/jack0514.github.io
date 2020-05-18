@@ -7,90 +7,91 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<body>
-    <div class="page-title-section">
-        <div class="container">
-            <h1 class="page-title">Air Conditioner Top Recommendations</h1>
+    <body>
+        <div class="page-title-section">
+            <div class="container">
+                <h1 class="page-title">Air Conditioner Top Recommendations</h1>
+            </div>
         </div>
-    </div>
-    <div class="breadcrum" style="margin-left:10%">
-        @Html.Raw(BreadCrumb.Display())
-    </div>
-    <div class="content-section" style="padding-top: 35px;">
-        <p class="paragraph">Keep your home cool and comfortable with a high efficiency air conditioner</p><br />
-        <form action="@Url.Action("Index", "air_conditioner")" method="get" class="appliance-collection-search-bar w-form">
-            <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by brand…" id="search" required="">
-            @Html.DropDownList("Ratings", null, htmlAttributes: new { @class = "recipe-dropdown" })
-            <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
-        </form>
-        <a href="@Url.Action("TopRecommendations", "air_conditioner")" class="button-3 w-button">Top Recommendations</a>
-    </div>
+        <div class="breadcrum" style="margin-left:10%">
+            @Html.Raw(BreadCrumb.Display())
+        </div>
+        <div class="content-section" style="padding-top: 35px;">
+            <p class="paragraph">Keep your home cool and comfortable with a high efficiency air conditioner</p><br />
+            <form action="@Url.Action("Index", "air_conditioner")" method="get" class="appliance-collection-search-bar w-form">
+                <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by brand…" id="search" required="">
+                @Html.DropDownList("Ratings", null, htmlAttributes: new { @class = "recipe-dropdown" })
+                <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+            </form>
+            <a href="@Url.Action("TopRecommendations", "air_conditioner")" class="button-3 w-button">Top Recommendations</a>
+        </div>
 
-    <div class="section-3">
-        <div class="w-layout-grid grid-3">
-            @{int x = 0;}
-            @if (Model != null)
-            {
-                foreach (var item in Model.Air_Conditioners)
+        @*  code to display all the top recommendated AC in grids of cards fetching them through the controller logic.  *@
+        <div class="section-3">
+            <div class="w-layout-grid grid-3">
+                @{int x = 0;}
+                @if (Model != null)
                 {
-                    x++;
-                    <div class="appliance-card">
-                        <a href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'>
-                            @if (item.Air_Conditioner_Id % 9 == 1)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner1.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Air_Conditioner_Id % 9 == 2)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner2.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Air_Conditioner_Id % 9 == 3)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner3.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Air_Conditioner_Id % 9 == 4)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner4.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Air_Conditioner_Id % 9 == 5)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner5.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Air_Conditioner_Id % 9 == 6)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner6.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Air_Conditioner_Id % 9 == 7)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner7.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Air_Conditioner_Id % 9 == 8)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner8.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                            else
-                            if (item.Air_Conditioner_Id % 9 == 0)
-                            {
-                                <img src='@Url.Content("~/Images/air_conditioner9.png")' alt="Air_conditioner" class="appliance-card-image" />
-                            }
-                        </a>
-                        <p>
-                            <button onclick="location.href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
-                                @item.Brand: @item.Model_No
-                            </button>
-                        </p>
-                    </div>
+                    foreach (var item in Model.Air_Conditioners)
+                    {
+                        x++;
+                        <div class="appliance-card">
+                            <a href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'>
+                                @if (item.Air_Conditioner_Id % 9 == 1)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner1.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Air_Conditioner_Id % 9 == 2)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner2.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Air_Conditioner_Id % 9 == 3)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner3.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Air_Conditioner_Id % 9 == 4)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner4.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Air_Conditioner_Id % 9 == 5)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner5.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Air_Conditioner_Id % 9 == 6)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner6.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Air_Conditioner_Id % 9 == 7)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner7.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Air_Conditioner_Id % 9 == 8)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner8.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                                else
+                                if (item.Air_Conditioner_Id % 9 == 0)
+                                {
+                                    <img src='@Url.Content("~/Images/air_conditioner9.png")' alt="Air_conditioner" class="appliance-card-image" />
+                                }
+                            </a>
+                            <p>
+                                <button onclick="location.href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
+                                    @item.Brand: @item.Model_No
+                                </button>
+                            </p>
+                        </div>
+                    }
                 }
-            }
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-</body>
+        <br>
+        <br>
+    </body>

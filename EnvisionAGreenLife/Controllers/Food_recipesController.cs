@@ -20,6 +20,7 @@ namespace EnvisionAGreenLife.Controllers
         // GET: Food_recipes
         [BreadCrumb(Clear = true, Label = "Breakfast Recipes")]
         [HttpGet]
+        // Logic for the breakfast page
         public ActionResult breakfast_recipes(int? page, string searchString, string currentFilter)
         {
             var results = from x in db.recipes
@@ -34,6 +35,9 @@ namespace EnvisionAGreenLife.Controllers
             {
                 searchString = currentFilter;
             }
+
+            // Showing data based on the search query string i.e. ingredient or name or cooking time and the difficulty level of the recipe selected from the dropdown.
+
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -52,11 +56,17 @@ namespace EnvisionAGreenLife.Controllers
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Breakfasts = list.ToPagedList(pageindex, pagesize);
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
             BreadCrumb.Add("", "Breakfast");
+
+            //adding the values in dropdown list
+
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -65,6 +75,8 @@ namespace EnvisionAGreenLife.Controllers
             this.ViewBag.Difficulty = new SelectList(Difficulty_level, "Value", "Text");
             return View(temp);
         }
+
+        // Logic for the lunch page
 
         [BreadCrumb(Clear = true, Label = "Lunch Recipes")]
         [HttpGet]
@@ -82,6 +94,8 @@ namespace EnvisionAGreenLife.Controllers
             {
                 searchString = currentFilter;
             }
+            // Showing data based on the search query string i.e. ingredient or name or cooking time and the difficulty level of the recipe selected from the dropdown.
+
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -100,11 +114,17 @@ namespace EnvisionAGreenLife.Controllers
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Lunch = list.ToPagedList(pageindex, pagesize);
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
             BreadCrumb.Add("", "Lunch");
+
+            //adding the values in dropdown list
+
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -116,6 +136,7 @@ namespace EnvisionAGreenLife.Controllers
 
         [BreadCrumb(Clear = true, Label = "Dinner Recipes")]
         [HttpGet]
+        // Logic for the dinner page
         public ActionResult dinner_recipes(int? page, string searchString, string currentFilter)
         {
             var results = from x in db.recipes
@@ -130,6 +151,7 @@ namespace EnvisionAGreenLife.Controllers
             {
                 searchString = currentFilter;
             }
+            // Showing data based on the search query string i.e. ingredient or name or cooking time and the difficulty level of the recipe selected from the dropdown.
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -148,11 +170,17 @@ namespace EnvisionAGreenLife.Controllers
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Dinner = list.ToPagedList(pageindex, pagesize);
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
             BreadCrumb.Add("", "Dinner");
+
+            //adding the values in dropdown list
+
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -162,6 +190,7 @@ namespace EnvisionAGreenLife.Controllers
             return View(temp);
         }
 
+        // Logic for the dinner page
         [BreadCrumb(Clear = true, Label = "Dessert Recipes")]
         [HttpGet]
         public ActionResult dessert_recipes(int? page, string searchString, string currentFilter)
@@ -178,6 +207,7 @@ namespace EnvisionAGreenLife.Controllers
             {
                 searchString = currentFilter;
             }
+            // Showing data based on the search query string i.e. ingredient or name or cooking time and the difficulty level of the recipe selected from the dropdown.
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -196,11 +226,17 @@ namespace EnvisionAGreenLife.Controllers
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Dessert = list.ToPagedList(pageindex, pagesize);
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
             BreadCrumb.Add("", "Dessert");
+
+            //adding the values in dropdown list
+
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -211,7 +247,7 @@ namespace EnvisionAGreenLife.Controllers
         }
 
 
-
+        //Logic of the seach fucntion implemented on the home page.
         [BreadCrumb(Clear = true, Label = "Recipes")]
         [HttpGet]
         public ActionResult General_search(int? page, string searchString, string currentFilter, string Difficulty, string currentDifficulty)
@@ -229,6 +265,9 @@ namespace EnvisionAGreenLife.Controllers
                 Difficulty = currentDifficulty;
                 searchString = currentFilter;
             }
+
+            // Showing data based on the search query string i.e. ingredient or name or cooking time and the difficulty level of the recipe selected from the dropdown.
+
             ViewData["CurrentFilter"] = searchString;
             ViewData["currentDifficulty"] = Difficulty;
             if (!String.IsNullOrEmpty(searchString) && !String.IsNullOrEmpty(Difficulty))
@@ -263,12 +302,17 @@ namespace EnvisionAGreenLife.Controllers
 
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
+
+            // showing the navigation map using the bread crumbs.
             temp.recipes = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home"); 
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
             BreadCrumb.Add(Url.Action("LeftOverRecipe", "Home"), "Left-Over Food Recipes");
             BreadCrumb.Add("", "General Search");
+
+            //adding the values in dropdown list
+
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
@@ -278,6 +322,7 @@ namespace EnvisionAGreenLife.Controllers
             return View(temp);
         }
 
+        //Displaying the result page for each category of recipe.
         // GET: Food_recipes/Details/5
         [HttpGet]
         public ActionResult Details(int? id)
@@ -291,17 +336,26 @@ namespace EnvisionAGreenLife.Controllers
             {
                 return HttpNotFound();
             }
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Waste");
             BreadCrumb.Add(Url.Action("LeftoverRecipe", "Home"), "Left-Over Food Recipes");
             BreadCrumb.Add("", recipes.name);
+
+            //adding the values in dropdown list
+
             List<SelectListItem> Difficulty_level = new List<SelectListItem>();
             Difficulty_level.Add(new SelectListItem() { Text = "Difficulty", Value = null });
             Difficulty_level.Add(new SelectListItem() { Text = "Easy", Value = "easy" });
             Difficulty_level.Add(new SelectListItem() { Text = "Average", Value = "average" });
             Difficulty_level.Add(new SelectListItem() { Text = "Challenging", Value = "Challenging" });
             this.ViewBag.Difficulty = new SelectList(Difficulty_level, "Value", "Text");
+
+            // logic to display the similar recipes.
+
             var results = from x in db.recipes
                           select x;
             var list = results.Where(x => x.difficulty_assignment.Contains(recipes.difficulty_assignment) && x.recipe_type_id == recipes.recipe_type_id).OrderBy(x => Guid.NewGuid()).Take(3).ToList();

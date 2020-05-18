@@ -25,6 +25,7 @@ namespace EnvisionAGreenLife.Controllers
             return View(db.Herbs.ToList());
         }
 
+        //displaying the herbs page with 6 different types of herbs.
         [HttpGet]
         public ActionResult Details(int? id)
         {
@@ -37,6 +38,9 @@ namespace EnvisionAGreenLife.Controllers
             {
                 return HttpNotFound();
             }
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("ReduceFoodWaste", "Home"), "Reduce Food Waste");

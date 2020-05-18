@@ -45,6 +45,9 @@ namespace EnvisionAGreenLife.Controllers
                 Ratings = currentRatings;
                 searchString = currentFilter;
             }
+
+            // Showing data based on the search query string and the star rating selected from the dropdown.
+
             ViewData["CurrentRatings"] = Ratings;
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString) && rating != -1)
@@ -70,11 +73,17 @@ namespace EnvisionAGreenLife.Controllers
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Clothes_Washers = list.ToPagedList(pageindex, pagesize);
+
+            // showing the navigation map using the bread crumbs.
+
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add("", "Clothes Washer");
             List<SelectListItem> Ratings_level = new List<SelectListItem>();
+
+            //adding the values in dropdown list
+
             Ratings_level.Add(new SelectListItem() { Text = "All Ratings", Value = "-1" });
             Ratings_level.Add(new SelectListItem() { Text = "1 Star", Value = "1" });
             Ratings_level.Add(new SelectListItem() { Text = "2 Star", Value = "2" });
@@ -102,6 +111,9 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
             BreadCrumb.Add(Url.Action("Index", "clothes_washer"), "Clothes Washer");
             BreadCrumb.Add("", clothes_Washer.Model_No);
+
+            // Smiliar products display logic
+
             var results = from x in db.clothes_washer
                           select x;
             var list = results.Where(x => x.Brand.Contains(clothes_Washer.Brand)).OrderBy(x => Guid.NewGuid()).Take(3).ToList();
