@@ -4,6 +4,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+    <style>
+        .quiz-card-container {
+            text-align: center;
+            margin-bottom: 3%;
+        }
+
+        .quiz-card-column1 {
+            padding-top: 3%;
+            position: fixed;
+            top: 250px;
+            left: 1%;
+            text-align: center;
+        }
+
+        .quiz-card-column2 {
+            padding-top: 3%;
+            position: fixed;
+            top: 250px;
+            right: 1%;
+            text-align:center;
+        }
+
+        .image-4 {
+            max-width: 40%;
+            border-radius: 20px;
+            filter: brightness(0.6);
+        }
+
+        .quiz-start-btn 
+        {
+            position: absolute;
+            left: 50%;
+            top: 80%;
+            font-size: 12px;
+            width: 100px;
+            margin-left: -50px;
+            border: 1px solid #f9f9f9;
+            border-radius: 16px;
+            background-color: transparent;
+            font-weight: 800;
+        }
+
+            .quiz-start-btn:hover {
+                border-color: #f9f9f9;
+                background-color: #f9f9f9;
+                color: #222;
+            }
+    </style>
+
 <!-- this is the display page for the reduce waste quiz which was embedded using an api called interactive and desgined our quiz in it-->
 
 <div class="page-title-section">
@@ -17,8 +66,25 @@
 </div>
 
 <div class="section">
-    <div class="container">
-        <div id="interact-5ebe517b6de90d0014a51ed2"></div>
-        <script type="text/javascript">var app_5ebe517b6de90d0014a51ed2; (function (d, t) { var s = d.createElement(t), options = { "appId": "5ebe517b6de90d0014a51ed2", "aspect_ratio": "80%", "async": true, "host": "quiz.tryinteract.com", "no_cover": true, "footer": "show" }; s.src = 'https://i.tryinteract.com/embed/app.js'; s.onload = s.onreadystatechange = function () { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { app_5ebe517b6de90d0014a51ed2 = new InteractApp(); app_5ebe517b6de90d0014a51ed2.initialize(options); app_5ebe517b6de90d0014a51ed2.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script');</script>
+    <div class="quiz-container container" style="text-align:center;">
+        <iframe id="interactApp5ebe517b6de90d0014a51ed2" width="800" height="800" style="border:none;max-width:100%;margin:0;" allowTransparency="true" frameborder="0" src="https://quiz.tryinteract.com/#/5ebe517b6de90d0014a51ed2/q/1?method=iframe"></iframe>
     </div>
+</div>
+
+<div class="quiz-card-column1">
+    <h3 style="text-align:center;"><strong>Reuse</strong></h3>
+    <img src="~/Images/down-arrow.png" style="width: 40px;" />
+    <div>
+        <img src="~/Images/reuse_quiz.png" alt="reuse_quiz" class="image-4">
+        <a href="@Url.Action("ReuseQuiz", "Home")" class="quiz-start-btn w-button">Start Quiz</a>
+    </div>
+</div>
+
+<div class="quiz-card-column2">
+        <h3 style="text-align:center;"><strong>Save Energy</strong></h3>
+        <img src="~/Images/down-arrow.png" style="width: 40px;" />
+        <div>
+            <img src="~/Images/energy.png" alt="energy_quiz" class="image-4">
+            <a href="@Url.Action("EnergyQuiz", "Home")" class="quiz-start-btn w-button">Start Quiz</a>
+        </div>
 </div>

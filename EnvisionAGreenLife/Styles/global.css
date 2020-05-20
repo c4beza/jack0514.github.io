@@ -4146,3 +4146,12 @@ dt {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .quiz-card-column1 {
+        display:none;
+    }
+
+    .quiz-card-column2 {
+        display: none;
+    }
+}
