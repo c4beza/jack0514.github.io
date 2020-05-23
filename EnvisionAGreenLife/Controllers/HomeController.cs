@@ -30,7 +30,7 @@ namespace EnvisionAGreenLife.Controllers
             ViewBag.Message = "How much do you know about saving money and energy?";
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add("", "Quiz");
+            BreadCrumb.Add("", "Assessment");
             return View();
         }
 
@@ -148,8 +148,8 @@ namespace EnvisionAGreenLife.Controllers
         {
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Quiz");
-            BreadCrumb.Add("", "Save Energy Quiz");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Assessment");
+            BreadCrumb.Add("", "Save Energy Assessment");
             return View();
         }
 
@@ -158,8 +158,8 @@ namespace EnvisionAGreenLife.Controllers
         {
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Quiz");
-            BreadCrumb.Add("", "Reuse Quiz");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Assessment");
+            BreadCrumb.Add("", "Reuse Assessment");
             return View();
         }
 
@@ -168,8 +168,8 @@ namespace EnvisionAGreenLife.Controllers
         {
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Quiz");
-            BreadCrumb.Add("", "Reduce Waste Quiz");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Assessment");
+            BreadCrumb.Add("", "Reduce Waste Assessment");
             return View();
         }
     }

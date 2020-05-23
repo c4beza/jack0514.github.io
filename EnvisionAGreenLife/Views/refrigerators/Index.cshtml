@@ -37,59 +37,63 @@
                     foreach (var item in Model.Refrigerators)
                     {
                         x++;
-                        <div class="appliance-card">
-                            <a href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'>
-                                @if (item.Refrigerator_Id % 9 == 1)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Refrigerator_Id % 9 == 2)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator2.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Refrigerator_Id % 9 == 3)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator3.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Refrigerator_Id % 9 == 4)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator4.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Refrigerator_Id % 9 == 5)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator5.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Refrigerator_Id % 9 == 6)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator6.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Refrigerator_Id % 9 == 7)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator7.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Refrigerator_Id % 9 == 8)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator8.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Refrigerator_Id % 9 == 0)
-                                {
-                                    <img src='@Url.Content("~/Images/refrigerator9.png")' alt="Refrigerator" class="appliance-card-image" />
-                                }
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
-                                    @item.Brand: @item.Model_No
-                                </button>
-                            </p>
-                        </div>
+                <div class="appliance-card">
+                    @if (item.Star2009 == 5)
+                    {
+                        <img src='@Url.Content("~/Images/five_star.png")' alt="Five_star" class="applicance-recommend-image" />
+                    }
+                    <a href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'>
+                        @if (item.Refrigerator_Id % 9 == 1)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Refrigerator_Id % 9 == 2)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator2.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Refrigerator_Id % 9 == 3)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator3.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Refrigerator_Id % 9 == 4)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator4.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Refrigerator_Id % 9 == 5)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator5.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Refrigerator_Id % 9 == 6)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator6.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Refrigerator_Id % 9 == 7)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator7.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Refrigerator_Id % 9 == 8)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator8.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Refrigerator_Id % 9 == 0)
+                        {
+                            <img src='@Url.Content("~/Images/refrigerator9.png")' alt="Refrigerator" class="appliance-card-image" />
+                        }
+                    </a>
+                    <p>
+                        <button onclick="location.href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
+                            @item.Brand: @item.Model_No
+                        </button>
+                    </p>
+                </div>
                     }
                 }
             </div>

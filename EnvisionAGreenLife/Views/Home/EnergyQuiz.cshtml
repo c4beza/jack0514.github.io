@@ -1,6 +1,6 @@
 ﻿@using MvcBreadCrumbs
 @{
-    ViewBag.Title = "Energy Quiz";
+    ViewBag.Title = "Energy Assessment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -56,7 +56,7 @@
 
 <div class="page-title-section">
     <div class="container">
-        <h1 class="page-title">Energy Quiz</h1>
+        <h1 class="page-title">Save Energy Assessment</h1>
     </div>
 </div>
 
@@ -72,19 +72,19 @@
 </div>
 
 <div class="quiz-card-column1">
-    <h3 style="text-align:center;"><strong>Reuse</strong></h3>
+    <h3 style="text-align:center;"><strong>Reuse Assessment</strong></h3>
     <img src="~/Images/down-arrow.png" style="width: 40px;" />
     <div>
         <img src="~/Images/reuse_quiz.png" alt="reuse_quiz" class="image-4">
-        <a href="@Url.Action("ReuseQuiz", "Home")" class="quiz-start-btn w-button">Start Quiz</a>
+        <a href="@Url.Action("ReuseQuiz", "Home")" class="quiz-start-btn w-button">Start</a>
     </div>
 </div>
 
 <div class="quiz-card-column2">
-    <h3 style="text-align:center;"><strong>Reduce Waste</strong></h3>
+    <h3 style="text-align:center;"><strong>Reduce Waste Assessment</strong></h3>
     <img src="~/Images/down-arrow.png" style="width: 40px;" />
     <div>
         <img src="~/Images/reduce.png" alt="reduce_quiz" class="image-4">
-        <a href="@Url.Action("ReduceWasteQuiz", "Home")" class="quiz-start-btn w-button">Start Quiz</a>
+        <a href="@Url.Action("ReduceWasteQuiz", "Home")" class="quiz-start-btn w-button">Start</a>
     </div>
 </div>

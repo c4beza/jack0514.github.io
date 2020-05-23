@@ -8,6 +8,11 @@
 }
 
 @* this page contains the view logic for the recipe page design *@
+    <style>
+        .appliance-card-but {
+            padding-bottom: 0px;
+        }
+    </style>
 
     <body>
         <div class="page-title-section">
@@ -117,7 +122,7 @@
                                     else
                                     if (item.recipe_id % 9 == 6)
                                     {
-                                        <img src='@Url.Content("~/Images/l6.jpg")' alt="Lunch" class="appliance-card-image" />
+                                        <img src='@Url.Content("~/Images/l6.png")' alt="Lunch" class="appliance-card-image" />
                                     }
                                     else
                                     if (item.recipe_id % 9 == 7)

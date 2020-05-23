@@ -1148,9 +1148,9 @@ blockquote {
   position: relative;
   left: 0px;
   display: -webkit-box;
-  display: -webkit-flex;
+  /*display: -webkit-flex;*/
   display: -ms-flexbox;
-  display: flex;
+  /*display: flex;*/
   height: 350px;
   min-height: 300px;
   margin-left: 28px;
@@ -1164,7 +1164,7 @@ blockquote {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: start;
+  /*-webkit-box-align: start;*/
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -2496,9 +2496,7 @@ blockquote {
 }
 
 .cards-section {
-  margin-top: 100px;
   padding-top: 0px;
-  padding-bottom: 100px;
   border: 1px solid transparent;
   color: #000;
 }
@@ -2537,21 +2535,22 @@ blockquote {
 }
 
 .cards-image {
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  opacity: 1;
-  -webkit-filter: brightness(75%);
-  filter: brightness(75%);
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: 50% 50%;
-  object-position: 50% 50%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    opacity: 1;
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%);
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 50% 50%;
+    object-position: 50% 50%;
+    border-radius: 10px;
 }
 
 .div-block {
@@ -2600,20 +2599,21 @@ blockquote {
 }
 
 .cards-image-2 {
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-filter: brightness(75%);
-  filter: brightness(75%);
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: 50% 50%;
-  object-position: 50% 50%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    -webkit-filter: brightness(75%);
+    filter: brightness(60%);
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 50% 50%;
+    object-position: 50% 50%;
+    border-radius: 10px;
 }
 
 .text-span {
@@ -2822,7 +2822,7 @@ blockquote {
 
 .appliance-card-image {
   width: 100%;
-  border: 1px solid #1976d2;
+  border: 1px solid seagreen;
   border-radius: 0px;
   background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/example-bg.png');
   background-position: 0px 0px;
@@ -2832,9 +2832,10 @@ blockquote {
 }
 
 .appliance-card-but {
-  width: 100%;
-  max-width: 100%;
-  text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 40px;
+    text-align: center;
 }
 
 .columns {
@@ -4154,4 +4155,69 @@ dt {
     .quiz-card-column2 {
         display: none;
     }
+
+    .appliance-card-but {
+        padding-bottom: 10px;
+    }
+}
+
+.card-text-wrapper {
+    min-height:80px;
+    text-align:justify;
+}
+
+@media screen and (max-width: 767px) {
+    .card-text-wrapper {
+        min-height: 0px;
+        text-align: center;
+    }
+}
+
+.cards-image-3 {
+    width: 205px;
+    height: 205px;
+    filter: brightness(60%);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    .cards-image-3 {
+        width: 100%;
+        height: 100%;
+        filter: brightness(60%);
+    }
+ }
+
+
+
+@media screen and (max-width: 767px) {
+    .appliance-col {
+        padding-left:0px;
+        padding-right:0px;
+        padding-top:30px;
+    }
+}
+
+.btn.light.outline.appliance-col-btn {
+    font-size: 14px;
+    float: none;
+    text-align: center;
+    padding: 9px 15px;
+    width:170px;
+}
+
+.compo-col-btn.btn.light.outline {
+    text-align:center;
+    padding:6px;
+}
+
+.appliance-card {
+    position:relative;
+}
+.applicance-recommend-image {
+    position: absolute;
+    top: 92%;
+    left: 30%;
+    width: 40%;
+    height: auto;
 }

@@ -36,59 +36,63 @@
                     foreach (var item in Model.Televisions)
                     {
                         x++;
-                        <div class="appliance-card">
-                            <a href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'>
-                                @if (item.Television_Id % 9 == 1)
-                                {
-                                    <img src='@Url.Content("~/Images/tv1.png")' alt="Television" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Television_Id % 9 == 2)
-                                {
-                                    <img src='@Url.Content("~/Images/tv2.png")' alt="Television" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Television_Id % 9 == 3)
-                                {
-                                    <img src='@Url.Content("~/Images/tv3.png")' alt="Television" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Television_Id % 9 == 4)
-                                {
-                                    <img src='@Url.Content("~/Images/tv4.png")' alt="Television" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Television_Id % 9 == 5)
-                                {
-                                    <img src='@Url.Content("~/Images/tv5.png")' alt="Television" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Television_Id % 9 == 6)
-                                {
-                                    <img src='@Url.Content("~/Images/tv6.png")' alt="Television" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Television_Id % 9 == 7)
-                                {
-                                    <img src='@Url.Content("~/Images/tv7.png")' alt="Television" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Television_Id % 9 == 8)
-                                {
-                                    <img src='@Url.Content("~/Images/tv8.png")' alt="Television" class="appliance-card-image" />
-                                }
-                                else
-                                if (item.Television_Id % 9 == 0)
-                                {
-                                    <img src='@Url.Content("~/Images/tv9.png")' alt="Television" class="appliance-card-image" />
-                                }
-                            </a>
-                            <p>
-                                <button onclick="location.href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
-                                    @item.Brand_Reg: @item.Model_No
-                                </button>
-                            </p>
-                        </div>
+                <div class="appliance-card">
+                    @if (item.Star2 == 5)
+                    {
+                        <img src='@Url.Content("~/Images/five_star.png")' alt="Five_star" class="applicance-recommend-image" />
+                    }
+                    <a href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'>
+                        @if (item.Television_Id % 9 == 1)
+                        {
+                            <img src='@Url.Content("~/Images/tv1.png")' alt="Television" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Television_Id % 9 == 2)
+                        {
+                            <img src='@Url.Content("~/Images/tv2.png")' alt="Television" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Television_Id % 9 == 3)
+                        {
+                            <img src='@Url.Content("~/Images/tv3.png")' alt="Television" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Television_Id % 9 == 4)
+                        {
+                            <img src='@Url.Content("~/Images/tv4.png")' alt="Television" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Television_Id % 9 == 5)
+                        {
+                            <img src='@Url.Content("~/Images/tv5.png")' alt="Television" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Television_Id % 9 == 6)
+                        {
+                            <img src='@Url.Content("~/Images/tv6.png")' alt="Television" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Television_Id % 9 == 7)
+                        {
+                            <img src='@Url.Content("~/Images/tv7.png")' alt="Television" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Television_Id % 9 == 8)
+                        {
+                            <img src='@Url.Content("~/Images/tv8.png")' alt="Television" class="appliance-card-image" />
+                        }
+                        else
+                        if (item.Television_Id % 9 == 0)
+                        {
+                            <img src='@Url.Content("~/Images/tv9.png")' alt="Television" class="appliance-card-image" />
+                        }
+                    </a>
+                    <p>
+                        <button onclick="location.href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'" type="button" class="appliance-card-but w-button" style="height:100px">
+                            @item.Brand_Reg: @item.Model_No
+                        </button>
+                    </p>
+                </div>
                     }
                 }
             </div>

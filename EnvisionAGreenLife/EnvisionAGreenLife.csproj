@@ -331,6 +331,7 @@
     <Content Include="Images\Easy.png" />
     <Content Include="Images\energy.png" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\five_star.png" />
     <Content Include="Images\foodRecipes.png" />
     <Content Include="Images\FoodWaste.png" />
     <Content Include="Images\homepage4.jpg" />

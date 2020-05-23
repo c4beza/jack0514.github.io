@@ -18,7 +18,7 @@
 
 <!-- this is the logic to place all the elements like left over food recipes and grow your own herbs on the page with the card grid with images and button-->
 
-<section id="cards-section" class="cards-section">
+<section id="cards-section" class="cards-section" style="margin-top:100px">
     <div class="centered-container w-container">
         <h2>Get Started. It's Easy</h2>
         <p>If you are ready to reduce your household food waste, below are some ideas to get you started on your own.<br></p>
@@ -27,10 +27,10 @@
                 <div class="div-block-2">
                     <div class="cards-image-mask">
                         <a href='@Url.Action("LeftoverRecipe", "Home")'>
-                            <img src="~/Images/FoodRecipes.png" class="cards-image" />
+                            <img src="~/Images/FoodRecipes.png" class="cards-image" style="filter: brightness(55%);"/>
                         </a>
-                        <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%; top:77%; ">
-                            Learn More
+                        <button onclick="location.href='@Url.Action("LeftoverRecipe", "Home")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%; top:77%; width:155px; ">
+                            Find Recipes
                         </button>
                     </div>
                     <h3>Left-Over Food Recipes</h3>
@@ -45,7 +45,7 @@
                             <img src="~/Images/herbs.png" alt="" class="cards-image">
                         </a>
                         <button onclick="location.href='@Url.Action("Index", "Herbs")'" type="button" class="btn light outline w-button" Style="margin-left:-75px; left:50%; top:77%;">
-                            Learn More
+                            Grow Herbs
                         </button>
                     </div>
                     <h3 id="w-node-e8c45c7a2617-d77e0d3d">Grow Your Own Herbs</h3>

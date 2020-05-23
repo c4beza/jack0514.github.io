@@ -17,7 +17,7 @@
     <div class="breadcrum" style="margin-left:10%">
         @Html.Raw(BreadCrumb.Display())
     </div>
-    <div class="cards-section">
+    <div class="cards-section" style="  margin-top: 100px;">
         <div class="centered-container-2 w-container">
             <p>Choose a type of appliance, and find the energy consumption of the appliance in your house</p><br />
             @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "appliance-collection-search-bar w-form" }))
@@ -33,65 +33,65 @@
                         <a href='@Url.Action("Index", "air_conditioner")'>
                             <img src='@Url.Content("~/Images/air_conditioner1.png")' alt="Air_conditioner" class="cards-image-2" />
                         </a>
-                        <a href="@Url.Action("Index", "air_conditioner")" class="btn light outline w-button" style="margin-left:-75px; left:50%; top: 77%">Learn More</a>
+                        <a href="@Url.Action("Index", "air_conditioner")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">AIR CONDITIONER</a>
                     </div>
-                    <h4 class="appliance-name">AIR CONDITIONER</h4>
                 </div>
                 <div id="w-node-9c9d69aee442-f67e0d43">
                     <div class="cards-image-mask">
                         <a href='@Url.Action("Index", "clothes_washer")'>
                             <img src='@Url.Content("~/Images/cw2.png")' alt="Clothes_Washer" class="cards-image-2" />
                         </a>
-                        <a href="@Url.Action("Index", "clothes_washer")" class="btn light outline w-button" style="margin-left:-75px; left:50%; top: 77%">Learn More</a>
+                        <a href="@Url.Action("Index", "clothes_washer")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">CLOTHES WASHER</a>
                     </div>
-                    <h4 class="appliance-name">CLOTHES WASHER</h4>
                 </div>
                 <div id="w-node-9c9d69aee448-f67e0d43">
                     <div class="cards-image-mask">
                         <a href='@Url.Action("Index", "clothes_dryer")'>
                             <img src='@Url.Content("~/Images/cw1.png")' alt="Clothes_Dryer" class="cards-image-2" />
                         </a>
-                        <a href="@Url.Action("Index", "clothes_dryer")" class="btn light outline w-button" style="margin-left:-75px; left:50%; top: 77%">Learn More</a>
+                        <a href="@Url.Action("Index", "clothes_dryer")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">CLOTHES DRYER</a>
                     </div>
-                    <h4 id="w-node-9c9d69aee44b-f67e0d43" class="appliance-name">CLOTHES DRYER</h4>
                 </div>
                 <div id="w-node-9c9d69aee44d-f67e0d43">
                     <div class="cards-image-mask">
                         <a href='@Url.Action("Index", "dishwashers")'>
                             <img src='@Url.Content("~/Images/dishwasher1.png")' alt="Dishwasher" class="cards-image-2" />
                         </a>
-                        <a href="@Url.Action("Index", "dishwashers")" class="btn light outline w-button" style="margin-left:-75px; left:50%; top: 77%">Learn More</a>
+                        <a href="@Url.Action("Index", "dishwashers")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">DISHWASHER</a>
                     </div>
-                    <h4 id="w-node-9c9d69aee451-f67e0d43" class="appliance-name">DISHWASHER</h4>
-                </div>
-                <div id="w-node-9c9d69aee453-f67e0d43">
-                    <div class="cards-image-mask">
-                        <a href='@Url.Action("Index", "monitors")'>
-                            <img src='@Url.Content("~/Images/monitor1.png")' alt="Monitor" class="cards-image-2" />
-                        </a>
-                        <a href="@Url.Action("Index", "monitors")" class="btn light outline w-button" style="margin-left:-75px; left:50%; top: 77%">Learn More</a>
-                    </div>
-                    <h4 id="w-node-9c9d69aee457-f67e0d43" class="appliance-name">MONITOR</h4>
-                </div>
-                <div id="w-node-eae23b7853e9-f67e0d43">
-                    <div class="cards-image-mask">
-                        <a href='@Url.Action("Index", "refrigerators")'>
-                            <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" class="cards-image-2" />
-                        </a>
-                        <a href="@Url.Action("Index", "refrigerators")" class="btn light outline w-button" style="margin-left:-75px; left:50%; top: 77%">Learn More</a>
-                    </div>
-                    <h4 class="appliance-name">REFRIGERATOR</h4>
-                </div>
-                <div id="w-node-06e4a0cd410c-f67e0d43">
-                    <div class="cards-image-mask">
-                        <a href='@Url.Action("Index", "televisions")'>
-                            <img src='@Url.Content("~/Images/tv1.png")' alt="Television" class="cards-image-2" />
-                        </a>
-                        <a href="@Url.Action("Index", "televisions")" class="btn light outline w-button" style="margin-left:-75px; left:50%; top: 77%">Learn More</a>
-                    </div>
-                    <h4 class="appliance-name">TELEVISION</h4>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="cards-section" style="        padding-bottom: 100px;
+">
+    <div class="centered-container-2 w-container">
+        <div class="w-row">
+            <div class="appliance-col w-col w-col-4" style="text-align:center;">
+                <div style="text-align:center;">
+                    <a href='@Url.Action("Index", "monitors")'>
+                        <img src='@Url.Content("~/Images/monitor1.png")' alt="Monitor" class="cards-image-3" />
+                    </a>
+                    <a href="@Url.Action("Index", "monitors")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">MONITOR</a>
+                    </div>
+                </div>
+                <div class="appliance-col w-col w-col-4" style="text-align:center;">
+                    <div style="text-align:center;">
+                        <a href='@Url.Action("Index", "refrigerators")'>
+                            <img src='@Url.Content("~/Images/refrigerator1.png")' alt="Refrigerator" class="cards-image-3" />
+                        </a>
+                        <a href="@Url.Action("Index", "refrigerators")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">REFRIGERATOR</a>
+                    </div>
+                </div>
+                <div class="appliance-col w-col w-col-4" style="text-align:center;">
+                    <div style="text-align:center;">
+                        <a href='@Url.Action("Index", "televisions")'>
+                            <img src='@Url.Content("~/Images/tv1.png")' alt="Television" class="cards-image-3" />
+                        </a>
+                        <a href="@Url.Action("Index", "televisions")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">TELEVISION</a>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </body>

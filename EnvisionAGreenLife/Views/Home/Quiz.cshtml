@@ -1,6 +1,6 @@
 ﻿@using MvcBreadCrumbs
 @{
-    ViewBag.Title = "Quiz";
+    ViewBag.Title = "Household Assessment";
 }
 
 <!-- this is the display page for the quiz which was embedded using an api called interactive and desgined our quiz in it-->
@@ -43,7 +43,7 @@
 <body>
     <div class="page-title-section">
         <div class="container">
-            <h1 class="page-title">Quiz</h1>
+            <h1 class="page-title">Household assessment</h1>
         </div>
     </div>
     <div class="breadcrum" style="margin-left:10%">
@@ -51,33 +51,33 @@
     </div>
 
     <div class="content-section" style="padding-top: 35px; padding-bottom:1%;">
-        <h2 class="heading-5" style="margin: 10px 120px;">Choose a type of quiz and we will lead you to a sustainable lifestyle.</h2>
+        <h2 class="heading-5" style="margin: 10px 120px;">Choose a type of assessment and we will lead you to a sustainable lifestyle.</h2>
     </div>
     <div>
         <div class="quiz-card-container w-container">
             <div class="w-row">
                 <div class="quiz-card-column w-col w-col-4">
-                    <h3 style="text-align:center;"><strong>Save Energy</strong></h3>
+                    <h3 style="text-align:center;"><strong>Save Energy Assessment</strong></h3>
                     <img src="~/Images/down-arrow.png" style="width: 40px;" />
                     <div>
                         <img src="~/Images/energy.png" alt="energy_quiz" class="image-4">
-                        <a href="@Url.Action("EnergyQuiz", "Home")" class="quiz-start-btn w-button">Start Quiz</a>
+                        <a href="@Url.Action("EnergyQuiz", "Home")" class="quiz-start-btn w-button">Start</a>
                     </div>
                 </div>
                 <div class="quiz-card-column w-col w-col-4">
-                    <h3 style="text-align:center;"><strong>Reduce Waste</strong></h3>
+                    <h3 style="text-align:center;"><strong>Reduce Waste Assessment</strong></h3>
                     <img src="~/Images/down-arrow.png" style="width: 40px;" />
                     <div>
                         <img src="~/Images/reduce.png" alt="reduce_quiz" class="image-4">
-                        <a href="@Url.Action("ReduceWasteQuiz", "Home")" class="quiz-start-btn w-button">Start Quiz</a>
+                        <a href="@Url.Action("ReduceWasteQuiz", "Home")" class="quiz-start-btn w-button">Start</a>
                     </div>
                 </div>
                 <div class="quiz-card-column w-col w-col-4">
-                    <h3 style="text-align:center;"><strong>Reuse</strong></h3>
+                    <h3 style="text-align:center;"><strong>Reuse Assessment</strong></h3>
                     <img src="~/Images/down-arrow.png" style="width: 40px;" />
                     <div>
                         <img src="~/Images/reuse_quiz.png" alt="reuse_quiz" class="image-4">
-                        <a href="@Url.Action("ReuseQuiz", "Home")" class="quiz-start-btn w-button">Start Quiz</a>
+                        <a href="@Url.Action("ReuseQuiz", "Home")" class="quiz-start-btn w-button">Start</a>
                     </div>
                 </div>
             </div>
