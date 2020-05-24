@@ -1625,18 +1625,13 @@ blockquote {
   text-decoration: line-through;
 }
 
-.shop-local-section {
-  padding-top: 65px;
-  padding-bottom: 65px;
-}
-
 .shop-local-wrapper {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 500px;
+  min-height: 300px;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
@@ -1649,35 +1644,35 @@ blockquote {
   top: 6%;
   right: auto;
   bottom: 0%;
-  width: 30%;
+  width: 35%;
   height: 0px;
-  min-height: 440px;
+  min-height: 260px;
   border-radius: 5px;
-  background-image: url('../images/christiann-koepke-dQyS2pMYtok-unsplash-1.jpg');
+  background-image: url('../Images/WebDescription.png');
   background-position: 69% 80%;
-  background-size: 270%;
+  background-size: 100%;
 }
 
 .shop-local-right {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 80%;
-  padding: 45px;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  border-radius: 5px;
-  background-color: #222;
-  color: #f9f9f9;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    padding: 45px;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    border-radius: 5px;
+    background-color: #517c63;
+    color: #f9f9f9;
 }
 
 .shop-local-content-wrapper {
   width: 80%;
-  padding-right: 145px;
-  padding-left: 145px;
+  padding-right: 35px;
+  padding-left: 35px;
 }
 
 .shop-local-heading {
@@ -3042,9 +3037,10 @@ blockquote {
   .shop-details-left {
     margin-right: 25px;
   }
-  .shop-local-left {
-    top: 8%;
-  }
+    .shop-local-left {
+        top: 8%;
+        background-size: 160%;
+    }
   .shop-local-content-wrapper {
     padding-right: 0px;
     padding-left: 0px;
@@ -4221,3 +4217,11 @@ dt {
     width: 40%;
     height: auto;
 }
+
+@media screen and (max-width: 1024px) {
+    .grid-3.w-layout-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+}
+

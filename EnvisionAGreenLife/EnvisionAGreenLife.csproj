@@ -37,12 +37,13 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -264,6 +265,16 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Images\0.5star.png" />
+    <Content Include="Images\1.5star.png" />
+    <Content Include="Images\1star.png" />
+    <Content Include="Images\2.5star.png" />
+    <Content Include="Images\2star.png" />
+    <Content Include="Images\3.5star.png" />
+    <Content Include="Images\3star.png" />
+    <Content Include="Images\4.5star.png" />
+    <Content Include="Images\4star.png" />
+    <Content Include="Images\5star.png" />
     <Content Include="Images\air_conditioner1.png" />
     <Content Include="Images\air_conditioner2.png" />
     <Content Include="Images\air_conditioner3.png" />
@@ -423,6 +434,7 @@
     <Content Include="Images\Visualisation1.png" />
     <Content Include="Images\Visualisation2.jpg" />
     <Content Include="Images\waste_type.png" />
+    <Content Include="Images\WebDescription.png" />
     <Content Include="Models\AppliancesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppliancesModel.Context.cs</LastGenOutput>

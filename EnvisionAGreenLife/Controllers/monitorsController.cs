@@ -29,6 +29,11 @@ namespace EnvisionAGreenLife.Controllers
                 rating = decimal.Parse(Ratings);
             }
             else
+            if (!String.IsNullOrEmpty(currentRatings))
+            {
+                rating = decimal.Parse(currentRatings);
+            }
+            else
             {
                 rating = -1;
             }
@@ -36,7 +41,7 @@ namespace EnvisionAGreenLife.Controllers
                           select x;
             int pagesize = 9, pageindex = 1;
             MList temp = new MList();
-            if (searchString != null || rating != -1)
+            if (searchString != null || Ratings != null)
             {
                 page = 1;
             }

@@ -36,9 +36,60 @@
                     {
                         x++;
                 <div class="appliance-card">
-                    @if (item.New_Star == 5)
-                    {
-                        <img src='@Url.Content("~/Images/five_star.png")' alt="Five_star" class="applicance-recommend-image" />
+                    @{
+                        switch (item.New_Star)
+                        {
+                            case 5m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/5star.png")' alt="5star" class="applicance-recommend-image" />
+                                </text>
+                                break;  
+                            case 4.5m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/4.5star.png")' alt="4.5star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                            case 4m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/4star.png")' alt="4star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                            case 3.5m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/3.5star.png")' alt="3.5star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                            case 3m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/3star.png")' alt="3star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                            case 2.5m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/2.5star.png")' alt="2.5star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                            case 2m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/2star.png")' alt="2star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                            case 1.5m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/1.5star.png")' alt="1.5star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                            case 1m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/1star.png")' alt="1star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                            case 0.5m:
+                                <text>
+                                    <img src='@Url.Content("~/Images/0.5star.png")' alt="0.5star" class="applicance-recommend-image" />
+                                </text>
+                                break;
+                        }
                     }
                     <a href='@Url.Action("Details", "dishwashers",new { id = @item.Dishwasher_Id })'>
                         @if (item.Dishwasher_Id % 9 == 1)

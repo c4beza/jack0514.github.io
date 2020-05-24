@@ -38,7 +38,7 @@
                 <div class="appliance-card">
                     @if (item.New_Star == 5)
                     {
-                        <img src='@Url.Content("~/Images/five_star.png")' alt="Five_star" class="applicance-recommend-image" />
+                        <img src='@Url.Content("~/Images/5star.png")' alt="Five_star" class="applicance-recommend-image" />
                     }
                     <a href='@Url.Action("Details", "Clothes_dryer",new { id = @item.Clothes_Dryer_Id })'>
                         @if (item.Clothes_Dryer_Id % 9 == 1)

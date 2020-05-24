@@ -39,7 +39,7 @@
                 <div class="appliance-card">
                     @if (item.Star2 == 5)
                     {
-                        <img src='@Url.Content("~/Images/five_star.png")' alt="Five_star" class="applicance-recommend-image" />
+                        <img src='@Url.Content("~/Images/5star.png")' alt="Five_star" class="applicance-recommend-image" />
                     }
                     <a href='@Url.Action("Details", "televisions",new { id = @item.Television_Id })'>
                         @if (item.Television_Id % 9 == 1)
