@@ -36,7 +36,7 @@
                 @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "home-search w-form" }))
                 {
                     <div>
-                        @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "home-search-bar w-input", @placeholder = "Search Recipes e.g. garlic.."})
+                        @Html.TextBox("homeSearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "home-search-bar w-input", @placeholder = "Search Recipes e.g. garlic.."})
                         <input type="submit" value="🔍" class="home-search-but w-button">
                     </div>
                 }
@@ -51,15 +51,7 @@
                             <a href="@Url.Action("Index","Home")" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
                             <a href="@Url.Action("Quiz","Home")" class="nav-link w-nav-link">Household Assessment</a>
                             <a href="@Url.Action("ReduceFoodWaste","Home")" class="nav-link w-nav-link">Reduce Waste</a>
-                            <div data-hover="1" data-delay="0" class="w-dropdown" style="z-index:1000;">
-                                <div class="nav-dropdown w-dropdown-toggle">
-                                    <div class="nav-dropdown-icon w-icon-dropdown-toggle"></div>
-                                    <div class="dropdown-link">Save Energy</div>
-                                </div>
-                                <nav class="w-dropdown-list">
-                                    <a href="@Url.Action("AppliancesType","Home")" class="sub-dropdown-list-item w-dropdown-link">Search Appliance</a>
-                                </nav>
-                            </div>
+                            <a href="@Url.Action("AppliancesType","Home")" class="nav-link w-nav-link">Save Energy</a>
                             <div data-hover="1" data-delay="0" class="w-dropdown" style="z-index:1000;">
                                 <div class="nav-dropdown w-dropdown-toggle">
                                     <div class="nav-dropdown-icon w-icon-dropdown-toggle"></div>

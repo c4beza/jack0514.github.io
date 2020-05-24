@@ -2753,6 +2753,16 @@ blockquote {
   border-radius: 16px;
 }
 
+.appliancec-type-search-but {
+    position: absolute;
+    left: 480px;
+    top: auto;
+    right: auto;
+    bottom: 0px;
+    width: 100px;
+    border-radius: 16px;
+}
+
 .appliance-collection-search-bar {
   position: relative;
   left: 50%;
@@ -3428,6 +3438,13 @@ blockquote {
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+    .appliancec-type-search-but {
+        left: 230px;
+        bottom: -2px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
   .appliance-collection-search-bar {
     margin-left: -166px;
   }
@@ -3738,6 +3755,12 @@ blockquote {
     left: 118px;
     bottom: auto;
   }
+
+    .appliancec-type-search-but {
+        left: 58px;
+        bottom: auto;
+    }
+
   .appliance-collection-search-bar {
     width: 200px;
     margin-left: -100px;
@@ -4225,3 +4248,10 @@ dt {
     }
 }
 
+.btn.light.outline.herb-col-btn {
+    font-size: 14px;
+    float: none;
+    text-align: center;
+    padding: 9px 15px;
+    width: 170px;
+}

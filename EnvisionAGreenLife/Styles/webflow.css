@@ -638,11 +638,12 @@ textarea.w-select {
   .w-col-medium-12 {
     width: 100%;
   }
-  .w-col-stack {
-    width: 100%;
-    left: auto;
-    right: auto;
-  }
+    .w-col-stack {
+        padding-top: 3%;
+        width: 100%;
+        left: auto;
+        right: auto;
+    }
 }
 @media screen and (max-width: 767px) {
   .w-hidden-main {

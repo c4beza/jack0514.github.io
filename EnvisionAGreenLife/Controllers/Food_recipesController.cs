@@ -250,8 +250,12 @@ namespace EnvisionAGreenLife.Controllers
         //Logic of the seach fucntion implemented on the home page.
         [BreadCrumb(Clear = true, Label = "Recipes")]
         [HttpGet]
-        public ActionResult General_search(int? page, string searchString, string currentFilter, string Difficulty, string currentDifficulty)
+        public ActionResult General_search(int? page, string homeSearchString, string searchString, string currentFilter, string Difficulty, string currentDifficulty)
         {
+            if (homeSearchString != null)
+            {
+                searchString = homeSearchString;
+            }
             var results = from x in db.recipes
                           select x;
             int pagesize = 9, pageindex = 1;

@@ -30,7 +30,7 @@ namespace EnvisionAGreenLife.Controllers
             ViewBag.Message = "How much do you know about saving money and energy?";
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add("", "Assessment");
+            BreadCrumb.Add("", "Household Assessment");
             return View();
         }
 
@@ -82,6 +82,51 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add("", "Save Energy");
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AppliancesType(string searchString)
+        {
+            String temp = searchString.ToLower();
+            if ("air conditioners".Contains(temp))
+            {
+                return RedirectToAction("Index", "air_conditioner");
+            }
+            else
+                if ("clothes dryers".Contains(temp))
+            {
+                return RedirectToAction("Index", "clothes_dryer");
+            }
+            else
+                if ("clothes washers".Contains(temp))
+            {
+                return RedirectToAction("Index", "clothes_washer");
+            }
+            else
+                if ("dishwashers".Contains(temp))
+            {
+                return RedirectToAction("Index", "dishwashers");
+            }
+            else
+                if ("monitors".Contains(temp))
+            {
+                return RedirectToAction("Index", "monitors");
+            }
+            else
+                if ("refrigerators".Contains(temp))
+            {
+                return RedirectToAction("Index", "refrigerators");
+            }
+            else
+                if ("television".Contains(temp))
+            {
+                return RedirectToAction("Index", "televisions");
+            }
+            else
+            {
+                ViewData["foundOrNot"] = "NO";
+                return View();
+            }
         }
 
         [HttpGet]
@@ -148,7 +193,7 @@ namespace EnvisionAGreenLife.Controllers
         {
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Assessment");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Household Assessment");
             BreadCrumb.Add("", "Save Energy Assessment");
             return View();
         }
@@ -158,7 +203,7 @@ namespace EnvisionAGreenLife.Controllers
         {
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Assessment");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Household Assessment");
             BreadCrumb.Add("", "Reuse Assessment");
             return View();
         }
@@ -168,7 +213,7 @@ namespace EnvisionAGreenLife.Controllers
         {
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
-            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Assessment");
+            BreadCrumb.Add(Url.Action("Quiz", "Home"), "Household Assessment");
             BreadCrumb.Add("", "Reduce Waste Assessment");
             return View();
         }

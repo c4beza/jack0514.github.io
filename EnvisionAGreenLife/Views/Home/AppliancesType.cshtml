@@ -17,16 +17,21 @@
     <div class="breadcrum" style="margin-left:10%">
         @Html.Raw(BreadCrumb.Display())
     </div>
-    <div class="cards-section" style="  margin-top: 100px;">
+    <div class="cards-section" style="  margin-top: 50px;">
         <div class="centered-container-2 w-container">
             <p>Choose a type of appliance, and find the energy consumption of the appliance in your house</p><br />
-            @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "appliance-collection-search-bar w-form" }))
+            @if (ViewData["foundOrNot"] != null)
+            {
+                <h2 style="text-align:center; background-color:aliceblue; color:seagreen; margin-top: 0px; margin-bottom: 20px;">No Result Found</h2>
+            }
+            @using (Html.BeginForm("AppliancesType", "Home", FormMethod.Post, new { @class = "appliance-collection-search-bar w-form" }))
             {
                 <div>
                     @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Search..." })
-                    <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
+                    <input type="submit" value="Search" class="appliancec-type-search-but w-button">
                 </div>
             }
+
             <div class="cards-grid-container-2">
                 <div>
                     <div class="cards-image-mask">
@@ -41,7 +46,9 @@
                         <a href='@Url.Action("Index", "clothes_washer")'>
                             <img src='@Url.Content("~/Images/cw2.png")' alt="Clothes_Washer" class="cards-image-2" />
                         </a>
-                        <a href="@Url.Action("Index", "clothes_washer")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">CLOTHES WASHER</a>
+                        <a href="@Url.Action("Index", "clothes_washer")" class="appliance-col-btn btn light outline w-button" style="        margin-left: -85px;
+        left: 50%;
+        top: 77%">CLOTHES WASHER</a>
                     </div>
                 </div>
                 <div id="w-node-9c9d69aee448-f67e0d43">
@@ -65,14 +72,14 @@
     </div>
     <div class="cards-section" style="        padding-bottom: 100px;
 ">
-    <div class="centered-container-2 w-container">
-        <div class="w-row">
-            <div class="appliance-col w-col w-col-4" style="text-align:center;">
-                <div style="text-align:center;">
-                    <a href='@Url.Action("Index", "monitors")'>
-                        <img src='@Url.Content("~/Images/monitor1.png")' alt="Monitor" class="cards-image-3" />
-                    </a>
-                    <a href="@Url.Action("Index", "monitors")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">MONITOR</a>
+        <div class="centered-container-2 w-container">
+            <div class="w-row">
+                <div class="appliance-col w-col w-col-4" style="text-align:center;">
+                    <div style="text-align: center;">
+                        <a href='@Url.Action("Index", "monitors")'>
+                            <img src='@Url.Content("~/Images/monitor1.png")' alt="Monitor" class="cards-image-3" />
+                        </a>
+                        <a href="@Url.Action("Index", "monitors")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">MONITOR</a>
                     </div>
                 </div>
                 <div class="appliance-col w-col w-col-4" style="text-align:center;">
@@ -89,9 +96,9 @@
                             <img src='@Url.Content("~/Images/tv1.png")' alt="Television" class="cards-image-3" />
                         </a>
                         <a href="@Url.Action("Index", "televisions")" class="appliance-col-btn btn light outline w-button" style="margin-left:-85px; left:50%; top: 77%">TELEVISION</a>
-                        </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </body>
