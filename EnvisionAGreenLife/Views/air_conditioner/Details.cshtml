@@ -222,7 +222,7 @@
                                 <img src='@Url.Content("~/Images/air_conditioner9.png")' alt="Air_conditioner" class="appliance-card-image" />
                             }
                         </a>
-                        <button onclick="location.href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="appliance-card-but w-button">
+                        <button onclick="location.href='@Url.Action("Details", "air_conditioner",new { id = @item.Air_Conditioner_Id })'" type="button" class="appliance-card-but w-button" style="height:100px;">
                             @item.Brand: @item.Model_No
                         </button>
                     </div>

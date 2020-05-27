@@ -239,7 +239,7 @@
                                 <img src='@Url.Content("~/Images/monitor9.png")' alt="Monitor" class="appliance-card-image" />
                             }
                         </a>
-                        <button onclick="location.href='@Url.Action("Details", "monitors",new { id = @item.Monitor_Id })'" type="button" class="appliance-card-but w-button">
+                        <button onclick="location.href='@Url.Action("Details", "monitors",new { id = @item.Monitor_Id })'" type="button" class="appliance-card-but w-button" style="height:100px;">
                             @item.Brand_Name: @item.Model_Number
                         </button>
                     </div>

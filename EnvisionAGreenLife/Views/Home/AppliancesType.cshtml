@@ -7,7 +7,8 @@
 }
 
 <!-- this is the view logic page to display the results when the user clicks the appliance type from the save energy dropdown-->
-<link href="~/Styles/Applianceslayout.css" rel="stylesheet" />
+<link href="/path/to/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css">
+<script src="/path/to/jquery.flexdatalist.min.js"></script>
 <body>
     <div class="page-title-section">
         <div class="container">
@@ -25,12 +26,30 @@
                 <h2 style="text-align:center; background-color:aliceblue; color:seagreen; margin-top: 0px; margin-bottom: 20px;">No Result Found</h2>
             }
             @using (Html.BeginForm("AppliancesType", "Home", FormMethod.Post, new { @class = "appliance-collection-search-bar w-form" }))
-            {
-                <div>
-                    @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Search..." })
-                    <input type="submit" value="Search" class="appliancec-type-search-but w-button">
-                </div>
-            }
+                {
+                    <div>
+                         <input type='text'
+                               placeholder='Search...'
+                               class='flexdatalist appliance-collection-search w-input'
+                               data-min-length='1'
+                               list='appliances'
+                               name='SearchString'
+                               data-selection-required='true'
+                                >
+
+                        <datalist id="appliances">
+                            <option value="Air Conditioners">Air Conditioners</option>
+                            <option value="Clothes Dryers">Clothes Dryers</option>
+                            <option value="Clothes Washers">Clothes Washers</option>
+                            <option value="Dishwashers">Dishwashers</option>
+                            <option value="Monitors">Monitors</option>
+                            <option value="Refrigerators">Refrigerators</option>
+                            <option value="Televisions">Televisions</option>
+                        </datalist>
+                        <input type="submit" value="Search" class="appliancec-type-search-but w-button">
+                    </div>
+                }
+
 
             <div class="cards-grid-container-2">
                 <div>
@@ -106,4 +125,9 @@
 
 
 
-
+<script>
+    $('.flexdatalist').flexdatalist({
+        selectionRequired: true,
+        minLength: 1
+});
+ </script>

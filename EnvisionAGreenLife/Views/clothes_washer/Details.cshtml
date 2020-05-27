@@ -244,7 +244,7 @@
                                 <img src='@Url.Content("~/Images/cw1.png")' alt="Clothes_washer" class="appliance-card-image" />
                             }
                         </a>
-                        <button onclick="location.href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id })'" type="button" class="appliance-card-but w-button">
+                        <button onclick="location.href='@Url.Action("Details", "clothes_washer",new { id = @item.Clothes_Washer_Id })'" type="button" class="appliance-card-but w-button" style="height:100px;">
                             @item.Brand: @item.Model_No
                         </button>
                     </div>

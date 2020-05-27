@@ -118,7 +118,7 @@ namespace EnvisionAGreenLife.Controllers
                 return RedirectToAction("Index", "refrigerators");
             }
             else
-                if ("television".Contains(temp))
+                if ("televisions".Contains(temp))
             {
                 return RedirectToAction("Index", "televisions");
             }

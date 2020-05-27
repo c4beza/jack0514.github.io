@@ -221,7 +221,7 @@
                                 <img src='@Url.Content("~/Images/refrigerator9.png")' alt="Refrigerator" class="appliance-card-image" />
                             }
                         </a>
-                        <button onclick="location.href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'" type="button" class="appliance-card-but w-button">
+                        <button onclick="location.href='@Url.Action("Details", "refrigerators",new { id = @item.Refrigerator_Id })'" type="button" class="appliance-card-but w-button" style="height:100px;">
                             @item.Brand: @item.Model_No
                         </button>
                     </div>
