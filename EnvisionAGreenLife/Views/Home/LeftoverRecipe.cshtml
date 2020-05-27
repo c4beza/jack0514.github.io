@@ -37,7 +37,7 @@
         @using (Html.BeginForm("General_search", "Food_recipes", FormMethod.Get, new { @class = "appliance-collection-search-bar w-form" }))
         {
             <div>
-                @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Find by name, ingredients, time.." })
+                @Html.TextBox("SearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "appliance-collection-search w-input", @placeholder = "Find by name, ingredients, time..",  @autocomplete = "off" })
                 @Html.DropDownList("Difficulty", null, htmlAttributes: new { @class = "recipe-dropdown" })
                 <input type="submit" value="Search" class="appliancec-collection-search-but w-button" />
             </div>

@@ -19,7 +19,7 @@
         <div class="content-section" style="padding-top: 35px;">
             <p class="paragraph">Keep your food or drinks chilled by using an energy efficient refrigerator</p><br />
             <form action="@Url.Action("Index", "refrigerators")"  method="get" class="appliance-collection-search-bar w-form">
-                <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by brand…" id="search" required="">
+                <input type="search" class="appliance-collection-search w-input" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Find by brand…" id="search" required="" autocomplete="off">
                 @Html.DropDownList("Ratings", null, htmlAttributes: new { @class = "recipe-dropdown" })
                 <input type="submit" value="Search" class="appliancec-collection-search-but w-button">
             </form>

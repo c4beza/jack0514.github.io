@@ -37,7 +37,7 @@
                 {
                     <div>
                         @Html.TextBox("homeSearchString", null, new { required = "", id = "search", style = "maxlength: 256;", @class = "home-search-bar w-input", @placeholder = "Search Recipes e.g. garlic.."})
-                        <input type="submit" value="🔍" class="home-search-but w-button">
+                        <input type="submit" value="🔍" class="home-search-but w-button"  autocomplete="off">
                     </div>
                 }
             </div>

@@ -306,7 +306,10 @@ namespace EnvisionAGreenLife.Controllers
 
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
-
+            if (list.Count == 0 )
+            {
+                ViewData["foundOrNot"] = "NO";
+            }
             // showing the navigation map using the bread crumbs.
             temp.recipes = list.ToPagedList(pageindex, pagesize);
             BreadCrumb.Clear();
