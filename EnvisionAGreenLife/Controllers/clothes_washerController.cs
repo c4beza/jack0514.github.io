@@ -84,7 +84,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
-            BreadCrumb.Add("", "Clothes Washer");
+            BreadCrumb.Add("", "Washing Machine");
             List<SelectListItem> Ratings_level = new List<SelectListItem>();
 
             //adding the values in dropdown list
@@ -114,7 +114,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
-            BreadCrumb.Add(Url.Action("Index", "clothes_washer"), "Clothes Washer");
+            BreadCrumb.Add(Url.Action("Index", "clothes_washer"), "Washing Machine");
             BreadCrumb.Add("", clothes_Washer.Model_No);
 
             // Smiliar products display logic
@@ -141,7 +141,7 @@ namespace EnvisionAGreenLife.Controllers
             BreadCrumb.Clear();
             BreadCrumb.Add(Url.Action("Index", "Home"), "Home");
             BreadCrumb.Add(Url.Action("AppliancesType", "Home"), "Save Energy");
-            BreadCrumb.Add(Url.Action("Index", "clothes_washer"), "Clothes Washer");
+            BreadCrumb.Add(Url.Action("Index", "clothes_washer"), "Washing Machine");
             BreadCrumb.Add("", "Top Recommendations");
             List<SelectListItem> Ratings_level = new List<SelectListItem>();
             Ratings_level.Add(new SelectListItem() { Text = "All Ratings", Value = "-1" });
