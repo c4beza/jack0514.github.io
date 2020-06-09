@@ -40,6 +40,16 @@
                     {
                         <img src='@Url.Content("~/Images/5star.png")' alt="Five_star" class="applicance-recommend-image" />
                     }
+                    else
+                    if (item.New_Star == 4)
+                    {
+                        <img src='@Url.Content("~/Images/4star.png")' alt="Four_star" class="applicance-recommend-image" />
+                    }
+                    else
+                    if (item.New_Star == 4.5m)
+                    {
+                    <img src='@Url.Content("~/Images/4.5star.png")' alt="4.5star" class="applicance-recommend-image" />
+                    }
                     <a href='@Url.Action("Details", "dishwashers",new { id = @item.Dishwasher_Id })'>
                         @if (item.Dishwasher_Id % 9 == 1)
                         {

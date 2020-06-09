@@ -17,7 +17,7 @@ namespace EnvisionAGreenLife
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            GlobalFilters.Filters.Add(new BasicAuthenticationAttribute("admin", "fit5120"));
+            //GlobalFilters.Filters.Add(new BasicAuthenticationAttribute("admin", "fit5120"));
 
         }
         void Session_Start(object sender, EventArgs e)
